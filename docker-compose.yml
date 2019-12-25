@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:5.7.28
+    restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+
+  web:
+    build: .
+    ports:
+      - 4000:3000
+    tty: true
+    stdin_open: true
+    env_file: .env
+    restart: always
+    volumes:
+      - .:/vaccination_center_management
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
