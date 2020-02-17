@@ -10,14 +10,17 @@ services:
 
   web:
     build: .
+    volumes:
+      - .:/app
+      - type: tmpfs
+        target: /app/tmp/pids/
+    command: rails s -b 0.0.0.0
     ports:
       - 4000:3000
     tty: true
     stdin_open: true
     env_file: .env
     restart: always
-    volumes:
-      - .:/vaccination_center_management
     depends_on:
       - mysql
 
