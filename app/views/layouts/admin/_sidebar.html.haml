@@ -1,0 +1,28 @@
+%aside.left-sidebar{"data-sidebarbg" => "skin5"}
+  .scroll-sidebar
+    %nav.sidebar-nav
+      %ul#sidebarnav.p-t-30.in
+        %li.sidebar-item.selected
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link.active{"aria-expanded" => "false", :href => "#"}
+            %i.mdi.mdi-view-dashboard
+            %span.hide-menu= t("dashboard")
+        %li.sidebar-item
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "javascript:void(0)"}
+            %i.mdi.mdi-face
+            %span.hide-menu= t("user_managerment")
+        %li.sidebar-item
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "pages-buttons.html"}
+            %i.mdi.mdi-relative-scale
+            %span.hide-menu= t("post_managerment")
+        %li.sidebar-item
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "charts.html"}
+            %i.mdi.mdi-chart-bar
+            %span.hide-menu= t("statistical")
+        %li.sidebar-item
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "widgets.html"}
+            %i.mdi.mdi-chart-bubble
+            %span.hide-menu
+        %li.sidebar-item
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "javascript:void(0)"}
+            %i.mdi.mdi-account-key
+            %span.hide-menu= t("authentication")

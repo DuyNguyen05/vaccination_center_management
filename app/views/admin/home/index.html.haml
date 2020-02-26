@@ -1,0 +1,110 @@
+.page-breadcrumb
+  .row
+    .col-12.d-flex.no-block.align-items-center
+      %h4.page-title= t("admin.layouts.dashboard")
+.container-fluid
+  .row
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-cyan.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-view-dashboard
+          %h6.text-white= t("admin.layouts.dashboard")
+    .col-md-6.col-lg-4.col-xlg-3
+      .card.card-hover
+        .box.bg-success.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-chart-areaspline
+          %h6.text-white Charts
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-warning.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-collage
+          %h6.text-white Widgets
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-danger.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-border-outside
+          %h6.text-white Tables
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-info.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-arrow-all
+          %h6.text-white Full Width
+    .col-md-6.col-lg-4.col-xlg-3
+      .card.card-hover
+        .box.bg-danger.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-receipt
+          %h6.text-white Forms
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-info.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-relative-scale
+          %h6.text-white Buttons
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-cyan.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-pencil
+          %h6.text-white Elements
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-success.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-calendar-check
+          %h6.text-white Calnedar
+    .col-md-6.col-lg-2.col-xlg-3
+      .card.card-hover
+        .box.bg-warning.text-center
+          %h1.font-light.text-white
+            %i.mdi.mdi-alert
+          %h6.text-white Errors
+  .row
+    .col-md-12
+      .card
+        .card-body
+          .d-md-flex.align-items-center
+            %div
+              %h4.card-title Site Analysis
+              %h5.card-subtitle Overview of Latest Month
+          .row
+            .col-lg-9
+              .flot-chart
+                #flot-line-chart.flot-chart-content
+            .col-lg-3
+              .row
+                .col-6
+                  .bg-dark.p-10.text-white.text-center
+                    %i.fa.fa-user.m-b-5.font-16
+                    %h5.m-b-0.m-t-5 2540
+                    %small.font-light Total Users
+                .col-6
+                  .bg-dark.p-10.text-white.text-center
+                    %i.fa.fa-plus.m-b-5.font-16
+                    %h5.m-b-0.m-t-5 120
+                    %small.font-light New Users
+                .col-6.m-t-15
+                  .bg-dark.p-10.text-white.text-center
+                    %i.fa.fa-cart-plus.m-b-5.font-16
+                    %h5.m-b-0.m-t-5 656
+                    %small.font-light Total Shop
+                .col-6.m-t-15
+                  .bg-dark.p-10.text-white.text-center
+                    %i.fa.fa-tag.m-b-5.font-16
+                    %h5.m-b-0.m-t-5 9540
+                    %small.font-light Total Orders
+                .col-6.m-t-15
+                  .bg-dark.p-10.text-white.text-center
+                    %i.fa.fa-table.m-b-5.font-16
+                    %h5.m-b-0.m-t-5 100
+                    %small.font-light Pending Orders
+                .col-6.m-t-15
+                  .bg-dark.p-10.text-white.text-center
+                    %i.fa.fa-globe.m-b-5.font-16
+                    %h5.m-b-0.m-t-5 8540
+                    %small.font-light Online Orders

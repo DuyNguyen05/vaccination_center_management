@@ -13276,3 +13276,1139 @@ FOREIGN KEY (`detail_vaccine_package_id`)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   ↳ bin/rails:9
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:01:49 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+TypeError (Admin is not a class):
+  
+app/controllers/admin/admin_controller.rb:1:in `<main>'
+app/controllers/admin/home_controller.rb:1:in `<main>'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:03:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (300.9ms)
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "demo/dashboard-demo.js" is not present in the asset pipeline.):
+    345: / /.col-lg-4
+    346: / /.row
+    347: 
+    348: %script{:src => url_to_javascript("demo/dashboard-demo.js")}
+  
+app/views/admin/home/index.haml:348:in `_app_views_admin_home_index_haml__1746224080859411369_47307224301760'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:04:00 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (80.7ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "application/admin.css" is not present in the asset pipeline.):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "application/admin", :media => "all"  , 'data-turbolinks-track' => true
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "application/admin"  , 'data-turbolinks-track' => true
+    13: 
+  
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml__4413852102581480504_69988480709800'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:04:41 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (62.8ms)
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: morris-0.4.3.min.
+        on line 3:1 of app/assets/stylesheets/admin/application.css.scss
+>> @import "morris-0.4.3.min";
+
+   ^
+):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"  , 'data-turbolinks-track' => true
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"  , 'data-turbolinks-track' => true
+    13: 
+  
+app/assets/stylesheets/admin/application.css.scss:3
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml__4413852102581480504_69988476465100'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:05:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (76.9ms)
+Completed 500 Internal Server Error in 997ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Autoprefixer doesn’t support Node v4.8.2. Update it.):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"  , 'data-turbolinks-track' => true
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"  , 'data-turbolinks-track' => true
+    13: 
+  
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml__4413852102581480504_69988482924020'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:08:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (94.8ms)
+Completed 500 Internal Server Error in 993ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Autoprefixer doesn’t support Node v4.8.2. Update it.):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"  , 'data-turbolinks-track' => true
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"  , 'data-turbolinks-track' => true
+    13: 
+  
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml__4413852102581480504_69988481002620'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:09:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (72.6ms)
+Completed 500 Internal Server Error in 936ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Autoprefixer doesn’t support Node v4.8.2. Update it.):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml__4413852102581480504_69988476445340'
+Started GET "/" for 172.19.0.1 at 2020-02-25 03:10:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ad" for 172.19.0.1 at 2020-02-25 03:10:20 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/ad"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin" for 172.19.0.1 at 2020-02-25 03:10:26 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (61.1ms)
+Completed 500 Internal Server Error in 878ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Autoprefixer doesn’t support Node v4.8.2. Update it.):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml__4413852102581480504_69988607032560'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:18:59 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (72.5ms)
+Completed 500 Internal Server Error in 2174ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:13
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_47398247965620'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:20:04 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (74.5ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_70086908012600'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:20:07 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (57.5ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_70086910687340'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:20:53 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (58.1ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't require absolute file: /lib/jquery.metisMenu):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_70086912142440'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:20:57 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (86.3ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't require absolute file: /lib/jquery.metisMenu):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_70086913732200'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:21:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (62.1ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_47398234272500'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:22:05 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (63.5ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu.js' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_70086898767160'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:22:15 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (64.9ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu.js' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1742163974675747131_70087023287820'
+Started GET "/admin" for 172.19.0.1 at 2020-02-25 03:29:29 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (71.9ms)
+Completed 500 Internal Server Error in 2187ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:17
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1819008609018211831_47196768777460'
+Started GET "/admin" for 172.19.0.1 at 2020-02-25 03:30:25 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (67.8ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'lib/jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:17
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1819008609018211831_70312173683040'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:33:13 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (60.8ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:17
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1819008609018211831_70312051505000'
+Started GET "/admin/" for 172.19.0.1 at 2020-02-25 03:33:16 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (59.5ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:17
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1819008609018211831_70312044310900'
+Started GET "/admin" for 172.18.0.1 at 2020-02-25 03:34:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (90.8ms)
+Completed 500 Internal Server Error in 468ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.metisMenu' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/admin/application.js:17
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___1748246110681170175_69927341367020'
+Started GET "/admin" for 172.18.0.1 at 2020-02-25 03:35:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (87.3ms)
+Completed 500 Internal Server Error in 725ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts):
+     7:     %title= content_for?(:title) ? yield(:title) : "Timbratura"
+     8:     = csrf_meta_tags
+     9: 
+    10:     = stylesheet_link_tag "admin/application", :media => "all"
+    11:     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    12:     = javascript_include_tag "admin/application"
+    13: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/admin/application.html.haml:10:in `_app_views_layouts_admin_application_html_haml___3039256995620210569_70223928996420'
+Started GET "/admin" for 172.18.0.1 at 2020-02-25 03:35:53 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.haml within layouts/admin/application
+  Rendered admin/home/index.haml within layouts/admin/application (66.2ms)
+Completed 200 OK in 1217ms (Views: 1216.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 172.18.0.1 at 2020-02-26 02:22:13 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+LoadError (Unable to autoload constant Admin::HomeController, expected /app/app/controllers/admin/home_controller.rb to define it):
+  
+activesupport (5.2.4.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.1) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.4.1) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.4.1) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.4.1) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin" for 172.18.0.1 at 2020-02-26 02:22:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (2835.4ms)
+Completed 500 Internal Server Error in 3174ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file './css/float-chart.css' under '/app/app/assets/stylesheets' with type 'text/css'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts
+  /usr/local/bundle/gems/material_design_icons-4.1.95/assets/stylesheets
+  /usr/local/bundle/gems/material_design_icons-4.1.95/assets/fonts
+  /usr/local/bundle/gems/material_design_icons-4.1.95/assets/images):
+     5:     %title Admin
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload"
+     9:     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
+    10:   %body
+    11:     .preloader{:style => "display: none;"}
+  
+app/assets/stylesheets/admin/application.css.scss:3
+app/views/layouts/admin/application.html.haml:8:in `_app_views_layouts_admin_application_html_haml__2145347506895848183_69929953333160'
+Started GET "/admin" for 172.18.0.1 at 2020-02-26 02:28:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (49.1ms)
+Completed 500 Internal Server Error in 3927ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: themify-icons.
+        on line 5:1 of app/assets/stylesheets/admin/css/style.min.css.scss
+>> @import "themify-icons";
+
+   ^
+):
+     5:     %title Admin
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload"
+     9:     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
+    10:   %body
+    11:     .preloader{:style => "display: none;"}
+  
+app/assets/stylesheets/admin/css/style.min.css.scss:5
+app/views/layouts/admin/application.html.haml:8:in `_app_views_layouts_admin_application_html_haml__2145347506895848183_69929966421240'
+Started GET "/admin" for 172.18.0.1 at 2020-02-26 02:29:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (52.7ms)
+Completed 500 Internal Server Error in 3450ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file './lib/chart-page-init.jsa' under '/app/app/assets/javascripts' with type 'application/javascript'
+Checked in these paths: 
+  /app/app/assets/config
+  /app/app/assets/fonts
+  /app/app/assets/images
+  /app/app/assets/javascripts
+  /app/app/assets/stylesheets
+  /usr/local/bundle/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/fonts
+  /usr/local/bundle/gems/font-awesome-rails-4.7.0.5/app/assets/stylesheets
+  /usr/local/bundle/gems/actioncable-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/activestorage-5.2.4.1/app/assets/javascripts
+  /usr/local/bundle/gems/actionview-5.2.4.1/lib/assets/compiled
+  /usr/local/bundle/gems/rails-ujs-0.1.0/dist
+  /app/node_modules
+  /usr/local/bundle/gems/popper_js-1.16.0/assets/javascripts
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/stylesheets
+  /usr/local/bundle/gems/bootstrap-4.4.1/assets/javascripts
+  /usr/local/bundle/gems/material_design_icons-4.1.95/assets/stylesheets
+  /usr/local/bundle/gems/material_design_icons-4.1.95/assets/fonts
+  /usr/local/bundle/gems/material_design_icons-4.1.95/assets/images):
+     5:     %title Admin
+     6:     = csrf_meta_tags
+     7:     = csp_meta_tag
+     8:     = stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload"
+     9:     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
+    10:   %body
+    11:     .preloader{:style => "display: none;"}
+  
+app/assets/javascripts/admin/application.js:28
+app/views/layouts/admin/application.html.haml:8:in `_app_views_layouts_admin_application_html_haml__2145347506895848183_69929970476700'
+Started GET "/admin" for 172.18.0.1 at 2020-02-26 02:29:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (51.4ms)
+  Rendered layouts/admin/_header.html.haml (39.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (13.6ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 3144ms (Views: 3142.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=en" for 172.18.0.1 at 2020-02-26 02:30:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (29.0ms)
+  Rendered layouts/admin/_header.html.haml (38.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (12.7ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 181ms (Views: 180.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:30:24 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (27.3ms)
+  Rendered layouts/admin/_header.html.haml (61.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (12.5ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 183ms (Views: 181.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:30:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (33.3ms)
+  Rendered layouts/admin/_header.html.haml (42.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (13.6ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 176ms (Views: 174.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=en" for 172.18.0.1 at 2020-02-26 02:31:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (47.4ms)
+  Rendered layouts/admin/_header.html.haml (51.5ms)
+  Rendered layouts/admin/_sidebar.html.haml (22.3ms)
+  Rendered layouts/admin/_footer.html.haml (2.1ms)
+Completed 200 OK in 221ms (Views: 220.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:32:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (32.6ms)
+  Rendered layouts/admin/_header.html.haml (4.8ms)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %a and nested within it.):
+    24:               %i.fa.fa-plus
+    25:           .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+    26:             %a.dropdown-item{:href => "#"}.text-center
+    27:               = link_to t("english"), locale:"en"
+    28:             .dropdown-divider
+    29:             %a.dropdown-item{:href => "#"}
+    30:               = link_to t("vietnamese"), locale:"vi"
+  
+app/views/layouts/admin/_header.html.haml:27
+app/views/layouts/admin/application.html.haml:16:in `_app_views_layouts_admin_application_html_haml__2145347506895848183_69929971597920'
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:32:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (54.1ms)
+  Rendered layouts/admin/_header.html.haml (44.3ms)
+  Rendered layouts/admin/_sidebar.html.haml (15.8ms)
+  Rendered layouts/admin/_footer.html.haml (3.1ms)
+Completed 200 OK in 210ms (Views: 208.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:33:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (29.3ms)
+  Rendered layouts/admin/_header.html.haml (42.3ms)
+  Rendered layouts/admin/_sidebar.html.haml (12.6ms)
+  Rendered layouts/admin/_footer.html.haml (2.3ms)
+Completed 200 OK in 200ms (Views: 198.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:34:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (28.1ms)
+  Rendered layouts/admin/_header.html.haml (70.7ms)
+  Rendered layouts/admin/_sidebar.html.haml (16.0ms)
+  Rendered layouts/admin/_footer.html.haml (2.7ms)
+Completed 200 OK in 206ms (Views: 204.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:35:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (31.9ms)
+  Rendered layouts/admin/_header.html.haml (39.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (13.1ms)
+  Rendered layouts/admin/_footer.html.haml (3.2ms)
+Completed 200 OK in 177ms (Views: 176.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:36:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (55.6ms)
+  Rendered layouts/admin/_header.html.haml (47.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (11.9ms)
+  Rendered layouts/admin/_footer.html.haml (2.5ms)
+Completed 200 OK in 204ms (Views: 203.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:36:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (33.0ms)
+  Rendered layouts/admin/_header.html.haml (46.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (15.4ms)
+  Rendered layouts/admin/_footer.html.haml (1.9ms)
+Completed 200 OK in 210ms (Views: 209.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:39:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (30.8ms)
+  Rendered layouts/admin/_header.html.haml (69.2ms)
+  Rendered layouts/admin/_sidebar.html.haml (14.5ms)
+  Rendered layouts/admin/_footer.html.haml (2.2ms)
+Completed 200 OK in 205ms (Views: 204.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:39:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (33.1ms)
+  Rendered layouts/admin/_header.html.haml (44.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (17.7ms)
+  Rendered layouts/admin/_footer.html.haml (26.0ms)
+Completed 200 OK in 208ms (Views: 207.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:40:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (33.4ms)
+  Rendered layouts/admin/_header.html.haml (41.1ms)
+  Rendered layouts/admin/_sidebar.html.haml (16.0ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 180ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:40:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (33.5ms)
+  Rendered layouts/admin/_header.html.haml (52.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (16.4ms)
+  Rendered layouts/admin/_footer.html.haml (3.8ms)
+Completed 200 OK in 221ms (Views: 220.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:42:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (36.4ms)
+  Rendered layouts/admin/_header.html.haml (46.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (14.3ms)
+  Rendered layouts/admin/_footer.html.haml (2.4ms)
+Completed 200 OK in 219ms (Views: 218.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 02:42:57 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (33.0ms)
+  Rendered layouts/admin/_header.html.haml (89.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (13.9ms)
+  Rendered layouts/admin/_footer.html.haml (1.9ms)
+Completed 200 OK in 236ms (Views: 235.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin?locale=vi" for 172.18.0.1 at 2020-02-26 03:03:47 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (29.2ms)
+  Rendered layouts/admin/_header.html.haml (67.2ms)
+  Rendered layouts/admin/_sidebar.html.haml (13.6ms)
+  Rendered layouts/admin/_footer.html.haml (3.2ms)
+Completed 200 OK in 200ms (Views: 198.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index.html" for 172.18.0.1 at 2020-02-26 03:03:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/index.html"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
