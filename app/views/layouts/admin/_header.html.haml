@@ -3,11 +3,9 @@
     .navbar-header.expand-logo{"data-logobg" => "skin5"}
       %a.nav-toggler.waves-effect.waves-light.d-block.d-md-none{:href => "javascript:void(0)"}
         %i.ti-menu.ti-close
-      %a.navbar-brand{:href => "index.html"}
-        %b.logo-icon.p-l-10
-          = image_tag "logo-icon.png", alt: "homepage", class: "light-logo"
-        %span.logo-text
-          = image_tag "logo-text.png", alt: "homepage", class: "light-logo"
+      = link_to admin_root_path, class: "navbar-brand" do
+        %span.d-flex.justify-content-center.align-items-center
+          %h2 Admin Center
       %a.topbartoggler.d-block.d-md-none.waves-effect.waves-light{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :href => "javascript:void(0)"}
         %i.ti-more
     #navbarSupportedContent.navbar-collapse.collapse{"data-navbarbg" => "skin5"}
@@ -18,16 +16,14 @@
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             %span.d-none.d-md-block
-              = t("language")
+              = t("layouts.admin.header.language")
               %i.fa.fa-angle-down.fa-lg
             %span.d-block.d-md-none
               %i.fa.fa-plus
           .dropdown-menu.text-center{"aria-labelledby" => "navbarDropdown"}
             %a.dropdown-item{:href => "#"}
-              = link_to t("english"), locale:"en", class: "text-center"
-            .dropdown-divider
-            %a.dropdown-item{:href => "#"}
-              = link_to t("vietnamese"), locale:"vi"
+              - I18n.available_locales.select { |locale| locale != I18n.locale }.each do |locale|
+                = link_to t(".#{locale}"), request.parameters.merge(locale: locale)
         %li.nav-item.search-box
           %a.nav-link.waves-effect.waves-dark{:href => "javascript:void(0)"}
             %i.ti-search

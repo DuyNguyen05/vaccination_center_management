@@ -14692,3 +14692,667 @@ Processing by Admin::HomeController#index as HTML
 Completed 200 OK in 192ms (Views: 190.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/admin/" for 172.18.0.1 at 2020-02-26 06:14:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (22.5ms)
+  Rendered layouts/admin/_header.html.haml (29.7ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/app/app/views/layouts/admin/_header.html.haml:88: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/layouts/admin/_header.html.haml:88: syntax error, unexpected end-of-input, expecting end
+app/views/layouts/admin/application.html.haml:16:in `_app_views_layouts_admin_application_html_haml__3826159601388636373_70111101682420'
+Started GET "/admin/" for 172.18.0.1 at 2020-02-26 06:14:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (31.1ms)
+  Rendered layouts/admin/_header.html.haml (36.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.6ms)
+  Rendered layouts/admin/_footer.html.haml (2.0ms)
+Completed 200 OK in 164ms (Views: 162.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:14:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (19.9ms)
+  Rendered layouts/admin/_header.html.haml (33.5ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.0ms)
+  Rendered layouts/admin/_footer.html.haml (1.4ms)
+Completed 200 OK in 161ms (Views: 159.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:14:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (20.9ms)
+  Rendered layouts/admin/_header.html.haml (37.2ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.6ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 148ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:14:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (17.8ms)
+  Rendered layouts/admin/_header.html.haml (64.1ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.4ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 162ms (Views: 161.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:14:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (26.1ms)
+  Rendered layouts/admin/_header.html.haml (35.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.3ms)
+  Rendered layouts/admin/_footer.html.haml (2.6ms)
+Completed 200 OK in 159ms (Views: 157.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:15:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (26.1ms)
+  Rendered layouts/admin/_header.html.haml (27.8ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/app/app/views/layouts/admin/_header.html.haml:89: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/layouts/admin/_header.html.haml:89: syntax error, unexpected end-of-input, expecting end
+app/views/layouts/admin/application.html.haml:16:in `_app_views_layouts_admin_application_html_haml__3826159601388636373_70111102192180'
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:15:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (21.5ms)
+  Rendered layouts/admin/_header.html.haml (37.3ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.1ms)
+  Rendered layouts/admin/_footer.html.haml (1.5ms)
+Completed 200 OK in 159ms (Views: 157.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:15:58 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (51.0ms)
+  Rendered layouts/admin/_header.html.haml (46.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.6ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 201ms (Views: 200.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:16:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (25.5ms)
+  Rendered layouts/admin/_header.html.haml (34.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.8ms)
+  Rendered layouts/admin/_footer.html.haml (3.3ms)
+Completed 200 OK in 154ms (Views: 152.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:16:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (32.1ms)
+  Rendered layouts/admin/_header.html.haml (5.1ms)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    24:               %i.fa.fa-plus
+    25:           .dropdown-menu.text-center{"aria-labelledby" => "navbarDropdown"}
+    26:             - I18n.available_locales.select { |locale| locale != I18n.locale }.each do |locale|
+    27:                 = link_to t(".#{locale}"), request.parameters.merge(locale: locale)
+    28:         %li.nav-item.search-box
+    29:           %a.nav-link.waves-effect.waves-dark{:href => "javascript:void(0)"}
+    30:             %i.ti-search
+  
+app/views/layouts/admin/_header.html.haml:27
+app/views/layouts/admin/application.html.haml:16:in `_app_views_layouts_admin_application_html_haml__3826159601388636373_70111103457080'
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:16:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (22.4ms)
+  Rendered layouts/admin/_header.html.haml (64.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.7ms)
+  Rendered layouts/admin/_footer.html.haml (2.6ms)
+Completed 200 OK in 183ms (Views: 182.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:17:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (22.2ms)
+  Rendered layouts/admin/_header.html.haml (35.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.6ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 151ms (Views: 150.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:17:28 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (18.7ms)
+  Rendered layouts/admin/_header.html.haml (64.9ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.5ms)
+  Rendered layouts/admin/_footer.html.haml (2.6ms)
+Completed 200 OK in 172ms (Views: 171.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:17:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (22.3ms)
+  Rendered layouts/admin/_header.html.haml (33.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.8ms)
+  Rendered layouts/admin/_footer.html.haml (1.9ms)
+Completed 200 OK in 146ms (Views: 145.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:17:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (20.9ms)
+  Rendered layouts/admin/_header.html.haml (33.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (33.3ms)
+  Rendered layouts/admin/_footer.html.haml (2.4ms)
+Completed 200 OK in 171ms (Views: 169.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:18:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (21.0ms)
+  Rendered layouts/admin/_header.html.haml (31.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.4ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 140ms (Views: 138.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:18:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (21.0ms)
+  Rendered layouts/admin/_header.html.haml (32.7ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.3ms)
+  Rendered layouts/admin/_footer.html.haml (1.8ms)
+Completed 200 OK in 135ms (Views: 133.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:18:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (49.9ms)
+  Rendered layouts/admin/_header.html.haml (36.1ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.5ms)
+  Rendered layouts/admin/_footer.html.haml (1.5ms)
+Completed 200 OK in 188ms (Views: 186.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:18:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (32.6ms)
+  Rendered layouts/admin/_header.html.haml (51.5ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.9ms)
+  Rendered layouts/admin/_footer.html.haml (3.8ms)
+Completed 200 OK in 187ms (Views: 185.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:19:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (60.8ms)
+  Rendered layouts/admin/_header.html.haml (43.5ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.8ms)
+  Rendered layouts/admin/_footer.html.haml (4.4ms)
+Completed 200 OK in 217ms (Views: 215.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:20:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (158.0ms)
+  Rendered layouts/admin/_header.html.haml (40.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.8ms)
+  Rendered layouts/admin/_footer.html.haml (2.0ms)
+Completed 200 OK in 321ms (Views: 319.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:20:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (6.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (288.5ms)
+  Rendered layouts/admin/_header.html.haml (44.7ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.2ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 1504ms (Views: 1497.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:21:00 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (27.2ms)
+  Rendered layouts/admin/_header.html.haml (57.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (11.2ms)
+  Rendered layouts/admin/_footer.html.haml (4.8ms)
+Completed 200 OK in 231ms (Views: 229.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:21:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (54.4ms)
+  Rendered layouts/admin/_header.html.haml (54.1ms)
+  Rendered layouts/admin/_sidebar.html.haml (10.8ms)
+  Rendered layouts/admin/_footer.html.haml (1.8ms)
+Completed 200 OK in 307ms (Views: 306.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:21:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (249.0ms)
+  Rendered layouts/admin/_header.html.haml (59.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (17.6ms)
+  Rendered layouts/admin/_footer.html.haml (2.1ms)
+Completed 200 OK in 1474ms (Views: 1473.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/admin" for 172.18.0.1 at 2020-02-26 06:22:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (35.5ms)
+  Rendered layouts/admin/_header.html.haml (57.9ms)
+  Rendered layouts/admin/_sidebar.html.haml (68.2ms)
+  Rendered layouts/admin/_footer.html.haml (1.8ms)
+Completed 200 OK in 292ms (Views: 289.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:22:25 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (24.5ms)
+  Rendered layouts/admin/_header.html.haml (31.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.2ms)
+  Rendered layouts/admin/_footer.html.haml (2.0ms)
+Completed 200 OK in 148ms (Views: 146.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:24:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (31.3ms)
+  Rendered layouts/admin/_header.html.haml (1475.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.8ms)
+  Rendered layouts/admin/_footer.html.haml (1.9ms)
+Completed 200 OK in 6982ms (Views: 6981.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:25:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (37.0ms)
+  Rendered layouts/admin/_header.html.haml (50.6ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.6ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 195ms (Views: 193.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/index.html" for 172.18.0.1 at 2020-02-26 06:25:09 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/vi/index.html"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:27:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (54.7ms)
+  Rendered layouts/admin/_header.html.haml (68.1ms)
+Completed 500 Internal Server Error in 4140ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "logo-txt.png" is not present in the asset pipeline.):
+     7:         %b.logo-icon.p-l-10
+     8:           = image_tag "logo-icon.png", alt: "homepage", class: "light-logo"
+     9:         %span.logo-text
+    10:           = image_tag "logo-txt.png", alt: "homepage", class: "light-logo img-thumb"
+    11:       %a.topbartoggler.d-block.d-md-none.waves-effect.waves-light{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :href => "javascript:void(0)"}
+    12:         %i.ti-more
+    13:     #navbarSupportedContent.navbar-collapse.collapse{"data-navbarbg" => "skin5"}
+  
+app/views/layouts/admin/_header.html.haml:10:in `_app_views_layouts_admin__header_html_haml__2893681074829189013_69826151086180'
+app/views/layouts/admin/application.html.haml:16:in `_app_views_layouts_admin_application_html_haml__4594768032762626569_69826158901260'
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:27:43 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (40.1ms)
+  Rendered layouts/admin/_header.html.haml (1410.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.3ms)
+  Rendered layouts/admin/_footer.html.haml (2.0ms)
+Completed 200 OK in 6150ms (Views: 6149.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:28:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (28.3ms)
+  Rendered layouts/admin/_header.html.haml (32.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.2ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 163ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:28:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (58.1ms)
+  Rendered layouts/admin/_header.html.haml (32.7ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.2ms)
+  Rendered layouts/admin/_footer.html.haml (2.7ms)
+Completed 200 OK in 189ms (Views: 187.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:29:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (31.8ms)
+  Rendered layouts/admin/_header.html.haml (34.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.1ms)
+  Rendered layouts/admin/_footer.html.haml (1.5ms)
+Completed 200 OK in 166ms (Views: 165.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:29:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (23.2ms)
+  Rendered layouts/admin/_header.html.haml (33.1ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.4ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 184ms (Views: 182.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:30:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (34.5ms)
+  Rendered layouts/admin/_header.html.haml (35.2ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.4ms)
+  Rendered layouts/admin/_footer.html.haml (3.2ms)
+Completed 200 OK in 184ms (Views: 182.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:30:33 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (26.8ms)
+  Rendered layouts/admin/_header.html.haml (35.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.4ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 196ms (Views: 194.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:31:07 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (24.0ms)
+  Rendered layouts/admin/_header.html.haml (39.3ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.2ms)
+  Rendered layouts/admin/_footer.html.haml (3.2ms)
+Completed 200 OK in 166ms (Views: 165.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:31:30 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (18.3ms)
+  Rendered layouts/admin/_header.html.haml (72.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (9.9ms)
+  Rendered layouts/admin/_footer.html.haml (2.0ms)
+Completed 200 OK in 199ms (Views: 197.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:31:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (23.2ms)
+  Rendered layouts/admin/_header.html.haml (39.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.0ms)
+  Rendered layouts/admin/_footer.html.haml (1.9ms)
+Completed 200 OK in 166ms (Views: 164.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:32:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (25.5ms)
+  Rendered layouts/admin/_header.html.haml (32.4ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.4ms)
+  Rendered layouts/admin/_footer.html.haml (1.5ms)
+Completed 200 OK in 156ms (Views: 154.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:32:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (54.2ms)
+  Rendered layouts/admin/_header.html.haml (3.2ms)
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    4:       %a.nav-toggler.waves-effect.waves-light.d-block.d-md-none{:href => "javascript:void(0)"}
+    5:         %i.ti-menu.ti-close
+    6:       %a.navbar-brand{:href => "index.html"}
+    7:           = image_tag "logo-icon.png", alt: "homepage", class: "light-logo"
+    8:         %span.d-flex.justify-content-center.align-items-center
+    9:           %h2 Admin
+   10:       %a.topbartoggler.d-block.d-md-none.waves-effect.waves-light{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :href => "javascript:void(0)"}
+  
+app/views/layouts/admin/_header.html.haml:7
+app/views/layouts/admin/application.html.haml:16:in `_app_views_layouts_admin_application_html_haml__4594768032762626569_69826158619900'
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:32:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (25.4ms)
+  Rendered layouts/admin/_header.html.haml (33.9ms)
+  Rendered layouts/admin/_sidebar.html.haml (7.8ms)
+  Rendered layouts/admin/_footer.html.haml (1.7ms)
+Completed 200 OK in 190ms (Views: 189.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:32:44 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (27.0ms)
+  Rendered layouts/admin/_header.html.haml (35.2ms)
+  Rendered layouts/admin/_sidebar.html.haml (9.2ms)
+  Rendered layouts/admin/_footer.html.haml (1.9ms)
+Completed 200 OK in 173ms (Views: 171.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:33:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (23.4ms)
+  Rendered layouts/admin/_header.html.haml (31.7ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.4ms)
+  Rendered layouts/admin/_footer.html.haml (3.6ms)
+Completed 200 OK in 186ms (Views: 184.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:34:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (26.8ms)
+  Rendered layouts/admin/_header.html.haml (30.1ms)
+  Rendered layouts/admin/_sidebar.html.haml (6.9ms)
+  Rendered layouts/admin/_footer.html.haml (1.5ms)
+Completed 200 OK in 152ms (Views: 151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:34:08 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (21.9ms)
+  Rendered layouts/admin/_header.html.haml (63.3ms)
+  Rendered layouts/admin/_sidebar.html.haml (9.2ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 188ms (Views: 186.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vi/admin" for 172.18.0.1 at 2020-02-26 06:36:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (27.8ms)
+  Rendered layouts/admin/_header.html.haml (33.8ms)
+  Rendered layouts/admin/_sidebar.html.haml (8.0ms)
+  Rendered layouts/admin/_footer.html.haml (1.6ms)
+Completed 200 OK in 165ms (Views: 163.9ms | ActiveRecord: 0.0ms)
+
+
