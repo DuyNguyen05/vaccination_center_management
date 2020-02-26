@@ -1,0 +1,7 @@
+vi:
+  layouts:
+    admin:
+      header:
+        profile: Thông Tin 
+        edit_profile: Chỉnh Sửa Thông Tin Cá Nhân
+        logout: Đăng Xuất

@@ -1,0 +1,5 @@
+vi:
+  admin:
+    sidebar:
+      dashboard: Trang Chủ
+      user_management: Quản Lý Người Dùng
