@@ -1,0 +1,12 @@
+%aside.left-sidebar{"data-sidebarbg" => "skin5"}
+  .scroll-sidebar
+    %nav.sidebar-nav
+      %ul#sidebarnav.p-t-30.in
+        %li.sidebar-item.selected
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link.active{"aria-expanded" => "false", :href => "#"}
+            %i.mdi.mdi-view-dashboard
+            %span.hide-menu= t("admin.sidebar.dashboard")
+        %li.sidebar-item
+          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "javascript:void(0)"}
+            %i.mdi.mdi-face
+            %span.hide-menu= t("admin.sidebar.user_management")

@@ -1,0 +1,8 @@
+en:
+  layouts:
+    admin:
+      header:
+        language: Language
+        profile: Profile
+        edit_profile: Edit Profile
+        logout: Logout

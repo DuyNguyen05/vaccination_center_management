@@ -1,0 +1,8 @@
+vi:
+  layouts:
+    admin:
+      header:
+        language: Ngôn Ngữ
+        profile: Thông Tin
+        edit_profile: Chỉnh Sửa Thông Tin Cá Nhân
+        logout: Đăng Xuất

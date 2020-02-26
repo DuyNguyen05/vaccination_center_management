@@ -1,0 +1,78 @@
+%header.topbar{"data-navbarbg" => "skin5"}
+  %nav.navbar.top-navbar.navbar-expand-md.navbar-dark
+    .navbar-header.expand-logo{"data-logobg" => "skin5"}
+      %a.nav-toggler.waves-effect.waves-light.d-block.d-md-none{:href => "javascript:void(0)"}
+        %i.ti-menu.ti-close
+      = link_to admin_root_path, class: "navbar-brand" do
+        %span.d-flex.justify-content-center.align-items-center
+          %h2 Admin Center
+      %a.topbartoggler.d-block.d-md-none.waves-effect.waves-light{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :href => "javascript:void(0)"}
+        %i.ti-more
+    #navbarSupportedContent.navbar-collapse.collapse{"data-navbarbg" => "skin5"}
+      %ul.navbar-nav.float-left.mr-auto
+        %li.nav-item.d-none.d-md-block
+          %a.nav-link.sidebartoggler.waves-effect.waves-light{"data-sidebartype" => "mini-sidebar", :href => "javascript:void(0)"}
+            %i.mdi.mdi-menu.font-24
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            %span.d-none.d-md-block
+              = t("layouts.admin.header.language")
+              %i.fa.fa-angle-down.fa-lg
+            %span.d-block.d-md-none
+              %i.fa.fa-plus
+          .dropdown-menu.text-center{"aria-labelledby" => "navbarDropdown"}
+            %a.dropdown-item{:href => "#"}
+              - I18n.available_locales.select { |locale| locale != I18n.locale }.each do |locale|
+                = link_to t(".#{locale}"), request.parameters.merge(locale: locale)
+        %li.nav-item.search-box
+          %a.nav-link.waves-effect.waves-dark{:href => "javascript:void(0)"}
+            %i.ti-search
+          %form.app-search.position-absolute
+            %input.form-control{:placeholder => "Search & enter", :type => "text"}/
+            %a.srh-btn
+              %i.ti-close
+      %ul.navbar-nav.float-right
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle.waves-effect.waves-dark{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => ""}
+            %i.mdi.mdi-bell.font-24
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            %a.dropdown-item{:href => "#"}
+            %a.dropdown-item{:href => "#"}
+            .dropdown-divider
+            %a.dropdown-item{:href => "#"}
+        %li.nav-item.dropdown
+          %a#2.nav-link.dropdown-toggle.waves-effect.waves-dark{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => ""}
+            %i.font-24.mdi.mdi-comment-processing
+          .dropdown-menu.dropdown-menu-right.mailbox.animated.bounceInDown{"aria-labelledby" => "2"}
+            %ul.list-style-none
+              %li
+                %div
+                  %a.link.border-top{:href => "javascript:void(0)"}
+                    .d-flex.no-block.align-items-center.p-10
+                      %span.btn.btn-success.btn-circle
+                        %i.ti-calendar
+                      .m-l-10
+                        %h5.m-b-0 Event today
+                        %span.mail-desc Just a reminder that event
+                  %a.link.border-top{:href => "javascript:void(0)"}
+                    .d-flex.no-block.align-items-center.p-10
+                      %span.btn.btn-info.btn-circle
+                        %i.ti-settings
+                      .m-l-10
+                        %h5.m-b-0 Settings
+                        %span.mail-desc You can customize this template
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark.pro-pic{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => ""}
+            = image_tag "1.jpg", alt:"user", class:"rounded-circle", width:"31"
+          .dropdown-menu.dropdown-menu-right.user-dd.animated
+            %a.pt-2.dropdown-item{:href => "javascript:void(0)"}
+              %i.ti-user.m-r-5.m-l-5
+              = t(".profile")
+            .dropdown-divider
+            %a.dropdown-item{:href => "javascript:void(0)"}
+              %i.ti-settings.m-r-5.m-l-5
+              = t(".edit_profile")
+            .dropdown-divider
+            %a.dropdown-item{:href => "javascript:void(0)"}
+              %i.fa.fa-power-off.m-r-5.m-l-5
+              = t(".logout")
