@@ -1,4 +1,5 @@
-class ApplicationController < ActionController::Base
+class User::UserController < ActionController::Base
+  layout "user/application"
   before_action :set_locale
 
   def set_locale
@@ -10,4 +11,5 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
 end

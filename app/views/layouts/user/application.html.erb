@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VaccinationCenterManagement</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'user/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'user/application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="page-top" class="sidebar-toggled">
+    <div id="wrapper">
+      <%= render "layouts/user/sidebar" %>
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%= render "layouts/user/header" %>
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </div>
+        <%= render "layouts/user/footer" %>
+      </div>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+  </body>
+</html>

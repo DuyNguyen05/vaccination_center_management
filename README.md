@@ -3,22 +3,17 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+1. Configure file
+Run: cp .env.example .env
 
-* Ruby version
+2. Build project
+- docker-compose build
+- docker-compose up -d
+- docker-compose up
 
-* System dependencies
+3. Database migration
+- docker-compose run --rm web bundle exec rake db:create
+- docker-compose run --rm web bundle exec rake db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Rails console
+- docker-compose run --rm web bundle exec rails console

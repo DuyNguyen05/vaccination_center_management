@@ -15356,6 +15356,7 @@ Processing by Admin::HomeController#index as HTML
 Completed 200 OK in 165ms (Views: 163.9ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< c0fef04b4230f8061510b9d0e32fc633a46c6a5f
 Started GET "/admin/" for 172.18.0.1 at 2020-03-02 01:23:45 +0000
 Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (2.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
@@ -30092,5 +30093,97 @@ Processing by Admin::CompaniesController#update as JS
   Rendering admin/companies/update.js.erb
   Rendered admin/companies/update.js.erb (2.1ms)
 Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 2.1ms)
+=======
+Started GET "/user" for 172.19.0.1 at 2020-02-29 10:57:34 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (175.4ms)
+  Rendered layouts/user/_sidebar.html.erb (1.6ms)
+  Rendered layouts/user/_header.html.erb (1.1ms)
+  Rendered layouts/user/_footer.html.erb (0.3ms)
+Completed 200 OK in 7527ms (Views: 7525.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 172.19.0.1 at 2020-02-29 10:59:33 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomeController#index as HTML
+  Rendering admin/home/index.html.haml within layouts/admin/application
+  Rendered admin/home/index.html.haml within layouts/admin/application (247.8ms)
+  Rendered layouts/admin/_header.html.haml (25.0ms)
+  Rendered layouts/admin/_sidebar.html.haml (5.5ms)
+  Rendered layouts/admin/_footer.html.haml (1.2ms)
+Completed 200 OK in 924ms (Views: 921.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 172.19.0.1 at 2020-02-29 10:59:47 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (3.2ms)
+  Rendered layouts/user/_sidebar.html.erb (10.6ms)
+  Rendered layouts/user/_header.html.erb (7.4ms)
+  Rendered layouts/user/_footer.html.erb (2.4ms)
+Completed 200 OK in 225ms (Views: 224.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 172.19.0.1 at 2020-02-29 11:00:24 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (2.3ms)
+  Rendered layouts/user/_sidebar.html.erb (1.5ms)
+  Rendered layouts/user/_header.html.erb (0.9ms)
+  Rendered layouts/user/_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 172.19.0.1 at 2020-02-29 11:02:18 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (2.8ms)
+  Rendered layouts/user/_sidebar.html.erb (2.9ms)
+  Rendered layouts/user/_header.html.erb (1.7ms)
+  Rendered layouts/user/_footer.html.erb (0.4ms)
+Completed 200 OK in 77ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 172.19.0.1 at 2020-02-29 11:04:22 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (7.8ms)
+  Rendered layouts/user/_sidebar.html.erb (5.7ms)
+  Rendered layouts/user/_header.html.erb (3.1ms)
+  Rendered layouts/user/_footer.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 172.19.0.1 at 2020-02-29 11:04:56 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (3.2ms)
+  Rendered layouts/user/_sidebar.html.erb (1.6ms)
+  Rendered layouts/user/_header.html.erb (1.6ms)
+  Rendered layouts/user/_footer.html.erb (0.3ms)
+Completed 200 OK in 217ms (Views: 215.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 172.19.0.1 at 2020-02-29 11:07:48 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by User::HomesController#index as HTML
+  Rendering user/homes/index.html.erb within layouts/user/application
+  Rendered user/homes/index.html.erb within layouts/user/application (1243.9ms)
+  Rendered layouts/user/_sidebar.html.erb (2.8ms)
+  Rendered layouts/user/_header.html.erb (1.8ms)
+  Rendered layouts/user/_footer.html.erb (0.5ms)
+Completed 200 OK in 1314ms (Views: 1312.7ms | ActiveRecord: 0.0ms)
+>>>>>>> Task 5 [User] Base view
 
 
