@@ -1,0 +1,6 @@
+<% if @company.errors.any? %>
+  alert("<%= I18n.t("error") %> <%= j @company.errors.full_messages.join('; ') %>")
+<% else %>
+  $("#companies").html("<%= j render 'admin/companies/company', companies: @companies %>");
+  $("#modalCompanyEdit<%= @company.id %>").modal("hide");
+<% end %>

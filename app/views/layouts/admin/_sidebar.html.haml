@@ -2,15 +2,15 @@
   .scroll-sidebar
     %nav.sidebar-nav
       %ul#sidebarnav.p-t-30.in
-        %li.sidebar-item.selected
-          %a.sidebar-link.waves-effect.waves-dark.sidebar-link.active{"aria-expanded" => "false", :href => "#"}
+        %li{ class: active_class(admin_root_path)}
+          = link_to admin_root_path, class: "sidebar-link waves-effect waves-dark sidebar-link" do
             %i.mdi.mdi-view-dashboard
             %span.hide-menu= t("admin.sidebar.dashboard")
-        %li.sidebar-item
-          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "javascript:void(0)"}
+        %li{ class: active_class("#")}
+          = link_to "#", class: "sidebar-link waves-effect waves-dark sidebar-link" do
             %i.mdi.mdi-face
             %span.hide-menu= t("admin.sidebar.user_management")
-        %li.sidebar-item
-          %a.sidebar-link.waves-effect.waves-dark.sidebar-link{"aria-expanded" => "false", :href => "javascript:void(0)"}
+        %li{ class: active_class(admin_companies_path)}
+          = link_to admin_companies_path, class: "sidebar-link waves-effect waves-dark sidebar-link" do
             %i.mdi.mdi-store
             %span.hide-menu= t("admin.sidebar.company_management")

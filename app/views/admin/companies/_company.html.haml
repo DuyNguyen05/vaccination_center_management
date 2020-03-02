@@ -1,0 +1,10 @@
+- companies.each do |company|
+  %tr.text-center{id: "company#{company.id}"}
+    %td= company.company_code
+    %td= company.name
+    %td= company.address
+    %td
+      = link_to edit_admin_company_path(company, format: 'js'), remote: true, class: "btn btn-success mr-3" do
+        = t(".edit")
+      = link_to admin_company_path(company, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: company.name)}, remote: true, class: "btn btn-warning" do
+        = t(".destroy")

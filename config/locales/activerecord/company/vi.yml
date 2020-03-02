@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    models:
+      company: Công Ty
+    attributes:
+      company:
+        company_code: Mã Công Ty
+        name: Tên Công Ty
+        address: Địa Chỉ

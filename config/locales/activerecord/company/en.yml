@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      company: Company
+    attributes:
+      company:
+        company_code: Company Code
+        name: Company Name
+        address: Company Address

@@ -1,0 +1,16 @@
+vi:
+  admin:
+    companies:
+      index:
+        add_company: Thêm Công Ty
+        search: Nhập Tên Hoặc Mã Công Ty
+      new:
+        add_company: Thêm Công Ty
+        submit: Tạo Công Ty
+      edit:
+        edit_company: Chỉnh Sửa Công Ty
+        submit: Cập Nhật
+      company:
+        edit: Chỉnh Sửa
+        destroy: Xóa
+        are_you_sure: "Bạn chắc muốn xóa công ty %{name}"
