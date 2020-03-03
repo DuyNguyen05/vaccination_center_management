@@ -1,0 +1,16 @@
+en:
+  admin:
+    companies:
+      index:
+        add_company: Add Company
+        search: Enter Company Code Or Name
+      new:
+        add_company: Add Company
+        submit: Create
+      edit:
+        edit_company: Update Company
+        submit: Update
+      company:
+        edit: Edit
+        destroy: Destroy
+        are_you_sure: Are You Sure Delete Company %{name}
