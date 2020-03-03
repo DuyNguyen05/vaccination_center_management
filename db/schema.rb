@@ -170,7 +170,9 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "company_id"
     t.index ["account_id"], name: "index_import_vaccines_on_account_id"
+    t.index ["company_id"], name: "index_import_vaccines_on_company_id"
     t.index ["vaccine_id"], name: "index_import_vaccines_on_vaccine_id"
   end
 
@@ -297,6 +299,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
   add_foreign_key "details_infos", "departments"
   add_foreign_key "details_infos", "vaccination_centers"
   add_foreign_key "import_vaccines", "accounts"
+  add_foreign_key "import_vaccines", "companies"
   add_foreign_key "import_vaccines", "vaccines"
   add_foreign_key "injection_books", "info_injection_books"
   add_foreign_key "injection_schedules", "vaccination_centers"
