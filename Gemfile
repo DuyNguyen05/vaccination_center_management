@@ -16,10 +16,12 @@ gem "haml-rails"
 gem "rails-i18n", "~> 5.1"
 gem "rails-ujs"
 gem "mini_racer"
-gem "jquery-rails"
-gem "material_design_icons"
 gem "kaminari"
 gem "bootstrap4-kaminari-views"
+gem 'jquery-rails'
+gem 'material_design_icons'
+gem 'chart-js-rails'
+gem 'font_awesome5_rails'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
