@@ -1,0 +1,6 @@
+<%= flash.each do |message_type, message| %>
+  <div class="flash-messages" >
+    <div class= "alert alert-#{message_type} flash-messages__container" >
+      <a class="close" data-dismiss="alert" href="#" > x
+      <%= message %>
+  </div>

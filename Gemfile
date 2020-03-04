@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'material_design_icons'
 gem 'chart-js-rails'
 gem 'font_awesome5_rails'
+gem 'devise'
+gem "pundit"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

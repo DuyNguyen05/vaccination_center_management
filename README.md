@@ -4,7 +4,7 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 1. Configure file
-Run: cp .env.example .env
+Run: cp .env_example .env
 
 2. Build project
 - docker-compose build
