@@ -1,0 +1,7 @@
+- if object.errors.any?
+  #error_explanation
+    .alert.alert-error
+    = t ".the_form_contains"
+    %ul
+      - object.errors.full_messages.uniq.each do |msg|
+        %li= msg

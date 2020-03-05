@@ -1,0 +1,16 @@
+vi:
+  admin:
+    vaccines:
+      index:
+        search: Nhập vào mã vaccine hoặc nhà sản xuất
+        add_vaccine: Thêm Vaccine
+      new:
+        submit: Tạo
+      edit:
+        edit_vaccine: Sửa Thông Tin Vaccine
+        submit: Cập Nhật
+      vaccine:
+        are_you_sure: "Bạn có chắc muốn xóa vaccine %{name}"
+  time:
+    formats:
+      date_month_year_concise: "%d/%m/%Y"

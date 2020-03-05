@@ -1,0 +1,12 @@
+vi:
+  activerecord:
+    models:
+      vaccine: Vaccine
+    attributes:
+      vaccine:
+        code: Mã Vaccine
+        name: Tên Vaccine
+        manufacture: Sản Xuất
+        expiry_date: Hạn Sử Dụng
+        content: Tác Dụng
+        inventory: Tồn Kho

@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      vaccine: Vaccine
+    attributes:
+      vaccine:
+        code: Vaccine Code
+        name: Vaccine Name
+        manufacture: Manufacture
+        expiry_date: Expiry Date
+        content: Effect
+        inventory: Quantity

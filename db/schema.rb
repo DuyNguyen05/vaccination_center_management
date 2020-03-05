@@ -266,10 +266,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "code"
     t.string "name"
     t.string "manufacture"
-    t.datetime "date_of_application"
-    t.string "expiry_date"
+    t.datetime "expiry_date"
     t.string "content"
-    t.string "date_added"
     t.string "inventory"
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
