@@ -18,11 +18,11 @@ gem "rails-ujs"
 gem "mini_racer"
 gem "kaminari"
 gem "bootstrap4-kaminari-views"
-gem 'jquery-rails'
-gem 'material_design_icons'
-gem 'chart-js-rails'
-gem 'font_awesome5_rails'
-gem 'devise'
+gem "jquery-rails"
+gem "material_design_icons"
+gem "chart-js-rails"
+gem "font_awesome5_rails"
+gem "devise"
 gem "pundit"
 
 group :development, :test do

@@ -82,9 +82,7 @@
         <a class="collapse-item" href="#">
           <%= t("view.layouts.user.sidebar.update_profile")%>
         </a>
-        <a class="collapse-item" href="#">
-          <%= t("view.layouts.user.sidebar.logout")%>
-        </a>
+        <%= link_to t("view.layouts.user.sidebar.logout"), destroy_user_account_session_path, class: "collapse-item" %>
         <a class="collapse-item" href="#">
           <%= t("view.layouts.user.sidebar.forgot_password")%>
         </a>

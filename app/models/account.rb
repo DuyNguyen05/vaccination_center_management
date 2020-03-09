@@ -1,8 +1,8 @@
 class Account < ApplicationRecord
-  devise :database_authenticatable
+  devise :database_authenticatable, :recoverable, :rememberable
 
-  belongs_to :role
-  belongs_to :details_info
+  belongs_to :role, optional: true
+  belongs_to :details_info, optional: true
 
   has_many :bills, dependent: :destroy
 end

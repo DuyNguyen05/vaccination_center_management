@@ -45,3 +45,4 @@ build-iPhoneSimulator/
 /lib/bundler/man/
 .env
 .rvmrc
+log/development.log

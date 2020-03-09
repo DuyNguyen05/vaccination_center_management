@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     namespace :user do
       root "homes#index"
-      devise_for :account, controllers: {sessions: 'user/sessions'}
+      devise_for :accounts
     end
 
     namespace :admin do
