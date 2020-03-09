@@ -16,3 +16,5 @@
 //= require Chart.min
 //= require ./lib/sb-admin-2.min.js
 //= require ./lib/jquery.easing.min.js
+//= require ./lib/jquery.dataTables.min.js
+//= require ./lib/dataTables.bootstrap4.min.js

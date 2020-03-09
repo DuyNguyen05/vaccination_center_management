@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :user do
       root "homes#index"
       devise_for :accounts
+      resources :injection_books
     end
 
     namespace :admin do
