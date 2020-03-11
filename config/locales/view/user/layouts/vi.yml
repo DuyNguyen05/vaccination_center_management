@@ -15,11 +15,17 @@ vi:
           new_injection_schedule: Tạo mới lịch tiêm
           list_injection_schedule: Danh sách lịch tiêm
           my_information: Thông tin của tôi
-          information_manage: Quản lý thông tin
+          information_manage: Quản lý hồ sơ cá nhân
           view_profile: Hồ sơ cá nhân
           update_profile: Cập nhật hồ sơ cá nhân
           logout: Đăng xuất tài khoản
           forgot_password: Quên mật khẩu
+          info_account: Thông tin tài khoản
+          account_management: Quản lý tài khoản
+          account_parents: Tài khoản của bố mẹ
+          account_staff: Tài khoản của nhân viên
+          new_account: Tạo mới
+          list_account: Danh sách tài khoản
         header:
           search_for: Tìm kiếm
           notifications: Thông báo

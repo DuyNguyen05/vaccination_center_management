@@ -18,11 +18,13 @@ ActiveRecord::Schema.define(version: 2020_03_15_072617) do
     t.string "avatar"
     t.bigint "role_id"
     t.bigint "details_info_id"
+    t.bigint "info_injection_book_id"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.index ["details_info_id"], name: "index_accounts_on_details_info_id"
+    t.index ["info_injection_book_id"], name: "index_accounts_on_info_injection_book_id"
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_accounts_on_role_id"
   end
@@ -141,6 +143,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_072617) do
     t.string "number_phone"
     t.string "current_address"
     t.string "permanent_address"
+    t.string "email"
   end
 
   create_table "injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -149,6 +152,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_072617) do
     t.datetime "date_of_birth"
     t.string "place_of_birth"
     t.bigint "info_injection_book_id"
+    t.integer "gender", default: 0
     t.index ["info_injection_book_id"], name: "index_injection_books_on_info_injection_book_id"
   end
 
@@ -213,6 +217,7 @@ ActiveRecord::Schema.define(version: 2020_03_15_072617) do
   end
 
   add_foreign_key "accounts", "details_infos"
+  add_foreign_key "accounts", "info_injection_books"
   add_foreign_key "accounts", "roles"
   add_foreign_key "bills", "accounts"
   add_foreign_key "bills", "detail_bills"

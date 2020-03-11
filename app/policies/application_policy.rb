@@ -1,16 +1,16 @@
 class ApplicationPolicy
-  attr_reader :account, :record
+  attr_reader :user, :record
 
-  def initialize account, record
-    @account = account
+  def initialize user, record
+    @user = user
     @record = record
   end
 
   class Scope
-    attr_reader :account, :scope
+    attr_reader :user, :scope
 
-    def initialize account, scope
-      @account = account
+    def initialize user, scope
+      @user = user
       @scope = scope
     end
 

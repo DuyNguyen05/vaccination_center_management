@@ -1,2 +1,17 @@
 vi:
   error: "LỖI: "
+  button:
+    cancel: Hủy
+    submit: Hoàn thành
+  confirm:
+    are_you_sure: Bạn có chắc chắn không?
+  views:
+    pagination:
+      next: Tiếp
+      last: Trang cuối
+      first: Trang đầu
+      previous: Trước
+  errors:
+    user_not_authorized: Bạn không có quyền truy cập.
+    messages:
+      not_saved: Không thể lưu thông tin

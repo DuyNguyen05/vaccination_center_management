@@ -1,0 +1,152 @@
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+          <div class="file btn btn-lg btn-primary">
+            <%= t(".change_photo") %>
+            <input type="file" name="file"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            User Code: <%= @account.user_code %>
+          </h5>
+          <h5>
+            Init Password: <%= ENV["INIT_ACCOUNT_PASSWORD"] %>
+          </h5>
+          <p class="proile-rating"><span></span></p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <input type="submit" class="profile-edit-btn" name="btnAddMore" value=""/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    <%= t("view.user.homes.index.injection_registration_schedule") %>
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col-md-6">
+                  <label><%= @account.user_code %></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label></label>
+                </div>
+                <div class="col-md-6">
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label></label><br/>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </form>
+</div>

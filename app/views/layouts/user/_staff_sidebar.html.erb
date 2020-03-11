@@ -16,6 +16,29 @@
   </li>
   <hr class="sidebar-divider">
   <div class="sidebar-heading">
+    <%= t("view.layouts.user.sidebar.account_management") %>
+  </div>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="fas fa-fw fa-book"></i>
+      <span><%= t("view.layouts.user.sidebar.info_account") %></span>
+    </a>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header"><%= t("view.layouts.user.sidebar.account_parents") %></h6>
+        <%= link_to t("view.layouts.user.sidebar.new_account"), new_user_info_injection_book_path, class: "collapse-item" %>
+        <%= link_to t("view.layouts.user.sidebar.list_account"), user_info_injection_books_path, class: "collapse-item" %>
+      </div>
+    </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header"><%= t("view.layouts.user.sidebar.account_staff") %></h6>
+        <%= link_to t("view.layouts.user.sidebar.new_account"), new_user_details_info_path, class: "collapse-item" %>
+      </div>
+    </div>
+  </li>
+  <hr class="sidebar-divider">
+  <div class="sidebar-heading">
     <%= t("view.layouts.user.sidebar.administer_injection_procedure") %>
   </div>
   <li class="nav-item">
@@ -26,7 +49,6 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header"><%= t("view.layouts.user.sidebar.administer_injection_book") %></h6>
-        <%= link_to t("view.layouts.user.sidebar.new_injection_book"), new_user_injection_book_path, class: "collapse-item" %>
         <%= link_to t("view.layouts.user.sidebar.list_injection_book"), user_injection_books_path, class: "collapse-item" %>
       </div>
     </div>
