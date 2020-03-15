@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_020544) do
+ActiveRecord::Schema.define(version: 2020_03_15_072617) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -18,7 +18,12 @@ ActiveRecord::Schema.define(version: 2020_02_25_020544) do
     t.string "avatar"
     t.bigint "role_id"
     t.bigint "details_info_id"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.index ["details_info_id"], name: "index_accounts_on_details_info_id"
+    t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_accounts_on_role_id"
   end
 

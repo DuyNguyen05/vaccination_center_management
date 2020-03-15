@@ -16,6 +16,16 @@
         <div id="content">
           <%= render "layouts/user/header" %>
           <div class="container-fluid">
+            <% if notice %>
+              <p class= "alert alert-success">
+                <%= notice %>
+              </p>
+            <% end %>
+            <% if alert %>
+              <p class= "alert alert-danger">
+                <%= alert %>
+              </p>
+            <% end %>
             <%= yield %>
           </div>
         </div>

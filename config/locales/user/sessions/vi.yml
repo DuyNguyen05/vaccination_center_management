@@ -1,0 +1,10 @@
+vi:
+  user:
+    sessions:
+      new:
+        header: Xin chào!
+        user_code: Nhập mã người dùng
+        password: Nhập password
+        remember_me: Ghi nhớ đăng nhập
+        login: Đăng nhập
+        forgot_password: Quên mật khẩu?
