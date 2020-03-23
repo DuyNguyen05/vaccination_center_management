@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">
+          <%= t(".new_injection_book") %>
+        </h6>
+        <div class="dropdown no-arrow">
+        </div>
+      </div>
+      <div class="card-body">
+        <%= form_with model: [:user, @injection_book] do |ib| %>
+          <%= render "shared/error_message", resource: @injection_book %>
+          <div class="row">
+            <div class="col-xl-10 col-lg-8">
+              <fieldset>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-right">
+                      <%= t(".name_person_injected") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-user"></i>
+                          </span>
+                        </div>
+                        <%= ib.text_field :name_person_injected, placeholder: t(".full_name"), class: "form-control bg-light border-1 small", required: "true" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-right">
+                      <%= t(".date_of_birth") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-calendar"></i>
+                          </span>
+                        </div>
+                        <%= ib.date_field :date_of_birth, placeholder: t(".date_of_birth"), class: "form-control bg-light border-1 small date", required: "true" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-right">
+                      <%= t(".place_of_birth") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-clinic-medical"></i>
+                          </span>
+                        </div>
+                        <%= ib.text_field :place_of_birth, placeholder: t(".place_of_birth"), class: "form-control bg-light border-1 small" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-right form-check-label">
+                      <%= t(".gender") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <%= ib.radio_button :gender, :male, class: "form-check-input" %>
+                          <%= t(".male") %>
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <label class="form-check-label">
+                          <%= ib.radio_button :gender, :female, class: "form-check-input" %>
+                          <%= t(".female") %>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-center">
+            <%= link_to t(".button.cancel"), new_user_injection_book_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }%>
+            <%= ib.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t(".confirm.are_you_sure") } %>
+          </div>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

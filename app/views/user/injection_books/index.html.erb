@@ -1,0 +1,38 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="text-lg m-0 font-weight-bold text-primary text-uppercase text-center">
+      <%= t(".list_injection_books") %>
+    </h6>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <% @injection_books.each do |injection_book| %>
+        <div class="col-xl-6 col-md-6 mb-6">
+          <div class="card border-left-primary shadow h-100 py-1">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                    <b> <%= injection_book.name_person_injected %> </b>
+                  </div>
+                  <div class="small text-gray-700">
+                    <%=  t(".date_of_birth") %>: <%= injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
+                    <%= t(".year_old") + ": " %> <%= age(injection_book.date_of_birth) %><br>
+                    <%= link_to t(".injection_schedule"), "#", class: "h6 mb-0 font-italic text-green-500"%>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-book fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-center">
+      <%= paginate @injection_books, theme: "twitter-bootstrap-4" %>
+    </div>
+  </div>
+</div>

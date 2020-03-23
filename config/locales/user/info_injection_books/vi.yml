@@ -1,0 +1,23 @@
+vi:
+  user:
+    info_injection_books:
+      new:
+        new_info_injection_books: Tạo thông tin bố mẹ của bé
+        father_name: Họ và tên bố
+        mother_name: Họ và tên mẹ
+        identify_father: CMT/CCCD của bố
+        identify_mother: CMT/CCCD của mẹ
+        number_phone: Số điện thoại liên lạc
+        email: Hộp thư điện tử
+        current_address: Địa chỉ hiện tại
+        permanent_address: Địa chỉ thường trú
+        name_person_injected: Họ và tên của bé
+        full_name: Họ và tên
+        date_of_birth: Ngày khai sinh
+        place_of_birth: Nơi khai sinh
+        male: Trai
+        female: Gái
+        gender: Giới tính
+        button:
+          cancel: Hủy
+          submit: Hoàn thành

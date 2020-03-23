@@ -1,0 +1,20 @@
+active_record:
+  details_info:
+    name:
+      minimum: 1
+      maximum: 50
+    number_phone:
+      minimum: 6
+      maximum: 15
+    email:
+      regex: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i/
+  info_injection_book:
+    name:
+      minimum: 5
+      maximum: 50
+  account:
+    role:
+      admin: 1
+      super_admin: 2
+      user: 3
+      staff: 4

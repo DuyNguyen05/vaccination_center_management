@@ -5,6 +5,7 @@ class User::UserController < ApplicationController
   protect_from_forgery with: :exception
 
   before_action :authenticate_user_account!
+  alias_method :current_user, :current_user_account
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -14,8 +15,8 @@ class User::UserController < ApplicationController
     respond_to do |format|
       format.js { render "shared/user_not_authorized" }
       format.html do
-        flash[:danger] = t "errors.user_not_authorized"
-        redirect_to request.referrer || current_user.root_path
+        flash[:alert] = t "errors.user_not_authorized"
+        redirect_to request.referrer || user_root_path
       end
     end
   end

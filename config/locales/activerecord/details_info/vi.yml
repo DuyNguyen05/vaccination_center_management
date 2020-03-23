@@ -1,0 +1,10 @@
+vi:
+  activerecord:
+    models:
+      details_info: Thông tin tài khoản nhân viên
+    attributes:
+      details_info:
+        first_name: Họ
+        last_name: Tên
+        current_address: Địa chỉ hiện tại
+        number_phone: Số điện thoại

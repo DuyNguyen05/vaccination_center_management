@@ -9,9 +9,13 @@
     <%= javascript_include_tag 'user/application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="page-top" class="sidebar-toggled">
+  <body id="page-top" class="">
     <div id="wrapper">
-      <%= render "layouts/user/sidebar" %>
+      <% if current_user_account.is_staff? %>
+        <%= render "layouts/user/staff_sidebar" %>
+      <% else %>
+        <%= render "layouts/user/sidebar" %>
+      <% end %>
       <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
           <%= render "layouts/user/header" %>
