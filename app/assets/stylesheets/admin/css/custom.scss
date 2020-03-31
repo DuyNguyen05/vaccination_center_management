@@ -1,0 +1,8 @@
+.pb-custom {
+  padding-bottom: 30px !important;
+}
+
+.required:after {
+  content:" *";
+  color: red;
+}

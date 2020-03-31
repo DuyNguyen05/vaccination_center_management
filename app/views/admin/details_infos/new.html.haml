@@ -1,0 +1,205 @@
+= form_with model: [:admin, @details_info], class: "well form-horizontal" do |f|
+  .row
+    .col-xl-12.col-lg-12
+      .card.shadow.mb-4
+        .card-header.py-3
+          %h4.text-lg.m-0.font-weight-bold.text-primary.text-uppercase.text-center
+            = t(".new_details_info")
+          .dropdown.no-arrow
+        = render "shared/error_message", resource: @details_info
+        .card-body
+          .row
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".first_name")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-user
+                        = f.text_field :first_name, placeholder: t(".first_name"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.form-check-label.required
+                      = t(".gender")
+                    .col-md-8.inputGroupContainer
+                      .form-check-inline
+                        %label.form-check-label
+                          = f.radio_button :gender, :male, class: "form-check-input"
+                          = t(".male")
+                      .form-check-inline
+                        %label.form-check-label
+                          = f.radio_button :gender, :female, class: "form-check-input"
+                          = t(".female")
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".last_name")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-user
+                        = f.text_field :last_name, placeholder: t(".last_name"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".identify")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-fingerprint
+                        = f.text_field :identify, placeholder: t(".identify"), class: "form-control bg-light border-1", required: true
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".number_phone")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-phone-square
+                        = f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".current_address")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-home
+                        = f.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = t(".bank")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-university
+                        = f.text_field :bank, placeholder: t(".bank"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = t(".language")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-language
+                        = f.text_field :language, placeholder: t(".language"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = t(".tax_code")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fab.fa-centercode
+                        = f.text_field :tax_code, placeholder: t(".tax_code"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".vaccination_center")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-hospital-alt
+                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1 pb-custom"
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".email")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-envelope
+                        = f.email_field :email, placeholder: t(".email"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = t(".permanent_address")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-home
+                        = f.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = t(".bank_account_number")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-university
+                        = f.text_field :bank_account_number, placeholder: t(".bank_account_number"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = t(".nationality")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-globe
+                        = f.text_field :nationality, placeholder: t(".nationality"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".contract_code")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fab.fa-centercode
+                        = f.text_field :contract_code, placeholder: t(".contract_code"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".department")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-users
+                        = f.select :department_id, options_for_select(Department.pluck(:name, :id)),{}, class: "form-control mdb-select md-form pb-custom"
+            .col-xl-12.col-lg-12
+              .form-group
+                .row
+                  %label.col-md-2.text-left
+                    = t(".certificate")
+                  .col-md-10.inputGroupContainer
+                    .input-group
+                      = f.text_area :certificate, placeholder: t(".certificate"), size: "20x8", class: "form-control bg-light border-1"
+            .col-xl-12.col-lg-12
+              .form-group
+                .row
+                  %label.col-md-2.text-left
+                    = t(".experience")
+                  .col-md-10.inputGroupContainer
+                    .input-group
+                      = f.text_area :experience, placeholder: t(".experience"), size: "20x8", class: "form-control bg-light border-1"
+        %hr
+        .d-flex.justify-content-center
+          = f.hidden_field :admin, value: "true"
+          .span.p-2
+            = f.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center pl-2", data: { confirm: t(".confirm.are_you_sure") }
+          .span.p-2
+            = link_to t(".button.cancel"), new_user_details_info_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }

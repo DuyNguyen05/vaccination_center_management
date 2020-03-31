@@ -4,19 +4,29 @@ class CreateAccountService
   def initialize params
     @info_injection_book_id = params[:info_injection_book_id]
     @details_info_id = params[:details_info_id]
+    @admin = params[:admin]
   end
 
-  def create_account
+  def create_account(role = nil)
     if @info_injection_book_id.present?
       user_code = generate_user_code("PARENT-")
       Account.create! user_code: user_code, password: ENV["INIT_ACCOUNT_PASSWORD"],
         info_injection_book_id: @info_injection_book_id, role_id: Settings.active_record.account.role.user
-
+    elsif role == "true"
+      user_code = generate_user_code("STAFF-")
+      Account.create! user_code: user_code, password: ENV["INIT_ACCOUNT_PASSWORD"],
+        details_info_id: @details_info_id, role_id: Settings.active_record.account.role.admin
     else
       user_code = generate_user_code("STAFF-")
       Account.create! user_code: user_code, password: ENV["INIT_ACCOUNT_PASSWORD"],
         details_info_id: @details_info_id, role_id: Settings.active_record.account.role.staff
     end
+  end
+
+  def create_account_admin
+    user_code = generate_user_code("Admin-")
+      Account.create! user_code: user_code, password: ENV["INIT_ACCOUNT_PASSWORD"],
+        details_info_id: @details_info_id, role_id: Settings.active_record.account.role.admin
   end
 
   private
