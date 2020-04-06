@@ -1,0 +1,25 @@
+.card
+  .card-body.row
+    %h4.col-12.card-title=  t("admin.sidebar.user_management")
+    .col-8
+      %span
+        = link_to t(".add_user"), "#", class: "btn btn-primary"
+    .col-4
+      = form_tag admin_accounts_path, method: :get do
+        .input-group
+          .input
+            = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+          %span.input-group-btn
+            = button_tag(type: "submit", class: "btn btn-primary") do
+              %i.fa.fa-search{"aria-hidden" => "true"}
+  .table-responsive
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th.text-center= Account.human_attribute_name("user_code")
+          %th.text-center= DetailsInfo.human_attribute_name("first_name")
+          %th.text-center= DetailsInfo.human_attribute_name("email")
+          %th.text-center= DetailsInfo.human_attribute_name("phone_number")
+      %tbody#accounts
+        = render "admin/accounts/account", accounts: @accounts
+    = paginate @accounts, theme: "twitter-bootstrap-4"

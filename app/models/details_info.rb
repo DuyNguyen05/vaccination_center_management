@@ -1,5 +1,5 @@
 class DetailsInfo < ApplicationRecord
-  # after_create :create_account
+  after_create :create_account
 
   belongs_to :vaccination_center, optional: true
   belongs_to :department, optional: true
@@ -14,8 +14,7 @@ class DetailsInfo < ApplicationRecord
   validates_format_of :email, without: /Settings.active_record.details_info.email.regex/
   validates :identify, presence: true, uniqueness: true
 
-  # def create_account(role)
-  #   byebug
-  #   CreateAccountService.new(details_info_id: self.id).create_account(role)
-  # end
+  def create_account
+    CreateAccountService.new(details_info_id: self.id).create_account
+  end
 end

@@ -1,0 +1,10 @@
+- accounts.each do |account|
+  %tr
+    %td
+      = link_to "#{account.user_code}", admin_account_path(account)
+    %td
+      = account.details_info.first_name
+    %td
+      = account.details_info.email
+    %td
+      = account.details_info.number_phone

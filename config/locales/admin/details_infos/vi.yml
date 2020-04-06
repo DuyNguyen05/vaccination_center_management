@@ -3,28 +3,8 @@ vi:
     details_infos:
       new:
         new_details_info: Tạo thông tin nhân viên của trung tâm
-        first_name: Tên
-        last_name: Họ
-        identify: CMT/CCCD
-        number_phone: Số điện thoại
-        email: Hộp thư điện tử
-        current_address: Địa chỉ hiện tại
-        permanent_address: Địa chỉ thường trú
-        full_name: Họ và tên
-        date_of_birth: Ngày sinh
-        nationality: Quốc tịch
-        bank_account_number: Số TK ngân hàng
-        bank: Tên ngân hàng
-        language: Trình độ ngoại ngữ
-        certificate: Chứng chỉ / Bằng cấp
-        experience: Kinh nghiệm làm việc
-        tax_code: Mã số thuế cá nhân
         vaccination_center: Trung tâm tiêm chủng
         department: Bộ phận
-        contract_code: Mã hợp đồng
-        male: Nam
-        female: Nữ
-        gender: Giới tính
         button:
           cancel: Hủy
           submit: Hoàn thành

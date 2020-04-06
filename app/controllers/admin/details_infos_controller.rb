@@ -1,5 +1,5 @@
 class Admin::DetailsInfosController < Admin::AdminController
-  attr_accessor :role
+  
   def new
     @details_info = DetailsInfo.new
   end
@@ -7,8 +7,6 @@ class Admin::DetailsInfosController < Admin::AdminController
   def create
     @details_info = DetailsInfo.new details_info_params
     if @details_info.save
-      role = params[:details_info][:admin]
-      CreateAccountService.new(details_info_id: @details_info.id).create_account(role)
       redirect_to admin_root_path
     else
       render :new

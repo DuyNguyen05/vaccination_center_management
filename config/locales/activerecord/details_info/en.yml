@@ -1,1 +1,25 @@
 en:
+  activerecord:
+    models:
+    attributes:
+      details_info:
+        first_name: First Name
+        last_name: Last Name
+        identify: ID
+        number_phone: Phone
+        email: Email
+        current_address: Current Address
+        permanent_address: Permanent Address
+        full_name: Full Name
+        date_of_birth: Birthday
+        nationality: Mationality
+        bank_account_number: Bank Account
+        bank: Bank
+        language: Language
+        certificate: Certificate
+        experience: Experience
+        tax_code: Tax Code
+        contract_code: Contract Code
+        male: Male
+        female: Female
+        gender: Gender

@@ -3,28 +3,8 @@ en:
     details_infos:
       new:
         new_details_info: Create New Information Staff
-        first_name: First Name
-        last_name: Last Name
-        identify: ID
-        number_phone: Phone
-        email: Email
-        current_address: Current Address
-        permanent_address: Permanent Address
-        full_name: Full Name
-        date_of_birth: Birthday
-        nationality: Mationality
-        bank_account_number: Bank Account
-        bank: Bank
-        language: Language
-        certificate: Certificate
-        experience: Experience
-        tax_code: Tax Code
         vaccination_center: Vaccination Center
         department: Department
-        contract_code: Contract Code
-        male: Male
-        female: Female
-        gender: Gender
         button:
           cancel: Cancel
           submit: Submit

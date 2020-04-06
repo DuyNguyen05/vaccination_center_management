@@ -1,4 +1,4 @@
-= form_with model: [:admin, @details_info], class: "well form-horizontal" do |f|
+= form_with model: [:admin, @details_info], class: "well form-horizontal", local: true do |f|
   .row
     .col-xl-12.col-lg-12
       .card.shadow.mb-4
@@ -14,100 +14,100 @@
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".first_name")
+                      = DetailsInfo.human_attribute_name("first_name")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-user
-                        = f.text_field :first_name, placeholder: t(".first_name"), class: "form-control bg-light border-1", required: true
+                        = f.text_field :first_name, placeholder: DetailsInfo.human_attribute_name("first_name"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left.form-check-label.required
-                      = t(".gender")
+                      = DetailsInfo.human_attribute_name("gender")
                     .col-md-8.inputGroupContainer
                       .form-check-inline
                         %label.form-check-label
                           = f.radio_button :gender, :male, class: "form-check-input"
-                          = t(".male")
+                          = DetailsInfo.human_attribute_name("male")
                       .form-check-inline
                         %label.form-check-label
                           = f.radio_button :gender, :female, class: "form-check-input"
-                          = t(".female")
+                          = DetailsInfo.human_attribute_name("female")
             .col-xl-6.col-lg-6
               %fieldset
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".last_name")
+                      = DetailsInfo.human_attribute_name("last_name")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-user
-                        = f.text_field :last_name, placeholder: t(".last_name"), class: "form-control bg-light border-1", required: true
+                        = f.text_field :last_name, placeholder: DetailsInfo.human_attribute_name("last_name"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".identify")
+                      = DetailsInfo.human_attribute_name("identify")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-fingerprint
-                        = f.text_field :identify, placeholder: t(".identify"), class: "form-control bg-light border-1", required: true
+                        = f.text_field :identify, placeholder: DetailsInfo.human_attribute_name("identify"), class: "form-control bg-light border-1", required: true
             .col-xl-6.col-lg-6
               %fieldset
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".number_phone")
+                      = DetailsInfo.human_attribute_name("number_phone")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-phone-square
-                        = f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1", required: true
+                        = f.text_field :number_phone, placeholder: DetailsInfo.human_attribute_name("number_phone"), class: "form-control bg-light border-1", required: true
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".current_address")
+                      = DetailsInfo.human_attribute_name("current_address")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-home
-                        = f.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1"
+                        = f.text_field :current_address, placeholder: DetailsInfo.human_attribute_name("current_address"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left
-                      = t(".bank")
+                      = DetailsInfo.human_attribute_name("bank")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-university
-                        = f.text_field :bank, placeholder: t(".bank"), class: "form-control bg-light border-1"
+                        = f.text_field :bank, placeholder: DetailsInfo.human_attribute_name("bank"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left
-                      = t(".language")
+                      = DetailsInfo.human_attribute_name("language")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-language
-                        = f.text_field :language, placeholder: t(".language"), class: "form-control bg-light border-1"
+                        = f.text_field :language, placeholder: DetailsInfo.human_attribute_name("language"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left
-                      = t(".tax_code")
+                      = DetailsInfo.human_attribute_name("tax_code")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fab.fa-centercode
-                        = f.text_field :tax_code, placeholder: t(".tax_code"), class: "form-control bg-light border-1"
+                        = f.text_field :tax_code, placeholder: DetailsInfo.human_attribute_name("tax_code"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
@@ -123,53 +123,53 @@
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".email")
+                      = DetailsInfo.human_attribute_name("email")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-envelope
-                        = f.email_field :email, placeholder: t(".email"), class: "form-control bg-light border-1", required: true
+                        = f.email_field :email, placeholder: DetailsInfo.human_attribute_name("email"), class: "form-control bg-light border-1", required: true
                 .form-group
                   .row
                     %label.col-md-4.text-left
-                      = t(".permanent_address")
+                      = DetailsInfo.human_attribute_name("permanent_address")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-home
-                        = f.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1"
+                        = f.text_field :permanent_address, placeholder: DetailsInfo.human_attribute_name("permanent_address"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left
-                      = t(".bank_account_number")
+                      = DetailsInfo.human_attribute_name("bank_account_number")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-university
-                        = f.text_field :bank_account_number, placeholder: t(".bank_account_number"), class: "form-control bg-light border-1"
+                        = f.text_field :bank_account_number, placeholder: DetailsInfo.human_attribute_name("bank_account_number"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left
-                      = t(".nationality")
+                      = DetailsInfo.human_attribute_name("nationality")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-globe
-                        = f.text_field :nationality, placeholder: t(".nationality"), class: "form-control bg-light border-1"
+                        = f.text_field :nationality, placeholder: DetailsInfo.human_attribute_name("nationality"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".contract_code")
+                      = DetailsInfo.human_attribute_name("contract_code")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fab.fa-centercode
-                        = f.text_field :contract_code, placeholder: t(".contract_code"), class: "form-control bg-light border-1"
+                        = f.text_field :contract_code, placeholder: DetailsInfo.human_attribute_name("contract_code"), class: "form-control bg-light border-1"
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
@@ -184,18 +184,18 @@
               .form-group
                 .row
                   %label.col-md-2.text-left
-                    = t(".certificate")
+                    = DetailsInfo.human_attribute_name("certificate")
                   .col-md-10.inputGroupContainer
                     .input-group
-                      = f.text_area :certificate, placeholder: t(".certificate"), size: "20x8", class: "form-control bg-light border-1"
+                      = f.text_area :certificate, placeholder: DetailsInfo.human_attribute_name("certificate"), size: "20x8", class: "form-control bg-light border-1"
             .col-xl-12.col-lg-12
               .form-group
                 .row
                   %label.col-md-2.text-left
-                    = t(".experience")
+                    = DetailsInfo.human_attribute_name("experience")
                   .col-md-10.inputGroupContainer
                     .input-group
-                      = f.text_area :experience, placeholder: t(".experience"), size: "20x8", class: "form-control bg-light border-1"
+                      = f.text_area :experience, placeholder: DetailsInfo.human_attribute_name("experience"), size: "20x8", class: "form-control bg-light border-1"
         %hr
         .d-flex.justify-content-center
           = f.hidden_field :admin, value: "true"
