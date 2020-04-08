@@ -163,6 +163,10 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.index ["vaccination_center_id"], name: "index_details_infos_on_vaccination_center_id"
   end
 
+  create_table "form_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+  end
+
   create_table "import_vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_code"
     t.integer "quantity"
@@ -272,6 +276,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tag", default: "default"
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 
