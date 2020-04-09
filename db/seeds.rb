@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times do |n|
-  company_code = "#{n+1} code"
-  name = Faker::Company.name
-  address = Faker::Company.industry
+# 10.times do |n|
+#   company_code = "#{n+1} code"
+#   name = Faker::Company.name
+#   address = Faker::Company.industry
 
-  Company.create(company_code: company_code, name: name, address: address)
-end
+#   Company.create(company_code: company_code, name: name, address: address)
+# end

@@ -8,3 +8,7 @@ vi:
         button:
           cancel: Hủy
           submit: Hoàn thành
+      edit:
+        button:
+          submit: Cập Nhật
+          cancel: Hủy

@@ -3,7 +3,7 @@
     %h4.col-12.card-title=  t("admin.sidebar.user_management")
     .col-8
       %span
-        = link_to t(".add_user"), "#", class: "btn btn-primary"
+        = link_to t(".add_user"), new_admin_details_info_path, class: "btn btn-primary"
     .col-4
       = form_tag admin_accounts_path, method: :get do
         .input-group
@@ -19,7 +19,8 @@
           %th.text-center= Account.human_attribute_name("user_code")
           %th.text-center= DetailsInfo.human_attribute_name("first_name")
           %th.text-center= DetailsInfo.human_attribute_name("email")
-          %th.text-center= DetailsInfo.human_attribute_name("phone_number")
+          %th.text-center= DetailsInfo.human_attribute_name("number_phone")
+          %th
       %tbody#accounts
         = render "admin/accounts/account", accounts: @accounts
     = paginate @accounts, theme: "twitter-bootstrap-4"

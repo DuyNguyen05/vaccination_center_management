@@ -1,0 +1,7 @@
+vi:
+  admin:
+    accounts:
+      index:
+        search: Nhập Email - Mã Nhân Viên - SĐT
+        add_user: Tạo Tài Khoản Mới
+

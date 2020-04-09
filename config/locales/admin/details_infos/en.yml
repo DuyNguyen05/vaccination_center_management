@@ -8,3 +8,7 @@ en:
         button:
           cancel: Cancel
           submit: Submit
+      edit:
+        button:
+          submit: Update
+          cancel: Cancel

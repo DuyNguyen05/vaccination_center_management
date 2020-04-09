@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
       resources :companies
       resources :accounts
-      resources :details_infos, only: [:new, :create]
+      resources :details_infos
     end
   end
 end

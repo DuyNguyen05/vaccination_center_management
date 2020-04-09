@@ -1,29 +1,29 @@
 vi:
   activerecord:
     models:
-      details_info: Thông tin tài khoản nhân viên
+      details_info: THÔNG TIN TÀI KHOẢN NHÂN VIÊN
     attributes:
       details_info:
         first_name: Tên
         last_name: Họ
         identify: CMT/CCCD
-        number_phone: Số điện thoại
-        email: Hộp thư điện tử
+        number_phone: Số Điện Thoại
+        email: Hộp Thư Điện Tử
         current_address: Địa chỉ hiện tại
         permanent_address: Địa chỉ thường trú
         full_name: Họ và tên
-        date_of_birth: Ngày sinh
-        nationality: Quốc tịch
-        bank_account_number: Số TK ngân hàng
-        bank: Tên ngân hàng
-        language: Trình độ ngoại ngữ
+        date_of_birth: Ngày Sinh
+        nationality: Quốc Tịch
+        bank_account_number: Số Tài Khoản Ngân Hàng
+        bank: Tên Ngân Hàng
+        language: Trình Độ Ngoại Ngữ
         certificate: Chứng chỉ / Bằng cấp
-        experience: Kinh nghiệm làm việc
-        tax_code: Mã số thuế cá nhân
-        vaccination_center: Trung tâm tiêm chủng
-        department: Bộ phận
-        contract_code: Mã hợp đồng
+        experience: Kinh Nghiệm Làm Việc
+        tax_code: Mã Số Thuế Cá Nhân
+        vaccination_center: Trung Tâm Tiêm Chủng
+        department: Bộ Phận
+        contract_code: Mã Hợp Đồng
         male: Nam
         female: Nữ
-        gender: Giới tính
+        gender: Giới Tính
 
