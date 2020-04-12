@@ -296,9 +296,6 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
   add_foreign_key "detail_vaccine_packages", "vaccines"
   add_foreign_key "details_infos", "departments"
   add_foreign_key "details_infos", "vaccination_centers"
-  add_foreign_key "import_vaccines", "accounts"
-  add_foreign_key "import_vaccines", "companies"
-  add_foreign_key "import_vaccines", "vaccines"
   add_foreign_key "injection_books", "info_injection_books"
   add_foreign_key "injection_schedules", "vaccination_centers"
   add_foreign_key "injection_schedules", "vaccine_packages"
@@ -306,5 +303,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
   add_foreign_key "vaccine_distributions", "vaccines"
   add_foreign_key "vaccine_packages", "detail_vaccine_packages"
   add_foreign_key "vaccine_packages", "vaccine_package_types"
+  add_foreign_key "vaccines", "accounts"
+  add_foreign_key "vaccines", "companies"
   add_foreign_key "vaccines", "vaccine_types"
 end

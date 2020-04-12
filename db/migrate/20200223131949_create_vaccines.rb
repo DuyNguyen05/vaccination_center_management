@@ -6,7 +6,6 @@ class CreateVaccines < ActiveRecord::Migration[5.2]
       t.string :manufacture
       t.datetime :expiry_date
       t.string :content
-      t.string :inventory
       t.references :vaccine_type, foreign_key: true
 
       t.timestamps

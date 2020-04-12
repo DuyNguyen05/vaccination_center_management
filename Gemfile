@@ -25,6 +25,8 @@ gem "font_awesome5_rails"
 gem "devise"
 gem "pundit"
 gem "config"
+gem "roo"
+gem "activerecord-import"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

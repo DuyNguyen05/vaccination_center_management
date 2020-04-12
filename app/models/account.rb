@@ -4,6 +4,7 @@ class Account < ApplicationRecord
   belongs_to :role, optional: true
   belongs_to :details_info, optional: true
   belongs_to :info_injection_book, optional: true
+  belongs_to :vaccine, optional: true
 
   has_many :bills, dependent: :destroy
 
