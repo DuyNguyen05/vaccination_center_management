@@ -11,8 +11,8 @@ class Admin::AccountsController < Admin::AdminController
   def edit; end
 
   def update
-    role_id = Role.find(params[:role_id])
-    if @account.update role_id: role_id
+    role = Role.find(params[:role_id])
+    if @account.update role: role
       flash[:success] = "Updated!!"
     else
       render :edit

@@ -2,5 +2,5 @@ en:
   admin:
     sidebar:
       dashboard: Dashboard
-      user_management: User Management
+      user_management: Account Management
       company_management: Company Management
