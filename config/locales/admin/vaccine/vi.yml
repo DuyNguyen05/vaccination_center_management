@@ -4,6 +4,8 @@ vi:
       index:
         search: Nhập vào mã vaccine hoặc nhà sản xuất
         add_vaccine: Thêm Vaccine
+        import_data: Nhập Tự Động
+        import: Nhập
       new:
         submit: Tạo
       edit:

@@ -9,4 +9,4 @@ vi:
         manufacture: Sản Xuất
         expiry_date: Hạn Sử Dụng
         content: Tác Dụng
-        inventory: Tồn Kho
+        quantity: Tồn Kho

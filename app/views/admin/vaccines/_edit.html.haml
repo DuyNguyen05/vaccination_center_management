@@ -24,6 +24,6 @@
             = f.label Vaccine.human_attribute_name(:expiry_date)
             = f.date_field :expiry_date, class: "form-control"
           .form-group
-            = f.label Vaccine.human_attribute_name(:inventory)
-            = f.number_field :inventory, class: "form-control", min: 0
+            = f.label Vaccine.human_attribute_name(:quantity)
+            = f.number_field :quantity, class: "form-control", min: 0
           = f.submit t(".submit"), class: "btn btn-primary"

@@ -9,4 +9,4 @@ en:
         manufacture: Manufacture
         expiry_date: Expiry Date
         content: Effect
-        inventory: Quantity
+        quantity: Quantity

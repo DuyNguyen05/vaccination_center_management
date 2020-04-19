@@ -57,7 +57,7 @@ class Admin::VaccinesController < Admin::AdminController
   private
 
   def vaccine_params
-    params.require(:vaccine).permit(:code, :name, :manufacture, :content, :expiry_date, :inventory, :quantity, :account_id, :company_id)
+    params.require(:vaccine).permit(:code, :name, :manufacture, :content, :expiry_date, :quantity, :account_id, :company_id)
   end
 
   def set_vaccine
