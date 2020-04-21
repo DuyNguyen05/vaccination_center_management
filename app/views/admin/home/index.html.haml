@@ -1,78 +1,101 @@
-.page-breadcrumb
-  .row
-    .col-12.d-flex.no-block.align-items-center
-      %h4.page-title= t("admin.layouts.dashboard")
-.container-fluid
-  .row
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-cyan.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-view-dashboard
-          %h6.text-white= t("admin.layouts.dashboard")
-    .col-md-6.col-lg-4.col-xlg-3
-      .card.card-hover
-        .box.bg-success.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-chart-areaspline
-          %h6.text-white Charts
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-warning.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-collage
-          %h6.text-white Widgets
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-danger.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-border-outside
-          %h6.text-white Tables
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-info.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-arrow-all
-          %h6.text-white Full Width
-    .col-md-6.col-lg-4.col-xlg-3
-      .card.card-hover
-        .box.bg-danger.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-receipt
-          %h6.text-white Forms
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-info.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-relative-scale
-          %h6.text-white Buttons
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-cyan.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-pencil
-          %h6.text-white Elements
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-success.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-calendar-check
-          %h6.text-white Calnedar
-    .col-md-6.col-lg-2.col-xlg-3
-      .card.card-hover
-        .box.bg-warning.text-center
-          %h1.font-light.text-white
-            %i.mdi.mdi-alert
-          %h6.text-white Errors
-  .row
-    .col-md-12
-      .card
-        .card-body
-          .d-md-flex.align-items-center
-            %div
-              %h4.card-title= t(".site_analysis")
-              %h5.card-subtitle= t(".overview_of_lastest_month")
-          .row
-            .col-lg-9
-              .flot-chart
-                #flot-line-chart.flot-chart-content
+%main
+  .container-fluid
+    %h1.mt-4= t("admin.layouts.dashboard")
+    %ol.breadcrumb.mb-4
+      %li.breadcrumb-item.active= t("admin.layouts.dashboard")
+    .row
+      .col-xl-3.col-md-6
+        .card.bg-primary.text-white.mb-4
+          .card-body Primary Card
+          .card-footer.d-flex.align-items-center.justify-content-between
+            %a.small.text-white.stretched-link{:href => "#"} View Details
+            .small.text-white
+              %i.fas.fa-angle-right
+      .col-xl-3.col-md-6
+        .card.bg-warning.text-white.mb-4
+          .card-body Warning Card
+          .card-footer.d-flex.align-items-center.justify-content-between
+            %a.small.text-white.stretched-link{:href => "#"} View Details
+            .small.text-white
+              %i.fas.fa-angle-right
+      .col-xl-3.col-md-6
+        .card.bg-success.text-white.mb-4
+          .card-body Success Card
+          .card-footer.d-flex.align-items-center.justify-content-between
+            %a.small.text-white.stretched-link{:href => "#"} View Details
+            .small.text-white
+              %i.fas.fa-angle-right
+      .col-xl-3.col-md-6
+        .card.bg-danger.text-white.mb-4
+          .card-body Danger Card
+          .card-footer.d-flex.align-items-center.justify-content-between
+            %a.small.text-white.stretched-link{:href => "#"} View Details
+            .small.text-white
+              %i.fas.fa-angle-right
+    .row
+      .col-xl-6
+        .card.mb-4
+          .card-header
+            %i.fas.fa-chart-area.mr-1>
+            Area Chart Example
+          .card-body
+            %canvas#myAreaChart{:height => "40", :width => "100%"}
+      .col-xl-6
+        .card.mb-4
+          .card-header
+            %i.fas.fa-chart-bar.mr-1>
+            Bar Chart Example
+          .card-body
+            %canvas#myBarChart{:height => "40", :width => "100%"}
+    .card.mb-4
+      .card-header
+        %i.fas.fa-table.mr-1>
+        DataTable Example
+      .card-body
+        .table-responsive
+          %table#dataTable.table.table-bordered{:cellspacing => "0", :width => "100%"}
+            %thead
+              %tr
+                %th Name
+                %th Position
+                %th Office
+                %th Age
+                %th Start date
+                %th Salary
+            %tfoot
+              %tr
+                %th Name
+                %th Position
+                %th Office
+                %th Age
+                %th Start date
+                %th Salary
+            %tbody
+              %tr
+                %td Tiger Nixon
+                %td System Architect
+                %td Edinburgh
+                %td 61
+                %td 2011/04/25
+                %td $320,800
+              %tr
+                %td Garrett Winters
+                %td Accountant
+                %td Tokyo
+                %td 63
+                %td 2011/07/25
+                %td $170,750
+              %tr
+                %td Ashton Cox
+                %td Junior Technical Author
+                %td San Francisco
+                %td 66
+                %td 2009/01/12
+                %td $86,000
+              %tr
+                %td Cedric Kelly
+                %td Senior Javascript Developer
+                %td Edinburgh
+                %td 22
+                %td 2012/03/29
+                %td $433,060

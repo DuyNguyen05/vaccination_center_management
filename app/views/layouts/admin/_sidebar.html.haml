@@ -1,16 +1,58 @@
-%aside.left-sidebar{"data-sidebarbg" => "skin5"}
-  .scroll-sidebar
-    %nav.sidebar-nav
-      %ul#sidebarnav.p-t-30.in
-        %li{ class: active_class(admin_root_path)}
-          = link_to admin_root_path, class: "sidebar-link waves-effect waves-dark sidebar-link" do
-            %i.mdi.mdi-view-dashboard
-            %span.hide-menu= t("admin.sidebar.dashboard")
-        %li{ class: active_class("#")}
-          = link_to "#", class: "sidebar-link waves-effect waves-dark sidebar-link" do
-            %i.mdi.mdi-face
-            %span.hide-menu= t("admin.sidebar.user_management")
-        %li{ class: active_class(admin_companies_path)}
-          = link_to admin_companies_path, class: "sidebar-link waves-effect waves-dark sidebar-link" do
-            %i.mdi.mdi-store
-            %span.hide-menu= t("admin.sidebar.company_management")
+#layoutSidenav_nav
+  %nav#sidenavAccordion.sb-sidenav.accordion.sb-sidenav-dark
+    .sb-sidenav-menu
+      .nav
+        .sb-sidenav-menu-heading Core
+        %a.nav-link{:href => "index.html"}
+          .sb-nav-link-icon
+            %i.fas.fa-tachometer-alt
+          Dashboard
+        .sb-sidenav-menu-heading Interface
+        %a.nav-link.collapsed{"aria-controls" => "collapseLayouts", "aria-expanded" => "false", "data-target" => "#collapseLayouts", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-columns
+          Layouts
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapseLayouts.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordion"}
+          %nav.sb-sidenav-menu-nested.nav
+            %a.nav-link{:href => "layout-static.html"} Static Navigation
+            %a.nav-link{:href => "layout-sidenav-light.html"} Light Sidenav
+        %a.nav-link.collapsed{"aria-controls" => "collapsePages", "aria-expanded" => "false", "data-target" => "#collapsePages", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-book-open
+          Pages
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapsePages.collapse{"aria-labelledby" => "headingTwo", "data-parent" => "#sidenavAccordion"}
+          %nav#sidenavAccordionPages.sb-sidenav-menu-nested.nav.accordion
+            %a.nav-link.collapsed{"aria-controls" => "pagesCollapseAuth", "aria-expanded" => "false", "data-target" => "#pagesCollapseAuth", "data-toggle" => "collapse", :href => "#"}
+              Authentication
+              .sb-sidenav-collapse-arrow
+                %i.fas.fa-angle-down
+            #pagesCollapseAuth.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordionPages"}
+              %nav.sb-sidenav-menu-nested.nav
+                %a.nav-link{:href => "login.html"} Login
+                %a.nav-link{:href => "register.html"} Register
+                %a.nav-link{:href => "password.html"} Forgot Password
+            %a.nav-link.collapsed{"aria-controls" => "pagesCollapseError", "aria-expanded" => "false", "data-target" => "#pagesCollapseError", "data-toggle" => "collapse", :href => "#"}
+              Error
+              .sb-sidenav-collapse-arrow
+                %i.fas.fa-angle-down
+            #pagesCollapseError.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordionPages"}
+              %nav.sb-sidenav-menu-nested.nav
+                %a.nav-link{:href => "401.html"} 401 Page
+                %a.nav-link{:href => "404.html"} 404 Page
+                %a.nav-link{:href => "500.html"} 500 Page
+        .sb-sidenav-menu-heading Addons
+        %a.nav-link{:href => "charts.html"}
+          .sb-nav-link-icon
+            %i.fas.fa-chart-area
+          Charts
+        %a.nav-link{:href => "tables.html"}
+          .sb-nav-link-icon
+            %i.fas.fa-table
+          Tables
+    .sb-sidenav-footer
+      .small Logged in as:
+      Start Bootstrap

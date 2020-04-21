@@ -6,14 +6,10 @@
     = stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
     = csrf_meta_tags
-  %body
-    .preloader{:style => "display: none;"}
-      .lds-ripple
-        .lds-pos
-        .lds-pos
-    #main-wrapper{"data-sidebartype" => "full"}
-      = render "layouts/admin/header"
+  %body.sb-nav-fixed
+    = render "layouts/admin/header"
+    #layoutSidenav
       = render "layouts/admin/sidebar"
-      .page-wrapper
+      #layoutSidenav_content
         = yield
         = render "layouts/admin/footer"

@@ -14,16 +14,3 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
-//= require ./lib/perfect-scrollbar.jquery.min.js
-//= require ./lib/sparkline.js
-//= require ./lib/waves.js
-//= require ./lib/sidebarmenu.js
-//= require ./lib/custom.min.js
-//= require ./lib/excanvas.js
-//= require ./lib/jquery.flot.js
-//= require ./lib/jquery.flot.pie.js
-//= require ./lib/jquery.flot.time.js
-//= require ./lib/jquery.flot.stack.js
-//= require ./lib/jquery.flot.crosshair.js
-//= require ./lib/jquery.flot.tooltip.min.js
-//= require ./lib/chart-page-init.js
