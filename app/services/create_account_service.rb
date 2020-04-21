@@ -17,6 +17,7 @@ class CreateAccountService
         details_info_id: @details_info_id, role_id: Settings.active_record.account.role.admin
     else
       user_code = generate_user_code("STAFF-")
+      byebug
       Account.create! user_code: user_code, password: ENV["INIT_ACCOUNT_PASSWORD"],
         details_info_id: @details_info_id, role_id: Settings.active_record.account.role.staff
     end

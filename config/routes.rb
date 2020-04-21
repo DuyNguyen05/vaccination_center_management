@@ -12,8 +12,12 @@ Rails.application.routes.draw do
     namespace :admin do
       root "home#index"
 
-      resources :companies
+      get "login", to: "sessions#new"
+      post "login", to: "sessions#create"
+      delete "logout", to: "sessions#destroy"
+
       resources :accounts
+      resources :companies
       resources :details_infos
     end
   end

@@ -1,0 +1,17 @@
+.page-login
+  .container-fluid
+    .row.justify-content-center
+      .col-xl-6.col-lg-6.col-md-6
+        .p-6
+          .card.o-hidden.border-0.shadow-lg.my-5
+            .p-5
+              .text-center
+                %h1.h4.text-gray-900.mb-4
+                  = t(".header")
+              = form_with model: @account, scope: :session, url: admin_login_path, method: :post, local: true do |f|
+                = render "shared/error_message", resource: f.object
+                .form-group
+                  = f.text_field :user_code, class: "form-control form-control-user", id: "exampleInputEmail", placeholder: t(".user_code")
+                .form-group
+                  = f.password_field :password, class: "form-control form-control-user", id: "exampleInputPassword", placeholder: t(".password")
+                = f.submit t(".login"), class: "btn btn-primary btn-user btn-block"
