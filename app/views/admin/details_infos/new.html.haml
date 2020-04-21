@@ -200,6 +200,6 @@
         .d-flex.justify-content-center
           = f.hidden_field :admin, value: "true"
           .span.p-2
-            = f.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center pl-2", data: { confirm: t(".confirm.are_you_sure") }
+            = f.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center pl-2", data: { confirm: t("confirm.are_you_sure") }
           .span.p-2
-            = link_to t(".button.cancel"), new_user_details_info_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }
+            = link_to t(".button.cancel"), new_admin_details_info_path, class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") }

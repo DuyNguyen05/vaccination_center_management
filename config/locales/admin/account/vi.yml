@@ -4,4 +4,5 @@ vi:
       index:
         search: Nhập Email - Mã Nhân Viên - SĐT
         add_user: Tạo Tài Khoản Mới
+        show_all: Tất Cả Tài Khoản
 
