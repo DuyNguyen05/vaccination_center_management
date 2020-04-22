@@ -1,0 +1,7 @@
+en:
+  admin:
+    accounts:
+      index:
+        search: ID - User Code - Phone Number
+        add_user: Add New Account
+        show_all: Show All Account

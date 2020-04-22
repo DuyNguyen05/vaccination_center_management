@@ -6,6 +6,7 @@ class User::DetailsInfosController < User::UserController
   def create
     @details_info = DetailsInfo.new details_info_params
     if @details_info.save
+      CreateAccountService.new(details_info_id: @details_info.id).create_account
       redirect_to user_account_path(@details_info)
     else
       render :new

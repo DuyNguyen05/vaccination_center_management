@@ -1,0 +1,14 @@
+en:
+  admin:
+    details_infos:
+      new:
+        new_details_info: Create New Information Staff
+        vaccination_center: Vaccination Center
+        department: Department
+        button:
+          cancel: Cancel
+          submit: Submit
+      edit:
+        button:
+          submit: Update
+          cancel: Cancel

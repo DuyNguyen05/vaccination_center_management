@@ -1,0 +1,14 @@
+vi:
+  admin:
+    details_infos:
+      new:
+        new_details_info: Tạo thông tin nhân viên của trung tâm
+        vaccination_center: Trung tâm tiêm chủng
+        department: Bộ phận
+        button:
+          cancel: Hủy
+          submit: Hoàn thành
+      edit:
+        button:
+          submit: Cập Nhật
+          cancel: Hủy

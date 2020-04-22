@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      account: ACCOUNTS
+    attributes:
+      account:
+        user_code: User Code
+        password: Password
+        avatar: Avatar

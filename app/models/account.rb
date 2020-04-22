@@ -7,6 +7,10 @@ class Account < ApplicationRecord
 
   has_many :bills, dependent: :destroy
 
+  scope :filter_users, ->(query) do
+    joins(:details_info).where("email LIKE :q OR user_code LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
+  end
+
   def is_current_user? user
     self == user
   end

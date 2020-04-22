@@ -1,0 +1,205 @@
+= form_with model: [:admin, @details_info], class: "well form-horizontal", local: true do |f|
+  .row
+    .col-xl-12.col-lg-12
+      .card.shadow.mb-4
+        .card-header.py-3
+          %h4.text-lg.m-0.font-weight-bold.text-primary.text-uppercase.text-center
+            = t(".edit_details_info")
+          .dropdown.no-arrow
+        = render "shared/error_message", resource: @details_info
+        .card-body
+          .row
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("first_name")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-user
+                        = f.text_field :first_name, placeholder: DetailsInfo.human_attribute_name("first_name"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.form-check-label.required
+                      = DetailsInfo.human_attribute_name("gender")
+                    .col-md-8.inputGroupContainer
+                      .form-check-inline
+                        %label.form-check-label
+                          = f.radio_button :gender, :male, class: "form-check-input"
+                          = DetailsInfo.human_attribute_name("male")
+                      .form-check-inline
+                        %label.form-check-label
+                          = f.radio_button :gender, :female, class: "form-check-input"
+                          = DetailsInfo.human_attribute_name("female")
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("last_name")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-user
+                        = f.text_field :last_name, placeholder: DetailsInfo.human_attribute_name("last_name"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("identify")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-fingerprint
+                        = f.text_field :identify, placeholder: DetailsInfo.human_attribute_name("identify"), class: "form-control bg-light border-1", required: true
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("number_phone")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-phone-square
+                        = f.text_field :number_phone, placeholder: DetailsInfo.human_attribute_name("number_phone"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("current_address")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-home
+                        = f.text_field :current_address, placeholder: DetailsInfo.human_attribute_name("current_address"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = DetailsInfo.human_attribute_name("bank")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-university
+                        = f.text_field :bank, placeholder: DetailsInfo.human_attribute_name("bank"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = DetailsInfo.human_attribute_name("language")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-language
+                        = f.text_field :language, placeholder: DetailsInfo.human_attribute_name("language"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = DetailsInfo.human_attribute_name("tax_code")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fab.fa-centercode
+                        = f.text_field :tax_code, placeholder: DetailsInfo.human_attribute_name("tax_code"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".vaccination_center")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-hospital-alt
+                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1 pb-custom"
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("email")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-envelope
+                        = f.email_field :email, placeholder: DetailsInfo.human_attribute_name("email"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = DetailsInfo.human_attribute_name("permanent_address")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-home
+                        = f.text_field :permanent_address, placeholder: DetailsInfo.human_attribute_name("permanent_address"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = DetailsInfo.human_attribute_name("bank_account_number")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-university
+                        = f.text_field :bank_account_number, placeholder: DetailsInfo.human_attribute_name("bank_account_number"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left
+                      = DetailsInfo.human_attribute_name("nationality")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-globe
+                        = f.text_field :nationality, placeholder: DetailsInfo.human_attribute_name("nationality"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = DetailsInfo.human_attribute_name("contract_code")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fab.fa-centercode
+                        = f.text_field :contract_code, placeholder: DetailsInfo.human_attribute_name("contract_code"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-left.required
+                      = t(".department")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fa.fa-users
+                        = f.select :department_id, options_for_select(Department.pluck(:name, :id)),{}, class: "form-control mdb-select md-form pb-custom"
+            .col-xl-12.col-lg-12
+              .form-group
+                .row
+                  %label.col-md-2.text-left
+                    = DetailsInfo.human_attribute_name("certificate")
+                  .col-md-10.inputGroupContainer
+                    .input-group
+                      = f.text_area :certificate, placeholder: DetailsInfo.human_attribute_name("certificate"), size: "20x8", class: "form-control bg-light border-1"
+            .col-xl-12.col-lg-12
+              .form-group
+                .row
+                  %label.col-md-2.text-left
+                    = DetailsInfo.human_attribute_name("experience")
+                  .col-md-10.inputGroupContainer
+                    .input-group
+                      = f.text_area :experience, placeholder: DetailsInfo.human_attribute_name("experience"), size: "20x8", class: "form-control bg-light border-1"
+        %hr
+        .d-flex.justify-content-center
+          = f.hidden_field :admin, value: "true"
+          .span.p-2
+            = f.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center pl-2", data: { confirm: t("confirm.are_you_sure") }
+          .span.p-2
+            = link_to t(".button.cancel"), new_user_details_info_path, class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") }

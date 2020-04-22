@@ -1,0 +1,99 @@
+.card
+  .card-body
+    .row
+      .col-lg-3
+        %div
+          = image_tag @account.avatar, width: "150", class: "rounded-circle" if @account.avatar
+        %hr/
+        %h6.font-medium
+          = @account.details_info.first_name
+          = @account.details_info.last_name
+          %span= @account.role_id
+        %span.m-b-15.d-block
+          = form_for [:admin, @account], method: :patch, value: @account.id do |f|
+            .form-group
+              = f.select :role_id, options_for_select([["admin", 1],["staff", 4]], @account.role_id), {}, { class: "form-control", id: "sel1", data: {value: f.object.role_id} }
+      .col-lg-9
+        %h4.card-title.m-b-0
+          %i.ti-info-alt>
+        %p
+          = DetailsInfo.model_name.human
+        %ul.list-style-none
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-genderless
+              = DetailsInfo.human_attribute_name("gender")
+              &colon;
+              = @account.details_info.gender
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-envelope
+              = DetailsInfo.human_attribute_name("email")
+              &colon;
+              = @account.details_info.email
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-phone
+              = DetailsInfo.human_attribute_name("number_phone")
+              &colon;
+              = @account.details_info.number_phone
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-id-card
+              = DetailsInfo.human_attribute_name("identify")
+              &colon;
+              = @account.details_info.identify
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-globe
+              = DetailsInfo.human_attribute_name("nationality")
+              &colon;
+              = @account.details_info.nationality
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-location-arrow
+              = DetailsInfo.human_attribute_name("permanent_address")
+              &colon;
+              = @account.details_info.permanent_address
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-map-marker
+              = DetailsInfo.human_attribute_name("current_address")
+              &colon;
+              = @account.details_info.current_address
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-university
+              = DetailsInfo.human_attribute_name("bank")
+              &colon;
+              = @account.details_info.bank
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-credit-card-alt
+              = DetailsInfo.human_attribute_name("bank_account_number")
+              &colon;
+              = @account.details_info.bank_account_number
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-balance-scale
+              = DetailsInfo.human_attribute_name("tax_code")
+              &colon;
+              = @account.details_info.tax_code
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-language
+              = DetailsInfo.human_attribute_name("language")
+              &colon;
+              = @account.details_info.language
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-certificate
+              = DetailsInfo.human_attribute_name("certificate")
+              &colon;
+              = @account.details_info.certificate
+          %li.d-flex.no-block.card-body
+            %div
+              %i.fa.fa-trophy
+              = DetailsInfo.human_attribute_name("experience")
+              &colon;
+              = @account.details_info.experience

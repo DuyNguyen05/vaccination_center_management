@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       root "home#index"
 
       resources :companies
+      resources :accounts
+      resources :details_infos
     end
   end
 end

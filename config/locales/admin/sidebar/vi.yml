@@ -2,5 +2,5 @@ vi:
   admin:
     sidebar:
       dashboard: Trang Chủ
-      user_management: Quản Lý Người Dùng
-      company_management: Quản Lý Công Ty 
+      user_management: Quản Lý Tài Khoản
+      company_management: Quản Lý Công Ty
