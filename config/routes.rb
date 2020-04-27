@@ -12,13 +12,11 @@ Rails.application.routes.draw do
     namespace :admin do
       root "home#index"
 
-      get "login", to: "sessions#new"
-      post "login", to: "sessions#create"
-      delete "logout", to: "sessions#destroy"
-
       resources :accounts
       resources :companies
       resources :details_infos
+
+      devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
     end
   end
 end

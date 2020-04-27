@@ -4,3 +4,4 @@ en:
       dashboard: Dashboard
       user_management: Account Management
       company_management: Company Management
+      logged_as: "Logged in as: "

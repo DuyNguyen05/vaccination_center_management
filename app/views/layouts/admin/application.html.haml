@@ -11,5 +11,12 @@
     #layoutSidenav
       = render "layouts/admin/sidebar"
       #layoutSidenav_content
+        .container-fluid
+          - if notice
+            %p.alert.alert-success
+              = notice
+          - if alert
+            %p.alert.alert-danger
+              = alert
         = yield
         = render "layouts/admin/footer"

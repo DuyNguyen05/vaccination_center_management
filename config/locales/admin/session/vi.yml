@@ -3,6 +3,6 @@ vi:
     sessions:
       new:
         header: Xin Chào!
-        user_code: Nhập Mã Người Dùng
-        password: Nhập Password
+        user_code: Mã Người Dùng
+        password: Password
         login: Đăng Nhập

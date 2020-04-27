@@ -5,8 +5,6 @@ class Account < ApplicationRecord
   belongs_to :details_info, optional: true
   belongs_to :info_injection_book, optional: true
 
-  has_secure_password
-
   has_many :bills, dependent: :destroy
 
   scope :filter_users, ->(query) do

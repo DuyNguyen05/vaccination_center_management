@@ -1,17 +1,30 @@
-.page-login
+.bg-login
   .container-fluid
-    .row.justify-content-center
-      .col-xl-6.col-lg-6.col-md-6
-        .p-6
-          .card.o-hidden.border-0.shadow-lg.my-5
-            .p-5
-              .text-center
-                %h1.h4.text-gray-900.mb-4
-                  = t(".header")
-              = form_with model: @account, scope: :session, url: admin_login_path, method: :post, local: true do |f|
-                = render "shared/error_message", resource: f.object
-                .form-group
-                  = f.text_field :user_code, class: "form-control form-control-user", id: "exampleInputEmail", placeholder: t(".user_code")
-                .form-group
-                  = f.password_field :password, class: "form-control form-control-user", id: "exampleInputPassword", placeholder: t(".password")
-                = f.submit t(".login"), class: "btn btn-primary btn-user btn-block"
+    - if notice
+      %p.alert.alert-success
+        = notice
+    - if alert
+      %p.alert.alert-danger
+        = alert
+  #layoutAuthentication
+    #layoutAuthentication_content
+      %main
+        .container
+          .row.justify-content-center
+            .col-lg-5
+              .card.shadow-lg.border-0.rounded-lg.mt-5
+                .card-header
+                  %h3.text-center.font-weight-light.my-4= t(".login")
+                .card-body
+                  = form_for resource, as: resource_name, url: session_path(resource_name), class: "admin" do |f|
+                    = render "shared/error_message", resource: resource
+                    .form-group
+                      = f.label :user_code, class: "small mb-1" do
+                        = t(".user_code")
+                      = f.text_field :user_code, class: "form-control py-4", placehoder: t(".enter")
+                    .form-group
+                      = f.label :password, class: "small mb-1" do
+                        = t(".password")
+                      = f.password_field :password, class: "form-control", placeholder: t(".password")
+                    .form-group.d-flex.align-items-center.justify-content-between.mt-4.mb-0
+                      = f.submit t(".login"), class: "btn btn-primary"

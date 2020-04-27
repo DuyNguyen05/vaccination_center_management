@@ -18,4 +18,5 @@
         %a.dropdown-item{:href => "#"}= t(".profile")
         %a.dropdown-item{:href => "#"}= t(".edit_profile")
         .dropdown-divider
-        %a.dropdown-item{:href => "login.html"}= t(".logout")
+        = link_to destroy_admin_admin_session_path, method: :delete, data: {confirm: t("confirm.are_you_sure")}, class: "dropdown-item" do
+          = t(".logout")

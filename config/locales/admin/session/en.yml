@@ -2,7 +2,7 @@ en:
   admin:
     sessions:
       new:
-        header:
-        user_code:
-        password:
-        login:
+        header: Hi! You're Back
+        user_code: User Code
+        password: Password
+        login: Login
