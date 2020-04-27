@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     if resource_or_scope == :user_account
       new_user_account_session_path
-    elsif resource_or_scope == :admin
-      new_admin_session_path
+    elsif resource_or_scope == :admin_admin
+      new_admin_admin_session_path
     else
       super
     end
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     if params[:user_account].present?
       user_root_path
     else
-      super
+      admin_root_path
     end
   end
 end

@@ -1,0 +1,8 @@
+en:
+  admin:
+    sessions:
+      new:
+        header: Hi! You're Back
+        user_code: User Code
+        password: Password
+        login: Login

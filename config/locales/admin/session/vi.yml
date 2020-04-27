@@ -1,0 +1,8 @@
+vi:
+  admin:
+    sessions:
+      new:
+        header: Xin Chào!
+        user_code: Mã Người Dùng
+        password: Password
+        login: Đăng Nhập

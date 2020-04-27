@@ -1,0 +1,30 @@
+.bg-login
+  .container-fluid
+    - if notice
+      %p.alert.alert-success
+        = notice
+    - if alert
+      %p.alert.alert-danger
+        = alert
+  #layoutAuthentication
+    #layoutAuthentication_content
+      %main
+        .container
+          .row.justify-content-center
+            .col-lg-5
+              .card.shadow-lg.border-0.rounded-lg.mt-5
+                .card-header
+                  %h3.text-center.font-weight-light.my-4= t(".login")
+                .card-body
+                  = form_for resource, as: resource_name, url: session_path(resource_name), class: "admin" do |f|
+                    = render "shared/error_message", resource: resource
+                    .form-group
+                      = f.label :user_code, class: "small mb-1" do
+                        = t(".user_code")
+                      = f.text_field :user_code, class: "form-control py-4", placehoder: t(".enter")
+                    .form-group
+                      = f.label :password, class: "small mb-1" do
+                        = t(".password")
+                      = f.password_field :password, class: "form-control", placeholder: t(".password")
+                    .form-group.d-flex.align-items-center.justify-content-between.mt-4.mb-0
+                      = f.submit t(".login"), class: "btn btn-primary"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_072617) do
+ActiveRecord::Schema.define(version: 2020_04_23_073920) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -27,6 +27,22 @@ ActiveRecord::Schema.define(version: 2020_03_15_072617) do
     t.index ["info_injection_book_id"], name: "index_accounts_on_info_injection_book_id"
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_accounts_on_role_id"
+  end
+
+  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user_code"
+    t.string "password"
+    t.bigint "role_id"
+    t.bigint "details_info_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["details_info_id"], name: "index_admins_on_details_info_id"
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_admins_on_role_id"
   end
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -219,6 +235,8 @@ ActiveRecord::Schema.define(version: 2020_03_15_072617) do
   add_foreign_key "accounts", "details_infos"
   add_foreign_key "accounts", "info_injection_books"
   add_foreign_key "accounts", "roles"
+  add_foreign_key "admins", "details_infos"
+  add_foreign_key "admins", "roles"
   add_foreign_key "bills", "accounts"
   add_foreign_key "bills", "detail_bills"
   add_foreign_key "bills", "injection_books"
