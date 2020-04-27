@@ -1,24 +1,33 @@
-.row
-  .col-12
-    .table-responsive.px-2
-      = form_with model: [:admin, @vaccine], local: true do |f|
-        = render "admin/shared/error_messages", object: f.object
-        .form-group
-          = f.label Vaccine.human_attribute_name(:code)
-          = f.text_field :code, class: "form-control"
-        .form-group
-          = f.label Vaccine.human_attribute_name(:name)
-          = f.text_field :name, class: "form-control"
-        .form-group
-          = f.label Vaccine.human_attribute_name(:manufacture)
-          = f.text_field :manufacture, class: "form-control"
-        .form-group
-          = f.label Vaccine.human_attribute_name(:content)
-          = f.text_field :content, class: "form-control"
-        .form-group
-          = f.label Vaccine.human_attribute_name(:expiry_date)
-          = f.date_field :expiry_date, class: "form-control"
-        .form-group
-          = f.label Vaccine.human_attribute_name(:quantity)
-          = f.number_field :quantity, class: "form-control"
-        = f.submit t(".submit"), class: "btn btn-primary"
+.container-fluid
+  %h1.mt-4= t("admin.vaccines.index.add_vaccine")
+  %ol.breadcrumb.mb-4
+    %li.breadcrumb-item
+      = link_to admin_vaccines_path do
+        = t("admin.vaccines.index.show_all")
+    %li.breadcrumb-item.active= t("admin.vaccines.index.add_vaccine")
+  .card.mb-4
+    .card-body
+      .row
+        .col-12
+          .table-responsive.px-2
+            = form_with model: [:admin, @vaccine], local: true do |f|
+              = render "admin/shared/error_messages", object: f.object
+              .form-group
+                = f.label Vaccine.human_attribute_name(:code)
+                = f.text_field :code, class: "form-control"
+              .form-group
+                = f.label Vaccine.human_attribute_name(:name)
+                = f.text_field :name, class: "form-control"
+              .form-group
+                = f.label Vaccine.human_attribute_name(:manufacture)
+                = f.text_field :manufacture, class: "form-control"
+              .form-group
+                = f.label Vaccine.human_attribute_name(:content)
+                = f.text_field :content, class: "form-control"
+              .form-group
+                = f.label Vaccine.human_attribute_name(:expiry_date)
+                = f.date_field :expiry_date, class: "form-control"
+              .form-group
+                = f.label Vaccine.human_attribute_name(:quantity)
+                = f.number_field :quantity, class: "form-control"
+              = f.submit t(".submit"), class: "btn btn-primary"

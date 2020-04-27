@@ -26,7 +26,7 @@ gem "devise"
 gem "pundit"
 gem "config"
 gem "roo"
-gem "activerecord-import"
+gem "toastr-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

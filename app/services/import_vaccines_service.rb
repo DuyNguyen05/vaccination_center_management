@@ -8,8 +8,7 @@ class ImportVaccinesService
       header = data.row(1)
       (2..data.last_row).each do |i|
         row = [header, data.row(i)].transpose.to_h
-
-        Vaccine.create! row.merge(account_id: "2")
+        Vaccine.create! row.merge(user_code: user)
       end
 
     rescue StandardError => e

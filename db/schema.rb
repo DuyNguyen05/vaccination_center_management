@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_073920) do
+ActiveRecord::Schema.define(version: 2020_04_27_060316) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -271,6 +271,15 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
+    t.string "company_code"
+    t.string "user_code"
+    t.bigint "admin_id"
+    t.bigint "company_id"
+    t.index ["admin_id"], name: "index_vaccines_on_admin_id"
+    t.index ["company_code"], name: "index_vaccines_on_company_code", unique: true
+    t.index ["company_id"], name: "index_vaccines_on_company_id"
+    t.index ["user_code"], name: "index_vaccines_on_user_code", unique: true
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 
@@ -302,7 +311,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
   add_foreign_key "vaccine_distributions", "vaccines"
   add_foreign_key "vaccine_packages", "detail_vaccine_packages"
   add_foreign_key "vaccine_packages", "vaccine_package_types"
-  add_foreign_key "vaccines", "accounts"
+  add_foreign_key "vaccines", "admins"
   add_foreign_key "vaccines", "companies"
   add_foreign_key "vaccines", "vaccine_types"
 end

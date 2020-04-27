@@ -1,14 +1,9 @@
 .card
   .card-body.row
-    %h4.col-12.card-title=  t("admin.sidebar.vaccine_management")
+    %h1.mt-4.col-12=  t("admin.sidebar.vaccine_management")
     .col-8
       %span
         = link_to t(".add_vaccine"), new_admin_vaccine_path, class: "btn btn-primary"
-      %div.mt-3
-        %h4= t(".import_data")
-        = form_tag import_admin_vaccines_path, multipart: true do
-          = file_field_tag :file
-          = submit_tag t(".import"), class: "btn btn-success"
     .col-4
       = form_tag admin_vaccines_path, method: :get do
         .input-group

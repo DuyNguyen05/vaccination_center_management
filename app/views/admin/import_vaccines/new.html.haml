@@ -1,0 +1,15 @@
+.container-fluid
+  %h1.mt-4= t(".import_data")
+  %ol.breadcrumb.mb-4
+    %li.breadcrumb-item
+      = link_to admin_vaccines_path do
+        = t("admin.vaccines.index.show_all")
+    %li.breadcrumb-item.active= t(".import_data")
+  .card.mb-4
+    .card-body
+      .row
+        .col-12
+          %h4= t(".import_data")
+          = form_with model: nil, url: admin_import_vaccines_path, multipart: true, local: true do |f|
+            = f.file_field :file, required: true
+            = f.submit t(".import")

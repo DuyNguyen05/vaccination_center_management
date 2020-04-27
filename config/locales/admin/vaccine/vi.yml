@@ -6,6 +6,7 @@ vi:
         add_vaccine: Thêm Vaccine
         import_data: Nhập Tự Động
         import: Nhập
+        show_all: Tất Cả Vaccines
       new:
         submit: Tạo
       edit:

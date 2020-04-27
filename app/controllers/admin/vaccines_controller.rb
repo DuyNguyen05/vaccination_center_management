@@ -43,21 +43,10 @@ class Admin::VaccinesController < Admin::AdminController
     end
   end
 
-  def import
-    response = ImportVaccinesService.perform params[:file], "1"
-    if response
-      flash[:success] = t(".file_imported")
-      redirect_to admin_vaccines_path
-    else
-      flash[:error] = t(".error_import")
-      redirect_to admin_vaccines_path
-    end
-  end
-
   private
 
   def vaccine_params
-    params.require(:vaccine).permit(:code, :name, :manufacture, :content, :expiry_date, :quantity, :account_id, :company_id)
+    params.require(:vaccine).permit(:code, :name, :manufacture, :content, :expiry_date, :quantity, :user_code, :company_code)
   end
 
   def set_vaccine

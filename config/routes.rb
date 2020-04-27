@@ -12,18 +12,13 @@ Rails.application.routes.draw do
     namespace :admin do
       root "home#index"
 
+      devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+
       resources :accounts
       resources :companies
       resources :details_infos
-
-      devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
-      resources :vaccines
       resources :import_vaccines
-      resources :vaccines do
-        collection do
-          post :import
-        end
-      end
+      resources :vaccines
     end
   end
 end

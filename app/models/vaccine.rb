@@ -3,7 +3,7 @@ class Vaccine < ApplicationRecord
   has_many :detail_injection_books
   has_many :injection_books, through: :detail_injection_books
   has_many :companies
-  has_many :accounts
+  has_many :admins
 
   scope :match_query, ->(query) do
     where("code LIKE :q OR manufacture LIKE :q", q: "%#{query}%") if query.present?
