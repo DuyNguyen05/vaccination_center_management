@@ -5,6 +5,8 @@ class CreateContracts < ActiveRecord::Migration[5.2]
       t.datetime :finish_at
       t.integer :expire
       t.references :contract_type, foreign_key: true
+
+      t.timestamps
     end
   end
 end

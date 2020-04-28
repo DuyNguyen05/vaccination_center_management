@@ -10,6 +10,8 @@ class CreateVaccines < ActiveRecord::Migration[5.2]
       t.string :date_added
       t.string :inventory
       t.references :vaccine_type, foreign_key: true
+
+      t.timestamps
     end
   end
 end

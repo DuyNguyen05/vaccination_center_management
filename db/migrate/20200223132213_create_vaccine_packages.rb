@@ -6,6 +6,8 @@ class CreateVaccinePackages < ActiveRecord::Migration[5.2]
       t.string :code
       t.string :total_injections
       t.string :price
+
+      t.timestamps
     end
   end
 end

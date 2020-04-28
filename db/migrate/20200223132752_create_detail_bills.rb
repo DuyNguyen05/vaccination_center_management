@@ -5,6 +5,8 @@ class CreateDetailBills < ActiveRecord::Migration[5.2]
       t.references :vaccine_package, foreign_key: true
       t.string :unit_price
       t.string :amount
+
+      t.timestamps
     end
   end
 end

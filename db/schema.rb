@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "avatar"
     t.bigint "role_id"
     t.bigint "details_info_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "info_injection_book_id"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -53,6 +55,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "total_money"
     t.string "code"
     t.bigint "detail_bill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_bills_on_account_id"
     t.index ["detail_bill_id"], name: "index_bills_on_detail_bill_id"
     t.index ["injection_book_id"], name: "index_bills_on_injection_book_id"
@@ -62,17 +66,23 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "company_code"
     t.string "name"
     t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contract_distributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "contract_id"
     t.bigint "details_info_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["contract_id"], name: "index_contract_distributions_on_contract_id"
     t.index ["details_info_id"], name: "index_contract_distributions_on_details_info_id"
   end
 
   create_table "contract_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,12 +90,16 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.datetime "finish_at"
     t.integer "expire"
     t.bigint "contract_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["contract_type_id"], name: "index_contracts_on_contract_type_id"
   end
 
   create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "detail_bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,6 +107,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.bigint "vaccine_package_id"
     t.string "unit_price"
     t.string "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["vaccine_id"], name: "index_detail_bills_on_vaccine_id"
     t.index ["vaccine_package_id"], name: "index_detail_bills_on_vaccine_package_id"
   end
@@ -106,6 +122,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.bigint "vaccine_package_id"
     t.integer "number_injection"
     t.bigint "injection_book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_detail_injection_books_on_account_id"
     t.index ["injection_book_id"], name: "index_detail_injection_books_on_injection_book_id"
     t.index ["vaccination_center_id"], name: "index_detail_injection_books_on_vaccination_center_id"
@@ -116,6 +134,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
   create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.integer "total_injections"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["vaccine_id"], name: "index_detail_vaccine_packages_on_vaccine_id"
   end
 
@@ -137,6 +157,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "tax_code"
     t.bigint "vaccination_center_id"
     t.bigint "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["department_id"], name: "index_details_infos_on_department_id"
     t.index ["vaccination_center_id"], name: "index_details_infos_on_vaccination_center_id"
   end
@@ -146,7 +168,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.integer "quantity"
     t.bigint "vaccine_id"
     t.bigint "account_id"
-    t.datetime "created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_import_vaccines_on_account_id"
     t.index ["vaccine_id"], name: "index_import_vaccines_on_vaccine_id"
   end
@@ -159,6 +182,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "number_phone"
     t.string "current_address"
     t.string "permanent_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email"
   end
 
@@ -168,6 +193,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.datetime "date_of_birth"
     t.string "place_of_birth"
     t.bigint "info_injection_book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "gender", default: 0
     t.index ["info_injection_book_id"], name: "index_injection_books_on_info_injection_book_id"
   end
@@ -178,29 +205,39 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.datetime "registration_date"
     t.bigint "vaccine_package_id"
     t.string "book_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["vaccination_center_id"], name: "index_injection_schedules_on_vaccination_center_id"
     t.index ["vaccine_package_id"], name: "index_injection_schedules_on_vaccine_package_id"
   end
 
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vaccination_centers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
     t.string "address"
     t.string "number_phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vaccine_distributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.bigint "vaccination_center_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["vaccination_center_id"], name: "index_vaccine_distributions_on_vaccination_center_id"
     t.index ["vaccine_id"], name: "index_vaccine_distributions_on_vaccine_id"
   end
 
   create_table "vaccine_package_types", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -209,6 +246,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "code"
     t.string "total_injections"
     t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "vaccine_package_type_id"
     t.bigint "detail_vaccine_package_id"
     t.index ["detail_vaccine_package_id"], name: "index_vaccine_packages_on_detail_vaccine_package_id"
@@ -217,6 +256,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
 
   create_table "vaccine_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -229,6 +270,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_073920) do
     t.string "date_added"
     t.string "inventory"
     t.bigint "vaccine_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 

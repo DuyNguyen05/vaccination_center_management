@@ -8,6 +8,8 @@ class CreateBills < ActiveRecord::Migration[5.2]
       t.string :total_money
       t.string :code
       t.references :detail_bill, foreign_key: true
+
+      t.timestamps
     end
   end
 end

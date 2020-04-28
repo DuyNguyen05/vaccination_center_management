@@ -4,6 +4,8 @@ class CreateVaccinationCenters < ActiveRecord::Migration[5.2]
       t.string :code
       t.string :address
       t.string :number_phone
+
+      t.timestamps
     end
   end
 end
