@@ -12,3 +12,4 @@ en:
         quantity: Quantity
         user_code: User Code
         company_code: Company Code
+        created_at: Created At

@@ -5,6 +5,4 @@ class Admin < ApplicationRecord
 
   belongs_to :role
   belongs_to :details_info, optional: true
-  belongs_to :vaccine, optional: true
-
 end

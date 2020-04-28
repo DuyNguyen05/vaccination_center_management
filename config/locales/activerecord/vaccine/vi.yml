@@ -12,3 +12,4 @@ vi:
         quantity: Tồn Kho
         company_code: Mã Công Ty Phân Phối
         user_code: Mã Người Nhập
+        created_at: Nhập Ngày

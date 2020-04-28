@@ -10,6 +10,8 @@ en:
       create:
         created: Success
         failed: Fail
+      show:
+        vaccine: "Vaccine-%{name}"
       edit:
         edit_vaccine: Edit Vaccine
         submit: Update

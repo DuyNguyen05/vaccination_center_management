@@ -12,7 +12,7 @@
           .table-responsive.px-2
             = form_with model: [:admin, @vaccine], local: true do |f|
               = render "admin/shared/error_messages", object: f.object
-              = f.hidden_field :user_code, value: current_admin_admin.user_code
+              = f.hidden_field :admin_id, value: current_admin_admin.id
               .form-group
                 = f.label Vaccine.human_attribute_name(:code), class: "required"
                 = f.text_field :code, class: "form-control"

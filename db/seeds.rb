@@ -38,7 +38,7 @@
   company_code =  Company.pluck(:company_code).sample
 
   Vaccine.create!(
-    code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first, company_code: company_code
+    code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code
   )
 end
 

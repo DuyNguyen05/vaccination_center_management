@@ -12,6 +12,8 @@ vi:
       create:
         created: Tạo Mới Vaccine Thành Công
         failed: Đã Có lỗi, Hãy Kiểm Tra Lại
+      show:
+        vaccine: "Vaccine-%{name}"
       edit:
         edit_vaccine: Sửa Thông Tin Vaccine
         submit: Cập Nhật
