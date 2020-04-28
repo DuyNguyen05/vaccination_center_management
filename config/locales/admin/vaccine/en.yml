@@ -7,9 +7,13 @@ en:
         import: Submit
       new:
         submit: Create
+      create:
+        created: Success
+        failed: Fail
       edit:
         edit_vaccine: Edit Vaccine
         submit: Update
-  time:
-    formats:
-      date_month_year_concise: "%d-%m-%Y"
+      update:
+        updated: Updated
+      destroy:
+        deleted: Deleted

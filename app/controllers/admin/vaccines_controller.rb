@@ -1,5 +1,5 @@
 class Admin::VaccinesController < Admin::AdminController
-  before_action :set_vaccine, only: [:edit, :update, :destroy]
+  before_action :set_vaccine, only: [:show, :edit, :update, :destroy]
 
   def index
     @vaccines = Vaccine.match_query(params[:query]).page(params[:page])
@@ -10,13 +10,18 @@ class Admin::VaccinesController < Admin::AdminController
   end
 
   def create
+    company_code = Company.find_by(company_code: params[:vaccine][:company_code])
+    vaccine_data = vaccine_params.merged(company_code: company_code) if company_code.present?
     @vaccine = Vaccine.new(vaccine_params)
     if @vaccine.save
+      flash[:success] = t(".created")
       redirect_to admin_vaccines_path
     else
       render :new
     end
   end
+
+  def show; end
 
   def edit
     respond_to do |format|

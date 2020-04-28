@@ -277,9 +277,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_060316) do
     t.bigint "admin_id"
     t.bigint "company_id"
     t.index ["admin_id"], name: "index_vaccines_on_admin_id"
-    t.index ["company_code"], name: "index_vaccines_on_company_code", unique: true
     t.index ["company_id"], name: "index_vaccines_on_company_id"
-    t.index ["user_code"], name: "index_vaccines_on_user_code", unique: true
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 

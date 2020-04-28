@@ -10,3 +10,5 @@ en:
         expiry_date: Expiry Date
         content: Effect
         quantity: Quantity
+        user_code: User Code
+        company_code: Company Code

@@ -3,4 +3,5 @@
 <% else %>
   $("#vaccines").html("<%= j render 'admin/vaccines/vaccine', vaccines: @vaccines %>");
   $("#modalVaccineEdit<%= @vaccine.id %>").modal("hide");
+  toastr["info"]("<%= I18n.t("admin.vaccines.update.updated") %>");
 <% end %>

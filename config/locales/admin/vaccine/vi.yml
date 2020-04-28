@@ -9,11 +9,15 @@ vi:
         show_all: Tất Cả Vaccines
       new:
         submit: Tạo
+      create:
+        created: Tạo Mới Vaccine Thành Công
+        failed: Đã Có lỗi, Hãy Kiểm Tra Lại
       edit:
         edit_vaccine: Sửa Thông Tin Vaccine
         submit: Cập Nhật
       vaccine:
         are_you_sure: "Bạn có chắc muốn xóa vaccine %{name}"
-  time:
-    formats:
-      date_month_year_concise: "%d/%m/%Y"
+      update:
+        updated: Cập Nhật Thành Công
+      destroy:
+        deleted: Xóa Vaccine Thành Công

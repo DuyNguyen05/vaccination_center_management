@@ -10,3 +10,5 @@ vi:
         expiry_date: Hạn Sử Dụng
         content: Tác Dụng
         quantity: Tồn Kho
+        company_code: Mã Công Ty Phân Phối
+        user_code: Mã Người Nhập

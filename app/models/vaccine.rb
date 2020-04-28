@@ -14,4 +14,6 @@ class Vaccine < ApplicationRecord
   validates :content, presence: true
   validates :expiry_date, presence: true
   validates :quantity, presence: true
+  validates :company_code, presence: true
+
 end

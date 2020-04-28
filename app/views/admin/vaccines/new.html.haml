@@ -12,22 +12,26 @@
           .table-responsive.px-2
             = form_with model: [:admin, @vaccine], local: true do |f|
               = render "admin/shared/error_messages", object: f.object
+              = f.hidden_field :user_code, value: current_admin_admin.user_code
               .form-group
-                = f.label Vaccine.human_attribute_name(:code)
+                = f.label Vaccine.human_attribute_name(:code), class: "required"
                 = f.text_field :code, class: "form-control"
               .form-group
-                = f.label Vaccine.human_attribute_name(:name)
+                = f.label Vaccine.human_attribute_name(:name), class: "required"
                 = f.text_field :name, class: "form-control"
               .form-group
-                = f.label Vaccine.human_attribute_name(:manufacture)
+                = f.label Vaccine.human_attribute_name(:manufacture), class: "required"
                 = f.text_field :manufacture, class: "form-control"
               .form-group
-                = f.label Vaccine.human_attribute_name(:content)
+                = f.label Vaccine.human_attribute_name(:content), class: "required"
                 = f.text_field :content, class: "form-control"
               .form-group
-                = f.label Vaccine.human_attribute_name(:expiry_date)
+                = f.label Vaccine.human_attribute_name(:expiry_date), class: "required"
                 = f.date_field :expiry_date, class: "form-control"
               .form-group
-                = f.label Vaccine.human_attribute_name(:quantity)
+                = f.label Vaccine.human_attribute_name(:quantity), class: "required"
                 = f.number_field :quantity, class: "form-control"
+              .form-group
+                = f.label Vaccine.human_attribute_name(:company_code), class: "required"
+                = f.text_field :company_code, class: "form-control"
               = f.submit t(".submit"), class: "btn btn-primary"
