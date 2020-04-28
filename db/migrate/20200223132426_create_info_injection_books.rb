@@ -8,6 +8,8 @@ class CreateInfoInjectionBooks < ActiveRecord::Migration[5.2]
       t.string :number_phone
       t.string :current_address
       t.string :permanent_address
+
+      t.timestamps
     end
   end
 end

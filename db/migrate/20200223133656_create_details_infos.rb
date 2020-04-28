@@ -18,6 +18,8 @@ class CreateDetailsInfos < ActiveRecord::Migration[5.2]
       t.string :tax_code
       t.references :vaccination_center, foreign_key: true
       t.references :department, foreign_key: true
+
+      t.timestamps
     end
   end
 end

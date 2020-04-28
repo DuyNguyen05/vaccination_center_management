@@ -6,6 +6,8 @@ class CreateInjectionSchedules < ActiveRecord::Migration[5.2]
       t.datetime :registration_date
       t.references :vaccine_package, foreign_key: true
       t.string :book_code
+
+      t.timestamps
     end
   end
 end

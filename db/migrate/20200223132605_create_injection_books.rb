@@ -6,6 +6,8 @@ class CreateInjectionBooks < ActiveRecord::Migration[5.2]
       t.datetime :date_of_birth
       t.string :place_of_birth
       t.references :info_injection_book, foreign_key: true
+
+      t.timestamps
     end
   end
 end
