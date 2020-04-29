@@ -4,6 +4,7 @@ vi:
       index:
         add_company: Thêm Công Ty
         search: Nhập Tên Hoặc Mã Công Ty
+        show_all: Tất Cả Các Công Ty
       new:
         add_company: Thêm Công Ty
         submit: Tạo Công Ty

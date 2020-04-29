@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    models:
+      vaccine_package_type: Vaccine
+    attributes:
+      vaccine_package_type:
+        name: Tên Gói Vaccine
+        created_at: Tạo Ngày
+        id: ID
