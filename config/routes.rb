@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :details_infos
       resources :import_vaccines
       resources :vaccines
+      resources :vaccine_package_types
     end
   end
 end

@@ -1,0 +1,24 @@
+vi:
+  admin:
+    vaccine_package_types:
+      index:
+        search: Nhập vào tên chủng loại
+        add_vaccine_package_type: Thêm Chủng Loại Tiêm
+        show_all: Tất Cả Chủng Loại Tiêm
+      new:
+        add_vaccine_package_type: Thêm Chủng Loại Tiêm
+        submit: Tạo
+      create:
+        created: Tạo Mới Chủng Loại Tiêm Thành Công
+        failed: Đã Có lỗi, Hãy Kiểm Tra Lại
+      show:
+        vaccine: "Vaccine-%{name}"
+      edit:
+        edit_vaccine_package_type: Sửa Thông Tin Chủng Loại Tiêm
+        submit: Cập Nhật
+      vaccine_package_type:
+        are_you_sure: "Bạn có chắc muốn xóa Chủng Loại Tiêm %{name}"
+      update:
+        updated: Cập Nhật Thành Công
+      destroy:
+        deleted: Xóa Chủng Loại Tiêm Thành Công

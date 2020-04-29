@@ -1,0 +1,23 @@
+en:
+  admin:
+    vaccine_package_types:
+      index:
+        search: Enter Vaccine Package Type
+        add_vaccine_package_type: Add Vaccine package Type
+        show_all: Show All Vaccine package Type
+      new:
+        submit: Create
+      create:
+        created: Success
+        failed: Fail
+      show:
+        vaccine: "Vaccine-%{name}"
+      edit:
+        edit_vaccine_package_type: Edit Vaccine package Type
+        submit: Update
+      vaccine_package_type:
+        are_you_sure: "Are you sure delete %{name}"
+      update:
+        updated: Updated
+      destroy:
+        deleted: Success

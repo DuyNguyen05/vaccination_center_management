@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      vaccine_package_type: Vaccine Package Type
+    attributes:
+      vaccine_package_type:
+        name: Name
+        created_at: Created At
+        id: ID
