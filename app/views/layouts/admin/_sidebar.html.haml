@@ -68,6 +68,18 @@
               .sb-nav-link-icon
                 %i.fas.fa-arrow-circle-right
               = t("admin.vaccine_package_types.index.show_all")
+        %a.nav-link.collapsed{"aria-controls" => "collapseDepartments", "aria-expanded" => "false", "data-target" => "#collapseDepartments", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-columns
+          = t("admin.sidebar.department_management")
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapseDepartments.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordion"}
+          %nav.sb-sidenav-menu-nested.nav
+            = link_to admin_departments_path, class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-boxes
+              = t("admin.departments.index.show_all")
         %a.nav-link.collapsed{"aria-controls" => "collapsePages", "aria-expanded" => "false", "data-target" => "#collapsePages", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
             %i.fas.fa-book-open

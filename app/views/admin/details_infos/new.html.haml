@@ -117,7 +117,7 @@
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-hospital-alt
-                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1 pb-custom"
+                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1"
             .col-xl-6.col-lg-6
               %fieldset
                 .form-group
@@ -129,7 +129,7 @@
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-envelope
-                        = f.email_field :email, placeholder: DetailsInfo.human_attribute_name("email"), class: "form-control bg-light border-1", required: true
+                        = f.email_field :email, placeholder: DetailsInfo.human_attribute_name("email"), class: "form-control bg-light border-1 mdb-select md-form", required: true
                 .form-group
                   .row
                     %label.col-md-4.text-left
@@ -179,7 +179,7 @@
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-users
-                        = f.select :department_id, options_for_select(Department.pluck(:name, :id)),{}, class: "form-control mdb-select md-form pb-custom"
+                        = f.select :department_id, options_for_select(Department.pluck(:name, :id)), {}, class: "form-control mdb-select md-form"
             .col-xl-12.col-lg-12
               .form-group
                 .row

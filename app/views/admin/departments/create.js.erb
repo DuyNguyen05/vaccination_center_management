@@ -1,0 +1,7 @@
+<% if @department.errors.any? %>
+  alert("<%= I18n.t("error") %> <%= j @department.errors.full_messages.join('; ') %>")
+<% else %>
+  $("#deparments").html("<%= j render 'admin/deparments/department', departments: @departments %>");
+  $("#modalDepartment").modal("hide");
+  $(".modal-body input").val("")
+<% end %>

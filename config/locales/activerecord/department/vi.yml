@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    models:
+      department: DEPARTMENTS
+    attributes:
+      department:
+        id: ID
+        name: Tên Bộ Phận
+        detail: Chi Tiết

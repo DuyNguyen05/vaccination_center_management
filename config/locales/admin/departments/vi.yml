@@ -1,0 +1,12 @@
+vi:
+  admin:
+    departments:
+      index:
+        show_all: Tất Cả Phòng Ban
+        add_department: Thêm Phòng Ban
+        search: Nhập Tên Phòng Ban
+      new:
+        submit: Tạo
+      edit:
+        edit_department: Chỉnh Sửa Phòng Ban
+        submit: Cập Nhật
