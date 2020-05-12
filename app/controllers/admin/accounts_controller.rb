@@ -12,16 +12,18 @@ class Admin::AccountsController < Admin::AdminController
 
   def update
     role = Role.find(params[:role_id])
+    admin = Admin.find_by(user_code: @account.user_code)
     if @account.update role: role
-      flash[:success] = "Updated!!"
+      admin.update role: role
+      flash[:success] = t(".updated")
     else
       render :edit
     end
   end
 
   def destroy
-    @account.destroy
-    flash[:success] = "Deleted!"
+    @account.details_info.destroy
+    flash[:success] = t(".deleted")
     redirect_to admin_accounts_path
   end
 

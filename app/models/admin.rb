@@ -6,4 +6,12 @@ class Admin < ApplicationRecord
   belongs_to :role
   belongs_to :details_info, optional: true
 
+  def active_for_authentication?
+    super && self.role.admin? # i.e. super && self.is_active
+  end
+
+  def inactive_message
+    I18n.t("devise.failure.locked")
+  end
+
 end
