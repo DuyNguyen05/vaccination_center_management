@@ -8,7 +8,7 @@ class CreateAccountService
 
   def create_account(admin = nil)
     if @info_injection_book_id.present?
-      user_code = generate_user_code("PARENT-")
+      user_code = generate_user_code("USER-")
       Account.create! user_code: user_code, password: ENV["INIT_ACCOUNT_PASSWORD"],
         info_injection_book_id: @info_injection_book_id, role_id: Settings.active_record.account.role.user
     elsif admin == "true"

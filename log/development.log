@@ -1,0 +1,894 @@
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (865.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `vaccinenation_management`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (10.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `vaccinenation_management_test`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE DATABASE `vaccinenation_management` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE DATABASE `vaccinenation_management_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (53.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (56.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('4410691545064387170', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoles (20200223125515)
+  [1m[35m (54.1ms)[0m  [1m[35mCREATE TABLE `roles` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `role` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223125515_create_roles.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223125515')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDepartments (20200223130200)
+  [1m[35m (55.8ms)[0m  [1m[35mCREATE TABLE `departments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `detail` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223130200_create_departments.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223130200')[0m
+  ↳ bin/rails:9
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateContractTypes (20200223130811)
+  [1m[35m (65.3ms)[0m  [1m[35mCREATE TABLE `contract_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223130811_create_contract_types.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223130811')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateContracts (20200223131307)
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE TABLE `contracts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `start_at` datetime, `finish_at` datetime, `expire` int, `contract_type_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_contracts_on_contract_type_id`  (`contract_type_id`), CONSTRAINT `fk_rails_fd2358bc82`
+FOREIGN KEY (`contract_type_id`)
+  REFERENCES `contract_types` (`id`)
+)[0m
+  ↳ db/migrate/20200223131307_create_contracts.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131307')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccinationCenters (20200223131526)
+  [1m[35m (54.3ms)[0m  [1m[35mCREATE TABLE `vaccination_centers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `code` varchar(255), `address` varchar(255), `number_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223131526_create_vaccination_centers.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131526')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccineTypes (20200223131619)
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE TABLE `vaccine_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223131619_create_vaccine_types.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131619')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccinePackageTypes (20200223131741)
+  [1m[35m (55.1ms)[0m  [1m[35mCREATE TABLE `vaccine_package_types` (`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223131741_create_vaccine_package_types.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131741')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccines (20200223131949)
+  [1m[35m (63.0ms)[0m  [1m[35mCREATE TABLE `vaccines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `code` varchar(255), `name` varchar(255), `manufacture` varchar(255), `date_of_application` datetime, `expiry_date` varchar(255), `content` varchar(255), `date_added` varchar(255), `inventory` varchar(255), `vaccine_type_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_vaccines_on_vaccine_type_id`  (`vaccine_type_id`), CONSTRAINT `fk_rails_6be8309fb4`
+FOREIGN KEY (`vaccine_type_id`)
+  REFERENCES `vaccine_types` (`id`)
+)[0m
+  ↳ db/migrate/20200223131949_create_vaccines.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131949')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccinePackages (20200223132213)
+  [1m[35m (55.4ms)[0m  [1m[35mCREATE TABLE `vaccine_packages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `content` varchar(255), `code` varchar(255), `total_injections` varchar(255), `price` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223132213_create_vaccine_packages.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132213')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInfoInjectionBooks (20200223132426)
+  [1m[35m (55.3ms)[0m  [1m[35mCREATE TABLE `info_injection_books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `father_name` varchar(255), `identify_father` varchar(255), `mother_name` varchar(255), `identify_mother` varchar(255), `number_phone` varchar(255), `current_address` varchar(255), `permanent_address` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223132426_create_info_injection_books.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132426')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInjectionBooks (20200223132605)
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE TABLE `injection_books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `book_code` varchar(255), `name_person_injected` varchar(255), `date_of_birth` datetime, `place_of_birth` varchar(255), `info_injection_book_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_injection_books_on_info_injection_book_id`  (`info_injection_book_id`), CONSTRAINT `fk_rails_c7e3b5a5af`
+FOREIGN KEY (`info_injection_book_id`)
+  REFERENCES `info_injection_books` (`id`)
+)[0m
+  ↳ db/migrate/20200223132605_create_injection_books.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132605')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailBills (20200223132752)
+  [1m[35m (70.7ms)[0m  [1m[35mCREATE TABLE `detail_bills` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccine_id` bigint, `vaccine_package_id` bigint, `unit_price` varchar(255), `amount` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_detail_bills_on_vaccine_id`  (`vaccine_id`),  INDEX `index_detail_bills_on_vaccine_package_id`  (`vaccine_package_id`), CONSTRAINT `fk_rails_7d1284d070`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_8bbc5a69fd`
+FOREIGN KEY (`vaccine_package_id`)
+  REFERENCES `vaccine_packages` (`id`)
+)[0m
+  ↳ db/migrate/20200223132752_create_detail_bills.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132752')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInjectionSchedules (20200223133000)
+  [1m[35m (70.9ms)[0m  [1m[35mCREATE TABLE `injection_schedules` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccination_center_id` bigint, `injection_date` datetime, `registration_date` datetime, `vaccine_package_id` bigint, `book_code` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_injection_schedules_on_vaccination_center_id`  (`vaccination_center_id`),  INDEX `index_injection_schedules_on_vaccine_package_id`  (`vaccine_package_id`), CONSTRAINT `fk_rails_9fe7821a2e`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+, CONSTRAINT `fk_rails_e53fcc2639`
+FOREIGN KEY (`vaccine_package_id`)
+  REFERENCES `vaccine_packages` (`id`)
+)[0m
+  ↳ db/migrate/20200223133000_create_injection_schedules.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133000')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCompanies (20200223133230)
+  [1m[35m (56.9ms)[0m  [1m[35mCREATE TABLE `companies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `company_code` varchar(255), `name` varchar(255), `address` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223133230_create_companies.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133230')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccineDistribution (20200223133325)
+  [1m[35m (81.0ms)[0m  [1m[35mCREATE TABLE `vaccine_distributions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccine_id` bigint, `vaccination_center_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_vaccine_distributions_on_vaccine_id`  (`vaccine_id`),  INDEX `index_vaccine_distributions_on_vaccination_center_id`  (`vaccination_center_id`), CONSTRAINT `fk_rails_a00d744293`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_1eb63414e3`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+)[0m
+  ↳ db/migrate/20200223133325_create_vaccine_distribution.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133325')[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailsInfos (20200223133656)
+  [1m[35m (72.4ms)[0m  [1m[35mCREATE TABLE `details_infos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `identify` varchar(255), `number_phone` varchar(255), `permanent_address` varchar(255), `current_address` varchar(255), `bank` varchar(255), `bank_account_number` varchar(255), `language` varchar(255), `certificate` varchar(255), `experience` varchar(255), `nationality` varchar(255), `gender` varchar(255), `tax_code` varchar(255), `vaccination_center_id` bigint, `department_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_details_infos_on_vaccination_center_id`  (`vaccination_center_id`),  INDEX `index_details_infos_on_department_id`  (`department_id`), CONSTRAINT `fk_rails_4a29ac2ef0`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+, CONSTRAINT `fk_rails_1c9c8854b3`
+FOREIGN KEY (`department_id`)
+  REFERENCES `departments` (`id`)
+)[0m
+  ↳ db/migrate/20200223133656_create_details_infos.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133656')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20200223133844)
+  [1m[35m (70.2ms)[0m  [1m[35mCREATE TABLE `accounts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_code` varchar(255), `password` varchar(255), `avatar` varchar(255), `role_id` bigint, `details_info_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_accounts_on_role_id`  (`role_id`),  INDEX `index_accounts_on_details_info_id`  (`details_info_id`), CONSTRAINT `fk_rails_30e3719454`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+, CONSTRAINT `fk_rails_063f35057a`
+FOREIGN KEY (`details_info_id`)
+  REFERENCES `details_infos` (`id`)
+)[0m
+  ↳ db/migrate/20200223133844_create_accounts.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133844')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20200223134319)
+  [1m[35m (79.4ms)[0m  [1m[35mCREATE TABLE `bills` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `creation_time` datetime, `payment_time` datetime, `account_id` bigint, `injection_book_id` bigint, `total_money` varchar(255), `code` varchar(255), `detail_bill_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_bills_on_account_id`  (`account_id`),  INDEX `index_bills_on_injection_book_id`  (`injection_book_id`),  INDEX `index_bills_on_detail_bill_id`  (`detail_bill_id`), CONSTRAINT `fk_rails_79e8aa9e27`
+FOREIGN KEY (`account_id`)
+  REFERENCES `accounts` (`id`)
+, CONSTRAINT `fk_rails_950c6727bd`
+FOREIGN KEY (`injection_book_id`)
+  REFERENCES `injection_books` (`id`)
+, CONSTRAINT `fk_rails_0aec83a1e5`
+FOREIGN KEY (`detail_bill_id`)
+  REFERENCES `detail_bills` (`id`)
+)[0m
+  ↳ db/migrate/20200223134319_create_bills.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223134319')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateImportVaccines (20200223134531)
+  [1m[35m (70.7ms)[0m  [1m[35mCREATE TABLE `import_vaccines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `company_code` varchar(255), `quantity` int, `vaccine_id` bigint, `account_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_import_vaccines_on_vaccine_id`  (`vaccine_id`),  INDEX `index_import_vaccines_on_account_id`  (`account_id`), CONSTRAINT `fk_rails_90ed202a8b`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_ef14c1ea5f`
+FOREIGN KEY (`account_id`)
+  REFERENCES `accounts` (`id`)
+)[0m
+  ↳ db/migrate/20200223134531_create_import_vaccines.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223134531')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateContractDistributions (20200223135458)
+  [1m[35m (71.0ms)[0m  [1m[35mCREATE TABLE `contract_distributions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `contract_id` bigint, `details_info_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_contract_distributions_on_contract_id`  (`contract_id`),  INDEX `index_contract_distributions_on_details_info_id`  (`details_info_id`), CONSTRAINT `fk_rails_0790914afc`
+FOREIGN KEY (`contract_id`)
+  REFERENCES `contracts` (`id`)
+, CONSTRAINT `fk_rails_1544c95f7f`
+FOREIGN KEY (`details_info_id`)
+  REFERENCES `details_infos` (`id`)
+)[0m
+  ↳ db/migrate/20200223135458_create_contract_distributions.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223135458')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailVaccinePackages (20200223135741)
+  [1m[35m (62.5ms)[0m  [1m[35mCREATE TABLE `detail_vaccine_packages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccine_id` bigint, `total_injections` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_detail_vaccine_packages_on_vaccine_id`  (`vaccine_id`), CONSTRAINT `fk_rails_66cd411d1d`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+)[0m
+  ↳ db/migrate/20200223135741_create_detail_vaccine_packages.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223135741')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailInjectionBooks (20200223140301)
+  [1m[35m (96.8ms)[0m  [1m[35mCREATE TABLE `detail_injection_books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `injection_date` datetime, `react_after_injection` varchar(255), `vaccination_center_id` bigint, `account_id` bigint, `vaccine_id` bigint, `vaccine_package_id` bigint, `number_injection` int, `injection_book_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_detail_injection_books_on_vaccination_center_id`  (`vaccination_center_id`),  INDEX `index_detail_injection_books_on_account_id`  (`account_id`),  INDEX `index_detail_injection_books_on_vaccine_id`  (`vaccine_id`),  INDEX `index_detail_injection_books_on_vaccine_package_id`  (`vaccine_package_id`),  INDEX `index_detail_injection_books_on_injection_book_id`  (`injection_book_id`), CONSTRAINT `fk_rails_c612ff7a21`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+, CONSTRAINT `fk_rails_a6b54e1779`
+FOREIGN KEY (`account_id`)
+  REFERENCES `accounts` (`id`)
+, CONSTRAINT `fk_rails_82dd6cf174`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_495fe4aee1`
+FOREIGN KEY (`vaccine_package_id`)
+  REFERENCES `vaccine_packages` (`id`)
+, CONSTRAINT `fk_rails_674164edfc`
+FOREIGN KEY (`injection_book_id`)
+  REFERENCES `injection_books` (`id`)
+)[0m
+  ↳ db/migrate/20200223140301_create_detail_injection_books.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223140301')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddVaccinePackageTypeToVaccinePackages (20200225020544)
+  [1m[35m (103.3ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD `vaccine_package_type_id` int[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:3
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE  INDEX `index_vaccine_packages_on_vaccine_package_type_id`  ON `vaccine_packages` (`vaccine_package_type_id`) [0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:3
+  [1m[35m (151.5ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD CONSTRAINT `fk_rails_53095c83db`
+FOREIGN KEY (`vaccine_package_type_id`)
+  REFERENCES `vaccine_package_types` (`id`)
+[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:3
+  [1m[35m (108.6ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD `detail_vaccine_package_id` bigint[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:4
+  [1m[35m (49.8ms)[0m  [1m[35mCREATE  INDEX `index_vaccine_packages_on_detail_vaccine_package_id`  ON `vaccine_packages` (`detail_vaccine_package_id`) [0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:4
+  [1m[35m (157.7ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD CONSTRAINT `fk_rails_7ddbd981c2`
+FOREIGN KEY (`detail_vaccine_package_id`)
+  REFERENCES `detail_vaccine_packages` (`id`)
+[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200225020544')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColumnToInjectionBook (20200310101842)
+  [1m[35m (111.4ms)[0m  [1m[35mALTER TABLE `injection_books` ADD `gender` int DEFAULT 0[0m
+  ↳ db/migrate/20200310101842_add_column_to_injection_book.rb:3
+  [1m[35m (94.7ms)[0m  [1m[35mALTER TABLE `info_injection_books` ADD `email` varchar(255)[0m
+  ↳ db/migrate/20200310101842_add_column_to_injection_book.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200310101842')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddReferenceToAccount (20200310130709)
+  [1m[35m (116.2ms)[0m  [1m[35mALTER TABLE `accounts` ADD `info_injection_book_id` bigint[0m
+  ↳ db/migrate/20200310130709_add_reference_to_account.rb:3
+  [1m[35m (48.4ms)[0m  [1m[35mCREATE  INDEX `index_accounts_on_info_injection_book_id`  ON `accounts` (`info_injection_book_id`) [0m
+  ↳ db/migrate/20200310130709_add_reference_to_account.rb:3
+  [1m[35m (167.6ms)[0m  [1m[35mALTER TABLE `accounts` ADD CONSTRAINT `fk_rails_65f760d2f4`
+FOREIGN KEY (`info_injection_book_id`)
+  REFERENCES `info_injection_books` (`id`)
+[0m
+  ↳ db/migrate/20200310130709_add_reference_to_account.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200310130709')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAccounts (20200315072617)
+  [1m[35m (129.9ms)[0m  [1m[35mALTER TABLE `accounts` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:8
+  [1m[35m (126.8ms)[0m  [1m[35mALTER TABLE `accounts` ADD `reset_password_token` varchar(255)[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:11
+  [1m[35m (123.6ms)[0m  [1m[35mALTER TABLE `accounts` ADD `reset_password_sent_at` datetime[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:12
+  [1m[35m (125.9ms)[0m  [1m[35mALTER TABLE `accounts` ADD `remember_created_at` datetime[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:15
+  [1m[35m (48.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_accounts_on_reset_password_token`  ON `accounts` (`reset_password_token`) [0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200315072617')[0m
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColunmToVaccine (20200323090611)
+  [1m[35m (107.0ms)[0m  [1m[35mALTER TABLE `vaccines` ADD `tag` varchar(255) DEFAULT 'default'[0m
+  ↳ db/migrate/20200323090611_add_colunm_to_vaccine.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200323090611')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFormTemplate (20200423073037)
+  [1m[35m (55.5ms)[0m  [1m[35mCREATE TABLE `form_templates` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `content` varchar(255))[0m
+  ↳ db/migrate/20200423073037_create_form_template.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200423073037')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20200423073534)
+  [1m[35m (70.9ms)[0m  [1m[35mCREATE TABLE `admins` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_code` varchar(255), `password` varchar(255), `role_id` bigint, `details_info_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_admins_on_role_id`  (`role_id`),  INDEX `index_admins_on_details_info_id`  (`details_info_id`), CONSTRAINT `fk_rails_460554bff2`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+, CONSTRAINT `fk_rails_2e3df1aa71`
+FOREIGN KEY (`details_info_id`)
+  REFERENCES `details_infos` (`id`)
+)[0m
+  ↳ db/migrate/20200423073534_create_admins.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200423073534')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20200423073920)
+  [1m[35m (112.6ms)[0m  [1m[35mALTER TABLE `admins` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:7
+  [1m[35m (117.6ms)[0m  [1m[35mALTER TABLE `admins` ADD `reset_password_token` varchar(255)[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:10
+  [1m[35m (116.9ms)[0m  [1m[35mALTER TABLE `admins` ADD `reset_password_sent_at` datetime[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:11
+  [1m[35m (113.3ms)[0m  [1m[35mALTER TABLE `admins` ADD `remember_created_at` datetime[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:14
+  [1m[35m (50.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_reset_password_token`  ON `admins` (`reset_password_token`) [0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:39
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200423073920')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-05-16 11:40:59', '2020-05-16 11:40:59')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('4410691545064387170')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (955.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `vaccinenation_management`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `vaccinenation_management_test`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE `vaccinenation_management` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE DATABASE `vaccinenation_management_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (54.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (56.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('4410691545064387170', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoles (20200223125515)
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE TABLE `roles` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `role` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223125515_create_roles.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223125515')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDepartments (20200223130200)
+  [1m[35m (57.8ms)[0m  [1m[35mCREATE TABLE `departments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `detail` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223130200_create_departments.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223130200')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateContractTypes (20200223130811)
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE TABLE `contract_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223130811_create_contract_types.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223130811')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateContracts (20200223131307)
+  [1m[35m (62.4ms)[0m  [1m[35mCREATE TABLE `contracts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `start_at` datetime, `finish_at` datetime, `expire` int, `contract_type_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_contracts_on_contract_type_id`  (`contract_type_id`), CONSTRAINT `fk_rails_fd2358bc82`
+FOREIGN KEY (`contract_type_id`)
+  REFERENCES `contract_types` (`id`)
+)[0m
+  ↳ db/migrate/20200223131307_create_contracts.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131307')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccinationCenters (20200223131526)
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE TABLE `vaccination_centers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `code` varchar(255), `address` varchar(255), `number_phone` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223131526_create_vaccination_centers.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131526')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccineTypes (20200223131619)
+  [1m[35m (57.3ms)[0m  [1m[35mCREATE TABLE `vaccine_types` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223131619_create_vaccine_types.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131619')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccinePackageTypes (20200223131741)
+  [1m[35m (55.3ms)[0m  [1m[35mCREATE TABLE `vaccine_package_types` (`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223131741_create_vaccine_package_types.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131741')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccines (20200223131949)
+  [1m[35m (61.4ms)[0m  [1m[35mCREATE TABLE `vaccines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `code` varchar(255), `name` varchar(255), `manufacture` varchar(255), `date_of_application` datetime, `expiry_date` varchar(255), `content` varchar(255), `date_added` varchar(255), `inventory` varchar(255), `vaccine_type_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_vaccines_on_vaccine_type_id`  (`vaccine_type_id`), CONSTRAINT `fk_rails_6be8309fb4`
+FOREIGN KEY (`vaccine_type_id`)
+  REFERENCES `vaccine_types` (`id`)
+)[0m
+  ↳ db/migrate/20200223131949_create_vaccines.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223131949')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccinePackages (20200223132213)
+  [1m[35m (56.1ms)[0m  [1m[35mCREATE TABLE `vaccine_packages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `content` varchar(255), `code` varchar(255), `total_injections` varchar(255), `price` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223132213_create_vaccine_packages.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132213')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInfoInjectionBooks (20200223132426)
+  [1m[35m (55.9ms)[0m  [1m[35mCREATE TABLE `info_injection_books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `father_name` varchar(255), `identify_father` varchar(255), `mother_name` varchar(255), `identify_mother` varchar(255), `number_phone` varchar(255), `current_address` varchar(255), `permanent_address` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223132426_create_info_injection_books.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132426')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInjectionBooks (20200223132605)
+  [1m[35m (61.8ms)[0m  [1m[35mCREATE TABLE `injection_books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `book_code` varchar(255), `name_person_injected` varchar(255), `date_of_birth` datetime, `place_of_birth` varchar(255), `info_injection_book_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_injection_books_on_info_injection_book_id`  (`info_injection_book_id`), CONSTRAINT `fk_rails_c7e3b5a5af`
+FOREIGN KEY (`info_injection_book_id`)
+  REFERENCES `info_injection_books` (`id`)
+)[0m
+  ↳ db/migrate/20200223132605_create_injection_books.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132605')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailBills (20200223132752)
+  [1m[35m (72.9ms)[0m  [1m[35mCREATE TABLE `detail_bills` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccine_id` bigint, `vaccine_package_id` bigint, `unit_price` varchar(255), `amount` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_detail_bills_on_vaccine_id`  (`vaccine_id`),  INDEX `index_detail_bills_on_vaccine_package_id`  (`vaccine_package_id`), CONSTRAINT `fk_rails_7d1284d070`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_8bbc5a69fd`
+FOREIGN KEY (`vaccine_package_id`)
+  REFERENCES `vaccine_packages` (`id`)
+)[0m
+  ↳ db/migrate/20200223132752_create_detail_bills.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223132752')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInjectionSchedules (20200223133000)
+  [1m[35m (70.0ms)[0m  [1m[35mCREATE TABLE `injection_schedules` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccination_center_id` bigint, `injection_date` datetime, `registration_date` datetime, `vaccine_package_id` bigint, `book_code` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_injection_schedules_on_vaccination_center_id`  (`vaccination_center_id`),  INDEX `index_injection_schedules_on_vaccine_package_id`  (`vaccine_package_id`), CONSTRAINT `fk_rails_9fe7821a2e`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+, CONSTRAINT `fk_rails_e53fcc2639`
+FOREIGN KEY (`vaccine_package_id`)
+  REFERENCES `vaccine_packages` (`id`)
+)[0m
+  ↳ db/migrate/20200223133000_create_injection_schedules.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133000')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCompanies (20200223133230)
+  [1m[35m (53.7ms)[0m  [1m[35mCREATE TABLE `companies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `company_code` varchar(255), `name` varchar(255), `address` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200223133230_create_companies.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133230')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVaccineDistribution (20200223133325)
+  [1m[35m (71.2ms)[0m  [1m[35mCREATE TABLE `vaccine_distributions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccine_id` bigint, `vaccination_center_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_vaccine_distributions_on_vaccine_id`  (`vaccine_id`),  INDEX `index_vaccine_distributions_on_vaccination_center_id`  (`vaccination_center_id`), CONSTRAINT `fk_rails_a00d744293`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_1eb63414e3`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+)[0m
+  ↳ db/migrate/20200223133325_create_vaccine_distribution.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133325')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailsInfos (20200223133656)
+  [1m[35m (70.9ms)[0m  [1m[35mCREATE TABLE `details_infos` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `identify` varchar(255), `number_phone` varchar(255), `permanent_address` varchar(255), `current_address` varchar(255), `bank` varchar(255), `bank_account_number` varchar(255), `language` varchar(255), `certificate` varchar(255), `experience` varchar(255), `nationality` varchar(255), `gender` varchar(255), `tax_code` varchar(255), `vaccination_center_id` bigint, `department_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_details_infos_on_vaccination_center_id`  (`vaccination_center_id`),  INDEX `index_details_infos_on_department_id`  (`department_id`), CONSTRAINT `fk_rails_4a29ac2ef0`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+, CONSTRAINT `fk_rails_1c9c8854b3`
+FOREIGN KEY (`department_id`)
+  REFERENCES `departments` (`id`)
+)[0m
+  ↳ db/migrate/20200223133656_create_details_infos.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133656')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20200223133844)
+  [1m[35m (70.6ms)[0m  [1m[35mCREATE TABLE `accounts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_code` varchar(255), `password` varchar(255), `avatar` varchar(255), `role_id` bigint, `details_info_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_accounts_on_role_id`  (`role_id`),  INDEX `index_accounts_on_details_info_id`  (`details_info_id`), CONSTRAINT `fk_rails_30e3719454`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+, CONSTRAINT `fk_rails_063f35057a`
+FOREIGN KEY (`details_info_id`)
+  REFERENCES `details_infos` (`id`)
+)[0m
+  ↳ db/migrate/20200223133844_create_accounts.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223133844')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20200223134319)
+  [1m[35m (78.3ms)[0m  [1m[35mCREATE TABLE `bills` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `creation_time` datetime, `payment_time` datetime, `account_id` bigint, `injection_book_id` bigint, `total_money` varchar(255), `code` varchar(255), `detail_bill_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_bills_on_account_id`  (`account_id`),  INDEX `index_bills_on_injection_book_id`  (`injection_book_id`),  INDEX `index_bills_on_detail_bill_id`  (`detail_bill_id`), CONSTRAINT `fk_rails_79e8aa9e27`
+FOREIGN KEY (`account_id`)
+  REFERENCES `accounts` (`id`)
+, CONSTRAINT `fk_rails_950c6727bd`
+FOREIGN KEY (`injection_book_id`)
+  REFERENCES `injection_books` (`id`)
+, CONSTRAINT `fk_rails_0aec83a1e5`
+FOREIGN KEY (`detail_bill_id`)
+  REFERENCES `detail_bills` (`id`)
+)[0m
+  ↳ db/migrate/20200223134319_create_bills.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223134319')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateImportVaccines (20200223134531)
+  [1m[35m (70.6ms)[0m  [1m[35mCREATE TABLE `import_vaccines` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `company_code` varchar(255), `quantity` int, `vaccine_id` bigint, `account_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_import_vaccines_on_vaccine_id`  (`vaccine_id`),  INDEX `index_import_vaccines_on_account_id`  (`account_id`), CONSTRAINT `fk_rails_90ed202a8b`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_ef14c1ea5f`
+FOREIGN KEY (`account_id`)
+  REFERENCES `accounts` (`id`)
+)[0m
+  ↳ db/migrate/20200223134531_create_import_vaccines.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223134531')[0m
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateContractDistributions (20200223135458)
+  [1m[35m (71.2ms)[0m  [1m[35mCREATE TABLE `contract_distributions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `contract_id` bigint, `details_info_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_contract_distributions_on_contract_id`  (`contract_id`),  INDEX `index_contract_distributions_on_details_info_id`  (`details_info_id`), CONSTRAINT `fk_rails_0790914afc`
+FOREIGN KEY (`contract_id`)
+  REFERENCES `contracts` (`id`)
+, CONSTRAINT `fk_rails_1544c95f7f`
+FOREIGN KEY (`details_info_id`)
+  REFERENCES `details_infos` (`id`)
+)[0m
+  ↳ db/migrate/20200223135458_create_contract_distributions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223135458')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailVaccinePackages (20200223135741)
+  [1m[35m (62.9ms)[0m  [1m[35mCREATE TABLE `detail_vaccine_packages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `vaccine_id` bigint, `total_injections` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_detail_vaccine_packages_on_vaccine_id`  (`vaccine_id`), CONSTRAINT `fk_rails_66cd411d1d`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+)[0m
+  ↳ db/migrate/20200223135741_create_detail_vaccine_packages.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223135741')[0m
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDetailInjectionBooks (20200223140301)
+  [1m[35m (98.3ms)[0m  [1m[35mCREATE TABLE `detail_injection_books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `injection_date` datetime, `react_after_injection` varchar(255), `vaccination_center_id` bigint, `account_id` bigint, `vaccine_id` bigint, `vaccine_package_id` bigint, `number_injection` int, `injection_book_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_detail_injection_books_on_vaccination_center_id`  (`vaccination_center_id`),  INDEX `index_detail_injection_books_on_account_id`  (`account_id`),  INDEX `index_detail_injection_books_on_vaccine_id`  (`vaccine_id`),  INDEX `index_detail_injection_books_on_vaccine_package_id`  (`vaccine_package_id`),  INDEX `index_detail_injection_books_on_injection_book_id`  (`injection_book_id`), CONSTRAINT `fk_rails_c612ff7a21`
+FOREIGN KEY (`vaccination_center_id`)
+  REFERENCES `vaccination_centers` (`id`)
+, CONSTRAINT `fk_rails_a6b54e1779`
+FOREIGN KEY (`account_id`)
+  REFERENCES `accounts` (`id`)
+, CONSTRAINT `fk_rails_82dd6cf174`
+FOREIGN KEY (`vaccine_id`)
+  REFERENCES `vaccines` (`id`)
+, CONSTRAINT `fk_rails_495fe4aee1`
+FOREIGN KEY (`vaccine_package_id`)
+  REFERENCES `vaccine_packages` (`id`)
+, CONSTRAINT `fk_rails_674164edfc`
+FOREIGN KEY (`injection_book_id`)
+  REFERENCES `injection_books` (`id`)
+)[0m
+  ↳ db/migrate/20200223140301_create_detail_injection_books.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200223140301')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddVaccinePackageTypeToVaccinePackages (20200225020544)
+  [1m[35m (98.8ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD `vaccine_package_type_id` int[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:3
+  [1m[35m (45.4ms)[0m  [1m[35mCREATE  INDEX `index_vaccine_packages_on_vaccine_package_type_id`  ON `vaccine_packages` (`vaccine_package_type_id`) [0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:3
+  [1m[35m (148.8ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD CONSTRAINT `fk_rails_53095c83db`
+FOREIGN KEY (`vaccine_package_type_id`)
+  REFERENCES `vaccine_package_types` (`id`)
+[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:3
+  [1m[35m (110.8ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD `detail_vaccine_package_id` bigint[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:4
+  [1m[35m (45.3ms)[0m  [1m[35mCREATE  INDEX `index_vaccine_packages_on_detail_vaccine_package_id`  ON `vaccine_packages` (`detail_vaccine_package_id`) [0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:4
+  [1m[35m (157.4ms)[0m  [1m[35mALTER TABLE `vaccine_packages` ADD CONSTRAINT `fk_rails_7ddbd981c2`
+FOREIGN KEY (`detail_vaccine_package_id`)
+  REFERENCES `detail_vaccine_packages` (`id`)
+[0m
+  ↳ db/migrate/20200225020544_add_vaccine_package_type_to_vaccine_packages.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200225020544')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColumnToInjectionBook (20200310101842)
+  [1m[35m (99.1ms)[0m  [1m[35mALTER TABLE `injection_books` ADD `gender` int DEFAULT 0[0m
+  ↳ db/migrate/20200310101842_add_column_to_injection_book.rb:3
+  [1m[35m (102.3ms)[0m  [1m[35mALTER TABLE `info_injection_books` ADD `email` varchar(255)[0m
+  ↳ db/migrate/20200310101842_add_column_to_injection_book.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200310101842')[0m
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddReferenceToAccount (20200310130709)
+  [1m[35m (115.1ms)[0m  [1m[35mALTER TABLE `accounts` ADD `info_injection_book_id` bigint[0m
+  ↳ db/migrate/20200310130709_add_reference_to_account.rb:3
+  [1m[35m (40.6ms)[0m  [1m[35mCREATE  INDEX `index_accounts_on_info_injection_book_id`  ON `accounts` (`info_injection_book_id`) [0m
+  ↳ db/migrate/20200310130709_add_reference_to_account.rb:3
+  [1m[35m (177.4ms)[0m  [1m[35mALTER TABLE `accounts` ADD CONSTRAINT `fk_rails_65f760d2f4`
+FOREIGN KEY (`info_injection_book_id`)
+  REFERENCES `info_injection_books` (`id`)
+[0m
+  ↳ db/migrate/20200310130709_add_reference_to_account.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200310130709')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAccounts (20200315072617)
+  [1m[35m (125.3ms)[0m  [1m[35mALTER TABLE `accounts` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:8
+  [1m[35m (120.8ms)[0m  [1m[35mALTER TABLE `accounts` ADD `reset_password_token` varchar(255)[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:11
+  [1m[35m (123.3ms)[0m  [1m[35mALTER TABLE `accounts` ADD `reset_password_sent_at` datetime[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:12
+  [1m[35m (124.2ms)[0m  [1m[35mALTER TABLE `accounts` ADD `remember_created_at` datetime[0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:15
+  [1m[35m (49.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_accounts_on_reset_password_token`  ON `accounts` (`reset_password_token`) [0m
+  ↳ db/migrate/20200315072617_add_devise_to_accounts.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200315072617')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColunmToVaccine (20200323090611)
+  [1m[35m (108.9ms)[0m  [1m[35mALTER TABLE `vaccines` ADD `tag` varchar(255) DEFAULT 'default'[0m
+  ↳ db/migrate/20200323090611_add_colunm_to_vaccine.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200323090611')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFormTemplate (20200423073037)
+  [1m[35m (53.8ms)[0m  [1m[35mCREATE TABLE `form_templates` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `content` varchar(255))[0m
+  ↳ db/migrate/20200423073037_create_form_template.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200423073037')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20200423073534)
+  [1m[35m (70.3ms)[0m  [1m[35mCREATE TABLE `admins` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_code` varchar(255), `password` varchar(255), `role_id` bigint, `details_info_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_admins_on_role_id`  (`role_id`),  INDEX `index_admins_on_details_info_id`  (`details_info_id`), CONSTRAINT `fk_rails_460554bff2`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+, CONSTRAINT `fk_rails_2e3df1aa71`
+FOREIGN KEY (`details_info_id`)
+  REFERENCES `details_infos` (`id`)
+)[0m
+  ↳ db/migrate/20200423073534_create_admins.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200423073534')[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20200423073920)
+  [1m[35m (114.5ms)[0m  [1m[35mALTER TABLE `admins` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:7
+  [1m[35m (118.3ms)[0m  [1m[35mALTER TABLE `admins` ADD `reset_password_token` varchar(255)[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:10
+  [1m[35m (124.8ms)[0m  [1m[35mALTER TABLE `admins` ADD `reset_password_sent_at` datetime[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:11
+  [1m[35m (115.7ms)[0m  [1m[35mALTER TABLE `admins` ADD `remember_created_at` datetime[0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:14
+  [1m[35m (47.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_reset_password_token`  ON `admins` (`reset_password_token`) [0m
+  ↳ db/migrate/20200423073920_add_devise_to_admins.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200423073920')[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-05-16 11:42:00', '2020-05-16 11:42:00')[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('4410691545064387170')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
