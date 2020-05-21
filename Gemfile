@@ -25,6 +25,7 @@ gem "font_awesome5_rails"
 gem "devise"
 gem "pundit"
 gem "config"
+gem "wicked"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

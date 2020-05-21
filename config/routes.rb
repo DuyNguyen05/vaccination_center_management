@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :info_injection_books, except: [:index]
       resources :accounts, only: [:show]
       resources :details_infos, only: [:new, :create]
-      resources :injections, only: [:index]
+      resources :injections
     end
 
     namespace :admin do

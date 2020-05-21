@@ -14,7 +14,7 @@
           <%=  t(".gender") %>: <%= t("." + @injection_book.gender) %><br>
           <%=  t(".place_of_birth") %>: <%= @injection_book.place_of_birth %><br>
           <%= link_to t(".injection_schedule"), "#", class: "h6 mb-0 font-italic text-green-500"%><br>
-          <%= link_to t(".injection"), user_injections_path, class: "h6 mb-0 font-italic text-green-500"%>
+          <%= link_to t(".injection"), user_injection_path(id: :step_1, user: {id: @injection_book}), class: "h6 mb-0 font-italic text-green-500"%>
         </div>
       </div>
     </div>
