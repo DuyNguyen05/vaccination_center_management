@@ -33,7 +33,7 @@
     </div>
   </div>
   <div id="menu-jk" class="header-bottom">
-    <div class="container">
+    <div style="padding: 0px 220px 0px 220px;">
       <div class="row nav-row">
         <div class="col-lg-3 col-md-12 logo">
           <a href="#">
@@ -56,36 +56,32 @@
               <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link" href="#">
-                    <%= t("view.layouts.header.home") %>
+                    <%= t(".home") %>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <%= t("view.layouts.header.about") %>
+                    <%= t(".about") %>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <%= t("view.layouts.header.service") %>
+                    <%= t(".service") %>
                   </a>
                 </li>
 
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <%= t("view.layouts.header.doctor") %>
+                    <%= t(".doctor") %>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <%= t("view.layouts.header.contact") %>
+                    <%= t(".contact") %>
                   </a>
                 </li>
               </ul>
-              <a class="nav-btn" href="#">
-                <button class="btn btn-success">
-                  <%= t("view.layouts.header.book_calendar") %>
-                </button>
-              </a>
+              <%= link_to t(".book_calendar"), "#", class: "nav-btn btn btn-success" %>
             </div>
           </nav>
         </div>
