@@ -3,7 +3,9 @@ class CreateDetailBills < ActiveRecord::Migration[5.2]
     create_table :detail_bills do |t|
       t.references :vaccine, foreign_key: true
       t.references :vaccine_package, foreign_key: true
+      t.integer :number_injection
       t.string :unit_price
+      t.string :discount
       t.string :amount
 
       t.timestamps

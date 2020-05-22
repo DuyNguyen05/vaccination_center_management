@@ -21,3 +21,7 @@ vi:
         button:
           cancel: Hủy
           submit: Hoàn thành
+      index:
+        search: Tìm kiếm
+        add_user: Đăng ký thông tin
+        user_management: Quản lý thông tin đăng ký tiêm

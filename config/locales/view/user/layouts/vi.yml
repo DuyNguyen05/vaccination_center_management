@@ -20,12 +20,12 @@ vi:
           update_profile: Cập nhật hồ sơ cá nhân
           logout: Đăng xuất tài khoản
           forgot_password: Quên mật khẩu
-          info_account: Thông tin tài khoản
-          account_management: Quản lý tài khoản
+          info_account: Thông tin đăng ký
+          account_management: Quản lý thông tin đăng ký tiêm
           account_parents: Tài khoản của bố mẹ
           account_staff: Tài khoản của nhân viên
-          new_account: Tạo mới
-          list_account: Danh sách tài khoản
+          new_account: Đăng ký mới
+          list_account: Danh sách đăng ký
         header:
           search_for: Tìm kiếm
           notifications: Thông báo
