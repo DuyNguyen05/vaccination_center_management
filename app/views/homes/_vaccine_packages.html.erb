@@ -1,0 +1,20 @@
+<div class="our-services container-fluid">
+  <div class="container">
+    <h2>DỊCH VỤ GÓI TIÊM</h2>
+    <hr>
+    <div class="service-row row">
+      <% vaccine_packages.each do |vaccine_package| %>
+        <div class="col-md-3">
+          <div class="service-col">
+            <%= image_tag "s7.jpg" %>
+            <div class="serv-detail">
+              <i class="fab fa-pagelines"></i>
+              <h4><%= vaccine_package.name %></h4>
+              <p><%= vaccine_package.content %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

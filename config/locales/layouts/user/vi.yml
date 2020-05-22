@@ -1,0 +1,41 @@
+vi:
+  view:
+    layouts:
+      user:
+        sidebar:
+          vacinnation_center: Trung tâm tiêm chủng
+          dashboard: Trang chủ
+          administer_injection_procedure: Quản lý quy trình tiêm
+          injection_book: Sổ tiêm
+          administer_injection_book: Quản lý sổ tiêm
+          new_injection_book: Đăng ký sổ tiêm
+          list_injection_book: Danh sách sổ tiêm
+          administer_schedule: Quản lý lịch tiêm
+          injection_schedule: Lịch tiêm
+          new_injection_schedule: Tạo mới lịch tiêm
+          list_injection_schedule: Danh sách lịch tiêm
+          my_information: Thông tin của tôi
+          information_manage: Quản lý hồ sơ cá nhân
+          view_profile: Hồ sơ cá nhân
+          update_profile: Cập nhật hồ sơ cá nhân
+          logout: Đăng xuất tài khoản
+          forgot_password: Quên mật khẩu
+          info_account: Thông tin đăng ký
+          account_management: Quản lý thông tin đăng ký tiêm
+          account_parents: Tài khoản của bố mẹ
+          account_staff: Tài khoản của nhân viên
+          new_account: Đăng ký mới
+          list_account: Danh sách đăng ký
+        header:
+          search_for: Tìm kiếm
+          notifications: Thông báo
+          show_more: Hiển thị thêm
+          messages: Tin nhắn
+          read_more: Đọc thêm
+          profile: Hồ sơ cá nhân
+          setting: Cài đặt chung
+          activity_log: Nhật ký hoạt động
+          logout: Đăng xuất
+        footer:
+          copyright: Bản quyền © thuộc về Phương Thảo
+

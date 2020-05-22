@@ -4,4 +4,6 @@ class Vaccine < ApplicationRecord
   has_many :injection_books, through: :detail_injection_books
 
   enum tag: {default: "default", other: "other"}
+
+  scope :newest, -> { order(created_at: :desc) }
 end
