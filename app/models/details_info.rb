@@ -1,5 +1,4 @@
 class DetailsInfo < ApplicationRecord
-
   belongs_to :vaccination_center, optional: true
   belongs_to :department, optional: true
 
@@ -13,5 +12,4 @@ class DetailsInfo < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, without: /Settings.active_record.details_info.email.regex/
   validates :identify, presence: true, uniqueness: true
-
 end

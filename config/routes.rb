@@ -4,10 +4,10 @@ Rails.application.routes.draw do
       root "homes#index"
       devise_for :accounts
       resources :injection_books
-      resources :info_injection_books, except: [:index]
+      resources :info_injection_books
       resources :accounts, only: [:show]
       resources :details_infos, only: [:new, :create]
-      resources :injections
+      resources :detail_injection_books
     end
 
     namespace :admin do
