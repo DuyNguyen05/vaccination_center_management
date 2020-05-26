@@ -10,7 +10,7 @@
         .sb-sidenav-menu-heading Interface
         %a.nav-link.collapsed{"aria-controls" => "collapseAccounts", "aria-expanded" => "false", "data-target" => "#collapseAccounts", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
-            %i.fas.fa-columns
+            %i.fas.fa-users
           = t("admin.sidebar.user_management")
           .sb-sidenav-collapse-arrow
             %i.fas.fa-angle-down
@@ -24,9 +24,21 @@
               .sb-nav-link-icon
                 %i.fas.fa-plus-circle
               = t("admin.accounts.index.add_user")
+        %a.nav-link.collapsed{"aria-controls" => "collapseCompanies", "aria-expanded" => "false", "data-target" => "#collapseCompanies", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-building
+          = t("admin.sidebar.company_management")
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapseCompanies.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordion"}
+          %nav.sb-sidenav-menu-nested.nav
+            = link_to admin_companies_path, class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-arrow-circle-right
+              = t("admin.companies.index.show_all")
         %a.nav-link.collapsed{"aria-controls" => "collapseVaccines", "aria-expanded" => "false", "data-target" => "#collapseVaccines", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
-            %i.fas.fa-book-open
+            %i.fas.fa-bong
           = t("admin.sidebar.vaccine_management")
           .sb-sidenav-collapse-arrow
             %i.fas.fa-angle-down
@@ -44,6 +56,18 @@
               .sb-nav-link-icon
                 %i.fas.fa-file-import
               = t("admin.import_vaccines.new.import_data")
+        %a.nav-link.collapsed{"aria-controls" => "collapseVaccinePackageTypes", "aria-expanded" => "false", "data-target" => "#collapseVaccinePackageTypes", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-tags
+          = t("admin.sidebar.vaccine_package_type_management")
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapseVaccinePackageTypes.collapse{"aria-labelledby" => "headingTwo", "data-parent" => "#sidenavAccordion"}
+          %nav.sb-sidenav-menu-nested.nav
+            = link_to admin_vaccine_package_types_path , class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-arrow-circle-right
+              = t("admin.vaccine_package_types.index.show_all")
         %a.nav-link.collapsed{"aria-controls" => "collapsePages", "aria-expanded" => "false", "data-target" => "#collapsePages", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
             %i.fas.fa-book-open

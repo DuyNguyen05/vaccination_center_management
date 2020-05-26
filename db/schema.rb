@@ -54,9 +54,11 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.bigint "injection_book_id"
     t.string "total_money"
     t.string "code"
+    t.bigint "detail_bill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_bills_on_account_id"
+    t.index ["detail_bill_id"], name: "index_bills_on_detail_bill_id"
     t.index ["injection_book_id"], name: "index_bills_on_injection_book_id"
   end
 
@@ -114,9 +116,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
   create_table "detail_bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.bigint "vaccine_package_id"
-    t.integer "number_injection"
     t.string "unit_price"
-    t.string "discount"
     t.string "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -131,8 +131,10 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.string "react_after_injection"
     t.bigint "vaccination_center_id"
     t.bigint "account_id"
+    t.bigint "vaccine_id"
+    t.bigint "vaccine_package_id"
+    t.integer "number_injection"
     t.bigint "injection_book_id"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "bill_id"
@@ -142,6 +144,8 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.index ["check_before_injection_id"], name: "index_detail_injection_books_on_check_before_injection_id"
     t.index ["injection_book_id"], name: "index_detail_injection_books_on_injection_book_id"
     t.index ["vaccination_center_id"], name: "index_detail_injection_books_on_vaccination_center_id"
+    t.index ["vaccine_id"], name: "index_detail_injection_books_on_vaccine_id"
+    t.index ["vaccine_package_id"], name: "index_detail_injection_books_on_vaccine_package_id"
   end
 
   create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -307,10 +311,10 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.string "company_code"
     t.string "user_code"
     t.bigint "company_id"
+    t.string "tag", default: "default"
     t.index ["company_code"], name: "index_vaccines_on_company_code"
     t.index ["company_id"], name: "index_vaccines_on_company_id"
     t.index ["user_code"], name: "index_vaccines_on_user_code"
-    t.string "tag", default: "default"
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 
@@ -320,6 +324,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
   add_foreign_key "admins", "details_infos"
   add_foreign_key "admins", "roles"
   add_foreign_key "bills", "accounts"
+  add_foreign_key "bills", "detail_bills"
   add_foreign_key "bills", "injection_books"
   add_foreign_key "check_before_injections", "templates"
   add_foreign_key "check_before_injections", "vaccine_types"
@@ -334,6 +339,8 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
   add_foreign_key "detail_injection_books", "check_before_injections"
   add_foreign_key "detail_injection_books", "injection_books"
   add_foreign_key "detail_injection_books", "vaccination_centers"
+  add_foreign_key "detail_injection_books", "vaccine_packages"
+  add_foreign_key "detail_injection_books", "vaccines"
   add_foreign_key "detail_vaccine_packages", "vaccines"
   add_foreign_key "details_infos", "departments"
   add_foreign_key "details_infos", "vaccination_centers"

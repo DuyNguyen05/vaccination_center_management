@@ -4,6 +4,7 @@ en:
       index:
         add_company: Add Company
         search: Enter Company Code Or Name
+        show_all: Show All Company
       new:
         add_company: Add Company
         submit: Create
