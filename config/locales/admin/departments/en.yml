@@ -1,0 +1,12 @@
+en:
+  admin:
+    departments:
+      index:
+        show_all: Show All Departments
+        add_department: Add New Department
+        search: Enter The Name Department
+      new:
+        submit: Create
+      edit:
+        edit_department: Edit Department
+        submit: Update

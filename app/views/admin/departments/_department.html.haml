@@ -1,0 +1,13 @@
+- departments.each do |department|
+  %tr.text-center{id: "department#{department.id}"}
+    %td
+      = department.id
+    %td
+      = department.name
+    %td
+      = department.detail
+    %td
+      = link_to edit_admin_department_path(department, format: "js"), remote: true, class: "btn btn-basic btn-sm" do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      = link_to admin_department_path(department, format: "js"), remote: true, class: "btn btn-basic btn-sm", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
+        %i.fa.fa-trash{"aria-hidden" => "true"}

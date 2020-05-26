@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       resources :import_vaccines
       resources :vaccines
       resources :vaccine_package_types
+      resources :departments
+
+
+      devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
     end
   end
 end
