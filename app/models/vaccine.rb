@@ -16,4 +16,7 @@ class Vaccine < ApplicationRecord
   validates :quantity, presence: true
   validates :company_code, presence: true
 
+  enum tag: {default: "default", other: "other"}
+
+  scope :newest, -> { order(created_at: :desc) }
 end

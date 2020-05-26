@@ -7,7 +7,7 @@
   <div class="card-body">
     <div class="row">
       <% @injection_books.each do |injection_book| %>
-        <div class="col-xl-6 col-md-6 mb-6">
+        <div class="col-xl-6 col-md-6 mb-6 injection_book" id="<%= injection_book.id %>">
           <div class="card border-left-primary shadow h-100 py-1">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
@@ -18,6 +18,8 @@
                   <div class="small text-gray-700">
                     <%=  t(".date_of_birth") %>: <%= injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
                     <%= t(".year_old") + ": " %> <%= age(injection_book.date_of_birth) %><br>
+                    <%=  t(".gender") %>: <%= t("." + injection_book.gender) %><br>
+                    <%=  t(".place_of_birth") %>: <%= injection_book.place_of_birth %><br>
                     <%= link_to t(".injection_schedule"), "#", class: "h6 mb-0 font-italic text-green-500"%>
                   </div>
                 </div>

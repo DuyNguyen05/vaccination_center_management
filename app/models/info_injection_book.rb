@@ -11,6 +11,11 @@ class InfoInjectionBook < ApplicationRecord
   validates :number_phone, presence: true, uniqueness: true
   validates :email, uniqueness: true
 
+  scope :newest, -> { order(created_at: :desc) }
+  scope :filter_info_injection_books, ->(query) do
+    joins(:account).where("accounts.user_code LIKE :q OR identify_father LIKE :q OR identify_mother LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
+  end
+
   private
 
   def create_account

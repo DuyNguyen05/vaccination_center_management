@@ -1,4 +1,5 @@
 class User::InjectionBooksController < User::UserController
+  before_action :load_injection_book, only: :show
   before_action -> { authorize [:user, InjectionBook] }, only: [:new, :create, :show]
 
   def index

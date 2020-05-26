@@ -1,0 +1,25 @@
+- info_injection_books.each do |info_injection_book|
+  %tr
+    %td
+      = link_to "#{info_injection_book.account.user_code}", user_account_path(info_injection_book.account)
+    %td
+      = info_injection_book.father_name
+    %td
+      = info_injection_book.identify_father
+    %td
+      = info_injection_book.mother_name
+    %td
+      = info_injection_book.identify_mother
+    %td
+      = info_injection_book.number_phone
+    %td
+      = info_injection_book.email
+    %td
+      = info_injection_book.current_address
+    %td
+      = info_injection_book.permanent_address
+    %td
+      = link_to edit_user_info_injection_book_path(info_injection_book), class: "btn btn-basic btn-sm" do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      = link_to user_info_injection_book_path(info_injection_book), class: "btn btn-basic btn-sm", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
+        %i.fa.fa-trash{"aria-hidden" => "true"}
