@@ -1,0 +1,28 @@
+.card
+  .card-body.row
+    %h1.mt-4.col-12=  t("admin.sidebar.vaccine_management")
+    .col-8
+      %span
+        = link_to t(".add_vaccine"), new_admin_vaccine_path, class: "btn btn-primary"
+    .col-4
+      = form_tag admin_vaccines_path, method: :get do
+        .input-group
+          .input
+            = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+          %span.input-group-btn
+            = button_tag(type: "submit", class: "btn btn-primary") do
+              %i.fa.fa-search{"aria-hidden" => "true"}
+  .table-responsive
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("code")
+          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("name")
+          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("manufacture")
+          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("content")
+          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("expiry_date")
+          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("quantity")
+          %th.text-center
+      %tbody#vaccines
+        = render "admin/vaccines/vaccine", vaccines: @vaccines
+    = paginate @vaccines, theme: "twitter-bootstrap-4"

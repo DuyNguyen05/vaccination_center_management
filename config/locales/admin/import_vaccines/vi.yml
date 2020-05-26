@@ -1,0 +1,11 @@
+vi:
+  admin:
+    import_vaccines:
+      new:
+        import_data: Nhập Vaccine Tự Động
+        import: Nhập
+      create:
+        not_file_selected: Vui Lòng Chon File Để  Tải Lên
+        file_imported: Tải Lên Thành Công
+        error_import: Đã xả ra LỖI. Vui lòng Kiểm tra lại!
+

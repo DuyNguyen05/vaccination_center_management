@@ -298,14 +298,18 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.string "code"
     t.string "name"
     t.string "manufacture"
-    t.datetime "date_of_application"
-    t.string "expiry_date"
+    t.datetime "expiry_date"
     t.string "content"
-    t.string "date_added"
-    t.string "inventory"
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
+    t.string "company_code"
+    t.string "user_code"
+    t.bigint "company_id"
+    t.index ["company_code"], name: "index_vaccines_on_company_code"
+    t.index ["company_id"], name: "index_vaccines_on_company_id"
+    t.index ["user_code"], name: "index_vaccines_on_user_code"
     t.string "tag", default: "default"
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
@@ -345,5 +349,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
   add_foreign_key "vaccine_distributions", "vaccines"
   add_foreign_key "vaccine_packages", "detail_vaccine_packages"
   add_foreign_key "vaccine_packages", "vaccine_package_types"
+  add_foreign_key "vaccines", "companies"
   add_foreign_key "vaccines", "vaccine_types"
 end

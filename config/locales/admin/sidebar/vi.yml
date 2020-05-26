@@ -5,3 +5,6 @@ vi:
       user_management: Quản Lý Tài Khoản
       company_management: Quản Lý Công Ty
       logged_as: "Đăng Nhập Với Tài Khoản"
+      user_management: Quản Lý Người Dùng
+      company_management: Quản Lý Công Ty
+      vaccine_management: Quản Lý Vaccine

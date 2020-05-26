@@ -1,0 +1,21 @@
+en:
+  admin:
+    vaccines:
+      index:
+        search: Enter Vaccine Code Or Manufacture
+        import_data: Import Data
+        import: Submit
+      new:
+        submit: Create
+      create:
+        created: Success
+        failed: Fail
+      show:
+        vaccine: "Vaccine-%{name}"
+      edit:
+        edit_vaccine: Edit Vaccine
+        submit: Update
+      update:
+        updated: Updated
+      destroy:
+        deleted: Deleted

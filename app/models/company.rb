@@ -1,4 +1,7 @@
 class Company < ApplicationRecord
+
+  has_many :vaccines
+
   scope :match_query, ->(query) do
     where("company_code LIKE :q OR name LIKE :q", q: "%#{query}%") if query.present?
   end

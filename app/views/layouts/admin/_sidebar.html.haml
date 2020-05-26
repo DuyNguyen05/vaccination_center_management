@@ -17,9 +17,33 @@
         #collapseAccounts.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordion"}
           %nav.sb-sidenav-menu-nested.nav
             = link_to admin_accounts_path, class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-arrow-circle-right
               = t("admin.accounts.index.show_all")
             = link_to new_admin_details_info_path, class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-plus-circle
               = t("admin.accounts.index.add_user")
+        %a.nav-link.collapsed{"aria-controls" => "collapseVaccines", "aria-expanded" => "false", "data-target" => "#collapseVaccines", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-book-open
+          = t("admin.sidebar.vaccine_management")
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapseVaccines.collapse{"aria-labelledby" => "headingTwo", "data-parent" => "#sidenavAccordion"}
+          %nav.sb-sidenav-menu-nested.nav
+            = link_to admin_vaccines_path , class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-arrow-circle-right
+              = t("admin.vaccines.index.show_all")
+            = link_to new_admin_vaccine_path , class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-plus-circle
+              = t("admin.vaccines.index.add_vaccine")
+            = link_to new_admin_import_vaccine_path , class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-file-import
+              = t("admin.import_vaccines.new.import_data")
         %a.nav-link.collapsed{"aria-controls" => "collapsePages", "aria-expanded" => "false", "data-target" => "#collapsePages", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
             %i.fas.fa-book-open
