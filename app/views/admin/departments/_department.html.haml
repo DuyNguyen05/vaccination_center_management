@@ -3,7 +3,7 @@
     %td
       = department.id
     %td
-      = department.name
+      = link_to department.name, admin_department_path(department)
     %td
       = department.detail
     %td

@@ -41,6 +41,8 @@ class Admin::DepartmentsController < Admin::AdminController
     end
   end
 
+  def show; end
+
   def destroy
     @department.destroy
     respond_to do |format|
