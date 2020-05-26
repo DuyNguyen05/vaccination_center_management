@@ -1,0 +1,10 @@
+en:
+  admin:
+    import_vaccines:
+      new:
+        import_data: Import Vaccine
+        import: Import
+      create:
+        not_file_selected: Not File Selected
+        file_imported: File Imported
+        error_import: ERROR Imported

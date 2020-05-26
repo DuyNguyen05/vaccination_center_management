@@ -13,5 +13,4 @@ class Admin < ApplicationRecord
   def inactive_message
     I18n.t("devise.failure.locked")
   end
-
 end

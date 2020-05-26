@@ -1,0 +1,11 @@
+vi:
+  user:
+    homes:
+      index:
+        dashboard: Trang chủ
+        generate_report: Tạo báo cáo
+        injection_registration_schedule: Lịch đăng ký tiêm
+        injection_book_is_waiting: Sổ tiêm đang chờ
+        working_day_calendar: Lịch làm việc của tôi
+        report_today: Báo cáo hôm nay
+        overview: Tổng quan

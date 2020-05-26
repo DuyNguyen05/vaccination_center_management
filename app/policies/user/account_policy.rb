@@ -1,4 +1,8 @@
 class User::AccountPolicy < ApplicationPolicy
+  def index?
+    user.is_admin? || user.is_staff?
+  end
+
   def edit?
     user.is_current_user? record
   end

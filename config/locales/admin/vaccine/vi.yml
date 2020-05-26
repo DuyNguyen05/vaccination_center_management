@@ -1,0 +1,25 @@
+vi:
+  admin:
+    vaccines:
+      index:
+        search: Nhập vào mã vaccine hoặc nhà sản xuất
+        add_vaccine: Thêm Vaccine
+        import_data: Nhập Tự Động
+        import: Nhập
+        show_all: Tất Cả Vaccines
+      new:
+        submit: Tạo
+      create:
+        created: Tạo Mới Vaccine Thành Công
+        failed: Đã Có lỗi, Hãy Kiểm Tra Lại
+      show:
+        vaccine: "Vaccine-%{name}"
+      edit:
+        edit_vaccine: Sửa Thông Tin Vaccine
+        submit: Cập Nhật
+      vaccine:
+        are_you_sure: "Bạn có chắc muốn xóa vaccine %{name}"
+      update:
+        updated: Cập Nhật Thành Công
+      destroy:
+        deleted: Xóa Vaccine Thành Công

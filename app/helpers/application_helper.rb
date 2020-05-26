@@ -12,4 +12,12 @@ module ApplicationHelper
     return t(".born_yet") if age < 0
     return age.to_s + t(".year_old") if age > 0
   end
+
+  def vaccines
+    @vaccines = Vaccine.newest.limit(8)
+  end
+
+  def vaccine_packages
+    @vaccine_packages = VaccinePackage.newest.limit(8)
+  end
 end

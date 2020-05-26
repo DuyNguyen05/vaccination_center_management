@@ -25,6 +25,12 @@ gem "font_awesome5_rails"
 gem "devise"
 gem "pundit"
 gem "config"
+gem "roo"
+gem "toastr-rails"
+gem "wicked"
+gem 'owlcarousel-rails'
+gem "animate-rails"
+
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

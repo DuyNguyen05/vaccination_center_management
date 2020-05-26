@@ -4,6 +4,6 @@ vi:
       account: TÀI KHOẢN
     attributes:
       account:
-        user_code: Mã Nhân Viên
-        password: Mật Khẩu
+        user_code: Mã người dùng
+        password: Mật khẩu
         avatar: Ảnh đại diện

@@ -1,0 +1,2 @@
+class CheckBeforeInjection < ApplicationRecord
+end

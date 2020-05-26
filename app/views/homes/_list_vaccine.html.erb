@@ -1,0 +1,20 @@
+<div class="our-services container-fluid">
+  <div class="container">
+    <h2>DANH MỤC VACXIN</h2>
+    <hr>
+    <div class="service-row row">
+      <% vaccines.each do |vaccine| %>
+        <div class="col-md-3">
+          <div class="service-col">
+            <%= image_tag "s7.jpg" %>
+            <div class="serv-detail">
+              <i class="fab fa-pagelines"></i>
+              <h4><%= vaccine.name %></h4>
+              <p><%= vaccine.content %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
