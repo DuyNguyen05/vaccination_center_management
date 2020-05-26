@@ -41,6 +41,11 @@ class Admin::CompaniesController < Admin::AdminController
     end
   end
 
+  def show
+    code = @company.company_code
+    @vaccines = Vaccine.where(company_code: code).page(params[:page])
+  end
+
   def destroy
     @company.destroy
     respond_to do |format|
