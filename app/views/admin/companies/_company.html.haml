@@ -1,7 +1,7 @@
 - companies.each do |company|
   %tr.text-center{id: "company#{company.id}"}
     %td= company.company_code
-    %td= company.name
+    %td= link_to company.name, admin_company_path(company)
     %td= company.address
     %td
       = link_to edit_admin_company_path(company, format: 'js'), remote: true, class: "btn btn-success mr-3" do
