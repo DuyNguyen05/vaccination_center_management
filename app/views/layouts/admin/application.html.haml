@@ -18,7 +18,7 @@
           - if alert
             %p.alert.alert-danger
               = alert
-        = yield
+          = yield
         = render "layouts/admin/footer"
     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
     = render "layouts/admin/toastr"
