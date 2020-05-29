@@ -1,5 +1,7 @@
 class VaccinePackageType < ApplicationRecord
-  has_many :vaccine_packages, dependent: :destroy
+  has_many :detail_vaccine_packages, dependent: :destroy
+  has_many :vaccine, through: :detail_vaccine_packages, dependent: :destroy
+  has_many :injection_books, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
 

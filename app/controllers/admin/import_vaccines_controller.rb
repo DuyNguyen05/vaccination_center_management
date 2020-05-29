@@ -9,7 +9,7 @@ class Admin::ImportVaccinesController < Admin::AdminController
       redirect_to admin_vaccines_path
     else
       flash[:error] = t(".error_import")
-      redirect_to admin_vaccines_path
+      render :new
     end
   end
 end
