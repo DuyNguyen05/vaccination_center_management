@@ -1,5 +1,5 @@
 <% if @department.errors.any? %>
-  alert("<%= I18n.t("error") %> <%= j @department.errors.full_messages.join('; ') %>")
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @department.errors.full_messages.join('; ') %>")
 <% else %>
   $("#departments").html("<%= j render 'admin/departments/department', departments: @departments, department: @department  %>");
   $("#modalDepartmentEdit<%= @department.id %>").modal("hide");

@@ -10,7 +10,7 @@
         = form_with model: [:admin, @company], method: :patch do |f|
           .form-group
             = f.label Company.human_attribute_name(:company_code)
-            = f.text_field :company_code, class: "form-control"
+            = f.text_field :company_code, class: "form-control", disabled: true
           .form-group
             = f.label Company.human_attribute_name(:name)
             = f.text_field :name, class: "form-control"

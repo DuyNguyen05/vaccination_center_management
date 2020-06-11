@@ -13,20 +13,22 @@
 #   Company.create(company_code: company_code, name: name, address: address)
 # end
 
-# Role.create role: :admin
-# Role.create role: :super_admin
-# Role.create role: :user
-# Role.create role: :staff
+Role.create role: :admin
+Role.create role: :super_admin
+Role.create role: :user
+Role.create role: :staff
 
-# duy = DetailsInfo.create(first_name: "Duy", last_name: "Nguyen", identify: "12345678999", number_phone: "1234567890", email: "duynn.mta@gmail.com")
-# CreateAccountService.new(details_info_id: duy.id).create_account("true")
+duy = DetailsInfo.create(first_name: "Duy", last_name: "Nguyen", identify: "12345678999", number_phone: "1234567890", email: "duynn.mta@gmail.com")
+account = CreateAccountService.new(details_info_id: duy.id).create_account("true")
+Account.find(account.id).update! user_code: "admin-070397"
+Admin.find(account.id).update! user_code: "admin-070397"
 
-# 30.times do |n|
-#   code = "#{n + 1}"
-#   name = Faker::Company.name
+30.times do |n|
+  code = "#{n + 1}"
+  name = Faker::Company.name
 
-#   Company.create!(company_code: code, name: name)
-# end
+  Company.create!(company_code: code, name: name)
+end
 
 30.times do |n|
   code = Faker::Code.imei
@@ -42,4 +44,12 @@
   )
 end
 
+10.times do |n|
+  name = Faker::IndustrySegments.sector
+  content = Faker::Lorem.word
+
+  VaccinePackageType.create!(
+    name: name, content: content
+  )
+end
 

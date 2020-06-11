@@ -1,0 +1,33 @@
+.card
+  %h2.mt-4=  t(".detail_vaccine_package")
+  .card.my-4
+    .card-header
+      %i.fas.fa-search.mr-1
+      = t(".search_title")
+    .card-body
+      = form_tag admin_vaccine_package_type_detail_vaccine_packages_path(@vaccine_package_type.id), method: :get do
+        .row
+          .col-sm-12
+            .form-group
+              = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+            = button_tag(type: "submit", class: "btn btn-primary") do
+              %i.fa.fa-search{"aria-hidden" => "true"}
+              = t(".search_title")
+  .card.mb-4
+    .card-header
+      .row
+        .col-md-6.pt-2
+          %i.fas.fa-table.mr-1>
+          = t(".detail_vaccine_package")
+        .col-md-6.text-right
+          = link_to new_admin_vaccine_package_type_detail_vaccine_package_path, class: "btn btn-primary", type: :button do
+            %i.fas.fa-plus-square
+        %table.table.table-bordered.table-hover
+          %thead
+            %tr
+              %th.text-center= DetailVaccinePackage.human_attribute_name(:id)
+              %th.text-center= DetailVaccinePackage.human_attribute_name(:vaccine_id)
+              %th.text-center= DetailVaccinePackage.human_attribute_name(:total_injections)
+          %tbody#detail_vaccine_packages
+            = render "admin/detail_vaccine_packages/detail_vaccine_package", detail_vaccine_packages: @detail_vaccine_packages
+        = paginate @detail_vaccine_packages, theme: "twitter-bootstrap-4"

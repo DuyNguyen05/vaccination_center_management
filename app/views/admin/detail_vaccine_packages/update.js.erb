@@ -1,0 +1,6 @@
+<% if @detail_vaccine_package.errors.any? %>
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @detail_vaccine_package.errors.full_messages.join('; ') %>")
+<% else %>
+  $("#detail_vaccine_packages").html("<%= j render 'admin/detail_vaccine_packages/detail_vaccine_package', detail_vaccine_packages: @detail_vaccine_packages %>");
+  $("#modalDetailVaccinePackageEdit<%= @detail_vaccine_package.id %>").modal("hide");
+<% end %>

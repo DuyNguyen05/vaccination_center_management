@@ -1,0 +1,13 @@
+en:
+  admin:
+    detail_vaccine_packages:
+      index:
+        detail_vaccine_package: Detail Vaccine Package
+        search_title: Search
+        search: Enter Vaccine Code
+      new:
+        import_data: Import Data
+        import: Import
+      edit:
+        submit: Update
+        edit_detail_vaccine_package: Edit Detail Vaccine Package

@@ -18,6 +18,6 @@ module ApplicationHelper
   end
 
   def vaccine_packages
-    @vaccine_packages = VaccinePackage.newest.limit(8)
+    @vaccine_packages = VaccinePackageType.newest.limit(8)
   end
 end

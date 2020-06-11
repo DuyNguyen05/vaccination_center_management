@@ -1,0 +1,13 @@
+vi:
+  admin:
+    detail_vaccine_packages:
+      index:
+        detail_vaccine_package: Chi Tiết Gói Tiêm
+        search_title: Tìm Kiếm
+        search: Nhập Vào Mã Vaccine
+      new:
+        import_data: Nhập Dữ Liệu
+        import: Nhập
+      edit:
+        submit: Cập Nhật
+        edit_detail_vaccine_package: Chỉnh Sửa Chi Tiêt Gói Tiêm

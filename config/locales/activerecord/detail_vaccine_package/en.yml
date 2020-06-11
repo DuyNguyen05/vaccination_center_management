@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      detail_vaccine_package: Detail Vaccine Package
+    attributes:
+      detail_vaccine_package:
+        vaccine_id: Vaccine ID
+        created_at: Created At
+        id: ID
+        total_injections: Total Injection
+
