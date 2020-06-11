@@ -5,6 +5,8 @@ en:
         show_all: Show All Departments
         add_department: Add New Department
         search: Enter The Name Department
+        search_title: Search
+        department_list: Department List
       new:
         submit: Create
       edit:

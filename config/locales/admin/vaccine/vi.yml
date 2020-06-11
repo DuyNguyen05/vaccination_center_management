@@ -7,6 +7,8 @@ vi:
         import_data: Nhập Tự Động
         import: Nhập
         show_all: Tất Cả Vaccines
+        search_title: Tìm Kiếm
+        vaccine_list: Danh Sách Vaccine
       new:
         submit: Tạo
       create:

@@ -5,6 +5,8 @@ en:
         search: Enter Vaccine Code Or Manufacture
         import_data: Import Data
         import: Submit
+        search_title: Search
+        vaccine_list: Vaccine List
       new:
         submit: Create
       create:
