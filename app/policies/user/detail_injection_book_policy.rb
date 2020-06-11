@@ -6,4 +6,20 @@ class User::DetailInjectionBookPolicy < ApplicationPolicy
   def show?
     new?
   end
+
+  def index?
+    new?
+  end
+
+  def edit?
+    new?
+  end
+
+  def update?
+    new?
+  end
+
+  def create?
+    new?
+  end
 end
