@@ -7,7 +7,7 @@
     %td
       = department.detail
     %td
-      = link_to edit_admin_department_path(department, format: "js"), remote: true, class: "btn btn-basic btn-sm" do
+      = link_to edit_admin_department_path(department, format: "js"), remote: true, class: "btn btn-primary mr-3" do
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-      = link_to admin_department_path(department, format: "js"), remote: true, class: "btn btn-basic btn-sm", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
+      = link_to admin_department_path(department, format: "js"),  method: :delete, data: { confirm: t("confirm.are_you_sure") }, remote: true, class: "btn btn-danger" do
         %i.fa.fa-trash{"aria-hidden" => "true"}

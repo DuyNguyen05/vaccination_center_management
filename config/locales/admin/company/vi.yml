@@ -5,6 +5,8 @@ vi:
         add_company: Thêm Công Ty
         search: Nhập Tên Hoặc Mã Công Ty
         show_all: Tất Cả Các Công Ty
+        company_list: Danh Sách Công Ty
+        search_title: Tìm Kiếm
       new:
         add_company: Thêm Công Ty
         submit: Tạo Công Ty

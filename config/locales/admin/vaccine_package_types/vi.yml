@@ -5,6 +5,8 @@ vi:
         search: Nhập vào tên chủng loại
         add_vaccine_package_type: Thêm Chủng Loại Tiêm
         show_all: Tất Cả Chủng Loại Tiêm
+        search_title: Tìm Kiếm
+        vaccine_package_type_list: Tất Cả Chủng Loại Tiêm
       new:
         add_vaccine_package_type: Thêm Chủng Loại Tiêm
         submit: Tạo

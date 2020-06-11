@@ -5,6 +5,8 @@ en:
         add_company: Add Company
         search: Enter Company Code Or Name
         show_all: Show All Company
+        company_list: Company List
+        search_title: Search
       new:
         add_company: Add Company
         submit: Create

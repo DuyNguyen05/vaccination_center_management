@@ -5,6 +5,8 @@ vi:
         show_all: Tất Cả Phòng Ban
         add_department: Thêm Phòng Ban
         search: Nhập Tên Phòng Ban
+        search_title: Tìm Kiếm
+        department_list: Danh Sách Phòng Ban
       new:
         submit: Tạo
       edit:

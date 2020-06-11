@@ -1,25 +1,36 @@
 .card
-  .card-body.row
-    %h4.col-12.card-title=  t("admin.sidebar.company_management")
-    .col-8
-      %span
-        = link_to t(".add_company"), new_admin_company_path(format: "js"), remote: true, class: "btn btn-primary"
-    .col-4
+  %h2.mt-4= t("admin.sidebar.company_management")
+  .card.my-4
+    .card-header
+      %i.fas.fa-search.mr-1
+      = t(".search_title")
+    .card-body
       = form_tag admin_companies_path, method: :get do
-        .input-group
-          .input
-            = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
-          %span.input-group-btn
+        .row
+          .col-sm-12
+            .form-group
+              = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
             = button_tag(type: "submit", class: "btn btn-primary") do
               %i.fa.fa-search{"aria-hidden" => "true"}
-  .table-responsive
-    %table.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th.text-center{:scope => "col"}= Company.human_attribute_name("company_code")
-          %th.text-center{:scope => "col"}= Company.human_attribute_name("name")
-          %th.text-center{:scope => "col"}= Company.human_attribute_name("address")
-          %th.text-center
-      %tbody#companies
-        = render "admin/companies/company", companies: @companies
-    = paginate @companies, theme: "twitter-bootstrap-4"
+              = t(".search_title")
+  .card.mb-4
+    .card-header
+      .row
+        .col-md-6.pt-2
+          %i.fas.fa-table.mr-1>
+          = t(".company_list")
+        .col-md-6.text-right
+          = link_to new_admin_company_path(format: "js"), remote: true, class: "btn btn-primary" do
+            %i.fas.fa-plus-square
+    .card-body
+      .table-responsive
+        %table.table.table-bordered.table-hover
+          %thead
+            %tr
+              %th.text-center{:scope => "col"}= Company.human_attribute_name("company_code")
+              %th.text-center{:scope => "col"}= Company.human_attribute_name("name")
+              %th.text-center{:scope => "col"}= Company.human_attribute_name("address")
+              %th.text-center
+          %tbody#companies
+            = render "admin/companies/company", companies: @companies
+        = paginate @companies, theme: "twitter-bootstrap-4"

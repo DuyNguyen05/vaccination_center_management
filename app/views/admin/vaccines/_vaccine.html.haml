@@ -7,7 +7,7 @@
     %td= l(vaccine.expiry_date, format: :date_month_year_concise)
     %td= vaccine.quantity
     %td
-      = link_to edit_admin_vaccine_path(vaccine, format: 'js'), remote: true, class: "btn btn-success mr-3" do
-        = t(".edit")
-      = link_to admin_vaccine_path(vaccine, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: vaccine.name)}, remote: true, class: "btn btn-warning" do
-        = t(".destroy")
+      = link_to edit_admin_vaccine_path(vaccine, format: 'js'), remote: true, class: "btn btn-primary" do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      = link_to admin_vaccine_path(vaccine, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: vaccine.name)}, remote: true, class: "btn btn-danger" do
+        %i.fa.fa-trash{"aria-hidden" => "true"}
