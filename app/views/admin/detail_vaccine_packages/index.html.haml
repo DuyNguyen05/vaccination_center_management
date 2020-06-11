@@ -1,27 +1,33 @@
 .card
-.card.mb-4
-  .card-header
-    .row
-      %table.table.table-bordered.table-hover
-        %thead
-          %tr
-            %th.text-center= DetailVaccinePackage.human_attribute_name(:vaccine_id)
-            %th.text-center= DetailVaccinePackage.human_attribute_name(:total_injections)
-            %th.text-center= Account.human_attribute_name(:user_code)
-            -# %th
-        %tbody
-          - @detail_vaccince_packages.each do |detail_vaccine_package|
-            %tr.text-center
-              %td
-                = detail_vaccine_package.vaccine.name
-              %td
-                = detail_vaccine_package.total_injections
-              %td
-                -# = link_to "#{detail_vaccine_package.user_code}", admin_account_path(Account.find_by(user_code: detail_vaccine_package.user_code)
-                = link_to detail_vaccine_package.user_code, "#"
-      -#         %td
-      -#           = link_to edit_admin_details_info_path(detail_vaccine_package.details_info), class: "btn btn-primary mr-2" do
-      -#             %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-      -#           = link_to admin_account_path(detail_vaccine_package), class: "btn btn-danger", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
-      -#             %i.fa.fa-trash{"aria-hidden" => "true"}
-      -# = paginate @detail_vaccince_packages, theme: "twitter-bootstrap-4"
+  %h2.mt-4=  t(".detail_vaccine_package")
+  .card.my-4
+    .card-header
+      %i.fas.fa-search.mr-1
+      = t(".search_title")
+    .card-body
+      = form_tag admin_vaccine_package_type_detail_vaccine_packages_path(@vaccine_package_type.id), method: :get do
+        .row
+          .col-sm-12
+            .form-group
+              = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+            = button_tag(type: "submit", class: "btn btn-primary") do
+              %i.fa.fa-search{"aria-hidden" => "true"}
+              = t(".search_title")
+  .card.mb-4
+    .card-header
+      .row
+        .col-md-6.pt-2
+          %i.fas.fa-table.mr-1>
+          = t(".detail_vaccine_package")
+        .col-md-6.text-right
+          = link_to new_admin_vaccine_package_type_detail_vaccine_package_path, class: "btn btn-primary", type: :button do
+            %i.fas.fa-plus-square
+        %table.table.table-bordered.table-hover
+          %thead
+            %tr
+              %th.text-center= DetailVaccinePackage.human_attribute_name(:id)
+              %th.text-center= DetailVaccinePackage.human_attribute_name(:vaccine_id)
+              %th.text-center= DetailVaccinePackage.human_attribute_name(:total_injections)
+          %tbody#detail_vaccine_packages
+            = render "admin/detail_vaccine_packages/detail_vaccine_package", detail_vaccine_packages: @detail_vaccine_packages
+        = paginate @detail_vaccine_packages, theme: "twitter-bootstrap-4"

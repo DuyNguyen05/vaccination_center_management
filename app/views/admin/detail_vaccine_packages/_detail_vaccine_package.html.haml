@@ -1,0 +1,13 @@
+- @detail_vaccine_packages.each do |detail_vaccine_package|
+  %tr.text-center{id: "detail_vaccince_package#{detail_vaccine_package.id}"}
+    %td
+      = detail_vaccine_package.id
+    %td
+      = link_to detail_vaccine_package.vaccine.name, admin_vaccine_path(detail_vaccine_package.vaccine_id)
+    %td
+      = detail_vaccine_package.total_injections
+    %td
+      = link_to edit_admin_detail_vaccine_package_path(detail_vaccine_package, format: 'js'), remote: true, class: "btn btn-primary mr-2" do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      = link_to admin_detail_vaccine_package_path(detail_vaccine_package, format: 'js'), remote: true, class: "btn btn-danger", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
+        %i.fa.fa-trash{"aria-hidden" => "true"}

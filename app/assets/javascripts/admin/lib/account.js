@@ -15,12 +15,12 @@ $(document).on("change", "select#sel1", function (e) {
         },
         success: function (response) {
           console.log(role_id);
-          alert("Cập Nhật Thành Công");
+          toastr["info"]("Cập Nhật Thành Công");
           $self.data("value", role_id);
         },
       });
     } else {
-      alert("Đã Hủy Cập Nhật");
+      toastr["warning"]("Đã Hủy Cập Nhật");
       $(this).val(previous);
     }
   } catch (err) {

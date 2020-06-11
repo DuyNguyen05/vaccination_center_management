@@ -2,12 +2,12 @@
   %td
     = vaccine_package_type.id
   %td
-    = vaccine_package_type.name
+    = link_to vaccine_package_type.name, admin_vaccine_package_type_detail_vaccine_packages_path(vaccine_package_type.id)
   %td
     = l(vaccine_package_type.created_at, format: :date_month_year_concise)
   %td
-    = link_to edit_admin_vaccine_package_type_path(vaccine_package_type, format: 'js'), remote: true, class: "btn btn-success mr-3" do
-      = t(".edit")
-    = link_to admin_vaccine_package_type_path(vaccine_package_type, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: vaccine_package_type.name)}, remote: true, class: "btn btn-warning" do
-      = t(".destroy")
+    = link_to edit_admin_vaccine_package_type_path(vaccine_package_type, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
+      %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+    = link_to admin_vaccine_package_type_path(vaccine_package_type, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: vaccine_package_type.name)}, remote: true, class: "btn btn-danger" do
+      %i.fa.fa-trash{"aria-hidden" => "true"}
 

@@ -1,0 +1,17 @@
+.modal.fade.bd-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modalDetailVaccinePackageEdit#{detail_vaccine_package.id}"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h4
+          %b= t(".edit_detail_vaccine_package")
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        = form_with model: [:admin, detail_vaccine_package], method: :patch do |f|
+          .form-group
+            = f.label DetailVaccinePackage.human_attribute_name(:vaccine_id)
+            = f.text_field :vaccine_id, class: "form-control"
+          .form-group
+            = f.label DetailVaccinePackage.human_attribute_name(:total_injections)
+            = f.number_field :total_injections, class: "form-control"
+          = f.submit t(".submit"), class: "btn btn-primary"

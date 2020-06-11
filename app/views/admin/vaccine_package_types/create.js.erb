@@ -1,5 +1,5 @@
 <% if @vaccine_package_type.errors.any? %>
-  alert("<%= I18n.t("error") %> <%= j @vaccine_package_type.errors.full_messages.join('; ') %>")
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @vaccine_package_type.errors.full_messages.join('; ') %>")
 <% else %>
   $("#vaccine_package_types").html("<%= j render partial: "vaccine_package_type", collection: @vaccine_package_types %>");
   $("#modalVaccinePackageType").modal("hide");
