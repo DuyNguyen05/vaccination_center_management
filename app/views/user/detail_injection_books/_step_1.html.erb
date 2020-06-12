@@ -1,177 +1,152 @@
-<div class="form-card" style="color: black">
-  <br>
-  <div class="container">
-    <div class="text-center">
-      <i><h7>(Ban hành theo Quyết định số 04 /QĐ-BYT ngày 02/01/2014)</h7></i>
-      <h5 class="fs-title text-center"><strong>BẢNG KIỂM TRA TRƯỚC TIÊM CHỦNG ĐỐI VỚI TRẺ EM</strong></h5>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <p>Họ và tên bé: Nguyễn Khánh Linh</p>
-        <p>Tuổi: 12</p>
-        <p>Họ tên bố/mẹ: Nguyễn Thị Phương Thảo</p>
+<%= form.fields_for :check_before_injection, CheckBeforeInjection.new do |check_before_injection_attributes| %>
+  <div class="form-card" style="color: black">
+    <br>
+    <div class="container">
+      <div class="text-center">
+        <i><h7>(Ban hành theo Quyết định số 04 /QĐ-BYT ngày 02/01/2014)</h7></i>
+        <h5 class="fs-title text-center"><strong>BẢNG KIỂM TRA TRƯỚC TIÊM CHỦNG ĐỐI VỚI TRẺ EM</strong></h5>
+        <hr>
       </div>
-      <div class="col-md-6">
-        <p>Giới tính: Nữ</p>
-        <p>Sinh ngày: 22 tháng 09 năm 2019</p>
-        <p>Điện thoại: 0389746397</p>
-      </div>
-      <div class="col-md-12">
-        <p>Địa chỉ: Số 179, đường 422, xã Tân Lập, huyện Đan Phượng, TP. Hà Nội</p>
-      </div>
-      <div class="col-md-12">
-        <div class="table-responsive">
-          <table class="table table-bordered table-hover">
-            <thead>
-              <tr class="text-center">
-                <th>
-                  <p>Câu hỏi</p>
-                </th>
-                <th colspan="2">
-                  <p>Trả lời</p>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-center">
-                <td>
-                  <p>(Chọn có hoặc không theo mẫu câu hỏi sau)</p>
-                </td>
-                <td>
-                  <p>Có</p>
-                </td>
-                <td>
-                  <p>Không</p>
-                </td>
-              </tr>
-              <tr>
-                <th>
-                  <p>1. Phản ứng, sốc mạnh sau lần tiêm chủng trước:</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-              <tr>
-                <th>
-                  <p>2. Đang mắc bệnh mãn tính hoặc cấp tính tiến triển:</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-              <tr>
-                <th>
-                  <p>3. Đang hoặc mới kết thúc liều điều trị corticoid/gammaglobulin:</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-              <tr>
-                <th>
-                  <p>4. Sốt/Hạ thân nhiệt (Sốt: nhiệt độ >= 37,5 độ C; Hạ thân nhiệt: nhiệt độ: <= 35,5 độ C):</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-              <tr>
-                <th>
-                  <p>5. Nghe tim bất thường:</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-              <tr>
-                <th>
-                  <p>6. Nhịp thở, nghe phổi bất thường:</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-               <tr>
-                <th>
-                  <p>7. Thi giác bất thường (Ly bì hoặc kích thích):</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-               <tr>
-                <th>
-                  <p>8. Có các chống chỉ định khác:</p>
-                </th>
-                <div class="col-md-8 inputGroupContainer">
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, true, class: "form-check-input" %>
-                  </td>
-                  <td class="text-center">
-                    <%#= form.check_box :answer_question, {}, false, class: "form-check-input" %>
-                  </td>
-                </div>
-              </tr>
-            </tbody>
-          </table>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Họ và tên bé: Nguyễn Khánh Linh</p>
+          <p>Tuổi: 12</p>
+          <p>Họ tên bố/mẹ: Nguyễn Thị Phương Thảo</p>
         </div>
-        <hr>
-        <p><strong>Kết luận: </strong></p>
-        <p>Đủ điều kiện tiêm chủng ngay (Tất cả đều KHÔNG có điểm bất thường)</p>
-        <p>Loại thuốc tiêm lần này: <input></p>
-        <p>Chống chỉ định tiêm chủng (Khi CÓ điểm bất thường tại các mục 1-8)</p>
-        <p>Tạm hoãn tiêm chủng (Khi CÓ điểm bất thường tại các mục 2,3,4,5,6,7)</p>
-        <hr>
-        <br>
-        <div class="form-group text-center">
-          <div class="row">
-            <div class="col-md-12 inputGroupContainer">
-              <div class="form-check-inline">
-                <label class="form-check-label">
-                  <input type="checkbox"> <span>Đồng ý tiêm</span>
-                </label>
-              </div>
-              <div class="form-check-inline">
-                <label class="form-check-label">
-                  <input type="checkbox"> <span>Không đồng ý tiêm</span>
-                </label>
+        <div class="col-md-6">
+          <p>Giới tính: Nữ</p>
+          <p>Sinh ngày: 22 tháng 09 năm 2019</p>
+          <p>Điện thoại: 0389746397</p>
+        </div>
+        <div class="col-md-12">
+          <p>Địa chỉ: Số 179, đường 422, xã Tân Lập, huyện Đan Phượng, TP. Hà Nội</p>
+        </div>
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr class="text-center">
+                  <th>
+                    <p>Câu hỏi</p>
+                  </th>
+                  <th colspan="2">
+                    <p>Trả lời</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <td>
+                    <p>(Chọn có hoặc không theo mẫu câu hỏi sau)</p>
+                  </td>
+                  <td>
+                    <p>Có (Đánh dấu)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <p>1. Phản ứng, sốc mạnh sau lần tiêm chủng trước:</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 1, nil %>
+                    </td>
+                  </div>
+                </tr>
+                <tr>
+                  <th>
+                    <p>2. Đang mắc bệnh mãn tính hoặc cấp tính tiến triển:</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 2, nil %>
+                    </td>
+                  </div>
+                </tr>
+                <tr>
+                  <th>
+                    <p>3. Đang hoặc mới kết thúc liều điều trị corticoid/gammaglobulin:</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 3, nil %>
+                    </td>
+                  </div>
+                </tr>
+                <tr>
+                  <th>
+                    <p>4. Sốt/Hạ thân nhiệt (Sốt: nhiệt độ >= 37,5 độ C; Hạ thân nhiệt: nhiệt độ: <= 35,5 độ C):</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 4, nil %>
+                    </td>
+                  </div>
+                </tr>
+                <tr>
+                  <th>
+                    <p>5. Nghe tim bất thường:</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 5, nil %>
+                    </td>
+                  </div>
+                </tr>
+                <tr>
+                  <th>
+                    <p>6. Nhịp thở, nghe phổi bất thường:</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 6, nil %>
+                    </td>
+                  </div>
+                </tr>
+                 <tr>
+                  <th>
+                    <p>7. Thi giác bất thường (Ly bì hoặc kích thích):</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 7, nil %>
+                    </td>
+                  </div>
+                </tr>
+                 <tr>
+                  <th>
+                    <p>8. Có các chống chỉ định khác:</p>
+                  </th>
+                  <div class="col-md-8 inputGroupContainer">
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 8, nil %>
+                    </td>
+                  </div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr>
+          <p><strong>Kết luận: </strong></p>
+          <p>Đủ điều kiện tiêm chủng ngay (Tất cả đều KHÔNG có điểm bất thường)</p>
+          <p>Loại thuốc tiêm lần này: <input></p>
+          <p>Chống chỉ định tiêm chủng (Khi CÓ điểm bất thường tại các mục 1-8)</p>
+          <p>Tạm hoãn tiêm chủng (Khi CÓ điểm bất thường tại các mục 2,3,4,5,6,7)</p>
+          <hr>
+          <br>
+          <div class="form-group text-center">
+            <div class="row">
+              <div class="col-md-12 inputGroupContainer">
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox"> <span>Đồng ý tiêm</span>
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox"> <span>Không đồng ý tiêm</span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -179,6 +154,6 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>
 <%#= link_to 'Hủy', previous_wizard_path(user: {id: @injection_book}), class: "previous action-button-previous", type: "button", name: "previous" %>
 <%#= form.submit 'Tiếp theo', class: "next action-button", type: "button", name: "next" %>

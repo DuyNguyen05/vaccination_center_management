@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_031907) do
+ActiveRecord::Schema.define(version: 2020_06_12_114113) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.bigint "template_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "detail_injection_book_id"
+    t.index ["detail_injection_book_id"], name: "index_check_before_injections_on_detail_injection_book_id"
     t.index ["template_id"], name: "index_check_before_injections_on_template_id"
     t.index ["vaccine_type_id"], name: "index_check_before_injections_on_vaccine_type_id"
   end
@@ -313,6 +315,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
   add_foreign_key "admins", "roles"
   add_foreign_key "bills", "accounts"
   add_foreign_key "bills", "injection_books"
+  add_foreign_key "check_before_injections", "detail_injection_books"
   add_foreign_key "check_before_injections", "templates"
   add_foreign_key "check_before_injections", "vaccine_types"
   add_foreign_key "contract_distributions", "contracts"

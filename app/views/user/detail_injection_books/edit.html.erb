@@ -17,6 +17,7 @@
               <%= render "#{@detail_injection_book.current_step}", form: form %>
               <%= hidden_field_tag :id, @detail_injection_book.id %>
               <%= link_to 'Hủy', "#", class: "previous action-button-previous", type: "button", name: "previous" %>
+              <%= form.submit 'Quay lại', class: "previous action-button-previous", name: "back_button" unless @detail_injection_book.first_step? %>
               <%= form.submit 'Tiếp theo', class: "next action-button" %>
             </fieldset>
           <% end %>

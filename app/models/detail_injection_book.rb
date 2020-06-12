@@ -30,7 +30,7 @@ class DetailInjectionBook < ApplicationRecord
   end
 
   def previous_step
-    self.update! status: steps[steps.index(current_step)+1]
+    self.update! status: steps[steps.index(current_step)-1]
   end
 
   def first_step?

@@ -7,7 +7,7 @@ class User::DetailInjectionBooksController < User::UserController
 
   def create
     byebug
-    if @injection_book.detail_injection_books.last.current_step == "step_5"
+    if @injection_book.detail_injection_books.blank? || @injection_book.detail_injection_books.last.current_step == "step_5"
       @detail_injection_book = @injection_book.detail_injection_books.create! status: "step_1", injection_date: Time.now
     else
       @detail_injection_book = @injection_book.detail_injection_books.last
@@ -16,13 +16,22 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def edit
-
   end
 
   def update
     byebug
-    @detail_injection_book.next_step
-    redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
+    if @detail_injection_book.valid?
+      if params[:back_button]
+        @detail_injection_book.previous_step
+      elsif @detail_injection_book.last_step?
+        flash[:notice] = "Saved!"
+      else
+        byebug
+        @detail_injection_book.update_attributes! detail_injection_book_params
+        @detail_injection_book.next_step
+      end
+      redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
+    end
     # session[:order_params].deep_merge!(params[:order]) if params[:order]
     # @detail_injection_book = Order.new(session[:order_params])
     # @detail_injection_book.current_step = session[:order_step]
@@ -70,9 +79,9 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def detail_injection_book_params
-    params.require(:injection).permit :vaccination_center_id, :account_id,
+    params.require(:detail_injection_book).permit :vaccination_center_id, :account_id,
       :react_after_injection, :status, :injection_date,
-      check_before_injection_attributes: [:id, :answer_question, :conclude, :vaccine_type_id],
+      check_before_injection_attributes: [:id, :conclude, :vaccine_type_id, answer_question: []],
       bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code]
   end
 end
