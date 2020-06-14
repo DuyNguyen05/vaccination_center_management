@@ -4,7 +4,7 @@
     <div class="container">
       <div class="text-center">
         <i><h7>(Ban hành theo Quyết định số 04 /QĐ-BYT ngày 02/01/2014)</h7></i>
-        <h5 class="fs-title text-center"><strong>BẢNG KIỂM TRA TRƯỚC TIÊM CHỦNG ĐỐI VỚI TRẺ EM</strong></h5>
+        <h5 class="fs-title text-center"><strong>BẢNG KIỂM TRA PHẢN ỨNG SAU TIÊM CHỦNG ĐỐI VỚI TRẺ EM</strong></h5>
         <hr>
       </div>
       <div class="row">
@@ -40,7 +40,10 @@
                     <p>(Chọn có hoặc không theo mẫu câu hỏi sau)</p>
                   </td>
                   <td>
-                    <p>Có (Đánh dấu)</p>
+                    <p>Có</p>
+                  </td>
+                  <td>
+                    <p>Không</p>
                   </td>
                 </tr>
                 <tr>
@@ -49,7 +52,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 1, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -59,7 +65,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 2, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -69,7 +78,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 3, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -79,7 +91,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 4, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -89,7 +104,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 5, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -99,7 +117,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 6, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -109,7 +130,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 7, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -119,7 +143,10 @@
                   </th>
                   <div class="col-md-8 inputGroupContainer">
                     <td class="text-center">
-                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, 8, nil %>
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, true, false %>
+                    </td>
+                    <td class="text-center">
+                      <%= check_before_injection_attributes.check_box :answer_question, {multiple: true, class: "form-check-input"}, false, false %>
                     </td>
                   </div>
                 </tr>
@@ -139,12 +166,16 @@
               <div class="col-md-12 inputGroupContainer">
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="checkbox"> <span>Đồng ý tiêm</span>
+                    <!-- <input type="checkbox">  -->
+                    <%= check_before_injection_attributes.radio_button :status, :agree, class: "form-check-input" %>
+                    <span>Đồng ý tiêm</span>
                   </label>
                 </div>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="checkbox"> <span>Không đồng ý tiêm</span>
+                    <%= check_before_injection_attributes.radio_button :status, :disagree, class: "form-check-input" %>
+                    <!-- <input type="checkbox">  -->
+                    <span>Không đồng ý tiêm</span>
                   </label>
                 </div>
               </div>

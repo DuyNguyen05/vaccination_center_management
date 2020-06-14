@@ -26,7 +26,6 @@ class User::DetailInjectionBooksController < User::UserController
       elsif @detail_injection_book.last_step?
         flash[:notice] = "Saved!"
       else
-        byebug
         @detail_injection_book.update_attributes! detail_injection_book_params
         @detail_injection_book.next_step
       end
@@ -79,9 +78,12 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def detail_injection_book_params
+    byebug
     params.require(:detail_injection_book).permit :vaccination_center_id, :account_id,
       :react_after_injection, :status, :injection_date,
       check_before_injection_attributes: [:id, :conclude, :vaccine_type_id, answer_question: []],
-      bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code]
+      bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code,
+        detail_bills_attributes: [:id, :vaccine_id, :vaccine_injection_package_id, :number_injection, :unit_price, :discount, :amount,
+          :register_injection_package_id]]
   end
 end
