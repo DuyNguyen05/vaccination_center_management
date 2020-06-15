@@ -1,6 +1,6 @@
 class User::AccountPolicy < ApplicationPolicy
   def index?
-    user.is_admin? || user.is_staff?
+    user.is_staff?
   end
 
   def edit?

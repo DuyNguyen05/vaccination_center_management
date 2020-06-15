@@ -1,0 +1,78 @@
+<div class="container border border-secondary rounded">
+  <div class="row mt-5">
+    <div class="well col-xs-10 col-sm-10 col-md-12 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <address>
+            <strong>Trung tâm tiêm chủng Quốc Tế</strong>
+            <br>
+            <%= vaccination_center.address %>
+            <br>
+            <abbr title="Phone">P:</abbr> <%= vaccination_center.number_phone %>
+          </address>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+          <p>
+              <em>Date: <%= Time.now.strftime("%d - %m - %Y ") %></em>
+          </p>
+          <p>
+              <em>Mã Hóa đơn #: 34522677W</em>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+          <h1>Hóa đơn</h1>
+        </div>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Sản phẩm </th>
+              <th>SL</th>
+              <th class="text-center">Đơn giá</th>
+              <th class="text-center">Giá</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% detail_bill(detail_injection_book).each  do |detail_bill| %>
+              <tr>
+                <td class="col-md-9"><em><%= detail_bill.vaccine.name %></em></td>
+                <td class="col-md-1" style="text-align: center">1<%= detail_bill.number_injection %> </td>
+                <td class="col-md-1 text-center"><%= detail_bill.vaccine.price %></td>
+                <td class="col-md-1 text-center"><%= amount detail_bill.number_injection, detail_bill.vaccine.price %></td>
+              </tr>
+              <tr>
+                <td> &nbsp; </td>
+                <td> &nbsp; </td>
+                <td class="text-right">
+                <p>
+                    <strong>Tổng:&nbsp;</strong>
+                </p>
+                <p>
+                    <strong>Thuế:&nbsp;</strong>
+                </p></td>
+                <td class="text-center">
+                <p>
+                    <strong><%#= detail_bill.amount %>1.000.000</strong>
+                </p>
+                <p>
+                    <strong><%#= detail_bill.amount %>100.000</strong>
+                </p></td>
+              </tr>
+            <% end %>
+            <tr>
+              <td> &nbsp; </td>
+              <td> &nbsp; </td>
+              <td class="text-right"><h4><strong>Thành tiền:&nbsp;</strong></h4></td>
+              <td class="text-center text-danger"><h4><strong>1.100.000</strong></h4></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+          <%= link_to 'In hóa đơn', "#" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

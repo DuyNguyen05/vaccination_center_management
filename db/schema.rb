@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_031907) do
+ActiveRecord::Schema.define(version: 2020_06_13_084800) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -56,7 +56,9 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "detail_injection_book_id"
     t.index ["account_id"], name: "index_bills_on_account_id"
+    t.index ["detail_injection_book_id"], name: "index_bills_on_detail_injection_book_id"
     t.index ["injection_book_id"], name: "index_bills_on_injection_book_id"
   end
 
@@ -67,6 +69,9 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.bigint "template_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
+    t.bigint "detail_injection_book_id"
+    t.index ["detail_injection_book_id"], name: "index_check_before_injections_on_detail_injection_book_id"
     t.index ["template_id"], name: "index_check_before_injections_on_template_id"
     t.index ["vaccine_type_id"], name: "index_check_before_injections_on_vaccine_type_id"
   end
@@ -121,6 +126,8 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "register_injection_package_id"
+    t.bigint "bill_id"
+    t.index ["bill_id"], name: "index_detail_bills_on_bill_id"
     t.index ["register_injection_package_id"], name: "index_detail_bills_on_register_injection_package_id"
     t.index ["vaccine_id"], name: "index_detail_bills_on_vaccine_id"
     t.index ["vaccine_package_type_id"], name: "index_detail_bills_on_vaccine_package_type_id"
@@ -290,7 +297,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
     t.string "name"
     t.string "manufacture"
     t.datetime "expiry_date"
-    t.string "content"
+    t.text "content", limit: 4294967295
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -312,12 +319,15 @@ ActiveRecord::Schema.define(version: 2020_05_22_031907) do
   add_foreign_key "admins", "details_infos"
   add_foreign_key "admins", "roles"
   add_foreign_key "bills", "accounts"
+  add_foreign_key "bills", "detail_injection_books"
   add_foreign_key "bills", "injection_books"
+  add_foreign_key "check_before_injections", "detail_injection_books"
   add_foreign_key "check_before_injections", "templates"
   add_foreign_key "check_before_injections", "vaccine_types"
   add_foreign_key "contract_distributions", "contracts"
   add_foreign_key "contract_distributions", "details_infos"
   add_foreign_key "contracts", "contract_types"
+  add_foreign_key "detail_bills", "bills"
   add_foreign_key "detail_bills", "register_injection_packages"
   add_foreign_key "detail_bills", "vaccine_package_types"
   add_foreign_key "detail_bills", "vaccines"

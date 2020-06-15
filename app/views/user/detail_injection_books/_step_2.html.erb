@@ -1,0 +1,94 @@
+<%= form.fields_for :bill, Bill.new do |bill_attributes| %>
+  <%= bill_attributes.fields_for :detail_bills, DetailBill.new do |detail_bill_attributes| %>
+    <div class="form-card" style="color: black">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6">
+          <div class="form-group">
+            <div class="row">
+              <label class="col-md-4 text-left">
+                Ngày giờ:
+              </label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                  <div class=" input-group-prepend">
+                  </div>
+                  <b><%= Time.now.strftime("%d - %m - %Y ") %></b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <label class="col-md-4 text-left">
+                Thuốc tiêm
+              </label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                  <div class=" input-group-prepend">
+                    <span class="btn btn-info">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <%= detail_bill_attributes.select :vaccine_id, options_for_select(Vaccine.all.pluck(:name, :id)), class: "form-control bg-light border"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="form-group">
+            <div class="row">
+              <label class="col-md-4 text-left form-check-label">
+                Tên bé:
+              </label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                  <div class=" input-group-prepend">
+                  </div>
+                  <b><%= detail_injection_book.injection_book.name_person_injected %></b>
+                  <%= bill_attributes.hidden_field :injection_book_id, value: detail_injection_book.injection_book.id %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <label class="col-md-4 text-left">
+                Gói tiêm
+              </label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                  <div class=" input-group-prepend">
+                    <span class="btn btn-info">
+                      <i class="fas fa-fingerprint"></i>
+                    </span>
+                  </div>
+                  <%= detail_bill_attributes.select :vaccine_package_type_id, options_for_select(VaccinePackageType.all.pluck(:name, :id)), class: "form-control bg-light border-1" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="form-group">
+            <div class="row">
+              <label class="col-md-4 text-left">
+                Số lượng
+              </label>
+              <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                  <div class=" input-group-prepend">
+                    <span class="btn btn-info">
+                      <i class="fas fa-phone-square"></i>
+                    </span>
+                  </div>
+                  <%= detail_bill_attributes.text_field :number_injection, placeholder: "0", class: "form-control bg-light border-1"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
