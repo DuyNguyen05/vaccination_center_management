@@ -10,11 +10,8 @@ class DetailInjectionBook < ApplicationRecord
   accepts_nested_attributes_for :bill
   accepts_nested_attributes_for :check_before_injection
 
-  validates :injection_date, presence: true, on: :step_1
-  validates :react_after_injection, presence: true, on: :step_4
-
   validates_presence_of :injection_date, :if => lambda { |o| o.status == "step_1" }
-  validates_presence_of :react_after_injection, :if => lambda { |o| o.status == "step_4" }
+  validates_presence_of :react_after_injection, :if => lambda { |o| o.status == "step_5" }
 
   def current_step
     self.status || steps.first
@@ -25,7 +22,6 @@ class DetailInjectionBook < ApplicationRecord
   end
 
   def next_step
-    byebug
     self.update! status: steps[steps.index(current_step)+1]
   end
 

@@ -1,12 +1,9 @@
 class User::DetailInjectionBooksController < User::UserController
   before_action :load_injection_book, only: :create
-  before_action :load_detail_injection_book, only: [:edit, :update]
+  before_action :load_detail_injection_book, only: [:edit, :update, :show]
   before_action -> { authorize [:user, DetailInjectionBook] }
-  # include Wicked::Wizard
-  # steps :step_1, :step_2, :step_3, :step_4, :step_5
 
   def create
-    byebug
     if @injection_book.detail_injection_books.blank? || @injection_book.detail_injection_books.last.current_step == "step_5"
       @detail_injection_book = @injection_book.detail_injection_books.create! status: "step_1", injection_date: Time.now
     else
@@ -16,56 +13,42 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def edit
+    @detail_bill = @detail_injection_book.bill.detail_bills if @detail_injection_book.current_step == "step_4"
+  end
+
+  def show
   end
 
   def update
-    byebug
     if @detail_injection_book.valid?
-      if params[:back_button]
+      if params[:back_button].present?
         @detail_injection_book.previous_step
-      elsif @detail_injection_book.last_step?
+      elsif params[:save_draft].present?
+        @detail_injection_book.update! detail_injection_book_params
         flash[:notice] = "Saved!"
+        # redirect_to @detail_injection_book
+      elsif @detail_injection_book.first_step?
+        if params[:detail_injection_book][:check_before_injection_attributes].present? && params[:detail_injection_book][:check_before_injection_attributes][:status].present? && (params[:detail_injection_book][:check_before_injection_attributes][:answer_question].length == 8)
+          if (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][1] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][2] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][3] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][4] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][5] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][6] == "true")
+            flash[:alert] = "Tạm hoãn tiêm chủng (Khi CÓ điểm bất thường tại các mục 2,3,4,5,6,7)"
+          elsif (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][0] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][7] == "true")
+            flash[:alert] = "Chống chỉ định tiêm chủng (Khi CÓ điểm bất thường tại các mục 1-8)"
+            @detail_injection_book.update! detail_injection_book_params
+            @detail_injection_book.next_step
+          else
+            @detail_injection_book.update! detail_injection_book_params
+            @detail_injection_book.next_step
+          end
+        else
+          flash[:alert] = "Vui lòng nhập đủ thông tin để tiếp tục."
+        end
       else
         @detail_injection_book.update_attributes! detail_injection_book_params
         @detail_injection_book.next_step
       end
       redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
     end
-    # session[:order_params].deep_merge!(params[:order]) if params[:order]
-    # @detail_injection_book = Order.new(session[:order_params])
-    # @detail_injection_book.current_step = session[:order_step]
-    # if @detail_injection_book.valid?
-    #   if params[:back_button]
-    #     @order.previous_step
-    #   elsif @order.last_step?
-    #     @detail_injection_book.save if @detail_injection_book.all_valid?
-    #   else
-    #     @detail_injection_book.next_step
-    #   end
-    #   session[:order_step] = @detail_injection_book.current_step
-    # end
-    # if @detail_injection_book.new_record?
-    #   render "new"
-    # else
-    #   session[:order_step] = session[:order_params] = nil
-    #   flash[:notice] = "Order saved!"
-    #   redirect_to @detail_injection_book
-    # end
   end
-
-  # def new
-  #   @detail_injection_book = @injection_book.detail_injection_books.new
-  # end
-
-  # def create
-  #   redirect_to
-  # end
-
-  # def update
-  #   @detail_injection_book.status = step
-  #   @detail_injection_book.update_attributes detail_injection_book_params context: step
-  #   render_wizard @detail_injection_book
-  # end
 
   private
 
@@ -78,12 +61,11 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def detail_injection_book_params
-    byebug
     params.require(:detail_injection_book).permit :vaccination_center_id, :account_id,
       :react_after_injection, :status, :injection_date,
-      check_before_injection_attributes: [:id, :conclude, :vaccine_type_id, answer_question: []],
+      check_before_injection_attributes: [:id, :conclude, :vaccine_type_id, :status,  answer_question: []],
       bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code,
-        detail_bills_attributes: [:id, :vaccine_id, :vaccine_injection_package_id, :number_injection, :unit_price, :discount, :amount,
+        detail_bills_attributes: [:id, :vaccine_id, :vaccine_package_type_id, :number_injection, :unit_price, :discount, :amount,
           :register_injection_package_id]]
   end
 end

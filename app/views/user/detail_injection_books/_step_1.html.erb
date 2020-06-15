@@ -9,17 +9,17 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <p>Họ và tên bé: Nguyễn Khánh Linh</p>
-          <p>Tuổi: 12</p>
-          <p>Họ tên bố/mẹ: Nguyễn Thị Phương Thảo</p>
+          <p><%=  t(".name_person_injected") %>: <%= @detail_injection_book.injection_book.name_person_injected %></p>
+          <p><%= t(".year_old") + ": " %> <%= age(@detail_injection_book.injection_book.date_of_birth) %></p>
+          <p><%=  t(".parent_name") %>: <%= @detail_injection_book.injection_book.info_injection_book.father_name || @detail_injection_book.injection_book.info_injection_book.father_name %> </p>
         </div>
         <div class="col-md-6">
-          <p>Giới tính: Nữ</p>
-          <p>Sinh ngày: 22 tháng 09 năm 2019</p>
-          <p>Điện thoại: 0389746397</p>
+          <p><%=  t(".gender") %>: <%= t("." + @detail_injection_book.injection_book.gender) %></p>
+          <p><%=  t(".date_of_birth") %>: <%= @detail_injection_book.injection_book.date_of_birth.strftime("%d - %m - %Y ") %></p>
+          <p><%=  t(".number_phone") %>: <%= @detail_injection_book.injection_book.info_injection_book.number_phone %></p>
         </div>
         <div class="col-md-12">
-          <p>Địa chỉ: Số 179, đường 422, xã Tân Lập, huyện Đan Phượng, TP. Hà Nội</p>
+          <p><%=  t(".address") %>: <%= @detail_injection_book.injection_book.info_injection_book.current_address %></p>
         </div>
         <div class="col-md-12">
           <div class="table-responsive">
@@ -166,7 +166,6 @@
               <div class="col-md-12 inputGroupContainer">
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <!-- <input type="checkbox">  -->
                     <%= check_before_injection_attributes.radio_button :status, :agree, class: "form-check-input" %>
                     <span>Đồng ý tiêm</span>
                   </label>
@@ -174,7 +173,6 @@
                 <div class="form-check-inline">
                   <label class="form-check-label">
                     <%= check_before_injection_attributes.radio_button :status, :disagree, class: "form-check-input" %>
-                    <!-- <input type="checkbox">  -->
                     <span>Không đồng ý tiêm</span>
                   </label>
                 </div>
@@ -186,5 +184,3 @@
     </div>
   </div>
 <% end %>
-<%#= link_to 'Hủy', previous_wizard_path(user: {id: @injection_book}), class: "previous action-button-previous", type: "button", name: "previous" %>
-<%#= form.submit 'Tiếp theo', class: "next action-button", type: "button", name: "next" %>

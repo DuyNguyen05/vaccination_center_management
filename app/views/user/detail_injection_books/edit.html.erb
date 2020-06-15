@@ -6,6 +6,7 @@
       <div class="row">
         <div class="col-md-12 mx-0">
           <%= form_for [:user, @detail_injection_book], url: user_detail_injection_book_path(@detail_injection_book), method: :patch, local: true, id: "msform" do |form| %>
+            <%= render "shared/error_message", resource: @detail_injection_book %>
             <fieldset class="text-center">
               <ul id="progressbar">
                 <li class="active" id="account"><strong>Khám trước tiêm</strong></li>
@@ -16,11 +17,11 @@
               </ul>
             </fieldset>
               <%= render "#{params[:steps] || @detail_injection_book.current_step}", form: form, detail_injection_book: @detail_injection_book %>
-              <%= hidden_field_tag :id, @detail_injection_book.id %>
+              <%= form.hidden_field :id, value: @detail_injection_book.id %>
               <div class="text-center mt-5">
-                <%= link_to 'Hủy', "#", class: "previous action-button-previous btn btn-danger", type: "button", name: "previous" %>
+                <%= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft" unless @detail_injection_book.last_step? %>
                 <%= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.first_step? %>
-                <%= form.submit 'Tiếp theo', class: "next action-button btn btn-success" %>
+                <%= form.submit 'Tiếp theo', class: "next action-button btn btn-success" unless @detail_injection_book.last_step? %>
               </div>
           <% end %>
         </div>

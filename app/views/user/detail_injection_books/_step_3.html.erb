@@ -4,80 +4,68 @@
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
           <address>
-            <strong>Elf Cafe</strong>
+            <strong>Trung tâm tiêm chủng Quốc Tế</strong>
             <br>
-            2135 Sunset Blvd
+            <%= vaccination_center.address %>
             <br>
-            Los Angeles, CA 90026
-            <br>
-            <abbr title="Phone">P:</abbr> (213) 484-6829
+            <abbr title="Phone">P:</abbr> <%= vaccination_center.number_phone %>
           </address>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 text-right">
           <p>
-              <em>Date: 1st November, 2013</em>
+              <em>Date: <%= Time.now.strftime("%d - %m - %Y ") %></em>
           </p>
           <p>
-              <em>Receipt #: 34522677W</em>
+              <em>Mã Hóa đơn #: 34522677W</em>
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-          <h1>Receipt</h1>
+          <h1>Hóa đơn</h1>
         </div>
 
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Product</th>
-              <th>#</th>
-              <th class="text-center">Price</th>
-              <th class="text-center">Total</th>
+              <th>Sản phẩm </th>
+              <th>SL</th>
+              <th class="text-center">Đơn giá</th>
+              <th class="text-center">Giá</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="col-md-9"><em>Baked Rodopa Sheep Feta</em></td>
-              <td class="col-md-1" style="text-align: center"> 2 </td>
-              <td class="col-md-1 text-center">$13</td>
-              <td class="col-md-1 text-center">$26</td>
-            </tr>
-            <tr>
-              <td class="col-md-9"><em>Lebanese Cabbage Salad</em></td>
-              <td class="col-md-1" style="text-align: center"> 1 </td>
-              <td class="col-md-1 text-center">$8</td>
-              <td class="col-md-1 text-center">$8</td>
-            </tr>
-            <tr>
-              <td class="col-md-9"><em>Baked Tart with Thyme and Garlic</em></td>
-              <td class="col-md-1" style="text-align: center"> 3 </td>
-              <td class="col-md-1 text-center">$16</td>
-              <td class="col-md-1 text-center">$48</td>
-            </tr>
-            <tr>
-              <td> &nbsp; </td>
-              <td> &nbsp; </td>
-              <td class="text-right">
-              <p>
-                  <strong>Subtotal:&nbsp;</strong>
-              </p>
-              <p>
-                  <strong>Tax:&nbsp;</strong>
-              </p></td>
-              <td class="text-center">
-              <p>
-                  <strong>$6.94</strong>
-              </p>
-              <p>
-                  <strong>$6.94</strong>
-              </p></td>
-            </tr>
+            <% detail_bill(detail_injection_book).each  do |detail_bill| %>
+              <tr>
+                <td class="col-md-9"><em><%= detail_bill.vaccine.name %></em></td>
+                <td class="col-md-1" style="text-align: center">1<%= detail_bill.number_injection %> </td>
+                <td class="col-md-1 text-center"><%= detail_bill.vaccine.price %></td>
+                <td class="col-md-1 text-center"><%= amount detail_bill.number_injection, detail_bill.vaccine.price %></td>
+              </tr>
+              <tr>
+                <td> &nbsp; </td>
+                <td> &nbsp; </td>
+                <td class="text-right">
+                <p>
+                    <strong>Tổng:&nbsp;</strong>
+                </p>
+                <p>
+                    <strong>Thuế:&nbsp;</strong>
+                </p></td>
+                <td class="text-center">
+                <p>
+                    <strong><%#= detail_bill.amount %>1.000.000</strong>
+                </p>
+                <p>
+                    <strong><%#= detail_bill.amount %>100.000</strong>
+                </p></td>
+              </tr>
+            <% end %>
             <tr>
               <td> &nbsp; </td>
               <td> &nbsp; </td>
-              <td class="text-right"><h4><strong>Total:&nbsp;</strong></h4></td>
-              <td class="text-center text-danger"><h4><strong>$31.53</strong></h4></td>
+              <td class="text-right"><h4><strong>Thành tiền:&nbsp;</strong></h4></td>
+              <td class="text-center text-danger"><h4><strong>1.100.000</strong></h4></td>
             </tr>
           </tbody>
         </table>

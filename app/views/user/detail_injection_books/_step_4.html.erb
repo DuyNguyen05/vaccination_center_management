@@ -1,92 +1,17 @@
-<%= form.fields_for :check_after_injection, CheckAfterInjection.new do |check_after_injection_attributes| %>
-  <div class="form-card" style="color: black">
+<div class="form-card" style="color: black">
+  <br>
+  <div class="container">
+    <div class="text-center">
+      <h5 class="fs-title text-center"><strong>THÔNG TIN PHẢN ỨNG SAU TIÊM CHỦNG ĐỐI VỚI TRẺ EM</strong></h5>
+      <hr>
+    </div>
     <div class="row">
-      <div class="col-xl-6 col-lg-6">
+      <div class="col-xl-12 col-lg-12">
         <div class="form-group">
           <div class="row">
-            <label class="col-md-4 text-left">
-              Ngày giờ:
-            </label>
-            <div class="col-md-8 inputGroupContainer">
+            <div class="col-md-12 inputGroupContainer">
               <div class="input-group">
-                <div class=" input-group-prepend">
-                  <span class="btn btn-info">
-                    <i class="fas fa-user"></i>
-                  </span>
-                </div>
-                <%= bill_attributes.text_field :creation_time, placeholder: Time.now, class: "form-control bg-light border-1" %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <label class="col-md-4 text-left form-check-label">
-              Tên bé:
-            </label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group">
-                <div class=" input-group-prepend">
-                  <span class="btn btn-info">
-                    <i class="fas fa-user"></i>
-                  </span>
-                </div>
-                  <%= bill_attributes.text_field :injection_book_id, placeholder: detail_injection_book.injection_book.name_person_injected, value: detail_injection_book.injection_book.id, class: "form-control bg-light border-1"%>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-6 col-lg-6">
-        <div class="form-group">
-          <div class="row">
-            <label class="col-md-4 text-left">
-              Thuốc tiêm
-            </label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group">
-                <div class=" input-group-prepend">
-                  <span class="btn btn-info">
-                    <i class="fas fa-user"></i>
-                  </span>
-                </div>
-                <%= detail_bill_attributes.select :vaccine_id, options_for_select(Vaccine.all.pluck(:id, :name)), class: "form-control bg-light border-1" %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <label class="col-md-4 text-left">
-              Gói tiêm
-            </label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group">
-                <div class=" input-group-prepend">
-                  <span class="btn btn-info">
-                    <i class="fas fa-fingerprint"></i>
-                  </span>
-                </div>
-                <%= detail_bill_attributes.select :vaccine_package_id, options_for_select(VaccinePackage.all.pluck(:id, :name)), class: "form-control bg-light border-1" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-6 col-lg-6">
-        <div class="form-group">
-          <div class="row">
-            <label class="col-md-4 text-left">
-              Mũi số
-            </label>
-            <div class="col-md-8 inputGroupContainer">
-              <div class="input-group">
-                <div class=" input-group-prepend">
-                  <span class="btn btn-info">
-                    <i class="fas fa-phone-square"></i>
-                  </span>
-                </div>
-                <%= detail_bill_attributes.text_field :number_injection, placeholder: "0", class: "form-control bg-light border-1" %>
+                <%= form.text_area :react_after_injection, placeholder: t(".react_after_injection"), size: "20x8", class: "form-control bg-light border-1" %>
               </div>
             </div>
           </div>
@@ -94,4 +19,4 @@
       </div>
     </div>
   </div>
-<% end %>
+</div>

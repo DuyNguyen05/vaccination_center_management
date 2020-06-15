@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.bigint "template_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "detail_injection_book_id"
     t.string "status"
+    t.bigint "detail_injection_book_id"
     t.index ["detail_injection_book_id"], name: "index_check_before_injections_on_detail_injection_book_id"
     t.index ["template_id"], name: "index_check_before_injections_on_template_id"
     t.index ["vaccine_type_id"], name: "index_check_before_injections_on_vaccine_type_id"
@@ -297,7 +297,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.string "name"
     t.string "manufacture"
     t.datetime "expiry_date"
-    t.string "content"
+    t.text "content", limit: 4294967295
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
