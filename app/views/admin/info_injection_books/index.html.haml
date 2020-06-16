@@ -1,0 +1,61 @@
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          =  t("admin.sidebar.user_management")
+      .card.my-4
+        .card-header
+          %i.fas.fa-search.mr-1
+          = t(".search_title")
+        .card-body
+          = form_tag admin_info_injection_books_path, method: :get do
+            .row
+              .col-sm-12
+                .form-group
+                  = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+                = button_tag(type: "submit", class: "btn btn-primary") do
+                  %i.fa.fa-search{"aria-hidden" => "true"}
+                  = t(".search_title")
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1
+              = t(".info_injection_books")
+            .col-md-6.text-right
+              -# = link_to "#", class: "btn btn-primary", type: :button do
+              -#   %i.fas.fa-user-plus
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th= Account.human_attribute_name("user_code")
+                  %th= InfoInjectionBook.human_attribute_name("father_name")
+                  %th= InfoInjectionBook.human_attribute_name("mother_name")
+                  %th= InfoInjectionBook.human_attribute_name("number_phone")
+                  %th= InfoInjectionBook.human_attribute_name("email")
+                  %th= InfoInjectionBook.human_attribute_name("current_address")
+                  %th
+              %tbody#info_injection_book
+                - @users.each do |user|
+                  %tr
+                    %td
+                      = link_to "#{user.account.user_code}", admin_info_injection_book_path(user)
+                    %td
+                      = user.father_name
+                    %td
+                      = user.mother_name
+                    %td
+                      = user.number_phone
+                    %td
+                      = user.email
+                    %td
+                      = user.current_address
+                    %td
+                      = link_to edit_admin_info_injection_book_path(user), class: "btn btn-primary mr-2" do
+                        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+                      = link_to admin_info_injection_book_path(user), class: "btn btn-danger", method: :delete, data: { confirm: t("confirm.are_you_sure") }, remote: true do
+                        %i.fa.fa-trash{"aria-hidden" => "true"}
+            = paginate @users, theme: "twitter-bootstrap-4"

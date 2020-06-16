@@ -10,8 +10,8 @@
         .sb-sidenav-menu-heading Interface
         %a.nav-link.collapsed{"aria-controls" => "collapseAccounts", "aria-expanded" => "false", "data-target" => "#collapseAccounts", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
-            %i.fas.fa-users
-          = t("admin.sidebar.user_management")
+            %i.fas.fa-hospital-user
+          = t("admin.sidebar.account_management")
           .sb-sidenav-collapse-arrow
             %i.fas.fa-angle-down
         #collapseAccounts.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordion"}
@@ -24,6 +24,18 @@
               .sb-nav-link-icon
                 %i.fas.fa-plus-circle
               = t("admin.accounts.index.add_user")
+        %a.nav-link.collapsed{"aria-controls" => "collapseUsers", "aria-expanded" => "false", "data-target" => "#collapseUsers", "data-toggle" => "collapse", :href => "#"}
+          .sb-nav-link-icon
+            %i.fas.fa-users
+          = t("admin.sidebar.user_management")
+          .sb-sidenav-collapse-arrow
+            %i.fas.fa-angle-down
+        #collapseUsers.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#sidenavAccordion"}
+          %nav.sb-sidenav-menu-nested.nav
+            = link_to admin_info_injection_books_path, class: "nav-link" do
+              .sb-nav-link-icon
+                %i.fas.fa-arrow-circle-right
+              = t("admin.info_injection_books.index.show_all")
         %a.nav-link.collapsed{"aria-controls" => "collapseCompanies", "aria-expanded" => "false", "data-target" => "#collapseCompanies", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
             %i.fas.fa-building

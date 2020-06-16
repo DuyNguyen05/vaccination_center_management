@@ -46,3 +46,4 @@ build-iPhoneSimulator/
 .env
 .rvmrc
 log/*
+log/*

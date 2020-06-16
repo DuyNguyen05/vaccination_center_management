@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 
       resources :accounts
-      resources :users
+      resources :info_injection_books
       resources :companies
       resources :details_infos
       resources :import_vaccines

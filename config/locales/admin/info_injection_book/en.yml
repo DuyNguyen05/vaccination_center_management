@@ -1,0 +1,7 @@
+en:
+  admin:
+    info_injection_books:
+      index:
+        users_list: User List
+        show_all: Show All
+        search_title: Search
