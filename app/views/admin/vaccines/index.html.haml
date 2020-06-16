@@ -1,39 +1,43 @@
-.card
-  %h2.mt-4= t("admin.sidebar.vaccine_management")
-  .card.my-4
-    .card-header
-      %i.fas.fa-search.mr-1
-      = t(".search_title")
-    .card-body
-      = form_tag admin_vaccines_path, method: :get do
-        .row
-          .col-sm-12
-            .form-group
-              = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
-            = button_tag(type: "submit", class: "btn btn-primary") do
-              %i.fa.fa-search{"aria-hidden" => "true"}
-              = t(".search_title")
-  .card.mb-4
-    .card-header
-      .row
-        .col-md-6.pt-2
-          %i.fas.fa-table.mr-1>
-          = t(".vaccine_list")
-        .col-md-6.text-right
-          = link_to new_admin_vaccine_path, class: "btn btn-primary" do
-            %i.fas.fa-plus-square
-    .card-body
-      .table-responsive
-        %table.table.table-bordered.table-hover
-          %thead
-            %tr
-              %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("code")
-              %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("name")
-              %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("manufacture")
-              %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("content")
-              %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("expiry_date")
-              %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("quantity")
-              %th.text-center
-          %tbody#vaccines
-            = render "admin/vaccines/vaccine", vaccines: @vaccines
-        = paginate @vaccines, theme: "twitter-bootstrap-4"
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = t("admin.sidebar.vaccine_management")
+      .card.my-4
+        .card-header
+          %i.fas.fa-search.mr-1
+          = t(".search_title")
+        .card-body
+          = form_tag admin_vaccines_path, method: :get do
+            .row
+              .col-sm-12
+                .form-group
+                  = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+                = button_tag(type: "submit", class: "btn btn-primary") do
+                  %i.fa.fa-search{"aria-hidden" => "true"}
+                  = t(".search_title")
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1>
+              = t(".vaccine_list")
+            .col-md-6.text-right
+              = link_to new_admin_vaccine_path, class: "btn btn-primary" do
+                %i.fas.fa-plus-square
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("code")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("name")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("manufacture")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("content")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("expiry_date")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("quantity")
+                  %th.text-center
+              %tbody#vaccines
+                = render "admin/vaccines/vaccine", vaccines: @vaccines
+            = paginate @vaccines, theme: "twitter-bootstrap-4"

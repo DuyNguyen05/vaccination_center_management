@@ -9,6 +9,7 @@ vi:
           cancel: Hủy
           submit: Hoàn thành
       edit:
+        edit_details_info: Chỉnh Sửa Thông Tin 
         button:
           submit: Cập Nhật
           cancel: Hủy

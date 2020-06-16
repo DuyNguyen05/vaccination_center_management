@@ -1,23 +1,28 @@
-.card
-  .card-body.row
-    %h1.mt-4.col-12= @company.name
-  .table-responsive
-    %table.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("code")
-          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("name")
-          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("manufacture")
-          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("content")
-          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("expiry_date")
-          %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("quantity")
-      %tbody
-        - @vaccines.each do |vaccine|
-          %tr.text-center{id: "vaccine#{vaccine.id}"}
-            %td= link_to "#{vaccine.code}", admin_vaccine_path(vaccine)
-            %td= vaccine.name
-            %td= vaccine.manufacture
-            %td= vaccine.content
-            %td= l(vaccine.expiry_date, format: :date_month_year_concise)
-            %td= vaccine.quantity
-    = paginate @vaccines, theme: "twitter-bootstrap-4"
+.row
+  .col-xl-12.col-lg-12
+    .card.shadow
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = @company.name
+      .card-body
+        .row
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("code")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("name")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("manufacture")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("content")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("expiry_date")
+                  %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("quantity")
+              %tbody
+                - @vaccines.each do |vaccine|
+                  %tr.text-center{id: "vaccine#{vaccine.id}"}
+                    %td= link_to "#{vaccine.code}", admin_vaccine_path(vaccine)
+                    %td= vaccine.name
+                    %td= vaccine.manufacture
+                    %td= vaccine.content
+                    %td= l(vaccine.expiry_date, format: :date_month_year_concise)
+                    %td= vaccine.quantity
+            = paginate @vaccines, theme: "twitter-bootstrap-4"

@@ -5,4 +5,6 @@ vi:
         search: Nhập Email - Mã Nhân Viên - SĐT
         add_user: Tạo Tài Khoản Mới
         show_all: Tất Cả Tài Khoản
+        search_title: Tìm Kiếm
+        account_list: Danh Sách Nhân Viên
 

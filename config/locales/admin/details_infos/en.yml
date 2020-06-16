@@ -9,6 +9,7 @@ en:
           cancel: Cancel
           submit: Submit
       edit:
+        edit_details_info: 
         button:
           submit: Update
           cancel: Cancel

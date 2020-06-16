@@ -1,11 +1,16 @@
 .container-fluid
-  %h1.mt-4= t("admin.vaccines.index.add_vaccine")
+  .row
+    .col-xl-12.col-lg-12
+      .card
+        .card-header.py-3
+          %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+            = t("admin.vaccines.index.add_vaccine")
   %ol.breadcrumb.mb-4
     %li.breadcrumb-item
       = link_to admin_vaccines_path do
         = t("admin.vaccines.index.show_all")
     %li.breadcrumb-item.active= t("admin.vaccines.index.add_vaccine")
-  .card.mb-4
+  .card.mb-4.shadow
     .card-body
       .row
         .col-12

@@ -1,11 +1,16 @@
 .container-fluid
-  %h1.mt-4= t(".import_data")
+  .row
+    .col-xl-12.col-lg-12
+      .card
+        .card-header.py-3
+          %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+            = t(".import_data")
   %ol.breadcrumb.mb-4
     %li.breadcrumb-item
       = link_to admin_vaccine_package_type_detail_vaccine_packages_path(@vaccine_package_type.id) do
         = t("admin.detail_vaccine_packages.index.detail_vaccine_package")
     %li.breadcrumb-item.active= t(".import_data")
-  .card.mb-4
+  .card.mb-4.shadow
     .card-body
       .row
         .col-12
