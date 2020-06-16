@@ -1,0 +1,71 @@
+.row
+  .col-xl-12.col-lg-12
+    .card.shadow.mb-4
+      .card-header.py-3
+        %h4.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = InfoInjectionBook.model_name.human
+      .card-body
+        %ul.list-style-none
+          .row
+            .col-lg-6
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fas.fa-user-circle
+                  = Account.human_attribute_name("user_code")
+                  &colon;
+                  = @user.account.user_code
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fa.fa-male
+                  = InfoInjectionBook.human_attribute_name("father_name")
+                  &colon;
+                  = @user.father_name
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fa.fa-id-card
+                  = InfoInjectionBook.human_attribute_name("identify_father")
+                  &colon;
+                  = @user.identify_father
+                %li.d-flex.no-block.card-body
+                  %div
+                    %i.fa.fa-female
+                    = InfoInjectionBook.human_attribute_name("mother_name")
+                    &colon;
+                    = @user.mother_name
+                %li.d-flex.no-block.card-body
+                  %div
+                    %i.fa.fa-id-card
+                    = InfoInjectionBook.human_attribute_name("identify_mother")
+                    &colon;
+                    = @user.identify_mother
+            .col-lg-6
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fa.fa-location-arrow
+                  = InfoInjectionBook.human_attribute_name("permanent_address")
+                  &colon;
+                  = @user.permanent_address
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fa.fa-map-marker
+                  = InfoInjectionBook.human_attribute_name("current_address")
+                  &colon;
+                  = @user.current_address
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fa.fa-phone
+                  = InfoInjectionBook.human_attribute_name("number_phone")
+                  &colon;
+                  = @user.number_phone
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.fa.fa-envelope
+                  = InfoInjectionBook.human_attribute_name("email")
+                  &colon;
+                  = @user.email
+              %li.d-flex.no-block.card-body
+                %div
+                  %i.far.fa-calendar-minus
+                  = InfoInjectionBook.human_attribute_name("created_at")
+                  &colon;
+                  = l(@user.created_at, format: :date_month_year_concise)

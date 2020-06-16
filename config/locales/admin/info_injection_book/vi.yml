@@ -1,0 +1,30 @@
+vi:
+  admin:
+    info_injection_books:
+      index:
+        info_injection_books: Danh Sách Sổ  Tiêm
+        show_all: Tất Cả Sổ  Tiêm
+        search_title: Tìm Kiếm
+        search: Nhập Vào Mã Người Dùng - SĐT - CMT - Email
+      edit:
+        edit_info_injection_books: Chỉnh sửa thông tin bố mẹ của bé
+        father_name: Họ và tên bố
+        mother_name: Họ và tên mẹ
+        identify_father: CMT/CCCD của bố
+        identify_mother: CMT/CCCD của mẹ
+        number_phone: Số điện thoại liên lạc
+        email: Hộp thư điện tử
+        current_address: Địa chỉ hiện tại
+        permanent_address: Địa chỉ thường trú
+        name_person_injected: Họ và tên của bé
+        full_name: Họ và tên
+        date_of_birth: Ngày khai sinh
+        place_of_birth: Nơi khai sinh
+        male: Trai
+        female: Gái
+        gender: Giới tính
+        button:
+          cancel: Hủy
+          submit: Hoàn thành
+      update:
+        updated: Cập Nhật Thành Công

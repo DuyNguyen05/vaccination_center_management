@@ -12,3 +12,4 @@ vi:
         current_address: Địa chỉ hiện tại
         permanent_address: Địa chỉ thường trú
         email: Thư điện tử
+        created_at: Tạo Ngày

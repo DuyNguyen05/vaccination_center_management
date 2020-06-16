@@ -1,4 +1,7 @@
 en:
+  admin:
+    destroy:
+      deleted: Deleted
   time:
     formats:
       date_month_year_concise: "%d/%m/%Y"

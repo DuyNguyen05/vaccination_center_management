@@ -10,3 +10,5 @@ vi:
       vaccine_management: Quản Lý Vaccine
       vaccine_package_type_management: Quản Lý Chủng Loại Gói Tiêm
       department_management: Quản Lý Phòng Ban
+      account_management: Quản Lý Nhân Viên
+

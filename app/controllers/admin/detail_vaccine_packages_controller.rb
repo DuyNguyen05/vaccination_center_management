@@ -14,7 +14,7 @@ class Admin::DetailVaccinePackagesController < Admin::AdminController
     response = ImportDetailVaccinePackageService.perform params[:file], current_admin_admin.user_code, @vaccine_package_type.id
     if response
       flash[:success] = t(".file_imported")
-      redirect_to admin_vaccines_path
+      redirect_to admin_vaccine_package_type_detail_vaccine_packages_path(@vaccine_package_type.id)
     else
       flash[:error] = t(".error_import")
       render :new
@@ -22,6 +22,7 @@ class Admin::DetailVaccinePackagesController < Admin::AdminController
   end
 
   def edit
+    @vaccines = Vaccine.pluck(:code, :id)
     respond_to do |format|
       format.js
     end

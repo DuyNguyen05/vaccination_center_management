@@ -2,7 +2,8 @@ en:
   admin:
     sidebar:
       dashboard: Dashboard
-      user_management: Account Management
+      user_management: User Management
+      account_management: Account Management
       company_management: Company Management
       logged_as: "Logged in as: "
       vaccine_management: Vaccine Management

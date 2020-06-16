@@ -1,0 +1,145 @@
+.row
+  .col-xl-12.col-lg-12
+    .card.shadow.mb-4
+      .card-header.py-3
+        %h4.text-lg.m-0.font-weight-bold.text-primary.text-uppercase.text-center
+          = t(".edit_info_injection_books")
+      = form_with model: [:admin, @user], class: "well form-horizontal", local: true do |f|
+        = render "shared/error_message", resource: @user
+        .card-body
+          .row
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".father_name")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-user
+                        = f.text_field :father_name, placeholder: t(".full_name"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".identify_father")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-fingerprint
+                        = f.text_field :identify_father, placeholder: t(".identify_father"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".number_phone")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-phone-square
+                        = f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1", required: true
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".current_address")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-home
+                        = f.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1"
+            .col-xl-6.col-lg-6
+              %fieldset
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".mother_name")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-user
+                        = f.text_field :mother_name, placeholder: t(".full_name"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".identify_mother")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-fingerprint
+                        = f.text_field :identify_mother, placeholder: t(".identify_mother"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".email")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-envelope
+                        = f.email_field :email, placeholder: t(".email"), class: "form-control bg-light border-1"
+                .form-group
+                  .row
+                    %label.col-md-4.text-right
+                      = t(".permanent_address")
+                    .col-md-8.inputGroupContainer
+                      .input-group
+                        .input-group-prepend
+                          %span.btn.btn-info
+                            %i.fas.fa-home
+                        = f.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1"
+          %br
+          = f.fields_for :injection_books do |ib|
+            .row
+              .col-xl-10.col-lg-8
+                %fieldset
+                  .form-group
+                    .row
+                      %label.col-md-4.text-right
+                        = t(".name_person_injected")
+                      .col-md-8.inputGroupContainer
+                        .input-group
+                          .input-group-prepend
+                            %span.btn.btn-info
+                              %i.fas.fa-user
+                          = ib.text_field :name_person_injected, placeholder: t(".full_name"), class: "form-control bg-light border-1 small", required: "true"
+                  .form-group
+                    .row
+                      %label.col-md-4.text-right
+                        = t(".date_of_birth")
+                      .col-md-8.inputGroupContainer
+                        .input-group
+                          .input-group-prepend
+                            %span.btn.btn-info
+                              %i.fas.fa-calendar
+                          = ib.date_field :date_of_birth, placeholder: t(".date_of_birth"), class: "form-control bg-light border-1 small date", required: "true"
+                  .form-group
+                    .row
+                      %label.col-md-4.text-right
+                        = t(".place_of_birth")
+                      .col-md-8.inputGroupContainer
+                        .input-group
+                          .input-group-prepend
+                            %span.btn.btn-info
+                              %i.fas.fa-clinic-medical
+                          = ib.text_field :place_of_birth, placeholder: t(".place_of_birth"), class: "form-control bg-light border-1 small", required: "true"
+                  .form-group
+                    .row
+                      %label.col-md-4.text-right.form-check-label
+                        = t(".gender")
+                      .col-md-8.inputGroupContainer
+                        .form-check-inline
+                          %label.form-check-label
+                            = ib.radio_button :gender, :male, class: "form-check-input"
+                            = t(".male")
+                        .form-check-inline
+                          %label.form-check-label
+                            = ib.radio_button :gender, :female, class: "form-check-input"
+                            = t(".female")
+        .d-flex.justify-content-center
+          = f.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center mr-2", data: { confirm: t("confirm.are_you_sure") }
+          = link_to t(".button.cancel"), admin_info_injection_books_path, class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") }

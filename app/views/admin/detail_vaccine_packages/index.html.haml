@@ -28,6 +28,7 @@
               %th.text-center= DetailVaccinePackage.human_attribute_name(:id)
               %th.text-center= DetailVaccinePackage.human_attribute_name(:vaccine_id)
               %th.text-center= DetailVaccinePackage.human_attribute_name(:total_injections)
+              %th
           %tbody#detail_vaccine_packages
             = render "admin/detail_vaccine_packages/detail_vaccine_package", detail_vaccine_packages: @detail_vaccine_packages
         = paginate @detail_vaccine_packages, theme: "twitter-bootstrap-4"

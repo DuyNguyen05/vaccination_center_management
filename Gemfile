@@ -30,7 +30,8 @@ gem "toastr-rails"
 gem "wicked"
 gem 'owlcarousel-rails'
 gem "animate-rails"
-
+gem "select2-rails"
+gem "thor", "~> 0.19.1"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
