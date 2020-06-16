@@ -16,3 +16,7 @@
 //= require bootstrap
 //= require toastr
 //= require ./lib/account
+//= require select2-full
+$('#detail-vaccine-package').select2({
+  theme: "bootstrap"
+});

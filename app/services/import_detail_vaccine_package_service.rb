@@ -8,6 +8,8 @@ class ImportDetailVaccinePackageService
       header = data.row(1)
       (2..data.last_row).each do |i|
         row = [header, data.row(i)].transpose.to_h
+        vaccine_code = Vaccine.find_by!(code: row["vaccine_id"])
+        row["vaccine_id"] = vaccine_code.id
         DetailVaccinePackage.create! row.merge(vaccine_package_type_id: vaccine_package_type, user_code: user)
       end
 

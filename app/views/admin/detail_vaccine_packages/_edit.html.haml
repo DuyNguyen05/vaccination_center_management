@@ -1,4 +1,4 @@
-.modal.fade.bd-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modalDetailVaccinePackageEdit#{detail_vaccine_package.id}"}
+.modal.fade.bd-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog"  , id: "modalDetailVaccinePackageEdit#{detail_vaccine_package.id}"}
   .modal-dialog.modal-lg
     .modal-content
       .modal-header
@@ -10,7 +10,8 @@
         = form_with model: [:admin, detail_vaccine_package], method: :patch do |f|
           .form-group
             = f.label DetailVaccinePackage.human_attribute_name(:vaccine_id)
-            = f.text_field :vaccine_id, class: "form-control"
+            -# = f.select :vaccine_id, options_for_select(vaccines, selected: f.object.vaccine_id), { include_blank: false }, class: "form-control", id: "detail-vaccine-package"
+            = f.select :vaccine_id, options_for_select(vaccines), {},class: "form-control", id: "detail-vaccine-package"
           .form-group
             = f.label DetailVaccinePackage.human_attribute_name(:total_injections)
             = f.number_field :total_injections, class: "form-control"

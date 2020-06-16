@@ -1,2 +1,6 @@
-$("body").append("<%= j render 'admin/detail_vaccine_packages/edit', detail_vaccine_package: @detail_vaccine_package %>");
+$("body").append("<%= j render 'admin/detail_vaccine_packages/edit', detail_vaccine_package: @detail_vaccine_package, vaccines: @vaccines %>");
 $("#modalDetailVaccinePackageEdit<%= @detail_vaccine_package.id %>").modal("show");
+$('#detail-vaccine-package').select2({
+  theme: "bootstrap",
+  dropdownParent: $("#modalDetailVaccinePackageEdit<%= @detail_vaccine_package.id %>"),
+});

@@ -126,8 +126,6 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "register_injection_package_id"
-    t.bigint "bill_id"
-    t.index ["bill_id"], name: "index_detail_bills_on_bill_id"
     t.index ["register_injection_package_id"], name: "index_detail_bills_on_register_injection_package_id"
     t.index ["vaccine_id"], name: "index_detail_bills_on_vaccine_id"
     t.index ["vaccine_package_type_id"], name: "index_detail_bills_on_vaccine_package_type_id"
@@ -297,7 +295,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.string "name"
     t.string "manufacture"
     t.datetime "expiry_date"
-    t.text "content", limit: 4294967295
+    t.string "content"
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -327,7 +325,6 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
   add_foreign_key "contract_distributions", "contracts"
   add_foreign_key "contract_distributions", "details_infos"
   add_foreign_key "contracts", "contract_types"
-  add_foreign_key "detail_bills", "bills"
   add_foreign_key "detail_bills", "register_injection_packages"
   add_foreign_key "detail_bills", "vaccine_package_types"
   add_foreign_key "detail_bills", "vaccines"
