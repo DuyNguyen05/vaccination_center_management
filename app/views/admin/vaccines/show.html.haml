@@ -1,11 +1,16 @@
 .container-fluid
-  %h1.mt-4= t(".vaccine", name: @vaccine.code)
+  .row
+    .col-xl-12.col-lg-12
+      .card
+        .card-header.py-3
+          %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+            = t(".vaccine", name: @vaccine.code)
   %ol.breadcrumb.mb-4
     %li.breadcrumb-item
       = link_to admin_vaccines_path do
         = t("admin.vaccines.index.show_all")
     %li.breadcrumb-item.active= t(".vaccine", name: @vaccine.code)
-  .card.mb-4
+  .card.mb-4.shadow
     .card-body
       .row.mt-3
         .col-4= Vaccine.human_attribute_name(:code)

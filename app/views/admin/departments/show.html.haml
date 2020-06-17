@@ -1,29 +1,34 @@
-.card
-  .card-body.row
-    %h4.col-12.card-title=  @department.name
-  .table-responsive
-    %table.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th.text-center= Account.human_attribute_name("user_code")
-          %th.text-center= DetailsInfo.human_attribute_name("first_name")
-          %th.text-center= DetailsInfo.human_attribute_name("email")
-          %th.text-center= DetailsInfo.human_attribute_name("number_phone")
-          %th
-      %tbody
-        - @department.accounts.each do |account|
-          %tr
-            %td
-              = link_to "#{account.user_code}", admin_account_path(account)
-            %td
-              = account.details_info.first_name
-            %td
-              = account.details_info.email
-            %td
-              = account.details_info.number_phone
-            %td
-              = link_to edit_admin_details_info_path(account.details_info), class: "btn btn-basic btn-sm" do
-                %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-              = link_to admin_account_path(account), class: "btn btn-basic btn-sm", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
-                %i.fa.fa-trash{"aria-hidden" => "true"}
+.row
+  .col-xl-12.col-lg-12
+    .card.shadow
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = @department.name
+      .card-body
+        .row
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center= Account.human_attribute_name("user_code")
+                  %th.text-center= DetailsInfo.human_attribute_name("first_name")
+                  %th.text-center= DetailsInfo.human_attribute_name("email")
+                  %th.text-center= DetailsInfo.human_attribute_name("number_phone")
+                  %th
+              %tbody
+                - @department.accounts.each do |account|
+                  %tr
+                    %td
+                      = link_to "#{account.user_code}", admin_account_path(account)
+                    %td
+                      = account.details_info.first_name
+                    %td
+                      = account.details_info.email
+                    %td
+                      = account.details_info.number_phone
+                    %td
+                      = link_to edit_admin_details_info_path(account.details_info), class: "btn btn-basic btn-sm" do
+                        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+                      = link_to admin_account_path(account), class: "btn btn-basic btn-sm", method: :delete, data: { confirm: t("confirm.are_you_sure") } do
+                        %i.fa.fa-trash{"aria-hidden" => "true"}
     -# = paginate @accounts, theme: "twitter-bootstrap-4"
