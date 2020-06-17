@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :accounts, only: [:show]
       resources :details_infos, only: [:new, :create]
       resources :detail_injection_books
+      resources :vaccines, only: :index
     end
     root "homes#index"
 

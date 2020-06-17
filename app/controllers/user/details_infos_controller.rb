@@ -1,4 +1,6 @@
 class User::DetailsInfosController < User::UserController
+  before_action -> { authorize [:user, DetailsInfo] }
+
   def new
     @details_info = DetailsInfo.new
   end

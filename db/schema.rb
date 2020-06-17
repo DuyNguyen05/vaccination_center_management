@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
   create_table "detail_bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.bigint "vaccine_package_type_id"
-    t.integer "number_injection"
+    t.integer "number_injection", default: 0
     t.string "unit_price"
     t.string "discount"
     t.string "amount"

@@ -1,4 +1,4 @@
-<div class="card shadow mb-4" style="z-index: 0;">
+<div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="px-0 pt-4 pb-0 mt-3 mb-3">
       <h2 class="text-center"><strong>Quy trình tiêm</strong></h2>
@@ -20,7 +20,7 @@
               <%= form.hidden_field :id, value: @detail_injection_book.id %>
               <div class="text-center mt-5">
                 <%= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft" unless @detail_injection_book.last_step? %>
-                <%= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.first_step? %>
+                <%= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.first_step? || @detail_injection_book.last_step? %>
                 <%= form.submit 'Tiếp theo', class: "next action-button btn btn-success" unless @detail_injection_book.last_step? %>
               </div>
           <% end %>

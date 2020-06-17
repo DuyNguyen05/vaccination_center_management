@@ -9,6 +9,9 @@ class InjectionBook < ApplicationRecord
   enum gender: [:male, :female]
 
   scope :newest, -> {order id: :desc}
+  scope :filter_injection_books, ->(query) do
+    where("book_code LIKE :q OR name_person_injected LIKE :q OR date_of_birth LIKE :q", q: "%#{query}%") if query.present?
+  end
 
   private
 

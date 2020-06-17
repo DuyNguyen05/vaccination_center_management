@@ -6,7 +6,7 @@ class User::InjectionBooksController < User::UserController
     if current_user_account.is_user?
       @injection_books = current_user_account.info_injection_book.injection_books.newest.page(params[:page])
     else
-      @injection_books = InjectionBook.newest.page(params[:page])
+      @injection_books = InjectionBook.newest.filter_injection_books(params[:query]).page(params[:page])
     end
   end
 

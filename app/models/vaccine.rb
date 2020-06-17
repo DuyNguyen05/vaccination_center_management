@@ -11,6 +11,10 @@ class Vaccine < ApplicationRecord
     where("code LIKE :q OR manufacture LIKE :q", q: "%#{query}%") if query.present?
   end
 
+  scope :search_vaccines, ->(params) do
+    where("code LIKE :q OR name LIKE :q", q: "%#{params}%") if params.present?
+  end
+
   validates :code, presence: true, uniqueness: true
   validates :manufacture, presence: true
   validates :content, presence: true

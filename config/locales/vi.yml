@@ -15,3 +15,6 @@ vi:
     user_not_authorized: Bạn không có quyền truy cập.
     messages:
       not_saved: Không thể lưu thông tin
+  enumerize:
+    agree: "Đồng ý"
+    disagree: "Không đồng ý"

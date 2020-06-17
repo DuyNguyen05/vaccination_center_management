@@ -1,0 +1,70 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3 bg-light">
+    <div class="float-left"><%= link_to t('.back'), url_for(:back) %></div>
+    <h4 class="text-lg m-0 font-weight-bold text-primary text-uppercase text-center">
+      LỊCH SỬ TIÊM CHỦNG
+    </h4>
+  </div>
+  <% @injection_book.detail_injection_books.newest.each do |detail_injection_book| %>
+    <div class="card-header py-3 bg-light">
+      <h4 class="text-lg m-0 font-weight-bold text-gray text-uppercase">
+        Ngày <%= detail_injection_book.updated_at.strftime("%d - %m - %Y, %H:%M") %>
+      </h4>
+    </div>
+    <div class="card-body">
+      <div class="row d-flex">
+        <div class="font-weight text-dark mb-1">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="m-0 font-weight-bold text-dark text-uppercase mb-1">
+                  <b>KIỂM TRA TRƯỚC KHI TIÊM</b>
+                </div>
+                <div class="text-gray-900">
+                  <li><%= detail_injection_book.check_before_injection.agree? ? "Kết luận: ĐỒNG Ý TIÊM" : "Kết luận: KHÔNG ĐỒNG Ý TIÊM" %></li>
+                  <div class="float-left">
+                    <%= link_to t('.info_previous_step'), "", data: {toggle: "modal", target: "#modal-#{detail_injection_book.id}"} %>
+                    <div class="modal fade bs-example-modal-lg" id="modal-<%= detail_injection_book.id %>" tabindex="-1" role="dialog">
+                      <%= render "info_step_1", detail_injection_book: detail_injection_book %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                  <b>CHI TIẾT THÔNG TIN TIÊM</b>
+                </div>
+                <div class="text-gray-900">
+                  <% detail_injection_book&.bill&.detail_bills&.each do |detail_bill| %>
+                    <li class="ml-3"><%= detail_bill.vaccine.name %>
+                      <li class="ml-5">
+                        Số mũi tiêm: <%= detail_bill.number_injection %>
+                      </li>
+                    </li>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                  <b>THEO DÕI SAU TIÊM</b>
+                </div>
+                <div class="text-gray-900">
+                  <li>Kết luận của bác sĩ: <%= detail_injection_book.react_after_injection %></li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

@@ -12,6 +12,7 @@ vi:
         male: Trai
         female: Gái
         gender: Giới tính
+        search: Tìm kiếm
       new:
         new_injection_book: Tạo sổ tiêm mới
         name_person_injected: Họ và tên của bé
@@ -36,3 +37,4 @@ vi:
         gender: Giới tính
         injection: Tiêm
         injection_history: Lịch sử tiêm
+        back: Quay lại

@@ -6,6 +6,25 @@
   </div>
   <div class="card-body">
     <div class="row">
+      <div class=" row col-xl-12 col-lg-12 mb-5 mr-3 ml-3">
+        <div class="col-lg-9">
+          <%= link_to(new_user_info_injection_book_path, class: "btn btn-primary" ) do %>
+            <i class="fas fa-user-plus"></i>
+          <% end %>
+        </div>
+        <div class="col-lg-3">
+          <%= form_tag user_injection_books_path, method: :get, class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" do %>
+            <div class="input-group">
+              <%= text_field_tag :query, params[:query], class: "form-control bg-light border-0 small", placeholder: t(".search") %>
+              <div class="input-group-append" >
+                <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                  <i class="fas fa-search fa-sm"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
       <% @injection_books.each do |injection_book| %>
         <div class="col-xl-6 col-md-6 mb-6 injection_book" id="<%= injection_book.id %>">
           <div class="card border-left-primary shadow h-100 py-1">
