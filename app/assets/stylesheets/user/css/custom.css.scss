@@ -170,6 +170,8 @@ select.list-dt:focus {
 }
 
 #progressbar li:before {
+    position: relative;
+    z-index: 1;
     width: 50px;
     height: 50px;
     line-height: 45px;
@@ -190,7 +192,7 @@ select.list-dt:focus {
     position: absolute;
     left: 0;
     top: 25px;
-    z-index: -1
+    z-index: 0;
 }
 
 #progressbar li.active:before,
@@ -330,3 +332,68 @@ html {
     height: 100%
 }
 
+.container {
+  display: block;
+  // position: relative;
+  cursor: pointer;
+  // font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  // background-color: #111111;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  // top: 8px;
+  // left: 12px;
+  height: 22px;
+  width: 22px;
+  background-color: #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

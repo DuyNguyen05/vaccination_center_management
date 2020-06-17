@@ -12,6 +12,14 @@ module User::DetailInjectionBookHelper
   end
 
   def amount a, b
-    a*(b.to_i)
+    number_with_delimiter(a*(b.to_f))
+  end
+
+  def total_price a
+    number_to_currency(a)
+  end
+
+  def set_checked_for_checkbox answer_question
+    answer_question == "true" ? "CÓ" : "KHÔNG"
   end
 end

@@ -38,35 +38,37 @@
             <% detail_bill(detail_injection_book).each  do |detail_bill| %>
               <tr>
                 <td class="col-md-9"><em><%= detail_bill.vaccine.name %></em></td>
-                <td class="col-md-1" style="text-align: center">1<%= detail_bill.number_injection %> </td>
-                <td class="col-md-1 text-center"><%= detail_bill.vaccine.price %></td>
+                <td class="col-md-1" style="text-align: center"><%= detail_bill.number_injection %> </td>
+                <td class="col-md-1 text-center"><%= number_with_delimiter(detail_bill.vaccine.price) %></td>
                 <td class="col-md-1 text-center"><%= amount detail_bill.number_injection, detail_bill.vaccine.price %></td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                      <strong>Tổng:&nbsp;</strong>
+                  </p>
+                  <p>
+                      <strong>Thuế:&nbsp;</strong>
+                  </p>
+                </td>
+                <td class="text-center"> <p>10</p><p></p> </td>
+                <td >
+                </td>
+                <td class="text-center">
+                <p>
+                    <strong><%= amount detail_bill.number_injection, detail_bill.vaccine.price %></strong>
+                </p>
+                <p>
+                    <strong>0</strong>
+                </p></td>
               </tr>
               <tr>
                 <td> &nbsp; </td>
                 <td> &nbsp; </td>
-                <td class="text-right">
-                <p>
-                    <strong>Tổng:&nbsp;</strong>
-                </p>
-                <p>
-                    <strong>Thuế:&nbsp;</strong>
-                </p></td>
-                <td class="text-center">
-                <p>
-                    <strong><%#= detail_bill.amount %>1.000.000</strong>
-                </p>
-                <p>
-                    <strong><%#= detail_bill.amount %>100.000</strong>
-                </p></td>
+                <td class="text-right"><h4><strong>Thành tiền:&nbsp;</strong></h4></td>
+                <td class="text-center text-danger"><h4><strong><%= total_price(amount(detail_bill.number_injection, detail_bill.vaccine.price)) %></strong></h4></td>
               </tr>
             <% end %>
-            <tr>
-              <td> &nbsp; </td>
-              <td> &nbsp; </td>
-              <td class="text-right"><h4><strong>Thành tiền:&nbsp;</strong></h4></td>
-              <td class="text-center text-danger"><h4><strong>1.100.000</strong></h4></td>
-            </tr>
           </tbody>
         </table>
         <div class="col-xs-12 col-sm-12 col-md-12 text-right">

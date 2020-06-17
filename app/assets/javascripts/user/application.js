@@ -13,6 +13,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require select2
 //= require Chart.min
 //= require ./lib/sb-admin-2.min.js
 //= require ./lib/jquery.easing.min.js

@@ -1,5 +1,6 @@
 <div class="card shadow mb-4">
-  <div class="card-header py-3 bg-light border-primary">
+  <div class="card-header py-3 bg-light">
+    <div class="float-left"><%= link_to t('.back'), url_for(:back) %></div>
     <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
       <b class="text-uppercase"> <%= @injection_book.name_person_injected %> </b>
     </h6>
@@ -8,20 +9,23 @@
     <div class="row d-flex justify-content-center">
       <div class="font-weight text-dark mb-2">
         <%= image_tag "https://hellobacsi.com/wp-content/uploads/2019/10/tre-hay-dao-mat1.jpg", size: "160x140" %>
-        <div class="ml-4 text-gray float-right">
+        <div class="ml-4 text-gray float-right font-weight-bold">
           <%=  t(".date_of_birth") %>: <%= @injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
           <%= t(".year_old") + ": " %> <%= age(@injection_book.date_of_birth) %><br>
           <%=  t(".gender") %>: <%= t("." + @injection_book.gender) %><br>
           <%=  t(".place_of_birth") %>: <%= @injection_book.place_of_birth %><br>
-          <%= link_to t(".injection_schedule"), "#", class: "h6 mb-0 font-italic text-green-500"%><br>
-          <%= button_to t(".injection"), user_detail_injection_books_path(injection_book: @injection_book), method: :post, class: "h6 mb-0 font-italic text-green-500"%>
+          <div class="col-md-12 mt-3">
+            <%= link_to t(".injection_history"), user_detail_injection_books_path(injection_book: @injection_book), method: :get, class: "btn btn-primary float-left mr-2"%>
+            <%= link_to t(".injection_schedule"), "#", class: "btn btn-primary float-left mr-2"%>
+            <%= button_to t(".injection"), user_detail_injection_books_path(injection_book: @injection_book), method: :post, class: "btn btn-primary float-left mr-2"%>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 <div class="card shadow mb-4">
-  <div class="card-header py-3 bg-light border-primary">
+  <div class="card-header py-3 bg-light">
     <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
       VẮC XIN CƠ BẢN
     </h6>
@@ -57,7 +61,7 @@
   </div>
 </div>
 <div class="card shadow">
-  <div class="card-header py-3 bg-light border-primary">
+  <div class="card-header py-3 bg-light">
     <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
       VẮC XIN KHÁC
     </h6>

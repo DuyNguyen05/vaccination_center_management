@@ -13,6 +13,8 @@ class DetailInjectionBook < ApplicationRecord
   validates_presence_of :injection_date, :if => lambda { |o| o.status == "step_1" }
   validates_presence_of :react_after_injection, :if => lambda { |o| o.status == "step_5" }
 
+  scope :newest, -> {order updated_at: :desc}
+
   def current_step
     self.status || steps.first
   end
