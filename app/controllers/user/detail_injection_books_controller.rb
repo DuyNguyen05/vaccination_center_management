@@ -1,15 +1,17 @@
 class User::DetailInjectionBooksController < User::UserController
   before_action :load_injection_book, only: [:create, :index]
-  before_action :load_detail_injection_book, only: [:edit, :update]
+  before_action :load_detail_injection_book, only: [:edit, :update, :show]
   before_action -> { authorize [:user, DetailInjectionBook] }
 
   def create
-    if @injection_book.detail_injection_books.blank? || @injection_book.detail_injection_books.last.current_step == "step_5"
-      @detail_injection_book = @injection_book.detail_injection_books.create! status: "step_1", injection_date: Time.now
+    if @injection_book.detail_injection_books.blank? || @injection_book.detail_injection_books.last.current_step == "step_5" || @injection_book.detail_injection_books.last.current_step == "waiting"
+      @detail_injection_book = @injection_book.detail_injection_books.create! status: "waiting", injection_date: Time.now
+      redirect_to user_detail_injection_book_path(@detail_injection_book)
     else
+      flash[:notice] = "Đang trong tiến trình tiên. Tiếp tục hòan thành các bước tiêm."
       @detail_injection_book = @injection_book.detail_injection_books.last
+      redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
     end
-    redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
   end
 
   def edit
@@ -29,6 +31,9 @@ class User::DetailInjectionBooksController < User::UserController
         flash[:notice] = "Saved!"
         redirect_to user_detail_injection_books_path(injection_book: @detail_injection_book.injection_book)
       elsif @detail_injection_book.first_step?
+        @detail_injection_book.next_step
+        redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
+      elsif @detail_injection_book.second_step?
         if params[:detail_injection_book][:check_before_injection_attributes][:answer_question].present? && (params[:detail_injection_book][:check_before_injection_attributes][:answer_question].length == 8) && params[:detail_injection_book][:check_before_injection_attributes][:status].present?
           if (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][1] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][2] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][3] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][4] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][5] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][6] == "true")
             flash[:alert] = "Tạm hoãn tiêm chủng (Khi CÓ điểm bất thường tại các mục 2,3,4,5,6,7)"

@@ -49,4 +49,6 @@ vi:
         name_person_injected: Họ và tên bé
         parent_name: Họ tên bố/mẹ
         address: Địa chỉ
+      waiting:
+        injection: Tiêm
 

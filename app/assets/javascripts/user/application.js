@@ -20,3 +20,4 @@
 //= require ./lib/jquery.dataTables.min.js
 //= require ./lib/dataTables.bootstrap4.min.js
 //= require ./lib/custom.js
+//= require jquery_nested_form

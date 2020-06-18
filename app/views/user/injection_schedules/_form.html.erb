@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between text-center">
+        <h6 class="m-0 font-weight-bold text-primary  text-uppercase">
+          <%= t(".new_injection_schedule") %>
+        </h6>
+        <div class="dropdown no-arrow">
+        </div>
+      </div>
+      <div class="card-body">
+        <%= render "shared/error_message", resource: injection_schedule %>
+        <%= nested_form_for [:user, injection_schedule] do |form| %>
+          <div class="row">
+            <div class="col-xl-11 col-lg-10">
+              <fieldset>
+                <div class="form-group ml-5">
+                  <div class="row ml-5">
+                    <label class="col-md-3 text-left ml-5">
+                      <%= t(".injection_shecdule_type") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <%= form.text_field :injection_schedule_type, placeholder: t(".injection_shecdule_type"), class: "form-control bg-light border-1 small", required: "true" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group ml-5">
+                  <div class="row ml-5">
+                    <label class="col-md-3 text-left ml-5">
+                      <%= t(".injection_date") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <%= form.date_field :injection_date, placeholder: t(".injection_date"), class: "form-control bg-light border-1 small date", required: "true" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="add-vaccine">
+                  <%= form.fields_for :detail_injection_schedules do |iform| %>
+                    <p><%= iform.link_to_remove "- Xóa Vắc-xin" %></p>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-3 text-left ml-5">
+                          <%= t(".vaccine_name") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <%= iform.select :vaccine_id, Vaccine.all.collect {|vac| [vac.name, vac.id]}, { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".select_vaccines.placeholder") } }%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-3 text-left ml-5">
+                          <%= t(".number_injection") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <%= iform.text_field :number_injection, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-3 text-left ml-5">
+                          <%= t(".min_age") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <%= iform.text_field :min_age, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
+                          </div>
+                        </div>
+                        <br><br>
+                        <label class="col-md-3 text-left ml-5">
+                          <%= t(".max_age") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <%= iform.text_field :max_age, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                  <% end %>
+                </div>
+                <p class="ml-5"><%= form.link_to_add t(".add_vaccine"), :detail_injection_schedules, data: {target: "#add-vaccine"} %></p>
+              </fieldset>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-center">
+            <%= link_to t(".button.cancel"), new_user_injection_schedule_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }%>
+            <%= form.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t(".confirm.are_you_sure") } %>
+          </div>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%#= javascript_include_tag :defaults, "nested_form" %>

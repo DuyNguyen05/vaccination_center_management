@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :details_infos, only: [:new, :create]
       resources :detail_injection_books
       resources :vaccines, only: :index
+      resources :injection_schedules
     end
     root "homes#index"
 

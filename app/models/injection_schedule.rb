@@ -1,5 +1,7 @@
 class InjectionSchedule < ApplicationRecord
-  belongs_to :vaccination_center
-  belongs_to :vaccine_package
-  belongs_to :book_code, class_name: InjectionBook.name
+  has_many :detail_injection_schedules, dependent: :destroy
+
+  validates :injection_schedule_type, presence: true
+
+  accepts_nested_attributes_for :detail_injection_schedules
 end

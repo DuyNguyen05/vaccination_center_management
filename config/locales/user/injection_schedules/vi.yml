@@ -1,0 +1,16 @@
+vi:
+  user:
+    injection_schedules:
+      form:
+        new_injection_schedule: Tạo mới lịch tiêm
+        injection_shecdule_type: Loại lịch tiêm
+        button:
+          submit: Tạo mới
+          cancel: Hủy
+        add_vaccine: + Thêm Vắc-xin
+        injection_date: Ngày áp dụng
+        select_vaccines:
+          placeholder: Tìm kiếm và chọn Vắc-xin
+        vaccine_name: Chọn Vắc-xin
+        number_injection: Mũi tiêm số
+
