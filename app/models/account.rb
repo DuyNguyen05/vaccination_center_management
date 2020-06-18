@@ -18,6 +18,39 @@ class Account < ApplicationRecord
     joins(:accounts).where("accounts.user_code LIKE :q OR email LIKE :q OR identify_father LIKE :q OR identify_mother LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
   end
 
+  class << self
+
+    def all_data_user
+      data = []
+      day = group_by_day(:created_at).count
+      date = day.keys
+      user = day.values
+      max = 14
+      title = "Daily"
+      data << {"date" => date, "user" => user, "max" => max, "title" => title}
+    end
+
+    def all_data_user1
+      data = []
+      week = group_by_week(:created_at).count
+      date = week.keys
+      user = week.values
+      max = week.size-1
+      title = "Weekly"
+      data << {"date" => date, "user" => user, "max" => max, "title" => title}
+    end
+
+    def all_data_user2
+      data = []
+      month = group_by_year(:created_at).count
+      date = month.keys
+      user = month.values
+      max = month.size-1
+      title = "Monthly"
+      data << {"date" => date, "user" => user, "max" => max, "title" => title}
+    end
+  end
+
   def is_current_user? user
     self == user
   end

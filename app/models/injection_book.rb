@@ -26,6 +26,32 @@ class InjectionBook < ApplicationRecord
     where("book_code LIKE :q OR name_person_injected LIKE :q OR date_of_birth LIKE :q", q: "%#{query}%") if query.present?
   end
 
+  class << self
+    def all_data_order
+      data = []
+      day = group_by_day(:created_at).count
+      date = day.keys
+      order = day.values
+      data << {"date" => date, "order" => order}
+    end
+
+    def all_data_order1
+      data = []
+      week = group_by_week(:created_at).count
+      date = week.keys
+      order = week.values
+      data << {"date" => date, "order" => order}
+    end
+
+    def all_data_order2
+      data = []
+      month = group_by_year(:created_at).count
+      date = month.keys
+      order = month.values
+      data << {"date" => date, "order" => order}
+    end
+  end
+
   private
 
   def generate_book_code

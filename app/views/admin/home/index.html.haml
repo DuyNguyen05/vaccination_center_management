@@ -38,20 +38,16 @@
             .small.text-white
               %i.fas.fa-angle-right
     .row
-      .col-xl-6
+      .col-xl-12
         .card.mb-4
           .card-header
             %i.fas.fa-chart-area.mr-1>
             Area Chart Example
           .card-body
-            %canvas#myAreaChart{:height => "40", :width => "100%"}
-      .col-xl-6
-        .card.mb-4
-          .card-header
-            %i.fas.fa-chart-bar.mr-1>
-            Bar Chart Example
-          .card-body
-            %canvas#myBarChart{:height => "40", :width => "100%"}
+            #statistic-body
+              .container-fluid
+                = line_chart Account.group_by_day(:created_at).count
+                -# = render "admin/home/statistic", data_user: @data_user, data_order: @data_order, data_product: @data_product
     .card.mb-4
       .card-header
         %i.fas.fa-table.mr-1>

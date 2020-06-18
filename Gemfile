@@ -38,6 +38,8 @@ gem "thor", "~> 0.19.1"
 gem "enumerize"
 gem "nested_form"
 gem "nested_form_fields"
+gem 'groupdate'
+gem "chartkick"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

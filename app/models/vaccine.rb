@@ -24,4 +24,33 @@ class Vaccine < ApplicationRecord
   validates :quantity, presence: true
   validates :company_code, presence: true
 
+  enum tag: {default: "default", other: "other"}
+
+  scope :newest, -> { order(created_at: :desc) }
+
+  class << self
+    def all_data_product
+      data = []
+      day = group_by_day(:created_at).count
+      date = day.keys
+      product = day.values
+      data << {"date" => date, "product" => product}
+    end
+
+    def all_data_product1
+      data = []
+      week = group_by_week(:created_at).count
+      date = week.keys
+      product = week.values
+      data << {"date" => date, "product" => product}
+    end
+
+    def all_data_product2
+      data = []
+      month = group_by_year(:created_at).count
+      date = month.keys
+      product = month.values
+      data << {"date" => date, "product" => product}
+    end
+  end
 end

@@ -40,6 +40,24 @@ end
 #   quantity = Faker::Number.within(range: 1..50)
 #   company_code =  Company.pluck(:company_code).sample
 #   price = Faker::Number.decimal(l_digits: 6, r_digits: 1)
+30.times do |n|
+  code = Faker::Code.imei
+  name = Faker::Beer.name
+  manufacture = Faker::Beer.brand
+  expiry_date = Faker::Date.between(from: Date.today, to: 1.year.from_now)
+  content = Faker::Marketing.buzzwords
+  quantity = Faker::Number.within(range: 1..50)
+  company_code =  Company.pluck(:company_code).sample
+  price = Faker::Number.decimal(l_digits: 6, r_digits: 1)
+
+  vaccine = Vaccine.create!(
+    code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, price: price
+  price = Faker::Number.decimal(l_digits: 3, r_digits: 3)
+  created_at = Faker::Date.between(from: Date.today, to: 1.year.from_now)
+
+  Vaccine.create!(
+    code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, price: price, created_at: created_at
+  )
 
 #   vaccine = Vaccine.create!(
 #     code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, saleprice: price, vaccine_type_id: 1

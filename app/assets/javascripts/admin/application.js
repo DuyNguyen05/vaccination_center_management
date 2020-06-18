@@ -10,13 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
 //= require toastr
 //= require ./lib/account
 //= require select2-full
+//= require ./lib/statistic
+//= require chartkick
+//= require Chart.bundle
+
 $('#detail-vaccine-package').select2({
   theme: "bootstrap"
 });
