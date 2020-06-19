@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :injection_schedules
     end
     root "homes#index"
+    resources :injection_schedules, only: :index
 
     namespace :admin do
       root "home#index"

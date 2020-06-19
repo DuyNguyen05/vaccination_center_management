@@ -73,8 +73,38 @@ $(document).ready(function(){
   })
 });
 
+$(document).on('nested:fieldAdded', function(event){
+  var vaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccines_path %>';
+  $('.select_vaccines').select2({
+    width: '100%',
+    ajax: {
+      url: vaccinesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { vaccine_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.vaccines };
+      }
+    },
+    vaccines: true,
+    templateResult: formatResult,
+    templateSelection: formatSelection,
+  }).trigger('change');
+
+  function formatResult(vaccine) {
+    return vaccine.name;
+  }
+
+  function formatSelection(vaccine) {
+    return vaccine.text || vaccine.name;
+  }
+})
+
 $(document).ready(function() {
-  var vaccinesPath = '/user/vaccines';
+  var vaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccines_path %>';
   $('.select_vaccines').select2({
     width: '100%',
     ajax: {
@@ -102,26 +132,26 @@ $(document).ready(function() {
     return vaccine.text || vaccine.name;
   }
 
-  $('.select_vaccines').on('select2:select', function(e) {
-    var vaccineName = e.params.data.id;
-    if (typeof e.params.data.id === 'string') {
-      $.ajax({
-        url: vaccinesPath,
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          vaccine: {
-            name: vaccineName
-          }
-        },
-      }).done(function(data) {
-        $('option[value="' + data.vaccine.name + '"]').removeAttr('data-select2-vaccine');
-        $('option[value="' + data.vaccine.name + '"]').attr('value', data.vaccine.id);
-      })
-      .fail(function(data){
-        alert(data.responseJSON["errors"]);
-        $('option[value="' + vaccineName + '"]').remove();
-      })
-    }
-  }).trigger('change');
+  // $('.select_vaccines').on('select2:select', function(e) {
+  //   var vaccineName = e.params.data.id;
+  //   if (typeof e.params.data.id === 'string') {
+  //     $.ajax({
+  //       url: vaccinesPath,
+  //       type: 'POST',
+  //       dataType: 'json',
+  //       data: {
+  //         vaccine: {
+  //           name: vaccineName
+  //         }
+  //       },
+  //     }).done(function(data) {
+  //       $('option[value="' + data.vaccine.name + '"]').removeAttr('data-select2-vaccine');
+  //       $('option[value="' + data.vaccine.name + '"]').attr('value', data.vaccine.id);
+  //     })
+  //     .fail(function(data){
+  //       alert(data.responseJSON["errors"]);
+  //       $('option[value="' + vaccineName + '"]').remove();
+  //     })
+  //   }
+  // }).trigger('change');
 });

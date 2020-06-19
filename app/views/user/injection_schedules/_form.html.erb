@@ -1,16 +1,14 @@
 <div class="row">
   <div class="col-xl-12 col-lg-12">
     <div class="card shadow mb-4">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between text-center">
-        <h6 class="m-0 font-weight-bold text-primary  text-uppercase">
+      <div class="card-header py-3 text-center">
+        <h6 class="m-0 font-weight-bold text-primary text-uppercase">
           <%= t(".new_injection_schedule") %>
         </h6>
-        <div class="dropdown no-arrow">
-        </div>
       </div>
       <div class="card-body">
-        <%= render "shared/error_message", resource: injection_schedule %>
-        <%= nested_form_for [:user, injection_schedule] do |form| %>
+        <%= nested_form_for [:user, injection_schedule], class: "well form-horizontal" do |form| %>
+          <%= render "shared/error_message", resource: injection_schedule %>
           <div class="row">
             <div class="col-xl-11 col-lg-10">
               <fieldset>
@@ -38,9 +36,9 @@
                     </div>
                   </div>
                 </div>
-                <div id="add-vaccine">
-                  <%= form.fields_for :detail_injection_schedules do |iform| %>
-                    <p><%= iform.link_to_remove "- Xóa Vắc-xin" %></p>
+                <div id="add_vaccine">
+                  <%= form.fields_for :detail_injection_schedules, wrapper: true do |iform| %>
+                    <%= iform.link_to_remove do%><i class="fa fa-times ml-5" style="color:gray"></i><%end%>
                     <div class="form-group ml-5">
                       <div class="row ml-5">
                         <label class="col-md-3 text-left ml-5">
@@ -48,7 +46,7 @@
                         </label>
                         <div class="col-md-8 inputGroupContainer">
                           <div class="input-group">
-                            <%= iform.select :vaccine_id, Vaccine.all.collect {|vac| [vac.name, vac.id]}, { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".select_vaccines.placeholder") } }%>
+                            <%= iform.select :vaccine_id, {}, {}, class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".select_vaccines.placeholder") } %>
                           </div>
                         </div>
                       </div>
@@ -89,7 +87,7 @@
                     <hr>
                   <% end %>
                 </div>
-                <p class="ml-5"><%= form.link_to_add t(".add_vaccine"), :detail_injection_schedules, data: {target: "#add-vaccine"} %></p>
+                <p class="ml-5"><%= form.link_to_add t(".add_vaccine"), :detail_injection_schedules, data: {target: "#add_vaccine"} %></p>
               </fieldset>
             </div>
           </div>
@@ -104,4 +102,4 @@
     </div>
   </div>
 </div>
-<%#= javascript_include_tag :defaults, "nested_form" %>
+

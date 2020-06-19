@@ -3,5 +3,5 @@ class InjectionSchedule < ApplicationRecord
 
   validates :injection_schedule_type, presence: true
 
-  accepts_nested_attributes_for :detail_injection_schedules
+  accepts_nested_attributes_for :detail_injection_schedules, allow_destroy: true
 end

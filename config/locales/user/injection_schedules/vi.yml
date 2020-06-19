@@ -13,4 +13,6 @@ vi:
           placeholder: Tìm kiếm và chọn Vắc-xin
         vaccine_name: Chọn Vắc-xin
         number_injection: Mũi tiêm số
+      show:
+        injection_schedule: Lịch tiêm chủng
 

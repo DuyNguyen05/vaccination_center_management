@@ -154,6 +154,8 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   create_table "detail_injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.integer "number_injection"
+    t.string "type_age"
+    t.string "age"
     t.bigint "injection_schedule_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
