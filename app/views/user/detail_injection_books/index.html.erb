@@ -5,66 +5,80 @@
       LỊCH SỬ TIÊM CHỦNG
     </h4>
   </div>
-  <% @injection_book.detail_injection_books.newest.each do |detail_injection_book| %>
-    <div class="card-header py-3 bg-light">
-      <h4 class="text-lg m-0 font-weight-bold text-gray text-uppercase">
-        Ngày <%= detail_injection_book.updated_at.strftime("%d - %m - %Y, %H:%M") %>
-      </h4>
+  <% if @injection_book.detail_injection_books.blank? %>
+    <br><br><br><br>
+    <h5 class="fs-title text-center"><span>Bé chưa có lịch sử tiêm chủng nào. Đăng ký tiêm ngay</span></h5>
+    <div class="row justify-content-center">
+      <div class="col-3 text-center">
+        <%= button_to "Tại đây", user_detail_injection_books_path(injection_book: @injection_book.id), method: :post, class: "btn btn-primary" %>
+      </div>
     </div>
-    <div class="card-body">
-      <div class="row d-flex">
-        <div class="font-weight text-dark mb-1">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="m-0 font-weight-bold text-dark text-uppercase mb-1">
-                  <b>KIỂM TRA TRƯỚC KHI TIÊM</b>
-                </div>
-                <div class="text-gray-900">
-                  <li><%= detail_injection_book.check_before_injection.agree? ? "Kết luận: ĐỒNG Ý TIÊM" : "Kết luận: KHÔNG ĐỒNG Ý TIÊM" %></li>
-                  <div class="float-left">
-                    <%= link_to t('.info_previous_step'), "", data: {toggle: "modal", target: "#modal-#{detail_injection_book.id}"} %>
-                    <div class="modal fade bs-example-modal-lg" id="modal-<%= detail_injection_book.id %>" tabindex="-1" role="dialog">
-                      <%= render "info_step_1", detail_injection_book: detail_injection_book %>
+    <br><br><br><br>
+  <% elsif @injection_book.detail_injection_books.blank? && @injection_book.detail_injection_books.last.current_step != "waiting" %>
+    <%= render "waiting"%>
+  <% else %>
+    <% @injection_book.detail_injection_books.newest.each do |detail_injection_book| %>
+      <% if detail_injection_book.current_step != "waiting" %>
+        <div class="card-header py-3 bg-light">
+          <h4 class="text-lg m-0 font-weight-bold text-gray text-uppercase">
+            Ngày <%= detail_injection_book.updated_at.strftime("%d - %m - %Y, %H:%M") %>
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="row d-flex">
+            <div class="card-body col-xl-4 col-lg-4">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-1">
+                    <b>KIỂM TRA TRƯỚC KHI TIÊM</b>
+                  </div>
+                  <div class="text-gray-900">
+                    <li><%= detail_injection_book.check_before_injection.agree? ? "Kết luận: ĐỒNG Ý TIÊM" : "Kết luận: KHÔNG ĐỒNG Ý TIÊM" %></li>
+                    <div class="float-left">
+                      <%= link_to t('.info_previous_step'), "", data: {toggle: "modal", target: "#modal-#{detail_injection_book.id}"} %>
+                      <div class="modal fade bs-example-modal-lg" id="modal-<%= detail_injection_book.id %>" tabindex="-1" role="dialog">
+                        <%= render "info_step_1", detail_injection_book: detail_injection_book %>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
-                  <b>CHI TIẾT THÔNG TIN TIÊM</b>
-                </div>
-                <div class="text-gray-900">
-                  <% detail_injection_book&.bill&.detail_bills&.each do |detail_bill| %>
-                    <li class="ml-3"><%= detail_bill.vaccine.name %>
-                      <li class="ml-5">
-                        Số mũi tiêm: <%= detail_bill.number_injection %>
+            <div class="card-body col-xl-4 col-lg-4">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                    <b>CHI TIẾT THÔNG TIN TIÊM</b>
+                  </div>
+                  <div class="text-gray-900">
+                    <%= "Tạm hoãn hoặc hủy tiêm do không đủ điều kiện" unless detail_injection_book.bill.present? %>
+                    <% detail_injection_book&.bill&.detail_bills&.each do |detail_bill| %>
+                      <li class="ml-3"><%= detail_bill.vaccine.name %>
+                        <li class="ml-5">
+                          Số mũi tiêm: <%= detail_bill.number_injection %>
+                        </li>
                       </li>
-                    </li>
-                  <% end %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
-                  <b>THEO DÕI SAU TIÊM</b>
-                </div>
-                <div class="text-gray-900">
-                  <li>Kết luận của bác sĩ: <%= detail_injection_book.react_after_injection %></li>
+            <div class="card-body col-xl-4 col-lg-4">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                    <b>THEO DÕI SAU TIÊM</b>
+                  </div>
+                  <div class="text-gray-900">
+                    <li>Kết luận của bác sĩ: <%= detail_injection_book.react_after_injection %></li>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 

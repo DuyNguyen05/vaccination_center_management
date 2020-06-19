@@ -11,7 +11,7 @@ class DetailInjectionBook < ApplicationRecord
   accepts_nested_attributes_for :check_before_injection
 
   validates_presence_of :injection_date, :if => lambda { |o| o.status == "step_1" }
-  validates_presence_of :react_after_injection, :if => lambda { |o| o.status == "step_5" }
+  # validates_presence_of :react_after_injection, :if => lambda { |o| o.status == "step_4" }
 
   scope :newest, -> {order updated_at: :desc}
 
@@ -20,7 +20,7 @@ class DetailInjectionBook < ApplicationRecord
   end
 
   def steps
-    %w[step_1 step_2 step_3 step_4 step_5]
+    %w[waiting step_1 step_2 step_3 step_4 step_5]
   end
 
   def next_step
@@ -33,6 +33,10 @@ class DetailInjectionBook < ApplicationRecord
 
   def first_step?
     status == steps.first
+  end
+
+  def second_step?
+    status == steps.second
   end
 
   def last_step?

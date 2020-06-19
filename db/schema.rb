@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_13_084800) do
+ActiveRecord::Schema.define(version: 2020_06_18_113809) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -126,6 +126,8 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "register_injection_package_id"
+    t.bigint "bill_id"
+    t.index ["bill_id"], name: "index_detail_bills_on_bill_id"
     t.index ["register_injection_package_id"], name: "index_detail_bills_on_register_injection_package_id"
     t.index ["vaccine_id"], name: "index_detail_bills_on_vaccine_id"
     t.index ["vaccine_package_type_id"], name: "index_detail_bills_on_vaccine_package_type_id"
@@ -147,6 +149,18 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.index ["check_before_injection_id"], name: "index_detail_injection_books_on_check_before_injection_id"
     t.index ["injection_book_id"], name: "index_detail_injection_books_on_injection_book_id"
     t.index ["vaccination_center_id"], name: "index_detail_injection_books_on_vaccination_center_id"
+  end
+
+  create_table "detail_injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "vaccine_id"
+    t.integer "number_injection"
+    t.string "type_age"
+    t.string "age"
+    t.bigint "injection_schedule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["injection_schedule_id"], name: "index_detail_injection_schedules_on_injection_schedule_id"
+    t.index ["vaccine_id"], name: "index_detail_injection_schedules_on_vaccine_id"
   end
 
   create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -225,15 +239,21 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
   end
 
   create_table "injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "vaccination_center_id"
     t.datetime "injection_date"
     t.datetime "registration_date"
-    t.bigint "vaccine_package_type_id"
-    t.string "book_code"
+    t.string "injection_schedule_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["vaccination_center_id"], name: "index_injection_schedules_on_vaccination_center_id"
-    t.index ["vaccine_package_type_id"], name: "index_injection_schedules_on_vaccine_package_type_id"
+  end
+
+  create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "min_age"
+    t.integer "max_age"
+    t.string "name"
+    t.bigint "vaccine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vaccine_id"], name: "index_number_injections_on_vaccine_id"
   end
 
   create_table "register_injection_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -295,7 +315,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
     t.string "name"
     t.string "manufacture"
     t.datetime "expiry_date"
-    t.string "content"
+    t.text "content", limit: 4294967295
     t.bigint "vaccine_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -325,6 +345,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
   add_foreign_key "contract_distributions", "contracts"
   add_foreign_key "contract_distributions", "details_infos"
   add_foreign_key "contracts", "contract_types"
+  add_foreign_key "detail_bills", "bills"
   add_foreign_key "detail_bills", "register_injection_packages"
   add_foreign_key "detail_bills", "vaccine_package_types"
   add_foreign_key "detail_bills", "vaccines"
@@ -333,6 +354,8 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
   add_foreign_key "detail_injection_books", "check_before_injections"
   add_foreign_key "detail_injection_books", "injection_books"
   add_foreign_key "detail_injection_books", "vaccination_centers"
+  add_foreign_key "detail_injection_schedules", "injection_schedules"
+  add_foreign_key "detail_injection_schedules", "vaccines"
   add_foreign_key "detail_vaccine_packages", "vaccine_package_types"
   add_foreign_key "detail_vaccine_packages", "vaccines"
   add_foreign_key "details_infos", "departments"
@@ -340,8 +363,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_084800) do
   add_foreign_key "import_vaccines", "accounts"
   add_foreign_key "import_vaccines", "vaccines"
   add_foreign_key "injection_books", "info_injection_books"
-  add_foreign_key "injection_schedules", "vaccination_centers"
-  add_foreign_key "injection_schedules", "vaccine_package_types"
+  add_foreign_key "number_injections", "vaccines"
   add_foreign_key "register_injection_packages", "bills"
   add_foreign_key "register_injection_packages", "injection_books"
   add_foreign_key "register_injection_packages", "vaccine_package_types"
