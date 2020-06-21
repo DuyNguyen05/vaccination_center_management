@@ -27,22 +27,22 @@ Admin.find(account.id).update! user_code: "admin-070397"
   Company.create!(company_code: code, name: name)
 end
 
-30.times do |n|
-  code = Faker::Code.imei
-  name = Faker::Beer.name
-  manufacture = Faker::Beer.brand
-  expiry_date = Faker::Date.between(from: Date.today, to: 1.year.from_now)
-  content = Faker::Marketing.buzzwords
-  quantity = Faker::Number.within(range: 1..50)
-  company_code =  Company.pluck(:company_code).sample
-  price = Faker::Number.decimal(l_digits: 6, r_digits: 1)
+# 30.times do |n|
+#   code = Faker::Code.imei
+#   name = Faker::Beer.name
+#   manufacture = Faker::Beer.brand
+#   expiry_date = Faker::Date.between(from: Date.today, to: 1.year.from_now)
+#   content = Faker::Marketing.buzzwords
+#   quantity = Faker::Number.within(range: 1..50)
+#   company_code =  Company.pluck(:company_code).sample
+#   price = Faker::Number.decimal(l_digits: 6, r_digits: 1)
 
-  vaccine = Vaccine.create!(
-    code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, price: price
-  )
+#   vaccine = Vaccine.create!(
+#     code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, price: price
+#   )
 
-  NumberInjection.create!(name: "Mũi 1", min_age: 0, max_age: 10, vaccine_id: vaccine.id)
-end
+#   NumberInjection.create!(name: "Mũi 1", age: 0, vaccine_id: vaccine.id)
+# end
 
 thao = DetailsInfo.create(first_name: "Thao", last_name: "Nguyen", identify: "017270100", number_phone: "0389746397", email: "thaonguyen.mta@gmail.com")
 account = CreateAccountService.new(details_info_id: thao.id).create_account

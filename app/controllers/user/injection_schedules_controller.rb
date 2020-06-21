@@ -36,6 +36,6 @@ class User::InjectionSchedulesController < User::UserController
 
   def injection_schedule_params
     params.require(:injection_schedule).permit :injection_date,
-      :injection_schedule_type, detail_injection_schedules_attributes: [:id, :vaccine_id, :number_injection, :_destroy]
+      :injection_schedule_type, detail_injection_schedules_attributes: [:id, :vaccine_id, :number_injection, :age, :_destroy]
   end
 end

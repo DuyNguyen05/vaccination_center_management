@@ -247,7 +247,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   end
 
   create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "min_age"
+    t.integer "age"
     t.integer "max_age"
     t.string "name"
     t.bigint "vaccine_id"

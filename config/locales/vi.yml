@@ -18,3 +18,6 @@ vi:
   enumerize:
     agree: "Đồng ý"
     disagree: "Không đồng ý"
+    childbirth: "Sơ sinh"
+    month_old: "Nhỏ hơn một tuổi"
+    year_old: "Lớn hơn một tuổi"
