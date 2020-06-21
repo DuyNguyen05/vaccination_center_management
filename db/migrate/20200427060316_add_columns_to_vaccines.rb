@@ -4,6 +4,8 @@ class AddColumnsToVaccines < ActiveRecord::Migration[5.2]
     add_column :vaccines, :company_code, :string
     add_column :vaccines, :user_code, :string
     add_column :vaccines, :saleprice, :string
+    add_column :vaccines, :price, :string
+    add_column :vaccines, :tag, :string
 
     add_index :vaccines, :company_code
     add_index :vaccines, :user_code

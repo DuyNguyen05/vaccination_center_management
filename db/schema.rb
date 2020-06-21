@@ -380,11 +380,12 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.string "entry_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "tag", default: "default"
     t.integer "quantity"
     t.string "company_code"
     t.string "user_code"
     t.string "saleprice"
+    t.string "price"
+    t.string "tag"
     t.bigint "company_id"
     t.index ["company_code"], name: "index_vaccines_on_company_code"
     t.index ["company_id"], name: "index_vaccines_on_company_id"

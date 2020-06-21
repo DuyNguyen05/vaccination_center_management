@@ -1,4 +1,5 @@
 class Vaccine < ApplicationRecord
+  extend Enumerize
   belongs_to :vaccine_type, optional: true
   belongs_to :company, class_name: Company.name, foreign_key: :company_code
   has_many :detail_injection_books
@@ -6,12 +7,15 @@ class Vaccine < ApplicationRecord
   has_many :detail_vaccine_packages, dependent: :destroy
   has_many :vaccine_package_types, through: :detail_vaccine_packages, dependent: :destroy
   has_many :number_injections, dependent: :destroy
+  has_many :detail_bills, dependent: :destroy
+  has_many :bills, through: :detail_bills
 
-  enum tag: {default: "default", other: "other"}
+  enumerize :tag, in: [:default, :other], default: :default
 
   scope :newest, -> { order(created_at: :desc) }
+
   scope :match_query, ->(query) do
-    where("code LIKE :q OR manufacture LIKE :q", q: "%#{query}%") if query.present?
+    where("code LIKE :q OR manufacture LIKE :q OR name LIKE :q", q: "%#{query}%") if query.present?
   end
   scope :search_vaccines, ->(params) do
     where("code LIKE :q OR name LIKE :q", q: "%#{params}%") if params.present?

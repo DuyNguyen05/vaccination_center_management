@@ -38,67 +38,32 @@
             .small.text-white
               %i.fas.fa-angle-right
     .row
-      .col-xl-12
+      .col-xl-6
         .card.mb-4
           .card-header
             %i.fas.fa-chart-area.mr-1>
-            Area Chart Example
+            = t("admin.charts.injection_book")
           .card-body
             #statistic-body
               .container-fluid
-                -# = column_chart Vaccine.group_by_year(:created_at, format: "%b-%x").count
-                -# = line_chart Vaccine.group_by_month(:created_at, last: 12, current: false).count, title: 'Monthly Spending For Last Year'
-                -# = column_chart admin_root_path, title: 'Monthly Spending For Last Year', subtitle: "haha"
-                = render "admin/home/statistic", account: @account
+                = render "admin/charts/injection_book", injection_books: @injection_books
+      .col-xl-6
+        .card.mb-4
+          .card-header
+            %i.fas.fa-chart-area.mr-1>
+            = t("admin.charts.vaccine")
+          .card-body
+            #statistic-body
+              .container-fluid
+                = render "admin/charts/vaccine", vaccines: @vaccines
     .card.mb-4
       .card-header
         %i.fas.fa-table.mr-1>
-        DataTable Example
-      .card-body
-        .table-responsive
-          %table#dataTable.table.table-bordered{:cellspacing => "0", :width => "100%"}
-            %thead
-              %tr
-                %th Name
-                %th Position
-                %th Office
-                %th Age
-                %th Start date
-                %th Salary
-            %tfoot
-              %tr
-                %th Name
-                %th Position
-                %th Office
-                %th Age
-                %th Start date
-                %th Salary
-            %tbody
-              %tr
-                %td Tiger Nixon
-                %td System Architect
-                %td Edinburgh
-                %td 61
-                %td 2011/04/25
-                %td $320,800
-              %tr
-                %td Garrett Winters
-                %td Accountant
-                %td Tokyo
-                %td 63
-                %td 2011/07/25
-                %td $170,750
-              %tr
-                %td Ashton Cox
-                %td Junior Technical Author
-                %td San Francisco
-                %td 66
-                %td 2009/01/12
-                %td $86,000
-              %tr
-                %td Cedric Kelly
-                %td Senior Javascript Developer
-                %td Edinburgh
-                %td 22
-                %td 2012/03/29
-                %td $433,060
+        = t("admin.charts.detail_bill")
+      .row
+        .col-xl-12
+          .card-body
+            #statistic-body
+              .container-fluid
+                -# = render "admin/charts/detail_bill", detail_bills: @detail_bills
+                = line_chart @detail_bills

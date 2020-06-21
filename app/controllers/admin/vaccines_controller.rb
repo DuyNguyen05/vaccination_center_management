@@ -3,6 +3,12 @@ class Admin::VaccinesController < Admin::AdminController
 
   def index
     @vaccines = Vaccine.match_query(params[:query]).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: { vaccines: @vaccines.as_json }
+      end
+    end
   end
 
   def new
@@ -10,9 +16,9 @@ class Admin::VaccinesController < Admin::AdminController
   end
 
   def create
-    company_code = Company.find_by(company_code: params[:vaccine][:company_code])
+    company_code = Company.find(params[:vaccine][:company_code]).company_code
     vaccine_data = vaccine_params.merge(company_code: company_code) if company_code.present?
-    @vaccine = Vaccine.new(vaccine_params)
+    @vaccine = Vaccine.new(vaccine_data)
     if @vaccine.save
       flash[:success] = t(".created")
       redirect_to admin_vaccines_path
@@ -51,7 +57,7 @@ class Admin::VaccinesController < Admin::AdminController
   private
 
   def vaccine_params
-    params.require(:vaccine).permit(:code, :name, :manufacture, :content, :expiry_date, :quantity, :user_code, :company_code)
+    params.require(:vaccine).permit(:code, :name, :manufacture, :content, :expiry_date, :quantity, :user_code)
   end
 
   def set_vaccine

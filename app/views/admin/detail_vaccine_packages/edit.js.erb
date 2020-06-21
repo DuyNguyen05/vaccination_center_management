@@ -1,6 +1,32 @@
 $("body").append("<%= j render 'admin/detail_vaccine_packages/edit', detail_vaccine_package: @detail_vaccine_package, vaccines: @vaccines %>");
 $("#modalDetailVaccinePackageEdit<%= @detail_vaccine_package.id %>").modal("show");
-$('#detail-vaccine-package').select2({
-  theme: "bootstrap",
-  dropdownParent: $("#modalDetailVaccinePackageEdit<%= @detail_vaccine_package.id %>"),
+$(document).ready(function() {
+  var vaccinesPath = '/admin/vaccines';
+  $('#detail-vaccine-package').select2({
+    dropdownParent: $("#modalDetailVaccinePackageEdit<%= @detail_vaccine_package.id %>"),
+    width: '100%',
+    ajax: {
+      url: vaccinesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { query: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.vaccines };
+      }
+    },
+    vaccines: true,
+    templateResult: formatResult,
+    templateSelection: formatSelection,
+  }).trigger('change');
+
+  function formatResult(vaccines) {
+    return vaccines.name;
+  }
+
+  function formatSelection(vaccines) {
+    return vaccines.text || vaccines.name;
+  }
 });

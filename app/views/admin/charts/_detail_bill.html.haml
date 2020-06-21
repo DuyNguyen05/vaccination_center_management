@@ -1,0 +1,6 @@
+#button-statistic
+  = link_to "Ngày", admin_root_path, method: :get, class: "btn btn-primary"
+  = link_to "Tuần", admin_root_path(type: "week"), method: :get, class: "btn btn-primary"
+  = link_to "Tháng",admin_root_path(type: "month"), method: :get, class: "btn btn-primary"
+  = link_to "Năm",admin_root_path(type: "year"), method: :get, class: "btn btn-primary"
+= detail_bills

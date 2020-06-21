@@ -20,6 +20,33 @@
 //= require ./lib/statistic
 //= require chartkick
 
-$('#detail-vaccine-package').select2({
-  theme: "bootstrap"
+
+$(document).ready(function() {
+  var companiesPath = '/admin/companies';
+  $('#selectcompanies').select2({
+    width: '100%',
+    ajax: {
+      url: companiesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { query: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.companies };
+      }
+    },
+    companies: true,
+    templateResult: formatResult,
+    templateSelection: formatSelection,
+  }).trigger('change');
+
+  function formatResult(companies) {
+    return companies.name;
+  }
+
+  function formatSelection(companies) {
+    return companies.text || companies.name;
+  }
 });
