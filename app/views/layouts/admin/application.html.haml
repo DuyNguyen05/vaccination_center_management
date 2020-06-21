@@ -5,6 +5,7 @@
     %title Admin
     = stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track": "reload"
     = csrf_meta_tags
+    = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
 
   %body.sb-nav-fixed
     = render "layouts/admin/header"
@@ -20,5 +21,4 @@
               = alert
           = yield
         = render "layouts/admin/footer"
-    = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
     = render "layouts/admin/toastr"

@@ -46,8 +46,10 @@
           .card-body
             #statistic-body
               .container-fluid
-                = line_chart Account.group_by_day(:created_at).count
-                -# = render "admin/home/statistic", data_user: @data_user, data_order: @data_order, data_product: @data_product
+                -# = column_chart Vaccine.group_by_year(:created_at, format: "%b-%x").count
+                -# = line_chart Vaccine.group_by_month(:created_at, last: 12, current: false).count, title: 'Monthly Spending For Last Year'
+                -# = column_chart admin_root_path, title: 'Monthly Spending For Last Year', subtitle: "haha"
+                = render "admin/home/statistic", account: @account
     .card.mb-4
       .card-header
         %i.fas.fa-table.mr-1>

@@ -19,7 +19,6 @@
 //= require select2-full
 //= require ./lib/statistic
 //= require chartkick
-//= require Chart.bundle
 
 $('#detail-vaccine-package').select2({
   theme: "bootstrap"
