@@ -32,7 +32,9 @@ Rails.application.routes.draw do
       devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 
       resources :accounts
-      resources :info_injection_books
+      resources :info_injection_books do
+        resources :injection_books, shallow: true
+      end
       resources :companies
       resources :details_infos
       resources :import_vaccines
@@ -41,6 +43,7 @@ Rails.application.routes.draw do
       resources :vaccine_package_types do
         resources :detail_vaccine_packages, shallow: true
       end
+      resources :bills
     end
   end
 end

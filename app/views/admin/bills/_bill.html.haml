@@ -1,0 +1,11 @@
+- bills.each do |bill|
+  %tr.text-center{id: "bill#{bill.id}"}
+    %td= bill.id
+    %td= link_to bill.injection_book_id, admin_injection_book_path(bill.injection_book_id)
+    %td= l(bill.created_at, format: :date_month_year_concise)
+    %td= bill.account_id
+    %td
+      -# = link_to edit_admin_bill_path(bill, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
+      -#   %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      -# = link_to admin_bill_path(bill, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: bill.name)}, remote: true, class: "btn btn-danger" do
+      -#   %i.fa.fa-trash{"aria-hidden" => "true"}

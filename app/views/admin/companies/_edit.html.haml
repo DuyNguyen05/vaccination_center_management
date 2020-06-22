@@ -9,12 +9,16 @@
       .modal-body
         = form_with model: [:admin, @company], method: :patch do |f|
           .form-group
-            = f.label Company.human_attribute_name(:company_code)
-            = f.text_field :company_code, class: "form-control", disabled: true
+            = f.label InjectionBook.human_attribute_name("name_person_injected")
+            = f.text_field :name_person_injected, class: "form-control"
           .form-group
-            = f.label Company.human_attribute_name(:name)
-            = f.text_field :name, class: "form-control"
+            = f.label InjectionBook.human_attribute_name("date_of_birth")
+
+            = f.text_field :date_of_birth, class: "form-control"
           .form-group
-            = f.label Company.human_attribute_name(:address)
-            = f.text_field :address, class: "form-control"
+            = f.label InjectionBook.human_attribute_name("place_of_birth")
+            = f.text_field :place_of_birth, class: "form-control"
+          .form-group
+            = f.label InjectionBook.human_attribute_name("gender")
+            = f.text_field :gender, class: "form-control"
           = f.submit t(".submit"), class: "btn btn-primary"

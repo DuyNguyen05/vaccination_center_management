@@ -1,0 +1,14 @@
+vi:
+  admin:
+    injection_books:
+      index:
+        injection_books_management: Quản Lý Sổ Tiêm
+        search_title: Tìm Kiếm
+        search: Nhập Mã Sổ Tiêm Hoặc Tên Của Bé
+      edit:
+        edit_injection_book: Chỉnh Sửa Sổ Tiêm
+        male: Nam
+        female: Nữ
+        submit: Cập Nhật
+      show:
+        show_injection_book: Hiển Thị Chi Tiết Sổ Tiêm

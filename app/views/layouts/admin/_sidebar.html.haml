@@ -92,6 +92,11 @@
               .sb-nav-link-icon
                 %i.fas.fa-boxes
               = t("admin.departments.index.show_all")
+        %li{ class: active_class(admin_bills_path)}
+          = link_to admin_bills_path, class: "nav-link" do
+            .sb-nav-link-icon
+              %i.fas.fa-plus
+            = t("admin.sidebar.bill_management")
         %a.nav-link.collapsed{"aria-controls" => "collapsePages", "aria-expanded" => "false", "data-target" => "#collapsePages", "data-toggle" => "collapse", :href => "#"}
           .sb-nav-link-icon
             %i.fas.fa-book-open

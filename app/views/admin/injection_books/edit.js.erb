@@ -1,0 +1,2 @@
+$("body").append("<%= j render 'admin/injection_books/edit', injection_book: @injection_book, info_injection_book: @info_injection_book %>");
+$("#modalInjectionBookEdit<%= @injection_book.id %>").modal("show");

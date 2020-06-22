@@ -14,6 +14,11 @@ class Bill < ApplicationRecord
   accepts_nested_attributes_for :detail_bills, allow_destroy: true
 
   scope :newest, -> {order created_at: :desc}
+  
+  scope :filter_bill, -> (query) do
+    where("injection_book_id LIKE :q OR id LIKE :q OR created_at LIKE :q", q: "%#{query}%") if query.present?
+  end
+
   # Bill.includes(:detail_bills, :vaccines).map{ |a| a.vaccines.sum(:price) }
 
   # scope :tested, -> (time) do

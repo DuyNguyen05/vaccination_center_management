@@ -1,0 +1,43 @@
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          =  t(".injection_books_management")
+      .card.my-4
+        .card-header
+          %i.fas.fa-search.mr-1
+          = t(".search_title")
+        .card-body
+          = form_tag admin_info_injection_book_injection_books_path(@info_injection_book), method: :get do
+            .row
+              .col-sm-12
+                .form-group
+                  = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+                = button_tag(type: "submit", class: "btn btn-primary") do
+                  %i.fa.fa-search{"aria-hidden" => "true"}
+                  = t(".search_title")
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1
+              = t(".info_injection_books")
+            .col-md-6.text-right
+              -# = link_to "#", class: "btn btn-primary", type: :button do
+              -#   %i.fas.fa-user-plus
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th= InjectionBook.human_attribute_name("book_code")
+                  %th= InjectionBook.human_attribute_name("name_person_injected")
+                  %th= InjectionBook.human_attribute_name("date_of_birth")
+                  %th= InjectionBook.human_attribute_name("place_of_birth")
+                  %th= InjectionBook.human_attribute_name("gender")
+                  %th= InjectionBook.human_attribute_name("created_at")
+                  %th
+              %tbody#injection_books
+                = render "admin/injection_books/injection_book", injection_books: @injection_books, info_injection_book: @info_injection_book
+            = paginate @injection_books, theme: "twitter-bootstrap-4"

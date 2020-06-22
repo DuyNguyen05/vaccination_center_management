@@ -38,6 +38,11 @@
                     = InfoInjectionBook.human_attribute_name("identify_mother")
                     &colon;
                     = @user.identify_mother
+                %li.d-flex.no-block.card-body
+                  %div
+                    = link_to admin_info_injection_book_injection_books_path(@user.id) do
+                      %i
+                        %b >> Xem Tất Cả Các Sổ Tiêm
             .col-lg-6
               %li.d-flex.no-block.card-body
                 %div

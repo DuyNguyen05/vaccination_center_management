@@ -1,0 +1,6 @@
+<% if @injection_book.errors.any? %>
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @injection_book.errors.full_messages.join('; ') %>")
+<% else %>
+  $("#injection_books").html("<%= j render 'admin/injection_books/injection_book', injection_books: @injection_books, info_injection_book: @info_injection_book %>");
+  $("#modalInjectionBookEdit<%= @injection_book.id %>").modal("hide");
+<% end %>

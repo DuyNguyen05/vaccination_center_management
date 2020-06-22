@@ -1,0 +1,7 @@
+vi:
+  admin:
+    bills:
+      index:
+        search_title: Tìm Kiếm
+        search: Nhập Mã Hóa Đơn Hoặc Mã Sổ Tiêm Hoặc Ngày Tạo Hóa Đơn
+        bill_list: Danh Sách Hóa Đơn
