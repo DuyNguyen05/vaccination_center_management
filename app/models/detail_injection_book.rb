@@ -1,5 +1,5 @@
 class DetailInjectionBook < ApplicationRecord
-  STEPS = %w[waiting step_1 step_2 step_3 step_4 step_5]
+  STEPS = %w[waiting step_1 step_2 step_3 step_4 step_5 cancel]
   attr_writer :current_step
 
   has_one :bill, dependent: :destroy
@@ -21,7 +21,7 @@ class DetailInjectionBook < ApplicationRecord
   end
 
   def next_step
-    self.update status: STEPS[STEPS.index(current_step)+1]
+    self.update status: STEPS[STEPS.index(current_step)+1] unless self.last_step? || self.cancel?
   end
 
   def previous_step
@@ -41,7 +41,11 @@ class DetailInjectionBook < ApplicationRecord
   end
 
   def last_step?
-    status == STEPS.last
+    status == STEPS[5]
+  end
+
+  def cancel?
+    status == STEPS[6]
   end
 
   def all_valid?

@@ -52,4 +52,6 @@ vi:
         address: Địa chỉ
       waiting:
         injection: Tiêm
-
+      edit:
+        confirm:
+          are_you_sure: Bạn có chắc chắn không?

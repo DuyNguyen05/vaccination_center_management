@@ -37,7 +37,7 @@
                     <div class="float-left">
                       <%= link_to t('.info_previous_step'), "", data: {toggle: "modal", target: "#modal-#{detail_injection_book.id}"} if detail_injection_book.check_before_injection.present? && detail_injection_book.check_before_injection.agree? %>
                       <div class="modal fade bs-example-modal-lg" id="modal-<%= detail_injection_book.id %>" tabindex="-1" role="dialog">
-                        <%= render "info_step_1", detail_injection_book: detail_injection_book %>
+                        <%= render "info_step_1", detail_injection_book: detail_injection_book if detail_injection_book.check_before_injection.present? && detail_injection_book.check_before_injection.agree? %>
                       </div>
                     </div>
                   </div>
