@@ -1,7 +1,7 @@
 vi:
   user:
     info_injection_books:
-      new:
+      form:
         new_info_injection_books: Tạo thông tin bố mẹ của bé
         father_name: Họ và tên bố
         mother_name: Họ và tên mẹ
@@ -21,6 +21,9 @@ vi:
         button:
           cancel: Hủy
           submit: Hoàn thành
+        confirm:
+            are_you_sure: Bạn có chắc chắn không?
+        add_injection_book: Thêm sổ tiêm
       index:
         search: Tìm kiếm
         add_user: Đăng ký thông tin

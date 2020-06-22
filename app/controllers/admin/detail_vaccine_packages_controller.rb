@@ -6,6 +6,11 @@ class Admin::DetailVaccinePackagesController < Admin::AdminController
     @detail_vaccine_packages = @vaccine_package_type.detail_vaccine_packages
       .filter_vaccine(params[:query])
       .includes(:vaccine).page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { detail_vaccine_packages: @vaccine_package_type.vaccines.as_json(only: [:name, :id]) } }
+    end
   end
 
   def new; end

@@ -8,6 +8,12 @@ class User::UserController < ApplicationController
   alias_method :current_user, :current_user_account
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_back fallback_location: user_root_path, alert: t("errors.messages.resource_not_found")
+  end
+  rescue_from ActiveRecord::RecordInvalid do
+    redirect_back fallback_location: user_root_path, alert: t("errors.messages.record_invalid")
+  end
 
   private
 

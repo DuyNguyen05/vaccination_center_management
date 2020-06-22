@@ -1,7 +1,7 @@
 class InfoInjectionBook < ApplicationRecord
   after_create :create_account
 
-  has_many :injection_books, inverse_of: :info_injection_book
+  has_many :injection_books, dependent: :destroy
   accepts_nested_attributes_for :injection_books
 
   has_one :account, dependent: :destroy

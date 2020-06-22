@@ -9,6 +9,9 @@
       <div class="col-xl-12 col-lg-12">
         <div class="form-group">
           <div class="row">
+            <div class="col-md-12">
+              Thời gian kết thúc theo dõi: <%= detail_injection_book.time_after_injection.strftime("%Hh : %Mm %p, %d - %m - %Y ")%>
+            </div>
             <div class="col-md-12 inputGroupContainer">
               <div class="input-group">
                 <%= form.text_area :react_after_injection, placeholder: t(".react_after_injection"), size: "20x8", class: "form-control bg-light border-1" %>

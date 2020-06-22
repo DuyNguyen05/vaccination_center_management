@@ -10,9 +10,10 @@ vi:
         new_injection_book: Đăng ký sổ tiêm
         list_injection_book: Danh sách sổ tiêm
         administer_schedule: Quản lý lịch tiêm
-        injection_schedule: Lịch tiêm
-        new_injection_schedule: Tạo mới lịch tiêm
-        list_injection_schedule: Danh sách lịch tiêm
+        injection_schedule: Hẹn lịch tiêm
+        new_injection_schedule: Hẹn lịch tiêm
+        list_injection_schedule: Danh sách lịch hẹn
+        injection_schedules: Lịch tiêm chung
         my_information: Thông tin của tôi
         information_manage: Quản lý hồ sơ cá nhân
         view_profile: Hồ sơ cá nhân
@@ -33,9 +34,10 @@ vi:
         administer_injection_book: Quản lý sổ tiêm
         new_injection_book: Đăng ký sổ tiêm
         list_injection_book: Danh sách sổ tiêm
+        injection_schedules: Lịch tiêm chung
         administer_schedule: Quản lý lịch tiêm
-        injection_schedule: Lịch tiêm
-        new_injection_schedule: Tạo mới lịch tiêm
+        injection_schedule: Hẹn lịch tiêm
+        new_injection_schedule: Hẹn lịch tiêm
         list_injection_schedule: Danh sách lịch tiêm
         my_information: Thông tin của tôi
         information_manage: Quản lý hồ sơ cá nhân

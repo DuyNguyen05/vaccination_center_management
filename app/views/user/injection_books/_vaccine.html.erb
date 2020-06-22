@@ -7,7 +7,19 @@
       </button>
     </div>
     <div class="modal-body">
-      <p><%= vaccine.content %></p>
+      <div class="our-services container-fluid">
+        <h7>SỐ MŨI TIÊM</h7>
+        <hr class="sidebar-divider my-0 mb-3">
+        <div class="service-row row">
+          <% vaccine.number_injections.each do |number| %>
+            <li class="mb-2 ml-5"><%= number.name %></li>
+          <% end %>
+        </div>
+        <br>
+        <h7>THÔNG TIN</h7>
+        <hr class="sidebar-divider my-0 mb-3">
+        <p class="ml-2"><%= vaccine.content %></p>
+      </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>

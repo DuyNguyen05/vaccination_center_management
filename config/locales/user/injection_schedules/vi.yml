@@ -19,4 +19,6 @@ vi:
         childbirth: Sơ sinh
       show:
         injection_schedule: Lịch tiêm chủng
+      index:
+        injection_schedules: Lịch tiêm chủng
 
