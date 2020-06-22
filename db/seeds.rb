@@ -41,7 +41,7 @@ end
     code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, price: price
   )
 
-  NumberInjection.create!(name: "Mũi 1", min_age: 0, max_age: 10, vaccine_id: vaccine.id)
+  NumberInjection.create!(name: "Mũi 1", age: 5, vaccine_id: vaccine.id)
 end
 
 thao = DetailsInfo.create(first_name: "Thao", last_name: "Nguyen", identify: "017270100", number_phone: "0389746397", email: "thaonguyen.mta@gmail.com")

@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   create_table "detail_injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "injection_date"
     t.string "react_after_injection"
+    t.datetime "time_after_injection"
     t.bigint "vaccination_center_id"
     t.bigint "account_id"
     t.bigint "injection_book_id"
@@ -247,7 +248,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   end
 
   create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "min_age"
+    t.integer "age"
     t.integer "max_age"
     t.string "name"
     t.bigint "vaccine_id"

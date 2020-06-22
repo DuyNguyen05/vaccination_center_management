@@ -11,15 +11,29 @@ module User::DetailInjectionBookHelper
     detail_injection_book.bill.detail_bills
   end
 
-  def amount a, b
-    number_with_delimiter(a*(b.to_f))
+  def number_injections detail_injection_book
+    number_injection = 0
+    detail_injection_book.bill.detail_bills.each do |detail_bill|
+      number_injection = number_injection + detail_bill.number_injection
+    end
+    return number_injection
   end
 
-  def total_price a
-    number_to_currency(a)
+  def amount detail_injection_book
+    amount = 0
+    detail_injection_book.bill.detail_bills.each do |detail_bill|
+      amount = amount + (detail_bill.number_injection)*(detail_bill.vaccine.price.to_f)
+    end
+    return number_with_delimiter(amount.to_f)
+  end
+
+  def total_price detail_injection_book
+    amount = amount detail_injection_book
+    number_to_currency(amount)
   end
 
   def set_checked_for_checkbox answer_question
+    return "" if answer_question.blank?
     answer_question == "true" ? "CÓ" : "KHÔNG"
   end
 end

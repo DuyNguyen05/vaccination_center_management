@@ -1,0 +1,253 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h4 class="text-lg m-0 font-weight-bold text-primary text-uppercase text-center">
+          <%= t(".new_info_injection_books") %>
+        </h4>
+      </div>
+      <%= form_with model: [:user, info_injection_book], class: "well form-horizontal", local: true do |f| %>
+        <%= render "shared/error_message", resource: info_injection_book %>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6">
+              <fieldset>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".father_name") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-user"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :father_name, placeholder: t(".full_name"), class: "form-control bg-light border-1" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".identify_father") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-fingerprint"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :identify_father, placeholder: t(".identify_father"), class: "form-control bg-light border-1" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".number_phone") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-phone-square"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1", required: true %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".current_address") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-home"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1" %>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+              <fieldset>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".mother_name") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-user"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :mother_name, placeholder: t(".full_name"), class: "form-control bg-light border-1" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".identify_mother") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-fingerprint"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :identify_mother, placeholder: t(".identify_mother"), class: "form-control bg-light border-1" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".email") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                        </div>
+                        <%= f.email_field :email, placeholder: t(".email"), class: "form-control bg-light border-1" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row ml-2">
+                    <label class="col-md-4 text-left">
+                      <%= t(".permanent_address") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-home"></i>
+                          </span>
+                        </div>
+                        <%= f.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <div id="add_injection_book">
+            <%= f.nested_fields_for :injection_books, wrapper: true do |ib| %>
+              <%= ib.remove_nested_fields_link do%><i class="fa fa-times ml-5" style="color:gray"></i><%end%>
+              <div class="row">
+                <div class="col-xl-10 col-lg-8">
+                  <fieldset>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-2 text-left">
+                          <%= t(".name_person_injected") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <div class=" input-group-prepend">
+                              <span class="btn btn-info">
+                                <i class="fas fa-user"></i>
+                              </span>
+                            </div>
+                            <%= ib.text_field :name_person_injected, placeholder: t(".full_name"), class: "form-control bg-light border-1 small", required: "true" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-2 text-left">
+                          <%= t(".date_of_birth") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <div class=" input-group-prepend">
+                              <span class="btn btn-info">
+                                <i class="fas fa-calendar"></i>
+                              </span>
+                            </div>
+                            <%= ib.date_field :date_of_birth, placeholder: t(".date_of_birth"), class: "form-control bg-light border-1 small date", required: "true" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-2 text-left">
+                          <%= t(".place_of_birth") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="input-group">
+                            <div class=" input-group-prepend">
+                              <span class="btn btn-info">
+                                <i class="fas fa-clinic-medical"></i>
+                              </span>
+                            </div>
+                            <%= ib.text_field :place_of_birth, placeholder: t(".place_of_birth"), class: "form-control bg-light border-1 small", required: "true" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group ml-5">
+                      <div class="row ml-5">
+                        <label class="col-md-2 text-left form-check-label">
+                          <%= t(".gender") %>
+                        </label>
+                        <div class="col-md-8 inputGroupContainer">
+                          <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <%= ib.radio_button :gender, :male, class: "form-check-input" %>
+                              <%= t(".male") %>
+                            </label>
+                          </div>
+                          <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <%= ib.radio_button :gender, :female, class: "form-check-input" %>
+                              <%= t(".female") %>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <p class="ml-5"><%= f.add_nested_fields_link :injection_books, t(".add_injection_book"), data: {target: "#add_injection_book"} %></p>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center">
+          <%= link_to t(".button.cancel"), user_info_injection_books_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }%>
+          <%= f.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t(".confirm.are_you_sure") } %>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>

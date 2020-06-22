@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :detail_injection_books
       resources :vaccines, only: :index
       resources :injection_schedules
+      resources :vaccine_package_types, only: :index
     end
     root "homes#index"
     resources :injection_schedules, only: :index

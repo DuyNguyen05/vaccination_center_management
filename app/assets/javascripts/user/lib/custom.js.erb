@@ -73,35 +73,136 @@ $(document).ready(function(){
   })
 });
 
-$(document).on('nested:fieldAdded', function(event){
-  var vaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccines_path %>';
-  $('.select_vaccines').select2({
+$(document).on('fields_added.nested_form_fields', function(event){
+  var vaccinesPath = ""
+  var packageVaccine = $("#TypeOfConstruction").val()
+  if (packageVaccine == "Tiêm lẻ"){
+    vaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccines_path %>';
+    $('.select_vaccines').select2({
+      width: '100%',
+      ajax: {
+        url: vaccinesPath,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { vaccine_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.vaccines };
+        }
+      },
+      vaccines: true,
+      templateResult: formatResult,
+      templateSelection: formatSelection,
+    }).trigger('change');
+
+    function formatResult(vaccines) {
+      return vaccines.name;
+    }
+
+    function formatSelection(vaccines) {
+      return vaccines.text || vaccines.name;
+    }
+  }
+  else{
+    var vaccinePackageId = $(".select_package_vaccines").val();
+    vaccinesPath = '/admin/vaccine_package_types/'+vaccinePackageId+'/detail_vaccine_packages';
+    $('.select_vaccines').select2({
+      width: '100%',
+      ajax: {
+        url: vaccinesPath,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { vaccine_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.detail_vaccine_packages };
+        }
+      },
+      detail_vaccine_packages: true,
+      templateResult: formatResult,
+      templateSelection: formatSelection,
+    }).trigger('change');
+
+    function formatResult(detail_vaccine_packages) {
+      return detail_vaccine_packages.name;
+    }
+
+    function formatSelection(detail_vaccine_packages) {
+      return detail_vaccine_packages.text || detail_vaccine_packages.name;
+    }
+  }
+
+});
+
+$(document).ready(function(){
+  var packageVaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccine_package_types_path %>';
+  var idInjectionBook = $('#idInjectionBook')[0].dataset.indexNumber
+  $('.select_package_vaccines').select2({
     width: '100%',
     ajax: {
-      url: vaccinesPath,
+      url: packageVaccinesPath + "?id_injection_book=" + idInjectionBook,
       type: 'GET',
       delay: 1000,
       dataType: 'json',
       data: function(params) {
-        return { vaccine_name: params.term }
+        return { vaccine_package_name: params.term }
       },
       processResults: function(data) {
-        return { results: data.vaccines };
+        return { results: data.vaccine_package_types };
       }
     },
-    vaccines: true,
+    vaccine_package_types: true,
     templateResult: formatResult,
     templateSelection: formatSelection,
   }).trigger('change');
 
-  function formatResult(vaccine) {
-    return vaccine.name;
+  function formatResult(vaccine_package_types) {
+    return vaccine_package_types.name;
   }
 
-  function formatSelection(vaccine) {
-    return vaccine.text || vaccine.name;
+  function formatSelection(vaccine_package_types) {
+    return vaccine_package_types.text || vaccine_package_types.name;
   }
-})
+});
+
+$(document).ready(function(){
+  $('.select_package_vaccines').on('select2:select', function(e) {
+    $(".vaccine").slideDown(500);
+
+    var vaccinePackageId = e.params.data.id;
+    var detailPackageVaccinesPath = '/admin/vaccine_package_types/'+vaccinePackageId+'/detail_vaccine_packages';
+    $('.select_vaccines').select2({
+      width: '100%',
+      ajax: {
+        url: detailPackageVaccinesPath,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { query: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.detail_vaccine_packages };
+        }
+      },
+      detail_vaccine_packages: true,
+      templateResult: formatResult,
+      templateSelection: formatSelection,
+    }).trigger('change');
+
+    function formatResult(detail_vaccine_packages) {
+      return detail_vaccine_packages.name;
+    }
+
+    function formatSelection(detail_vaccine_packages) {
+      return detail_vaccine_packages.text || detail_vaccine_packages.name;
+    }
+  });
+});
 
 $(document).ready(function() {
   var vaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccines_path %>';
@@ -124,12 +225,12 @@ $(document).ready(function() {
     templateSelection: formatSelection,
   }).trigger('change');
 
-  function formatResult(vaccine) {
-    return vaccine.name;
+  function formatResult(vaccines) {
+    return vaccines.name;
   }
 
-  function formatSelection(vaccine) {
-    return vaccine.text || vaccine.name;
+  function formatSelection(vaccines) {
+    return vaccines.text || vaccines.name;
   }
 
   // $('.select_vaccines').on('select2:select', function(e) {
@@ -154,4 +255,21 @@ $(document).ready(function() {
   //     })
   //   }
   // }).trigger('change');
+});
+
+
+$(document).ready(function(){
+  $("#TypeOfConstruction").on('change',function(){
+    var selectedBalue = $("#TypeOfConstruction").val();
+    if (selectedBalue == "Tiêm lẻ")
+    {
+      $(".vaccine").slideDown(500);
+      $(".packageVaccine").hide();
+    }
+    if (selectedBalue == "Tiêm gói")
+    {
+      $(".packageVaccine").slideDown(500);
+      $(".vaccine").hide();
+    }
+  });
 });

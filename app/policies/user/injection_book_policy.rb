@@ -10,4 +10,8 @@ class User::InjectionBookPolicy < ApplicationPolicy
   def show?
     new?
   end
+
+  def index?
+    new?
+  end
 end

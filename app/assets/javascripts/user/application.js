@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery_ujs
 //= require popper
 //= require bootstrap
 //= require select2
@@ -21,3 +22,4 @@
 //= require ./lib/dataTables.bootstrap4.min.js
 //= require ./lib/custom.js
 //= require jquery_nested_form
+//= require nested_form_fields

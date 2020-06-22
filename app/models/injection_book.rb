@@ -3,6 +3,8 @@ class InjectionBook < ApplicationRecord
 
   belongs_to :info_injection_book
   has_many :detail_injection_books, dependent: :destroy
+  has_many :register_injection_packages, dependent: :destroy
+  has_many :vaccine_package_types, through: :register_injection_packages, dependent: :destroy
 
   validates_presence_of :info_injection_book
 

@@ -1,0 +1,4 @@
+<%= bill_attributes.nested_fields_for :detail_bills, DetailBill.new, wrapper: true  do |detail_bill_attributes| %>
+  <%= detail_bill_attributes.label :name, class: "col-lg-2 control-label" %>
+  <%= detail_bill_attributes.text_field :vaccine_id, id: :autocomplete %>
+<% end %>

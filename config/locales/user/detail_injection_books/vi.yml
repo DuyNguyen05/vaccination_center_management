@@ -35,6 +35,7 @@ vi:
         back: Quay lại
         select_vaccines:
           placeholder: Tìm kiếm và chọn Vắc-xin
+        add_vaccine: + Thêm vaccine
       info_step_1:
         injection_schedule: Lịch tiêm >>
         date_of_birth: Ngày sinh

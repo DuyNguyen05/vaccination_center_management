@@ -18,9 +18,10 @@
             </fieldset>
               <%= render "#{params[:steps] || @detail_injection_book.current_step}", form: form, detail_injection_book: @detail_injection_book %>
               <%= form.hidden_field :id, value: @detail_injection_book.id %>
+              <%= form.hidden_field :steps, value: params[:steps] %>
               <div class="text-center mt-5">
-                <%= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft" unless @detail_injection_book.last_step? %>
-                <%= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.first_step? || @detail_injection_book.last_step? %>
+                <%= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft" if @detail_injection_book.second_step? %>
+                <%#= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.second_step? || @detail_injection_book.last_step? %>
                 <%= form.submit 'Tiếp theo', class: "next action-button btn btn-success" unless @detail_injection_book.last_step? %>
               </div>
           <% end %>

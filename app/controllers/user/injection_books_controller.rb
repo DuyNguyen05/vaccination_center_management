@@ -1,6 +1,6 @@
 class User::InjectionBooksController < User::UserController
   before_action :load_injection_book, only: :show
-  before_action -> { authorize [:user, InjectionBook] }, only: [:new, :create, :show]
+  before_action -> { authorize [:user, InjectionBook] }, only: [:new, :create, :show, :index]
 
   def index
     if current_user_account.is_user?
@@ -16,7 +16,7 @@ class User::InjectionBooksController < User::UserController
 
   def create
     @injection_book = current_user_account.info_injection_book.injection_books.build injection_book_params
-    if @injection_book.save!
+    if @injection_book.save
       redirect_to user_injection_books_path
     else
       render :new

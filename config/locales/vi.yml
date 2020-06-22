@@ -15,6 +15,11 @@ vi:
     user_not_authorized: Bạn không có quyền truy cập.
     messages:
       not_saved: Không thể lưu thông tin
+      resource_not_found: Không tìm thấy dữ liệu
+      record_invalid: Lỗi dữ liệu
   enumerize:
     agree: "Đồng ý"
     disagree: "Không đồng ý"
+    childbirth: "Sơ sinh"
+    month_old: "Nhỏ hơn một tuổi"
+    year_old: "Lớn hơn một tuổi"

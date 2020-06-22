@@ -13,6 +13,12 @@ vi:
           placeholder: Tìm kiếm và chọn Vắc-xin
         vaccine_name: Chọn Vắc-xin
         number_injection: Mũi tiêm số
+        type_age: Độ tuổi
+        year_old: Tuổi theo năm
+        month_old: Tuổi theo tháng
+        childbirth: Sơ sinh
       show:
         injection_schedule: Lịch tiêm chủng
+      index:
+        injection_schedules: Lịch tiêm chủng
 

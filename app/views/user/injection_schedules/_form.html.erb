@@ -54,32 +54,52 @@
                     <div class="form-group ml-5">
                       <div class="row ml-5">
                         <label class="col-md-3 text-left ml-5">
-                          <%= t(".number_injection") %>
+                          <%= t(".type_age") %>
                         </label>
                         <div class="col-md-8 inputGroupContainer">
-                          <div class="input-group">
-                            <%= iform.text_field :number_injection, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
+                          <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <%= iform.radio_button :type_age, :childbirth, class: "form-check-input" %>
+                              <%= t(".childbirth") %>
+                            </label>
+                          </div>
+                          <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <%= iform.radio_button :type_age, :month_old, class: "form-check-input" %>
+                              <%= t(".month_old") %>
+                            </label>
+                          </div>
+                          <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <%= iform.radio_button :type_age, :year_old, class: "form-check-input" %>
+                              <%= t(".year_old") %>
+                            </label>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <fieldset class="form-group">
+                      <div class="form-group ml-5">
+                        <div class="row ml-5">
+                          <label class="col-md-3 text-left ml-5">
+                            <%= t(".age") %>
+                          </label>
+                          <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                              <%= iform.text_field :age, class: "form-control bg-light border-1", value: "0", type: "number", min: "0", max: "20" %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
                     <div class="form-group ml-5">
                       <div class="row ml-5">
                         <label class="col-md-3 text-left ml-5">
-                          <%= t(".min_age") %>
+                          <%= t(".number_injection") %>
                         </label>
                         <div class="col-md-8 inputGroupContainer">
                           <div class="input-group">
-                            <%= iform.text_field :min_age, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
-                          </div>
-                        </div>
-                        <br><br>
-                        <label class="col-md-3 text-left ml-5">
-                          <%= t(".max_age") %>
-                        </label>
-                        <div class="col-md-8 inputGroupContainer">
-                          <div class="input-group">
-                            <%= iform.text_field :max_age, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
+                            <%= iform.text_field :number_injection, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "20" %>
                           </div>
                         </div>
                       </div>
@@ -102,4 +122,3 @@
     </div>
   </div>
 </div>
-

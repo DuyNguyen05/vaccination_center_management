@@ -6,100 +6,112 @@
   <b class="text-uppercase">THÔNG TIN CHI TIẾT TIÊM CHỦNG</b>
 </h6>
 <hr>
-<%= form.fields_for :bill, Bill.new do |bill_attributes| %>
-  <%= bill_attributes.fields_for :detail_bills, DetailBill.new do |detail_bill_attributes| %>
-    <div class="form-card" style="color: black">
-      <div class="row">
-        <div class="col-xl-6 col-lg-6">
-          <div class="form-group">
-            <div class="row">
-              <label class="col-md-4 text-left form-check-label">
-                Tên bé:
-              </label>
-              <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-                  <div class=" input-group-prepend">
-                  </div>
-                  <b><%= detail_injection_book.injection_book.name_person_injected %></b>
-                  <%= bill_attributes.hidden_field :injection_book_id, value: detail_injection_book.injection_book.id %>
+<%= form.hidden_field :time_after_injection, value: (Time.now + 30.minutes) %>
+<%= form.fields_for :bill, @bill do |bill_attributes| %>
+  <%= render "shared/error_message", resource: @bill %>
+  <div class="form-card" style="color: black">
+    <div class="row ml-5">
+      <div class="col-md-12 ml-5">
+        <div class="form-group ml-5">
+          <div class="row">
+            <label class="col-md-3 text-left form-check-label">
+              Tên bé:
+            </label>
+            <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+                <div class=" input-group-prepend">
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label class="col-md-4 text-left">
-                Thuốc tiêm:
-              </label>
-              <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-<!--                   <div class=" input-group-prepend">
-                    <span class="btn btn-info">
-                      <i class="fas fa-user"></i>
-                    </span>
-                  </div> -->
-                  <%= detail_bill_attributes.select :vaccine_id, {}, {} , { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".select_vaccines.placeholder") } }%>
-                  <%#= detail_bill_attributes.select :vaccine_id, options_for_select(Vaccine.all.pluck(:name, :id)), class: "form-control bg-light border"%>
-                </div>
+                <b id="idInjectionBook" data-index-number="<%= detail_injection_book.injection_book.id %>"><%= detail_injection_book.injection_book.name_person_injected %></b>
+                <%= bill_attributes.hidden_field :injection_book_id, value: detail_injection_book.injection_book.id %>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-6 col-lg-6">
-          <div class="form-group">
-            <div class="row">
-              <label class="col-md-4 text-left">
-                Thời gian:
-              </label>
-              <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-                  <div class=" input-group-prepend">
-                  </div>
-                  <b><%= Time.now.strftime("%d - %m - %Y ") %></b>
+        <div class="form-group ml-5">
+          <div class="row">
+            <label class="col-md-3 text-left">
+              Ngày tiêm:
+            </label>
+            <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+                <div class=" input-group-prepend">
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label class="col-md-4 text-left">
-                Gói tiêm:
-              </label>
-              <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-<!--                   <div class=" input-group-prepend">
-                    <span class="btn btn-info">
-                      <i class="fas fa-fingerprint"></i>
-                    </span>
-                  </div> -->
-                  <%= detail_bill_attributes.select :vaccine_package_type_id, options_for_select(VaccinePackageType.all.pluck(:name, :id)), class: "form-control bg-light border-1" %>
-                </div>
+                <b><%= Time.now.strftime("%Hh:%Mm, Ngày %d - %m - %Y ") %></b>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-6 col-lg-6">
-          <div class="form-group">
-            <div class="row">
-              <label class="col-md-4 text-left">
-                Số lượng:
-              </label>
-              <div class="col-md-8 inputGroupContainer">
-                <div class="input-group">
-<!--                   <div class=" input-group-prepend">
-                    <span class="btn btn-info">
-                      <i class="fas fa-phone-square"></i>
-                    </span>
-                  </div> -->
-                  <%= detail_bill_attributes.text_field :number_injection, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
-                </div>
+        <div class="form-group ml-5">
+          <div class="row ">
+            <label class="col-md-3 text-left">
+              Hình thức tiêm
+            </label>
+            <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+                <label class="form-check-label">
+                  <div class=" input-group-prepend">
+                  </div>
+                  <select class="form-control" id="TypeOfConstruction">
+                    <option>Chọn</option>
+                    <option>Tiêm lẻ</option>
+                    <option>Tiêm gói</option>
+                  </select>
+                </label>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-md-12 packageVaccine ml-5" style="display: none">
+        <div class="form-group ml-5">
+          <div class="row">
+            <label class="col-md-3 text-left">
+              Gói tiêm:
+            </label>
+            <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+                <select class="select_package_vaccines form-control bg-light border-1">
+                  <option>Lựa chọn</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 vaccine ml-5" style="display: none">
+        <div id="add_vaccine">
+          <%= bill_attributes.nested_fields_for :detail_bills, DetailBill.new, wrapper: true  do |detail_bill_attributes| %>
+            <%= detail_bill_attributes.remove_nested_fields_link do%><i class="fa fa-times ml-3" style="color:gray"></i><%end%>
+            <div class="form-group ml-5">
+              <div class="row">
+                <label class="col-md-3 text-left">
+                  Thuốc tiêm:
+                </label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                    <%= detail_bill_attributes.select :vaccine_id, {}, {} , { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".select_vaccines.placeholder") } }%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group ml-5">
+              <div class="row">
+                <label class="col-md-3 text-left">
+                  Số lượng:
+                </label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                    <%= detail_bill_attributes.text_field :number_injection, class: "form-control bg-light border-1", value: "1", type: "number", min: "1", max: "10" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end%>
+          <p class="ml-3"><%= bill_attributes.add_nested_fields_link :detail_bills, t(".add_vaccine") %></p>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
 <% end %>
 <div class="modal fade bs-example-modal-lg" id="modal" tabindex="-1" role="dialog">
   <%= render "info_step_1", detail_injection_book: @detail_injection_book %>

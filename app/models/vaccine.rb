@@ -1,8 +1,8 @@
 class Vaccine < ApplicationRecord
   belongs_to :vaccine_type, optional: true
+  belongs_to :company, class_name: Company.name, foreign_key: :company_code
   has_many :detail_injection_books
   has_many :injection_books, through: :detail_injection_books
-  belongs_to :company, class_name: Company.name, foreign_key: :company_code
   has_many :detail_vaccine_packages, dependent: :destroy
   has_many :vaccine_package_types, through: :detail_vaccine_packages, dependent: :destroy
   has_many :number_injections, dependent: :destroy

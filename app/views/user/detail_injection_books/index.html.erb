@@ -21,7 +21,7 @@
       <% if detail_injection_book.current_step != "waiting" %>
         <div class="card-header py-3 bg-light">
           <h4 class="text-lg m-0 font-weight-bold text-gray text-uppercase">
-            Ngày <%= detail_injection_book.updated_at.strftime("%d - %m - %Y, %H:%M") %>
+            <%= detail_injection_book.updated_at.strftime("%Hh:%Mm, Ngày %d - %m - %Y") %>
           </h4>
         </div>
         <div class="card-body">
@@ -33,9 +33,9 @@
                     <b>KIỂM TRA TRƯỚC KHI TIÊM</b>
                   </div>
                   <div class="text-gray-900">
-                    <li><%= detail_injection_book.check_before_injection.agree? ? "Kết luận: ĐỒNG Ý TIÊM" : "Kết luận: KHÔNG ĐỒNG Ý TIÊM" %></li>
+                    <li><%= detail_injection_book.check_before_injection.present? && detail_injection_book.check_before_injection.agree? ? "Kết luận: ĐỒNG Ý TIÊM" : "Kết luận: KHÔNG ĐỒNG Ý TIÊM" %></li>
                     <div class="float-left">
-                      <%= link_to t('.info_previous_step'), "", data: {toggle: "modal", target: "#modal-#{detail_injection_book.id}"} %>
+                      <%= link_to t('.info_previous_step'), "", data: {toggle: "modal", target: "#modal-#{detail_injection_book.id}"} if detail_injection_book.check_before_injection.present? && detail_injection_book.check_before_injection.agree? %>
                       <div class="modal fade bs-example-modal-lg" id="modal-<%= detail_injection_book.id %>" tabindex="-1" role="dialog">
                         <%= render "info_step_1", detail_injection_book: detail_injection_book %>
                       </div>
