@@ -318,13 +318,16 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
     t.datetime "expiry_date"
     t.text "content", limit: 4294967295
     t.bigint "vaccine_type_id"
+    t.string "unit"
+    t.string "dosage"
+    t.string "entry_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tag", default: "default"
     t.integer "quantity"
     t.string "company_code"
     t.string "user_code"
-    t.string "price"
+    t.string "saleprice"
     t.bigint "company_id"
     t.index ["company_code"], name: "index_vaccines_on_company_code"
     t.index ["company_id"], name: "index_vaccines_on_company_id"

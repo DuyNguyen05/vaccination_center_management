@@ -17,6 +17,7 @@ vi:
       not_saved: Không thể lưu thông tin
       resource_not_found: Không tìm thấy dữ liệu
       record_invalid: Lỗi dữ liệu
+      invalid_authenticity_token: Lỗi truy cập
   enumerize:
     agree: "Đồng ý"
     disagree: "Không đồng ý"

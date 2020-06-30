@@ -3,7 +3,7 @@ require "roo"
 
 class ImportVaccinesService
 
-  PARAMS_VACCINE = ["code", "name", "manufacture", "content", "expiry_date", "quantity", "price", "tag", "company_code"].freeze
+  PARAMS_VACCINE = ["code", "name", "manufacture", "content", "expiry_date", "quantity", "saleprice", "tag", "company_code", "unit", "dosage", "entry_price"].freeze
   class << self
     def perform(file, user)
       data = open_file file
@@ -16,7 +16,7 @@ class ImportVaccinesService
         row = [PARAMS_VACCINE, params_vaccine].transpose.to_h
         vaccine = Vaccine.create! row.merge(user_code: user)
         number_injection = 0
-        (10..data.last_column).each do |number|
+        (PARAMS_VACCINE.count+1..data.last_column).each do |number|
           number_injection = number_injection + 1
           vaccine.number_injections.create! name: "Mũi #{number_injection}", age: data.cell(i,number) unless data.cell(i,number).blank?
         end

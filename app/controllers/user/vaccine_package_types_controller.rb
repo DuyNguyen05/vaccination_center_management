@@ -1,4 +1,4 @@
-class User::VaccinePackageTypesController < ApplicationController
+class User::VaccinePackageTypesController < User::UserController
   def index
     injection_book = InjectionBook.find(params[:id_injection_book])
     @vaccine_package_types = injection_book.vaccine_package_types.search_vaccines_packages(params[:vaccine_package_name]).newest

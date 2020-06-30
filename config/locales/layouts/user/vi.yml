@@ -51,6 +51,7 @@ vi:
         account_staff: Tài khoản của nhân viên
         new_account: Đăng ký mới
         list_account: Danh sách đăng ký
+        vaccines: Danh mục vắc xin
       header:
         search_for: Tìm kiếm
         notifications: Thông báo

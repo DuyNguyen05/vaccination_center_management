@@ -36,6 +36,16 @@ vi:
         select_vaccines:
           placeholder: Tìm kiếm và chọn Vắc-xin
         add_vaccine: + Thêm vaccine
+      step_3:
+        name: Họ và tên khách hàng tiêm
+        date_of_birth: Ngày sinh
+        year_old: " Tuổi"
+        childbirth: Trẻ sơ sinh
+        born_yet: Chưa sinh
+        place_of_birth: Nơi khai sinh
+        male: Trai
+        female: Gái
+        gender: Giới tính
       info_step_1:
         injection_schedule: Lịch tiêm >>
         date_of_birth: Ngày sinh

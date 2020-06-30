@@ -8,7 +8,7 @@
   <div class="card-body">
     <div class="row d-flex justify-content-center">
       <div class="font-weight text-dark mb-2">
-        <%= image_tag "https://hellobacsi.com/wp-content/uploads/2019/10/tre-hay-dao-mat1.jpg", size: "160x140" %>
+        <%= image_tag "baby-2.jpeg", size: "160x160" %>
         <div class="ml-4 text-gray float-right font-weight-bold">
           <%=  t(".date_of_birth") %>: <%= @injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
           <%= t(".year_old") + ": " %> <%= age(@injection_book.date_of_birth) %><br>
@@ -24,75 +24,78 @@
     </div>
   </div>
 </div>
-<div class="card shadow mb-4">
-  <div class="card-header py-3 bg-light">
-    <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
-      VẮC XIN CƠ BẢN
-    </h6>
+
+<div class="card shadw mb-4 mt-3 tab-card">
+  <div class="card-header tab-card-header">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin cá nhân</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="history-injection-tab" data-toggle="tab" href="#history-injection" role="tab" aria-controls="history-injection" aria-selected="false">Lịch sử tiêm chủng</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab" aria-controls="service" aria-selected="false">Dịch vụ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="history-update-tab" data-toggle="tab" href="#history-update" role="tab" aria-controls="history-update" aria-selected="false">Lịch sử cập nhật</a>
+      </li>
+    </ul>
   </div>
-  <div class="card-body">
-    <div class="row">
-      <% list_vaccine.each do |vaccine| %>
-        <div class="col-xl-6 col-md-6 mb-6" data-toggle="modal" data-target="#modal-<%= vaccine.id %>">
-          <div class="card border-left-primary shadow h-100 py-1">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
-                    <b> <%= vaccine.name %> </b>
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <i class="fas fa-book fa-2x text-gray-300"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade bs-example-modal-lg" id="modal-<%= vaccine.id %>" tabindex="-1" role="dialog">
-          <%= render "vaccine", vaccine: vaccine %>
-        </div>
-      <% end %>
+  <div class="tab-content profile-tab ml-3 mt-3" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <h5 class="card-title">Thông tin</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <hr>
-    <div class="d-flex justify-content-center">
-      <%= paginate list_vaccine, theme: "twitter-bootstrap-4" %>
+    <div class="tab-pane fade" id="history-injection" role="tabpanel" aria-labelledby="history-injection-tab">
+      <h5 class="card-title">Lịch sử tiêm chủng</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-  </div>
-</div>
-<div class="card shadow">
-  <div class="card-header py-3 bg-light">
-    <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
-      VẮC XIN KHÁC
-    </h6>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <% list_vaccine_other.each do |vaccine| %>
-        <div class="col-xl-6 col-md-6 mb-6" data-toggle="modal" data-target="#modal-<%= vaccine.id %>">
-          <div class="card border-left-primary shadow h-100 py-1">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
-                    <b> <%= vaccine.name %> </b>
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <i class="fas fa-book fa-2x text-gray-300"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade bs-example-modal-lg" id="modal-<%= vaccine.id %>" tabindex="-1" role="dialog">
-          <%= render "vaccine", vaccine: vaccine %>
-        </div>
-      <% end %>
+    <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">
+      <h5 class="card-title">Dịch vụ</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    <hr>
-    <div class="d-flex justify-content-center">
-      <%= paginate list_vaccine_other, theme: "twitter-bootstrap-4" %>
+    <div class="tab-pane fade" id="history-update" role="tabpanel" aria-labelledby="history-update-tab">
+      <h5 class="card-title">Lịch sử cập nhật</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
   </div>
 </div>
+<!-- <div class="row">
+  <div class="col-12">
+    <div class="card mt-3 tab-card">
+      <div class="card-header tab-card-header">
+        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+              <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">One</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">Two</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">Three</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+          <h5 class="card-title">Tab Card One</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+          <h5 class="card-title">Tab Card Two</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+          <h5 class="card-title">Tab Card Three</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->
