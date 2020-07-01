@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       resources :vaccines, only: :index
       resources :injection_schedules
       resources :vaccine_package_types, only: :index
+      resources :provinces, only: :index
+      resources :districts, only: :index
+      resources :wards, only: :index
     end
     root "homes#index"
     resources :injection_schedules, only: :index

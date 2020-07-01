@@ -273,3 +273,98 @@ $(document).ready(function(){
     }
   });
 });
+
+$(document).ready(function(){
+  $('.select_district').select2({})
+  $('.select_ward').select2({})
+  var provincesPath = '<%= Rails.application.routes.url_helpers.user_provinces_path %>';
+  var districtsPath = '<%= Rails.application.routes.url_helpers.user_districts_path %>';
+  var wardsPath = '<%= Rails.application.routes.url_helpers.user_wards_path %>';
+
+  $('.select_province').select2({
+    width: '100%',
+    ajax: {
+      url: provincesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { province_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.provinces };
+      }
+    },
+    provinces: true,
+    templateResult: formatResult1,
+    templateSelection: formatSelection1,
+  }).trigger('change');
+
+  function formatResult1(provinces) {
+    return provinces.name;
+  }
+
+  function formatSelection1(provinces) {
+    return provinces.text || provinces.name;
+  }
+
+  $('.select_province').on('change',function(){
+    var provinceId = $('.select_province').val();
+    $('.select_district').select2({
+      width: '100%',
+      ajax: {
+        url: districtsPath + "?provinceId=" + provinceId,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { district_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.districts };
+        }
+      },
+      districts: true,
+      templateResult: formatResult2,
+      templateSelection: formatSelection2,
+    }).trigger('change');
+
+    function formatResult2(districts) {
+      return districts.name;
+    }
+
+    function formatSelection2(districts) {
+      return districts.text || districts.name;
+    }
+  });
+
+  $('.select_district').on('change',function(){
+    var districtId = $('.select_district').val();
+    $('.select_ward').select2({
+      width: '100%',
+      ajax: {
+        url: wardsPath + "?districtId=" + districtId,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { ward_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.wards };
+        }
+      },
+      wards: true,
+      templateResult: formatResult3,
+      templateSelection: formatSelection3,
+    }).trigger('change');
+
+    function formatResult3(wards) {
+      return wards.name;
+    }
+
+    function formatSelection3(wards) {
+      return wards.text || wards.name;
+    }
+  });
+})

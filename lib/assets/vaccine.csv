@@ -1,39 +1,39 @@
 code,name,manufacture,content,expiry_date,quantity,saleprice,tag,company_code,unit,dosage,"entry_price
 ",number_1,Number_2,Number_3,Number_4
-1,Vaccin dại – VERORAB,Pháp,,2030-10-10,10,"250,000",default,1,Liều,"0,5ml","285,000",6,12,24,36
-2,Vaccin tiêu chảy Rotavirus - ROTAVIN-M1,Việt Nam,,2030-10-11,11,"388,000",default,1,Lọ,2ml,"435,000",6,12,24,36
-3,Vaccin dại - ABHAYRAB,Ấn Độ,,2030-10-12,12,"210,000",default,1,Liều,"0,5ml","210,000",6,12,24,36
-4,"Vaccin bạch hầu, ho gà, uốn ván - ADACEL",Canada,,2030-10-13,13,"635,000",default,1,Hộp,1500UI,"635,000",6,12,24,36
-5,Vaacin viêm gan siêu vi A - AVAXIM,Pháp,,2030-10-14,14,"470,000",default,1,Liều,"0,5ml","450,000",6,12,24,36
-6,Vaccin ung thư tử cung HP - CERVARIX,Bỉ,,2030-10-15,15,"880,000",default,1,Liều,"0,5ml","880,000",6,12,24,36
-7,Vaccin viêm gan B - ENGERIX B - 1ml,Bỉ,,2030-10-16,16,"150,000",default,1,Lọ,20mcg/1ml,"150,000",6,12,24,36
-8,"Vaccin viêm gan B - ENGERIX B - 0,5ml",Bỉ,,2030-10-17,17,"90,000",default,1,Lọ,"10mcg/0,5ml","90,000",6,12,24,36
-9,"Vaccin viêm gan B - EUVAX B - 0,5ml",Hàn Quốc,,2030-10-18,18,"90,000",default,1,Lọ,"10mcg/0,5ml","110,000",6,12,24,36
-10,Vaccin viêm gan B - EUVAX B - 1ml,Hàn Quốc,,2030-10-19,19,"150,000",default,1,Lọ,20mcg/1ml,"160,000",6,12,24,36
-11,Vaccin ung thư cổ tử cung HP - GARDASIL,Mỹ,,2030-10-20,20,"1,350,000",default,1,Lọ,"0,5ml","1,500,000",6,12,24,36
-12,"Vaccin 6 trong 1 (Bạch hầu, uốn ván, ho gà, bại liệt, viêm gan B, Hib)- HEXAXIM",Pháp,,2030-10-21,21,"980,000",default,1,Liều,"0,5ml","990,000",6,12,24,36
-13,Vaccin Hib - HIBERIX,Bỉ,,2030-10-22,22,"300,000",default,1,Lọ,"0,5ml","300,000",6,12,24,36
-14,Huyết thanh kháng Dại -SAR,Việt Nam,,2030-10-23,23,"405,000",default,1,Liều,1000UI,"405,000",6,12,24,36
-15,"Vaccin 6 trong 1 (Bạch hầu, uốn ván, ho gà, bại liệt, viêm gan B, Hib) - INFANRIX",Bỉ,,2030-10-24,24,"890,000",default,1,Lọ,"0,5ml","980,000",6,12,24,36
-16,Vaccin viêm não Nhật bản - JEVAX,Việt Nam,,2030-10-25,25,"90,000",default,1,Lọ,1ml,,6,12,24,36
-17,Vaccin viêm não mô cầu - MENACTRA,Mỹ,,2030-10-26,26,"1,165,000",default,1,Lọ,"0,5ml","1,175,000",6,12,24,36
-18,"Vaccin sởi, quai bị, rubella - M-M-R II",Mỹ,,2030-10-27,27,"190,000",default,1,Lọ,"0,5ml","190,000",6,12,24,36
-19,Vaccin rotavirus - ROTATEQ,Mỹ,,2030-10-28,28,"600,000",default,1,Liều,2ml,"670,000",6,12,24,36
-20,Vaccin Hib - SYNFLORIX,Bỉ,,2030-10-29,29,"925,000",default,1,Liều,"0,5ml","935,000",6,12,24,36
-21,"Vaccin 4 trong 1 (Bạch hầu, uốn ván, ho gà, bại liệt) - TETRAXIM",Pháp,,2030-10-30,30,"410,000",default,1,Liều,"0,5ml","410,000",6,12,24,36
-22,"Vaccin viêm gan A,viêm gan B  - TWINRIX",Bỉ,,2030-10-31,31,"510,000",default,1,Liều,1ml,"550,000",6,12,24,36
-23,Vaccin não mô cầu typ B&C - VA MENGOC BC,Cuba,,2030-11-01,32,"210,000",other,1,Lọ,"0,5ml","210,000",6,12,24,36
-24,Vaccin thủy đậu - VARIVAX,Mỹ,,2030-11-02,33,"710,000",other,1,Lọ,"0,5ml","760,000",6,12,24,36
-25,"Vaccin cúm - VAXIGRIP -0,25ml",Pháp,,2030-11-03,34,"190,000",other,1,Bơm Tiêm,"0,25ml","220,000",6,12,24,36
-26,"Vaccin cúm - VAXIGRIP -0,5ml",Pháp,,2030-11-04,35,"245,000",other,1,Bơm Tiêm,"0,5ml","275,000",6,12,24,36
-27,Vaccin viêm não Nhật Bản - IMOJEV,Thái Lan,,2030-11-05,36,"675,000",other,1,Hộp,"0,5ml","680,000",6,12,24,36
-28,Vaccin lao - BCG,Việt Nam,,2030-11-06,37,"115,000",other,1,Lọ,1ml,,6,12,24,36
-29,Vaccin viêm gan A - HAVAX,Việt Nam,,2030-11-07,38,"135,000",other,1,Liều,"0,5ml","135,000",6,12,24,36
-30,Vaccin uốn ván hấp phụ - VAT,Việt Nam,,2030-11-08,39,"33,000",other,1,Ống,"0,5ml","33,000",6,12,24,36
-31,"Vaccin sởi, quai bị, rubella - Measles, Mumps and Rubella Vaccine",Ấn Độ,,2030-11-09,40,"175,000",other,1,Ống,"0,5ml","175,000",6,12,24,36
-32,Vaccin viêm phổi và viêm màng não mủ - QUIMI-HIB,Cuba,,2030-11-10,41,"230,000",other,1,Lọ,"0,5ml","230,000",6,12,24,36
-33,Vaccin Thuỷ đậu - VARICELLA,Hàn Quốc,,2030-11-11,42,"590,000",other,1,Lọ,"0,7ml","590,000",6,12,24,36
-34,Huyết thanh kháng uốn ván - SAT,Việt Nam,,2030-11-12,43,"48,000",other,1,Ống,1500UI,"48,000",6,12,24,36
-35,"Vaccin 5 trong 1 (bạch hầu, uốn ván, ho gà, bại liệt, Hib) - PENTAXIM",Pháp,,2030-11-13,44,"705,000",other,1,Lọ,"0,5ml","705,000",6,12,24,36
-36,Vaccin viêm não mô cầu - A+C,Pháp,,2030-11-14,45,"175,000",other,1,Liều,"0,5ml",,6,12,24,36
-37,Vaccin  rotavirus - ROTARIX,Bỉ,,2030-11-15,46,"800,000",other,1,Liều,"1,5ml","800,000",6,12,24,36
+1,Vaccin dại – VERORAB,Pháp,,2030-10-10,10,250000,default,1,Liều,"0,5ml",285000,6,12,24,36
+2,Vaccin tiêu chảy Rotavirus - ROTAVIN-M1,Việt Nam,,2030-10-11,11,388000,default,1,Lọ,2ml,435000,6,12,24,36
+3,Vaccin dại - ABHAYRAB,Ấn Độ,,2030-10-12,12,210000,default,1,Liều,"0,5ml",210000,6,12,24,36
+4,"Vaccin bạch hầu, ho gà, uốn ván - ADACEL",Canada,,2030-10-13,13,635000,default,1,Hộp,1500UI,635000,6,12,24,36
+5,Vaacin viêm gan siêu vi A - AVAXIM,Pháp,,2030-10-14,14,470000,default,1,Liều,"0,5ml",450000,6,12,24,36
+6,Vaccin ung thư tử cung HP - CERVARIX,Bỉ,,2030-10-15,15,880000,default,1,Liều,"0,5ml",880000,6,12,24,36
+7,Vaccin viêm gan B - ENGERIX B - 1ml,Bỉ,,2030-10-16,16,150000,default,1,Lọ,20mcg/1ml,150000,6,12,24,36
+8,"Vaccin viêm gan B - ENGERIX B - 0,5ml",Bỉ,,2030-10-17,17,90000,default,1,Lọ,"10mcg/0,5ml",90000,6,12,24,36
+9,"Vaccin viêm gan B - EUVAX B - 0,5ml",Hàn Quốc,,2030-10-18,18,90000,default,1,Lọ,"10mcg/0,5ml",110000,6,12,24,36
+10,Vaccin viêm gan B - EUVAX B - 1ml,Hàn Quốc,,2030-10-19,19,150000,default,1,Lọ,20mcg/1ml,160000,6,12,24,36
+11,Vaccin ung thư cổ tử cung HP - GARDASIL,Mỹ,,2030-10-20,20,1350000,default,1,Lọ,"0,5ml",1500000,6,12,24,36
+12,"Vaccin 6 trong 1 (Bạch hầu, uốn ván, ho gà, bại liệt, viêm gan B, Hib)- HEXAXIM",Pháp,,2030-10-21,21,980000,default,1,Liều,"0,5ml",990000,6,12,24,36
+13,Vaccin Hib - HIBERIX,Bỉ,,2030-10-22,22,300000,default,1,Lọ,"0,5ml",300000,6,12,24,36
+14,Huyết thanh kháng Dại -SAR,Việt Nam,,2030-10-23,23,405000,default,1,Liều,1000UI,405000,6,12,24,36
+15,"Vaccin 6 trong 1 (Bạch hầu, uốn ván, ho gà, bại liệt, viêm gan B, Hib) - INFANRIX",Bỉ,,2030-10-24,24,890000,default,1,Lọ,"0,5ml",980000,6,12,24,36
+16,Vaccin viêm não Nhật bản - JEVAX,Việt Nam,,2030-10-25,25,90000,default,1,Lọ,1ml,,6,12,24,36
+17,Vaccin viêm não mô cầu - MENACTRA,Mỹ,,2030-10-26,26,1165000,default,1,Lọ,"0,5ml",1175000,6,12,24,36
+18,"Vaccin sởi, quai bị, rubella - M-M-R II",Mỹ,,2030-10-27,27,190000,default,1,Lọ,"0,5ml",190000,6,12,24,36
+19,Vaccin rotavirus - ROTATEQ,Mỹ,,2030-10-28,28,600000,default,1,Liều,2ml,670000,6,12,24,36
+20,Vaccin Hib - SYNFLORIX,Bỉ,,2030-10-29,29,925000,default,1,Liều,"0,5ml",935000,6,12,24,36
+21,"Vaccin 4 trong 1 (Bạch hầu, uốn ván, ho gà, bại liệt) - TETRAXIM",Pháp,,2030-10-30,30,410000,default,1,Liều,"0,5ml",410000,6,12,24,36
+22,"Vaccin viêm gan A,viêm gan B  - TWINRIX",Bỉ,,2030-10-31,31,510000,default,1,Liều,1ml,550000,6,12,24,36
+23,Vaccin não mô cầu typ B&C - VA MENGOC BC,Cuba,,2030-11-01,32,210000,other,1,Lọ,"0,5ml",210000,6,12,24,36
+24,Vaccin thủy đậu - VARIVAX,Mỹ,,2030-11-02,33,710000,other,1,Lọ,"0,5ml",760000,6,12,24,36
+25,"Vaccin cúm - VAXIGRIP -0,25ml",Pháp,,2030-11-03,34,190000,other,1,Bơm Tiêm,"0,25ml",220000,6,12,24,36
+26,"Vaccin cúm - VAXIGRIP -0,5ml",Pháp,,2030-11-04,35,245000,other,1,Bơm Tiêm,"0,5ml",275000,6,12,24,36
+27,Vaccin viêm não Nhật Bản - IMOJEV,Thái Lan,,2030-11-05,36,675000,other,1,Hộp,"0,5ml",680000,6,12,24,36
+28,Vaccin lao - BCG,Việt Nam,,2030-11-06,37,115000,other,1,Lọ,1ml,,6,12,24,36
+29,Vaccin viêm gan A - HAVAX,Việt Nam,,2030-11-07,38,135000,other,1,Liều,"0,5ml",135000,6,12,24,36
+30,Vaccin uốn ván hấp phụ - VAT,Việt Nam,,2030-11-08,39,33000,other,1,Ống,"0,5ml",33000,6,12,24,36
+31,"Vaccin sởi, quai bị, rubella - Measles, Mumps and Rubella Vaccine",Ấn Độ,,2030-11-09,40,175000,other,1,Ống,"0,5ml",175000,6,12,24,36
+32,Vaccin viêm phổi và viêm màng não mủ - QUIMI-HIB,Cuba,,2030-11-10,41,230000,other,1,Lọ,"0,5ml",230000,6,12,24,36
+33,Vaccin Thuỷ đậu - VARICELLA,Hàn Quốc,,2030-11-11,42,590000,other,1,Lọ,"0,7ml",590000,6,12,24,36
+34,Huyết thanh kháng uốn ván - SAT,Việt Nam,,2030-11-12,43,48000,other,1,Ống,1500UI,48000,6,12,24,36
+35,"Vaccin 5 trong 1 (bạch hầu, uốn ván, ho gà, bại liệt, Hib) - PENTAXIM",Pháp,,2030-11-13,44,705000,other,1,Lọ,"0,5ml",705000,6,12,24,36
+36,Vaccin viêm não mô cầu - A+C,Pháp,,2030-11-14,45,175000,other,1,Liều,"0,5ml",,6,12,24,36
+37,Vaccin  rotavirus - ROTARIX,Bỉ,,2030-11-15,46,800000,other,1,Liều,"1,5ml",800000,6,12,24,36

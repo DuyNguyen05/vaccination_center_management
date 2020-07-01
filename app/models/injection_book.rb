@@ -7,6 +7,9 @@ class InjectionBook < ApplicationRecord
   has_many :vaccine_package_types, through: :register_injection_packages, dependent: :destroy
 
   validates_presence_of :info_injection_book
+  validates :name_person_injected, presence: true, length: {minimum: Settings.active_record.injection_book.name.minimum, maximum: Settings.active_record.injection_book.name.maximum}
+  validates :date_of_birth, presence: true
+  validates :gender, presence: true
 
   enum gender: [:male, :female]
 

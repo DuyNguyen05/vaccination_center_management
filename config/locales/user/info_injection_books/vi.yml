@@ -9,8 +9,8 @@ vi:
         identify_mother: CMT/CCCD của mẹ
         number_phone: Số điện thoại liên lạc
         email: Hộp thư điện tử
-        current_address: Địa chỉ hiện tại
-        permanent_address: Địa chỉ thường trú
+        current_address: Nơi ở thường trú (tạm trú)
+        permanent_address: Hộ khẩu thường trú
         name_person_injected: Họ và tên của bé
         full_name: Họ và tên
         date_of_birth: Ngày khai sinh
@@ -24,6 +24,11 @@ vi:
         confirm:
             are_you_sure: Bạn có chắc chắn không?
         add_injection_book: Thêm sổ tiêm
+        province: Tỉnh/Thành Phố
+        district: Quận/Huyện
+        ward: Xã/Phường
+        guardian_name: Tên người giám hộ
+        identify_guardian: CMT/CCCD người giám hộ
       index:
         search: Tìm kiếm
         add_user: Đăng ký thông tin

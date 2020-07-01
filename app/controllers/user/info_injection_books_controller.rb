@@ -27,9 +27,10 @@ class User::InfoInjectionBooksController < User::UserController
 
   def info_injection_book_params
     params.require(:info_injection_book).permit :father_name, :identify_father, :email,
-      :mother_name, :identify_mother, :number_phone, :current_address, :permanent_address,
+      :mother_name, :identify_mother, :number_phone, :guardian_name, :identify_guardian,
       injection_books_attributes: [:id, :name_person_injected, :date_of_birth,
-        :place_of_birth, :gender, :_destroy]
+        :place_of_birth, :gender, :_destroy],
+      addresses_attributes: [:id, :province, :district, :ward, :hometown, :current_address, :permanent_address]
   end
 
   def load_info_injection_book

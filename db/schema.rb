@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_113809) do
+ActiveRecord::Schema.define(version: 2020_07_01_025210) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
     t.index ["info_injection_book_id"], name: "index_accounts_on_info_injection_book_id"
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_accounts_on_role_id"
+  end
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "info_injection_book_id"
+    t.string "province"
+    t.string "district"
+    t.string "ward"
+    t.string "current_address"
+    t.string "permanent_address"
+    t.string "hometown"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["info_injection_book_id"], name: "index_addresses_on_info_injection_book_id"
   end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -199,6 +212,12 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
     t.index ["vaccination_center_id"], name: "index_details_infos_on_vaccination_center_id"
   end
 
+  create_table "districts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "province_id"
+    t.index ["province_id"], name: "index_districts_on_province_id"
+  end
+
   create_table "form_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
   end
@@ -217,8 +236,13 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   create_table "info_injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "father_name"
     t.string "identify_father"
+    t.string "year_of_birth_father"
     t.string "mother_name"
     t.string "identify_mother"
+    t.string "year_of_birth_mother"
+    t.string "guardian_name"
+    t.string "identify_guardian"
+    t.string "year_of_birth_guardian"
     t.string "number_phone"
     t.string "current_address"
     t.string "permanent_address"
@@ -255,6 +279,10 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["vaccine_id"], name: "index_number_injections_on_vaccine_id"
+  end
+
+  create_table "provinces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "register_injection_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -335,9 +363,16 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 
+  create_table "wards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "district_id"
+    t.index ["district_id"], name: "index_wards_on_district_id"
+  end
+
   add_foreign_key "accounts", "details_infos"
   add_foreign_key "accounts", "info_injection_books"
   add_foreign_key "accounts", "roles"
+  add_foreign_key "addresses", "info_injection_books"
   add_foreign_key "admins", "details_infos"
   add_foreign_key "admins", "roles"
   add_foreign_key "bills", "accounts"
@@ -364,6 +399,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   add_foreign_key "detail_vaccine_packages", "vaccines"
   add_foreign_key "details_infos", "departments"
   add_foreign_key "details_infos", "vaccination_centers"
+  add_foreign_key "districts", "provinces"
   add_foreign_key "import_vaccines", "accounts"
   add_foreign_key "import_vaccines", "vaccines"
   add_foreign_key "injection_books", "info_injection_books"
@@ -375,4 +411,5 @@ ActiveRecord::Schema.define(version: 2020_06_18_113809) do
   add_foreign_key "vaccine_distributions", "vaccines"
   add_foreign_key "vaccines", "companies"
   add_foreign_key "vaccines", "vaccine_types"
+  add_foreign_key "wards", "districts"
 end

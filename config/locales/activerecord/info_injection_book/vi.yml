@@ -9,7 +9,7 @@ vi:
         mother_name: Họ tên mẹ
         identify_mother: CMT/CCCD mẹ
         number_phone: SĐT liên hệ
-        current_address: Địa chỉ hiện tại
-        permanent_address: Địa chỉ thường trú
+        current_address: Nơi ở thường trú (tạm trú)
+        permanent_address: Hộ khẩu thường trú
         email: Thư điện tử
         created_at: Tạo Ngày

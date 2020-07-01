@@ -7,16 +7,17 @@
       .well.form-horizontal
         .card-body
           .row.col-xl-12.col-lg-12
-            .col-lg-9
-              = link_to(new_user_info_injection_book_path, class: "btn btn-primary" ) do
-                %i.fas.fa-user-plus
-            .col-lg-3
-              = form_tag user_info_injection_books_path, method: :get, class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" do
+            .col-lg-6
+              = form_tag user_info_injection_books_path, method: :get, class: "navbar-search" do
                 .input-group
                   = text_field_tag :query, params[:query], class: "form-control bg-light border-0 small", placeholder: t(".search")
                   .input-group-append
                     = button_tag(type: "submit", class: "btn btn-primary") do
                       %i.fas.fa-search.fa-sm
+            .col-lg-5
+            .col-lg-1.float-right
+              = link_to(new_user_info_injection_book_path, class: "btn btn-primary" ) do
+                %i.fas.fa-user-plus
           %hr
           .table-responsive
             %table.table.table-bordered.table-hover
