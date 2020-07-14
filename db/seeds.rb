@@ -20,6 +20,10 @@ account = CreateAccountService.new(details_info_id: duy.id).create_account("true
 Account.find(account.id).update! user_code: "admin-070397"
 Admin.find(account.id).update! user_code: "admin-070397"
 
+VaccineType.create! name: "Vắc xin phòng bệnh Thủy đậu"
+VaccineType.create! name: "Vắc xin phòng bệnh Sởi-Quai bị-Rubella"
+VaccineType.create! name: "Vắc xin phòng bệnh Viêm gan B"
+
 30.times do |n|
   code = "#{n + 1}"
   name = Faker::Company.name
@@ -27,22 +31,22 @@ Admin.find(account.id).update! user_code: "admin-070397"
   Company.create!(company_code: code, name: name)
 end
 
-30.times do |n|
-  code = Faker::Code.imei
-  name = Faker::Beer.name
-  manufacture = Faker::Beer.brand
-  expiry_date = Faker::Date.between(from: Date.today, to: 1.year.from_now)
-  content = Faker::Marketing.buzzwords
-  quantity = Faker::Number.within(range: 1..50)
-  company_code =  Company.pluck(:company_code).sample
-  price = Faker::Number.decimal(l_digits: 6, r_digits: 1)
+# 30.times do |n|
+#   code = Faker::Code.imei
+#   name = Faker::Beer.name
+#   manufacture = Faker::Beer.brand
+#   expiry_date = Faker::Date.between(from: Date.today, to: 1.year.from_now)
+#   content = Faker::Marketing.buzzwords
+#   quantity = Faker::Number.within(range: 1..50)
+#   company_code =  Company.pluck(:company_code).sample
+#   price = Faker::Number.decimal(l_digits: 6, r_digits: 1)
 
-  vaccine = Vaccine.create!(
-    code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, price: price
-  )
+#   vaccine = Vaccine.create!(
+#     code: code, name: name, manufacture: manufacture, expiry_date: expiry_date, content: content, quantity: quantity, user_code: Admin.first.user_code, company_code: company_code, saleprice: price, vaccine_type_id: 1
+#   )
 
-  NumberInjection.create!(name: "Mũi 1", age: 5, vaccine_id: vaccine.id)
-end
+#   NumberInjection.create!(name: "Mũi 1", age: 5, vaccine_id: vaccine.id)
+# end
 
 thao = DetailsInfo.create(first_name: "Thao", last_name: "Nguyen", identify: "017270100", number_phone: "0389746397", email: "thaonguyen.mta@gmail.com")
 account = CreateAccountService.new(details_info_id: thao.id).create_account
@@ -65,8 +69,11 @@ end
   phone = InfoInjectionBook.pluck(:number_phone)
   father_name = Faker::Name.name_with_middle
   mother_name = Faker::Name.name_with_middle
+  guardian_name = Faker::Name.name_with_middle
   identify_mother = Faker::IDNumber.invalid_south_african_id_number
   identify_father = Faker::IDNumber.invalid_south_african_id_number
+  identify_guardian = Faker::IDNumber.invalid_south_african_id_number
+
   number_phone = Faker::PhoneNumber.country_code
   while phone.include? number_phone do
     number_phone = Faker::PhoneNumber.country_code
@@ -75,10 +82,30 @@ end
   permanent_address = Faker::Address.full_address
   email = Faker::Internet.email
   InfoInjectionBook.create!(father_name: father_name, identify_father: identify_father, mother_name: mother_name, identify_mother: identify_mother,
-    number_phone: number_phone, current_address: current_address, permanent_address: permanent_address, email: email)
+    number_phone: number_phone, email: email, guardian_name: guardian_name, identify_guardian: identify_guardian)
 
   name_person_injected = Faker::Name.name_with_middle
   date_of_birth = Faker::Date.between(from: 10.days.ago, to: Date.today)
   place_of_birth = permanent_address
   InjectionBook.create!(name_person_injected: name_person_injected, date_of_birth: date_of_birth, place_of_birth: place_of_birth, info_injection_book_id: n+1, gender: "male")
+end
+
+require 'csv'
+
+Province.transaction do
+  # ActiveRecord::Base.connection.execute("TRUNCATE table provinces")
+
+  CSV.foreach(Rails.root.join('db', 'master_data', 'provinces.csv'), headers: true) do |row|
+    attrs = row.to_h.symbolize_keys
+    Province.create!(attrs)
+  end
+end
+
+District.transaction do
+  # ActiveRecord::Base.connection.execute("TRUNCATE table districts")
+
+  CSV.foreach(Rails.root.join('db', 'master_data', 'districts.csv'), headers: true) do |row|
+    attrs = row.to_h.symbolize_keys
+    District.create!(attrs)
+  end
 end

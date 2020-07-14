@@ -11,7 +11,7 @@ class Admin::VaccinesController < Admin::AdminController
 
   def create
     company_code = Company.find_by(company_code: params[:vaccine][:company_code])
-    vaccine_data = vaccine_params.merged(company_code: company_code) if company_code.present?
+    vaccine_data = vaccine_params.merge(company_code: company_code) if company_code.present?
     @vaccine = Vaccine.new(vaccine_params)
     if @vaccine.save
       flash[:success] = t(".created")

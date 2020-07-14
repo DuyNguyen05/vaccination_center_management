@@ -1,0 +1,26 @@
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="text-lg m-0 font-weight-bold text-uppercase text-center"></h4>
+      <button class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="our-services container-fluid">
+        <div class="file btn-primary ml-4 ml-1">
+          <%= form_for [:user, injection_book] do |f| %>
+            <%= f.fields_for :image_attributes do |image_f| %>
+
+              <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+              <%= image_f.hidden_field :imageable_id, value: injection_book.id %>
+              <%= image_f.hidden_field :imageable_type, value: "image" %>
+              <%= image_f.hidden_field :image_cache %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

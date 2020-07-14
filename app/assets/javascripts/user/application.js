@@ -12,14 +12,17 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require jquery
 //= require popper
 //= require bootstrap
 //= require select2
+//= require toastr
 //= require Chart.min
 //= require ./lib/sb-admin-2.min.js
 //= require ./lib/jquery.easing.min.js
 //= require ./lib/jquery.dataTables.min.js
 //= require ./lib/dataTables.bootstrap4.min.js
-//= require ./lib/custom.js
-//= require jquery_nested_form
 //= require nested_form_fields
+//= require jquery_nested_form
+//= require ./lib/custom.js.erb
+//= require cloudinary

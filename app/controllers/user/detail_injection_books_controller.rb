@@ -25,57 +25,14 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def update
-    if @detail_injection_book.valid?
-      if params[:back_button].present?
-        # @detail_injection_book.previous_step
-        redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: DetailInjectionBook::STEPS[DetailInjectionBook::STEPS.index(params[:detail_injection_book][:steps]) - 1])
-      elsif params[:save_draft].present?
-        @detail_injection_book.update status: "cancel"
-        # detail_injection_book_params[:check_before_injection_attributes].merge(answer_question: ["", "", "", "", "", "", "", ""]) if detail_injection_book_params[:check_before_injection_attributes].present? && detail_injection_book_params[:check_before_injection_attributes][:answer_question].blank?
-        # @detail_injection_book.update_attributes! detail_injection_book_params
-        # flash[:notice] = "Saved!"
-        redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-      elsif @detail_injection_book.first_step?
-        @detail_injection_book.next_step
-        redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-      elsif @detail_injection_book.second_step?
-        if params[:detail_injection_book][:check_before_injection_attributes][:answer_question].present? && (params[:detail_injection_book][:check_before_injection_attributes][:answer_question].length == 8) && params[:detail_injection_book][:check_before_injection_attributes][:status].present?
-          if (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][1] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][2] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][3] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][4] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][5] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][6] == "true")
-            flash[:alert] = "Tạm hoãn tiêm chủng (Khi CÓ điểm bất thường tại các mục 2,3,4,5,6,7)"
-            params[:detail_injection_book][:check_before_injection_attributes][:status] = "disagree"
-            @detail_injection_book.update_attributes detail_injection_book_params
-            @detail_injection_book.update_attributes status: "cancel"
-          elsif (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][0] == "true") || (params[:detail_injection_book][:check_before_injection_attributes][:answer_question][7] == "true")
-            flash[:alert] = "Chống chỉ định tiêm chủng (Khi CÓ điểm bất thường tại các mục 1-8)"
-            @detail_injection_book.update_attributes detail_injection_book_params
-            @detail_injection_book.next_step
-          elsif params[:detail_injection_book][:check_before_injection_attributes][:status] == "disagree"
-            @detail_injection_book.update_attributes detail_injection_book_params
-            @detail_injection_book.update_attributes status: "cancel"
-          else
-            @detail_injection_book.update_attributes detail_injection_book_params
-            @detail_injection_book.next_step
-          end
-          redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-        else
-          flash[:alert] = "Vui lòng nhập đủ thông tin để tiếp tục."
-          redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-        end
-      elsif @detail_injection_book.third_step?
-        if params[:detail_injection_book][:bill_attributes][:detail_bills_attributes].present?
-          @detail_injection_book.update! detail_injection_book_params
-          @detail_injection_book.next_step
-          redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-        else
-          flash[:alert] = "Vui lòng nhập đủ thông tin để tiếp tục."
-          redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-        end
-      else
-        @detail_injection_book.update detail_injection_book_params
-        @detail_injection_book.next_step
-        redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
-      end
+    response = InjectionService.new(detail_injection_book_params: detail_injection_book_params, detail_injection_book_id: params[:id], save_draft: params[:save_draft]).update_info_injection
+    if response[1]
+      flash[:notice] = response[0] unless response[0].blank?
+    elsif !response[0].blank?
+      flash[:alert] = response[0] unless response[0].blank?
     end
+    @detail_injection_book.reload
+    redirect_to edit_user_detail_injection_book_path(@detail_injection_book, steps: @detail_injection_book.current_step)
   end
 
   private

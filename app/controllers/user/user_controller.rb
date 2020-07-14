@@ -14,6 +14,9 @@ class User::UserController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid do
     redirect_back fallback_location: user_root_path, alert: t("errors.messages.record_invalid")
   end
+  rescue_from ActionController::InvalidAuthenticityToken do
+    redirect_back fallback_location: user_root_path, alert: t("errors.messages.invalid_authenticity_token")
+  end
 
   private
 

@@ -1,0 +1,72 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3 bg-light">
+    <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
+      VẮC XIN CƠ BẢN
+    </h6>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <% list_vaccine.each do |vaccine| %>
+        <div class="col-xl-6 col-md-6 mb-6" data-toggle="modal" data-target="#modal-<%= vaccine.id %>">
+          <div class="card border-left-primary shadow h-100 py-1">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                    <b> <%= vaccine.name %> </b>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-book fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade bs-example-modal-lg" id="modal-<%= vaccine.id %>" tabindex="-1" role="dialog">
+          <%= render "vaccine", vaccine: vaccine %>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-center">
+      <%= paginate list_vaccine, theme: "twitter-bootstrap-4" %>
+    </div>
+  </div>
+</div>
+<div class="card shadow">
+  <div class="card-header py-3 bg-light">
+    <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
+      VẮC XIN KHÁC
+    </h6>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <% list_vaccine_other.each do |vaccine| %>
+        <div class="col-xl-6 col-md-6 mb-6" data-toggle="modal" data-target="#modal-<%= vaccine.id %>">
+          <div class="card border-left-primary shadow h-100 py-1">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                    <b> <%= vaccine.name %> </b>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-book fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade bs-example-modal-lg" id="modal-<%= vaccine.id %>" tabindex="-1" role="dialog">
+          <%= render "vaccine", vaccine: vaccine %>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-center">
+      <%= paginate list_vaccine_other, theme: "twitter-bootstrap-4" %>
+    </div>
+  </div>
+</div>

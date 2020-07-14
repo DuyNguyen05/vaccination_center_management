@@ -86,6 +86,15 @@
                     </div>
                   </div>
                 </div>
+                <div class="file btn-primary ml-4 ml-1">
+                  <%= ib.fields_for :image_attributes do |image_f| %>
+                    <i class="far fa-edit"></i>
+                    <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+                    <%= image_f.hidden_field :imageable_id, value: injection_book.id %>
+                    <%= image_f.hidden_field :imageable_type, value: "image" %>
+                    <%= image_f.hidden_field :image_cache %>
+                  <% end %>
+                </div>
               </fieldset>
             </div>
           </div>

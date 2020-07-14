@@ -7,10 +7,19 @@ active_record:
       minimum: 6
       maximum: 15
     email:
-      regex: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i/
+      regex: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i
   info_injection_book:
     name:
-      minimum: 5
+      minimum: 0
+      maximum: 50
+    number_phone:
+      minimum: 6
+      maximum: 15
+    email:
+      regex: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i
+  injection_book:
+    name:
+      minimum: 0
       maximum: 50
   account:
     role:

@@ -22,14 +22,14 @@ module User::DetailInjectionBookHelper
   def amount detail_injection_book
     amount = 0
     detail_injection_book.bill.detail_bills.each do |detail_bill|
-      amount = amount + (detail_bill.number_injection)*(detail_bill.vaccine.price.to_f)
+      amount = amount + (detail_bill.number_injection)*(detail_bill.vaccine.saleprice.to_i*1000)
     end
-    return number_with_delimiter(amount.to_f)
+    return number_with_delimiter(amount)
   end
 
   def total_price detail_injection_book
     amount = amount detail_injection_book
-    number_to_currency(amount)
+    number_to_currency(number_with_delimiter(amount))
   end
 
   def set_checked_for_checkbox answer_question

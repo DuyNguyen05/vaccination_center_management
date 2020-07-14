@@ -1,0 +1,115 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3 bg-light">
+    <div class="float-left"><%= link_to t('.back'), url_for(:back) %></div>
+    <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
+      <b class="text-uppercase"> <%= injection_book.name_person_injected %> </b>
+    </h6>
+  </div>
+  <div class="card-body">
+    <div class="row d-flex justify-content-center">
+      <div class="font-weight text-dark">
+        <div class="profile-img float-left">
+          <%#= image_tag "baby-2.jpeg", size: "160x160" %>
+          <%= image_tag injection_book.image.present? ? injection_book.image.image_link.to_s : "baby-2.jpeg", size: "160x160", class: "image" %>
+          <div class="file btn-primary ml-4 ml-1">
+            <%= form_for [:user, injection_book], method: :patch, id: "avatar-form" do |f| %>
+              <%= f.fields_for :image_attributes do |image_f| %>
+                <i class="far fa-edit"></i>
+                <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+                <%= image_f.hidden_field :imageable_id, value: injection_book.id %>
+                <%= image_f.hidden_field :imageable_type, value: "image" %>
+                <%= image_f.hidden_field :image_cache %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="ml-4 text-gray float-right font-weight-bold">
+          <%=  t(".date_of_birth") %>: <%= injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
+          <%= t(".year_old") + ": " %> <%= age(injection_book.date_of_birth) %><br>
+          <%=  t(".gender") %>: <%= t("." + injection_book.gender) %><br>
+          <%=  t(".place_of_birth") %>: <%= injection_book.place_of_birth %><br>
+          <div class="col-md-12 mt-3">
+            <%= link_to t(".injection_history"), user_detail_injection_books_path(injection_book: injection_book), method: :get, class: "btn btn-primary float-left mr-2"%>
+            <%= link_to t(".injection_schedule"), "#", class: "btn btn-primary float-left mr-2"%>
+            <%= button_to t(".injection"), user_detail_injection_books_path(injection_book: injection_book), method: :post, class: "btn btn-primary float-left mr-2"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card shadw mb-4 mt-3 tab-card">
+  <div class="card-header tab-card-header">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin cá nhân</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="history-injection-tab" data-toggle="tab" href="#history-injection" role="tab" aria-controls="history-injection" aria-selected="false">Lịch sử tiêm chủng</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab" aria-controls="service" aria-selected="false">Dịch vụ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="history-update-tab" data-toggle="tab" href="#history-update" role="tab" aria-controls="history-update" aria-selected="false">Lịch sử cập nhật</a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content profile-tab ml-3 mt-3" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <h5 class="card-title">Thông tin</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="tab-pane fade" id="history-injection" role="tabpanel" aria-labelledby="history-injection-tab">
+      <h5 class="card-title">Lịch sử tiêm chủng</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">
+      <h5 class="card-title">Dịch vụ</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="tab-pane fade" id="history-update" role="tabpanel" aria-labelledby="history-update-tab">
+      <h5 class="card-title">Lịch sử cập nhật</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col-12">
+    <div class="card mt-3 tab-card">
+      <div class="card-header tab-card-header">
+        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+              <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">One</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">Two</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">Three</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+          <h5 class="card-title">Tab Card One</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+          <h5 class="card-title">Tab Card Two</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+          <h5 class="card-title">Tab Card Three</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->
