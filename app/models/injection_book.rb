@@ -5,6 +5,9 @@ class InjectionBook < ApplicationRecord
   has_many :detail_injection_books, dependent: :destroy
   has_many :register_injection_packages, dependent: :destroy
   has_many :vaccine_package_types, through: :register_injection_packages, dependent: :destroy
+  has_one :image, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :image, reject_if: proc {|attributes|
+    attributes['image_link'].blank?}
 
   validates_presence_of :info_injection_book
   validates :name_person_injected, presence: true, length: {minimum: Settings.active_record.injection_book.name.minimum, maximum: Settings.active_record.injection_book.name.maximum}

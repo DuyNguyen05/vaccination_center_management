@@ -3,6 +3,15 @@ $(document).ready(function() {
     var injectionBookPath = '<%= Rails.application.routes.url_helpers.user_injection_books_path %>/' + this.id;
     location.replace(injectionBookPath)
   });
+
+  $('.input-file').on('change',function(){
+    $('form.edit_injection_book').submit();
+  });
+
+  $(".cancel_search").on("click", function(){
+    $("input.input_search").val('');
+  })
+
 });
 
 $(document).ready(function(){
@@ -93,15 +102,15 @@ $(document).on('fields_added.nested_form_fields', function(event){
         }
       },
       vaccines: true,
-      templateResult: formatResult,
-      templateSelection: formatSelection,
+      templateResult: formatResultt,
+      templateSelection: formatSelectionn,
     }).trigger('change');
 
-    function formatResult(vaccines) {
+    function formatResultt(vaccines) {
       return vaccines.name;
     }
 
-    function formatSelection(vaccines) {
+    function formatSelectionn(vaccines) {
       return vaccines.text || vaccines.name;
     }
   }
@@ -136,37 +145,6 @@ $(document).on('fields_added.nested_form_fields', function(event){
     }
   }
 
-});
-
-$(document).ready(function(){
-  var packageVaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccine_package_types_path %>';
-  var idInjectionBook = $('#idInjectionBook')[0].dataset.indexNumber
-  $('.select_package_vaccines').select2({
-    width: '100%',
-    ajax: {
-      url: packageVaccinesPath + "?id_injection_book=" + idInjectionBook,
-      type: 'GET',
-      delay: 1000,
-      dataType: 'json',
-      data: function(params) {
-        return { vaccine_package_name: params.term }
-      },
-      processResults: function(data) {
-        return { results: data.vaccine_package_types };
-      }
-    },
-    vaccine_package_types: true,
-    templateResult: formatResult,
-    templateSelection: formatSelection,
-  }).trigger('change');
-
-  function formatResult(vaccine_package_types) {
-    return vaccine_package_types.name;
-  }
-
-  function formatSelection(vaccine_package_types) {
-    return vaccine_package_types.text || vaccine_package_types.name;
-  }
 });
 
 $(document).ready(function(){
@@ -271,17 +249,45 @@ $(document).ready(function(){
       $(".packageVaccine").slideDown(500);
       $(".vaccine").hide();
     }
+    var packageVaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccine_package_types_path %>';
+    var idInjectionBook = $('#idInjectionBook')[0].dataset.indexNumber;
+    $('.select_package_vaccines').select2({
+      width: '100%',
+      ajax: {
+        url: packageVaccinesPath + "?id_injection_book=" + idInjectionBook,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { vaccine_package_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.vaccine_package_types };
+        }
+      },
+      vaccine_package_types: true,
+      templateResult: formatResult,
+      templateSelection: formatSelection,
+    }).trigger('change');
+
+    function formatResult(vaccine_package_types) {
+      return vaccine_package_types.name;
+    }
+
+    function formatSelection(vaccine_package_types) {
+      return vaccine_package_types.text || vaccine_package_types.name;
+    }
   });
 });
 
 $(document).ready(function(){
-  $('.select_district').select2({})
-  $('.select_ward').select2({})
+  $('.select_district1').select2({})
+  $('.select_ward1').select2({})
   var provincesPath = '<%= Rails.application.routes.url_helpers.user_provinces_path %>';
   var districtsPath = '<%= Rails.application.routes.url_helpers.user_districts_path %>';
   var wardsPath = '<%= Rails.application.routes.url_helpers.user_wards_path %>';
 
-  $('.select_province').select2({
+  $('.select_province1').select2({
     width: '100%',
     ajax: {
       url: provincesPath,
@@ -308,9 +314,9 @@ $(document).ready(function(){
     return provinces.text || provinces.name;
   }
 
-  $('.select_province').on('change',function(){
-    var provinceId = $('.select_province').val();
-    $('.select_district').select2({
+  $('.select_province1').on('change',function(){
+    var provinceId = $('.select_province1').val();
+    $('.select_district1').select2({
       width: '100%',
       ajax: {
         url: districtsPath + "?provinceId=" + provinceId,
@@ -338,9 +344,102 @@ $(document).ready(function(){
     }
   });
 
-  $('.select_district').on('change',function(){
-    var districtId = $('.select_district').val();
-    $('.select_ward').select2({
+  $('.select_district1').on('change',function(){
+    var districtId = $('.select_district1').val();
+    $('.select_ward1').select2({
+      width: '100%',
+      ajax: {
+        url: wardsPath + "?districtId=" + districtId,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { ward_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.wards };
+        }
+      },
+      wards: true,
+      templateResult: formatResult3,
+      templateSelection: formatSelection3,
+    }).trigger('change');
+
+    function formatResult3(wards) {
+      return wards.name;
+    }
+
+    function formatSelection3(wards) {
+      return wards.text || wards.name;
+    }
+  });
+
+  $('.select_district2').select2({})
+  $('.select_ward2').select2({})
+  var provincesPath = '<%= Rails.application.routes.url_helpers.user_provinces_path %>';
+  var districtsPath = '<%= Rails.application.routes.url_helpers.user_districts_path %>';
+  var wardsPath = '<%= Rails.application.routes.url_helpers.user_wards_path %>';
+
+  $('.select_province2').select2({
+    width: '100%',
+    ajax: {
+      url: provincesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { province_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.provinces };
+      }
+    },
+    provinces: true,
+    templateResult: formatResult4,
+    templateSelection: formatSelection4,
+  }).trigger('change');
+
+  function formatResult4(provinces) {
+    return provinces.name;
+  }
+
+  function formatSelection4(provinces) {
+    return provinces.text || provinces.name;
+  }
+
+  $('.select_province2').on('change',function(){
+    var provinceId = $('.select_province2').val();
+    $('.select_district2').select2({
+      width: '100%',
+      ajax: {
+        url: districtsPath + "?provinceId=" + provinceId,
+        type: 'GET',
+        delay: 1000,
+        dataType: 'json',
+        data: function(params) {
+          return { district_name: params.term }
+        },
+        processResults: function(data) {
+          return { results: data.districts };
+        }
+      },
+      districts: true,
+      templateResult: formatResult2,
+      templateSelection: formatSelection2,
+    }).trigger('change');
+
+    function formatResult2(districts) {
+      return districts.name;
+    }
+
+    function formatSelection2(districts) {
+      return districts.text || districts.name;
+    }
+  });
+
+  $('.select_district2').on('change',function(){
+    var districtId = $('.select_district2').val();
+    $('.select_ward2').select2({
       width: '100%',
       ajax: {
         url: wardsPath + "?districtId=" + districtId,

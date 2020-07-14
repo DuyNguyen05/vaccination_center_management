@@ -1,0 +1,18 @@
+development:
+  cloud_name: "nguyenthiphuongthao28091997"
+  api_key: "943885343947886"
+  api_secret: "_q2SDdiYlvYydRH9t984SqFya_s"
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: "nguyenthiphuongthao28091997"
+  api_key: "943885343947886"
+  api_secret: "_q2SDdiYlvYydRH9t984SqFya_s"
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: "nguyenthiphuongthao28091997"
+  api_key: "943885343947886"
+  api_secret: "_q2SDdiYlvYydRH9t984SqFya_s"
+  enhance_image_tag: true
+  static_file_support: false

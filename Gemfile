@@ -25,17 +25,19 @@ gem "font_awesome5_rails"
 gem "devise"
 gem "pundit"
 gem "config"
+gem "carrierwave"
+gem "cloudinary"
+gem "figaro"
 gem "roo"
 gem "toastr-rails"
 gem "wicked"
-gem 'owlcarousel-rails'
+gem "owlcarousel-rails"
 gem "animate-rails"
 gem "select2-rails"
 gem "thor", "~> 0.19.1"
-gem 'enumerize'
+gem "enumerize"
 gem "nested_form"
-gem 'nested_form_fields'
-# gem 'seed-fu', '~> 2.3'
+gem "nested_form_fields"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

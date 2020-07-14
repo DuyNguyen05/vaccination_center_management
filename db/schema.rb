@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_025210) do
+ActiveRecord::Schema.define(version: 2020_07_02_041349) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -222,6 +222,14 @@ ActiveRecord::Schema.define(version: 2020_07_01_025210) do
     t.string "content"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_link"
+    t.integer "imageable_id"
+    t.string "imageable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "import_vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_code"
     t.integer "quantity"
@@ -260,6 +268,7 @@ ActiveRecord::Schema.define(version: 2020_07_01_025210) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "gender", default: 0
+    t.string "avatar"
     t.index ["info_injection_book_id"], name: "index_injection_books_on_info_injection_book_id"
   end
 

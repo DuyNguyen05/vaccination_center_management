@@ -1,5 +1,5 @@
 class User::InjectionBooksController < User::UserController
-  before_action :load_injection_book, only: :show
+  before_action :load_injection_book, only: [:show, :update]
   before_action -> { authorize [:user, InjectionBook] }, only: [:new, :create, :show, :index]
 
   def index
@@ -23,6 +23,16 @@ class User::InjectionBooksController < User::UserController
     end
   end
 
+  def update
+    @injection_book.update injection_book_params
+    # respond_to do |format|
+    #   # format.html { render(:text => "not implemented") }
+    #   format.js
+    # end
+    # Cloudinary::Uploader.upload(injection_book_params[:image_attributes][:image_link])
+    redirect_to user_injection_book_path(@injection_book)
+  end
+
   def show
   end
 
@@ -30,7 +40,7 @@ class User::InjectionBooksController < User::UserController
 
   def injection_book_params
     params.require(:injection_book).permit :name_person_injected, :date_of_birth,
-      :place_of_birth, :gender
+      :place_of_birth, :gender, image_attributes: [:id, :image_link, :imageable_id, :imageable_type, :_destroy]
   end
 
   def load_injection_book

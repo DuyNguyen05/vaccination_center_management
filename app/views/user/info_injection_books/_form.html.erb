@@ -6,7 +6,7 @@
           <%= t(".new_info_injection_books") %>
         </h4>
       </div>
-      <%= form_with model: [:user, info_injection_book], class: "well form-horizontal", local: true do |f| %>
+      <%= nested_form_for [:user, info_injection_book], class: "well form-horizontal" do |f| %>
         <%= render "shared/error_message", resource: info_injection_book %>
         <div class="card-body">
           <div class="row">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                   <div class="row ml-2">
-                    <label class="col-md-4 text-left required">
+                    <label class="col-md-4 text-left">
                       <%= t(".number_phone") %>
                     </label>
                     <div class="col-md-8 inputGroupContainer">
@@ -58,14 +58,14 @@
                             <i class="fas fa-phone-square"></i>
                           </span>
                         </div>
-                        <%= f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1", required: true %>
+                        <%= f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1" %>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="row ml-2">
-                    <label class="col-md-4 text-left required">
+                    <label class="col-md-4 text-left">
                       <%= t(".guardian_name") %>
                     </label>
                     <div class="col-md-8 inputGroupContainer">
@@ -75,7 +75,7 @@
                             <i class="fas fa-user"></i>
                           </span>
                         </div>
-                        <%= f.text_field :guardian_name, placeholder: t(".guardian_name"), class: "form-control bg-light border-1", required: true %>
+                        <%= f.text_field :guardian_name, placeholder: t(".guardian_name"), class: "form-control bg-light border-1" %>
                       </div>
                     </div>
                   </div>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="form-group">
                   <div class="row ml-2">
-                    <label class="col-md-4 text-left required">
+                    <label class="col-md-4 text-left">
                       <%= t(".identify_guardian") %>
                     </label>
                     <div class="col-md-8 inputGroupContainer">
@@ -147,7 +147,7 @@
                             <i class="fas fa-fingerprint"></i>
                           </span>
                         </div>
-                        <%= f.text_field :identify_guardian, placeholder: t(".identify_guardian"), class: "form-control bg-light border-1", required: true %>
+                        <%= f.text_field :identify_guardian, placeholder: t(".identify_guardian"), class: "form-control bg-light border-1" %>
                       </div>
                     </div>
                   </div>
@@ -156,61 +156,63 @@
             </div>
             <div class="col-xl-12 col-lg-12 ml-4 text-primary">Hộ khẩu thường trú:</div>
             <%= f.fields_for :addresses, Address.new do |addr| %>
-              <div class="col-xl-4 col-lg-4">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".province") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
-                        <%= addr.select :province, {}, {}, class: "select_province form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+              <div class="row ml-2">
+                <div class="col-xl-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".province") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                          <%= addr.select :province, {}, {}, class: "select_province1 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-4 col-lg-4">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".district") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :district, placeholder: t(".district"), class: "form-control bg-light border-1" %>
-                        <%= addr.select :district, {}, {}, class: "select_district form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                <div class="col-xl-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".district") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :district, placeholder: t(".district"), class: "form-control bg-light border-1" %>
+                          <%= addr.select :district, {}, {}, class: "select_district1 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-4 col-lg-4">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".ward") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :ward, placeholder: t(".ward"), class: "form-control bg-light border-1" %>
-                        <%= addr.select :ward, {}, {}, class: "select_ward form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                <div class="col-xl-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".ward") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :ward, placeholder: t(".ward"), class: "form-control bg-light border-1" %>
+                          <%= addr.select :ward, {}, {}, class: "select_ward1 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-8 col-lg-8">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".permanent_address") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
-                        <%= addr.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1 small" %>
+                <div class="col-xl-8 col-lg-8">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".permanent_address") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                          <%= addr.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1 small" %>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -219,61 +221,63 @@
             <% end %>
             <div class="col-xl-12 col-lg-12 ml-4 text-primary">Nơi ở thường trú (tạm trú):</div>
             <%= f.fields_for :addresses, Address.new do |addr| %>
-              <div class="col-xl-4 col-lg-4">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".province") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
-                        <%= addr.select :province, {}, {}, class: "select_province form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+              <div class="row ml-2">
+                <div class="col-xl-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".province") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                          <%= addr.select :province, {}, {}, class: "select_province2 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-4 col-lg-4">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".district") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :district, placeholder: t(".district"), class: "form-control bg-light border-1" %>
-                         <%= addr.select :district, {}, {}, class: "select_district form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                <div class="col-xl-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".district") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :district, placeholder: t(".district"), class: "form-control bg-light border-1" %>
+                           <%= addr.select :district, {}, {}, class: "select_district2 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-4 col-lg-4">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".ward") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :ward, placeholder: t(".ward"), class: "form-control bg-light border-1" %>
-                        <%= addr.select :ward, {}, {}, class: "select_ward form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                <div class="col-xl-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".ward") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :ward, placeholder: t(".ward"), class: "form-control bg-light border-1" %>
+                          <%= addr.select :ward, {}, {}, class: "select_ward2 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-8 col-lg-8">
-                <div class="form-group">
-                  <div class="row ml-2">
-                    <label class="col-md-12 text-left">
-                      <%= t(".current_address") %>
-                    </label>
-                    <div class="col-md-12 inputGroupContainer">
-                      <div class="input-group">
-                        <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
-                        <%= addr.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1 small" %>
+                <div class="col-xl-8 col-lg-8">
+                  <div class="form-group">
+                    <div class="row ml-2">
+                      <label class="col-md-12 text-left">
+                        <%= t(".current_address") %>
+                      </label>
+                      <div class="col-md-12 inputGroupContainer">
+                        <div class="input-group">
+                          <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                          <%= addr.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1 small" %>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -284,8 +288,8 @@
           <br>
           <hr>
           <div id="add_injection_book">
-            <%= f.nested_fields_for :injection_books, wrapper: true do |ib| %>
-              <%= ib.remove_nested_fields_link do%><i class="fa fa-times ml-5" style="color:gray"></i><%end%>
+            <%= f.fields_for :injection_books, wrapper: true do |ib| %>
+              <%= ib.link_to_remove do%><i class="fa fa-times ml-5" style="color:gray"></i><%end%>
               <div class="row">
                 <div class="col-xl-10 col-lg-8">
                   <fieldset>
@@ -301,7 +305,7 @@
                                 <i class="fas fa-user"></i>
                               </span>
                             </div>
-                            <%= ib.text_field :name_person_injected, placeholder: t(".full_name"), class: "form-control bg-light border-1 small", required: true %>
+                            <%= ib.text_field :name_person_injected, placeholder: t(".full_name"), class: "form-control bg-light border-1 small" %>
                           </div>
                         </div>
                       </div>
@@ -318,7 +322,7 @@
                                 <i class="fas fa-calendar"></i>
                               </span>
                             </div>
-                            <%= ib.date_field :date_of_birth, placeholder: t(".date_of_birth"), class: "form-control bg-light border-1 small date", required: true %>
+                            <%= ib.date_field :date_of_birth, placeholder: t(".date_of_birth"), class: "form-control bg-light border-1 small date" %>
                           </div>
                         </div>
                       </div>
@@ -335,7 +339,7 @@
                                 <i class="fas fa-clinic-medical"></i>
                               </span>
                             </div>
-                            <%= ib.text_field :place_of_birth, placeholder: t(".place_of_birth"), class: "form-control bg-light border-1 small", required: true %>
+                            <%= ib.text_field :place_of_birth, placeholder: t(".place_of_birth"), class: "form-control bg-light border-1 small" %>
                           </div>
                         </div>
                       </div>
@@ -366,7 +370,7 @@
               </div>
             <% end %>
           </div>
-          <p class="ml-5"><%= f.add_nested_fields_link :injection_books, t(".add_injection_book"), data: {target: "#add_injection_book"} %></p>
+          <p class="ml-5"><%= f.link_to_add t(".add_injection_book"), :injection_books, data: {target: "#add_injection_book"} %></p>
         </div>
         <hr>
         <div class="d-flex justify-content-center">
