@@ -310,6 +310,17 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_id"], name: "index_number_injections_on_vaccine_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "quantity"
+    t.string "vaccine_id"
+    t.bigint "company_id"
+    t.bigint "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_orders_on_account_id"
+    t.index ["company_id"], name: "index_orders_on_company_id"
+  end
+
   create_table "provinces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
   end
@@ -448,6 +459,8 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
   add_foreign_key "import_vaccines", "vaccines"
   add_foreign_key "injection_books", "info_injection_books"
   add_foreign_key "number_injections", "vaccines"
+  add_foreign_key "orders", "accounts"
+  add_foreign_key "orders", "companies"
   add_foreign_key "register_injection_packages", "bills"
   add_foreign_key "register_injection_packages", "injection_books"
   add_foreign_key "register_injection_packages", "vaccine_package_types"

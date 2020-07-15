@@ -1,0 +1,8 @@
+- orders.each do |order|
+  %tr
+    %td
+      - Vaccine.where(id: order.vaccine_id).each do |vaccine|
+        = vaccine.name
+    %td= order.quantity
+    %td= order.company.name
+    %td= order.account_id

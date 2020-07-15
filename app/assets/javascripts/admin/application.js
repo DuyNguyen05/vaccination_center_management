@@ -50,3 +50,7 @@ $(document).ready(function() {
     return companies.text || companies.name;
   }
 });
+
+$(document).ready(function() {
+  $('#vaccineCompany').select2();
+});

@@ -6,5 +6,7 @@
     %td
       = link_to edit_admin_company_path(company, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-      = link_to admin_company_path(company, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: company.name)}, remote: true, class: "btn btn-danger" do
+      = link_to admin_company_path(company, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: company.name)}, remote: true, class: "btn btn-danger mr-3" do
         %i.fa.fa-trash{"aria-hidden" => "true"}
+      = link_to admin_company_orders_path(company), class: "btn btn-warning" do
+        %i.fa.fa-shopping-cart{"aria-hidden" => "true"}

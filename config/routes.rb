@@ -35,7 +35,9 @@ Rails.application.routes.draw do
       resources :info_injection_books do
         resources :injection_books, shallow: true
       end
-      resources :companies
+      resources :companies do
+        resources :orders, shallow: true
+      end
       resources :details_infos
       resources :import_vaccines
       resources :vaccines

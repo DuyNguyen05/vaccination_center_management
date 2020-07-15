@@ -3,10 +3,9 @@ vi:
     sidebar:
       dashboard: Trang Chủ
       user_management: Quản Lý Tài Khoản
-      company_management: Quản Lý Công Ty
+      company_management: Quản Lý Nhà Cung Cấp
       logged_as: "Đăng Nhập Với Tài Khoản"
       user_management: Quản Lý Người Dùng
-      company_management: Quản Lý Công Ty
       vaccine_management: Quản Lý Vaccine
       vaccine_package_type_management: Quản Lý Chủng Loại Gói Tiêm
       department_management: Quản Lý Phòng Ban

@@ -18,7 +18,7 @@ class Admin::HomeController < Admin::AdminController
       else
         @vaccines = Vaccine.group_by_day(:created_at, last: 7, current: true).count
         @injection_books = InjectionBook.group_by_day(:created_at, last: 7, current: true).count
-        # @detail_bills = DetailBill.group_by_day(:created_at, last: 7, current: true).count
+        @detail_bills = DetailBill.group_by_day(:created_at, last: 7, current: true).count
         # @detail_bills = Bill.includes(:detail_bills, :vaccines).map{ |a| [a.created_at, a.vaccines.sum(:price)] }
 
       end
