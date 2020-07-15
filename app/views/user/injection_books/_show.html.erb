@@ -43,10 +43,10 @@
   <div class="card-header tab-card-header">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin cá nhân</a>
+        <a class="nav-link active" id="history-injection-tab" data-toggle="tab" href="#history-injection" role="tab" aria-controls="history-injection" aria-selected="false">Lịch sử tiêm chủng</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="history-injection-tab" data-toggle="tab" href="#history-injection" role="tab" aria-controls="history-injection" aria-selected="false">Lịch sử tiêm chủng</a>
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin cá nhân</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab" aria-controls="service" aria-selected="false">Dịch vụ</a>
@@ -57,12 +57,11 @@
     </ul>
   </div>
   <div class="tab-content profile-tab ml-3 mt-3" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <h5 class="card-title">Thông tin</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="tab-pane fade show active" id="history-injection" role="tabpanel" aria-labelledby="history-injection-tab">
+      <%= render "history_book", injection_book: injection_book %>
     </div>
-    <div class="tab-pane fade" id="history-injection" role="tabpanel" aria-labelledby="history-injection-tab">
-      <h5 class="card-title">Lịch sử tiêm chủng</h5>
+    <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
+      <h5 class="card-title">Thông tin</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
     <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">

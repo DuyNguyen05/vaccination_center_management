@@ -1,0 +1,10 @@
+vi:
+  activerecord:
+    models:
+      register_injection_package: Đăng ký gói tiêm
+    attributes:
+      register_injection_package:
+        injection_book_id: Thông tin sổ tiêm
+        vaccine_package_type_id: Thông tin loại gói tiêm
+        bill_id: Thông tin hóa đơn
+

@@ -12,6 +12,33 @@ $(document).ready(function() {
     $("input.input_search").val('');
   })
 
+  // var injectionBooksPath = '<%= Rails.application.routes.url_helpers.user_injection_books_path %>';
+  // $('.select_injection_books').select2({
+  //   width: '100%',
+  //   ajax: {
+  //     url: injectionBooksPath,
+  //     type: 'GET',
+  //     delay: 1000,
+  //     dataType: 'json',
+  //     data: function(params) {
+  //       return { query: params.term }
+  //     },
+  //     processResults: function(data) {
+  //       return { results: data.injection_books };
+  //     }
+  //   },
+  //   injection_books: true,
+  //   templateResult: formatResult7,
+  //   templateSelection: formatSelection7,
+  // }).trigger('change');
+
+  // function formatResult7(injection_books) {
+  //   return injection_books.name_person_injected;
+  // }
+
+  // function formatSelection7(injection_books) {
+  //   return injection_books.text || injection_books.name_person_injected;
+  // }
 });
 
 $(document).ready(function(){
@@ -210,6 +237,7 @@ $(document).ready(function() {
   function formatSelection(vaccines) {
     return vaccines.text || vaccines.name;
   }
+
 
   // $('.select_vaccines').on('select2:select', function(e) {
   //   var vaccineName = e.params.data.id;
@@ -467,3 +495,4 @@ $(document).ready(function(){
     }
   });
 })
+

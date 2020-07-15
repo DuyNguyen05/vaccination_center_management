@@ -1,6 +1,6 @@
 class User::InjectionSchedulePolicy < ApplicationPolicy
   def new?
-    user.is_staff?
+    user.is_staff? || user.is_doctor? || user.is_nurse? || user.is_user?
   end
 
   def show?

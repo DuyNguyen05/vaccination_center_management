@@ -5,7 +5,7 @@ active_record:
       maximum: 50
     number_phone:
       minimum: 6
-      maximum: 15
+      maximum: 30
     email:
       regex: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i
   info_injection_book:
@@ -14,7 +14,7 @@ active_record:
       maximum: 50
     number_phone:
       minimum: 6
-      maximum: 15
+      maximum: 30
     email:
       regex: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i
   injection_book:

@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      register_injection_package: RegisterInjectionPackage
+    attributes:
+      register_injection_package:
+        injection_book_id: Information injection book
+        vaccine_package_type_id: Information package type
+        bill_id: Information bill

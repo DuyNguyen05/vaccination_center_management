@@ -12,4 +12,8 @@ class DetailsInfo < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, without: /Settings.active_record.details_info.email.regex/
   validates :identify, presence: true, uniqueness: true
+
+  def full_name
+    last_name + " " + first_name
+  end
 end

@@ -1,0 +1,11 @@
+vi:
+  activerecord:
+    models:
+      check_before_injection: Kiểm tra trước tiêm
+    attributes:
+      check_before_injection:
+        answer_question: Nội dung khám
+        conclude: Kết luận
+        vaccine_type_id: Loại vắc xin
+        status: Trạng thái
+        detail_injection_book_id: Chi tiết sổ tiêm

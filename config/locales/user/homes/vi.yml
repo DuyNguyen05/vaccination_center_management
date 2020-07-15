@@ -9,3 +9,17 @@ vi:
         working_day_calendar: Lịch làm việc của tôi
         report_today: Báo cáo hôm nay
         overview: Tổng quan
+        list_room: Danh sách phòng tiêm
+        status: đang chờ...
+        job: BS.
+      form_wait_number:
+        job: BS.
+        select_injection_books:
+          placeholder: Nhập mã sổ tiêm
+        create: Tạo mới
+        close: Đóng
+        select: Tìm kiếm và chọn sổ tiêm
+        take_wait_number: Đăng ký chờ tiêm
+        room: "Chỉ định tiêm bởi:"
+        appointment: Bạn có hẹn lịch trước với bác sĩ chưa?
+        created: Lấy số thứ tự thành công

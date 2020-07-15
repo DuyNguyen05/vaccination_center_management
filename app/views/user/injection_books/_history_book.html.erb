@@ -1,0 +1,32 @@
+<% vaccines_injected(injection_book).each do |vaccine| %>
+  <div class="card-header py-3 bg-light">
+    <h5 class="card-title text-lg m-0 font-weight-bold text-gray text-uppercase"><%= vaccine.name %></h5>
+  </div>
+  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> Mũi tiêm </th>
+            <th> Số lô </th>
+            <th> Ngày tiêm </th>
+            <th> Hẹn ngày lần sau </th>
+            <th> Người tiêm </th>
+          </tr>
+        </thead>
+        <tbody id="info_injection_book">
+          <% vaccine.number_injections.each do |number| %>
+            <tr>
+              <td> <%= number.name %> </td>
+              <td> <%= vaccine.code %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.vaccine&.updated_at %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.next_appointment %></td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.wait_number&.doctor&.details_info&.full_name %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_041349) do
+ActiveRecord::Schema.define(version: 2020_07_16_013532) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2020_07_02_041349) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.datetime "last_sign_out_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.index ["details_info_id"], name: "index_accounts_on_details_info_id"
     t.index ["info_injection_book_id"], name: "index_accounts_on_info_injection_book_id"
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
@@ -140,6 +146,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_041349) do
     t.datetime "updated_at", null: false
     t.bigint "register_injection_package_id"
     t.bigint "bill_id"
+    t.datetime "next_appointment"
     t.index ["bill_id"], name: "index_detail_bills_on_bill_id"
     t.index ["register_injection_package_id"], name: "index_detail_bills_on_register_injection_package_id"
     t.index ["vaccine_id"], name: "index_detail_bills_on_vaccine_id"
@@ -372,6 +379,20 @@ ActiveRecord::Schema.define(version: 2020_07_02_041349) do
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 
+  create_table "wait_numbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "doctor_id"
+    t.integer "nurse_id"
+    t.bigint "injection_book_id"
+    t.boolean "appointment", default: false
+    t.integer "number"
+    t.string "room"
+    t.bigint "detail_bill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["detail_bill_id"], name: "index_wait_numbers_on_detail_bill_id"
+    t.index ["injection_book_id"], name: "index_wait_numbers_on_injection_book_id"
+  end
+
   create_table "wards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "district_id"
@@ -420,5 +441,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_041349) do
   add_foreign_key "vaccine_distributions", "vaccines"
   add_foreign_key "vaccines", "companies"
   add_foreign_key "vaccines", "vaccine_types"
+  add_foreign_key "wait_numbers", "detail_bills"
+  add_foreign_key "wait_numbers", "injection_books"
   add_foreign_key "wards", "districts"
 end

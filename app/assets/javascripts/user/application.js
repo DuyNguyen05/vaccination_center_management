@@ -26,3 +26,14 @@
 //= require jquery_nested_form
 //= require ./lib/custom.js.erb
 //= require cloudinary
+
+// $(document).ready(function() {
+//   toastr.options = {
+//     timeOut : 5000,
+//     extendedTimeOut : 5000,
+//     tapToDismiss : true,
+//     debug : false,
+//     fadeOut: 10,
+//     positionClass : "toast-top-center"
+//   };
+// })

@@ -86,22 +86,13 @@
                     </div>
                   </div>
                 </div>
-                <div class="file btn-primary ml-4 ml-1">
-                  <%= ib.fields_for :image_attributes do |image_f| %>
-                    <i class="far fa-edit"></i>
-                    <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
-                    <%= image_f.hidden_field :imageable_id, value: injection_book.id %>
-                    <%= image_f.hidden_field :imageable_type, value: "image" %>
-                    <%= image_f.hidden_field :image_cache %>
-                  <% end %>
-                </div>
               </fieldset>
             </div>
           </div>
           <hr>
           <div class="d-flex justify-content-center">
-            <%= link_to t(".button.cancel"), new_user_injection_book_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }%>
-            <%= ib.submit t(".button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t(".confirm.are_you_sure") } %>
+            <%= link_to t("button.cancel"), user_injection_books_path, class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") }%>
+            <%= ib.submit t("button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t("confirm.are_you_sure") } %>
           </div>
           <br>
         <% end %>

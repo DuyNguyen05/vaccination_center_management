@@ -1,6 +1,7 @@
 class User::UserController < ApplicationController
   layout "user/application"
 
+  include ApplicationHelper
   include Pundit
   protect_from_forgery with: :exception
 

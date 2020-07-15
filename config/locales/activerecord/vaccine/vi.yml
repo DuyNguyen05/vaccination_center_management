@@ -1,15 +1,23 @@
 vi:
   activerecord:
     models:
-      vaccine: Vaccine
+      vaccine: Vắc xin
     attributes:
       vaccine:
-        code: Mã Vaccine
-        name: Tên Vaccine
-        manufacture: Sản Xuất
-        expiry_date: Hạn Sử Dụng
-        content: Tác Dụng
+        code: Mã vắc xin
+        name: Tên vắc xin
+        manufacture: Sản xuất
+        expiry_date: Hạn sử dụng
+        content: Tác dụng
         quantity: Tồn Kho
-        company_code: Mã Công Ty Phân Phối
-        user_code: Mã Người Nhập
-        created_at: Nhập Ngày
+        company_code: Mã công ty phân phối
+        user_code: Mã người nhập
+        created_at: Nhập ngày
+        saleprice: Giá bán
+        entry_price: Giá nhập
+        vaccine_type_id: Loại vắc xin
+        dosage: Liều
+        tag: Phân loại
+        company_id: Thông tin nhà cung cấp
+
+

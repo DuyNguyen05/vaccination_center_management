@@ -16,10 +16,13 @@ class User::InfoInjectionBooksController < User::UserController
 
   def create
     @info_injection_book = InfoInjectionBook.new info_injection_book_params
-    if @info_injection_book.save
-      redirect_to user_info_injection_books_path
-    else
-      render :new
+    respond_to do |format|
+      if @info_injection_book.save
+        flash[:success] = t(".created")
+        format.js {render ajax_redirect_to(user_info_injection_books_path) }
+      else
+        format.js
+      end
     end
   end
 

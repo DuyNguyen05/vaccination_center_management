@@ -6,6 +6,10 @@ vi:
       info_injection_book:
         father_name: Họ tên bố
         identify_father: CMT/CCCD bố
+        year_of_birth_father: Năm sinh của bố
+        year_of_birth_mother: Năm sinh của mẹ
+        guardian_name: Tên người giám hộ
+        identify_guardian: CMT/CCCD người giám hộ
         mother_name: Họ tên mẹ
         identify_mother: CMT/CCCD mẹ
         number_phone: SĐT liên hệ

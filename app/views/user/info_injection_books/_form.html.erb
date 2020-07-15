@@ -6,7 +6,7 @@
           <%= t(".new_info_injection_books") %>
         </h4>
       </div>
-      <%= nested_form_for [:user, info_injection_book], class: "well form-horizontal" do |f| %>
+      <%= nested_form_for [:user, info_injection_book], class: "well form-horizontal", remote: true do |f| %>
         <%= render "shared/error_message", resource: info_injection_book %>
         <div class="card-body">
           <div class="row">
@@ -155,7 +155,7 @@
               </fieldset>
             </div>
             <div class="col-xl-12 col-lg-12 ml-4 text-primary">Hộ khẩu thường trú:</div>
-            <%= f.fields_for :addresses, Address.new do |addr| %>
+            <%= f.fields_for :addresses, Address.new, remote: true do |addr| %>
               <div class="row ml-2">
                 <div class="col-xl-4 col-lg-4">
                   <div class="form-group">
