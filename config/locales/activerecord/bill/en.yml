@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    models:
+      bill: Hóa đơn
+    attributes:
+      bill:
+        creation_time: Thời gian tạo
+        payment_time: Thời gian thanh toán
+        account_id: Thu ngân
+        injection_book_id: Thông tin sổ tiêm
+        total_money: Tổng tiền
+        code: Mã hóa đơn
+        detail_injection_book_id: Chi tiết sổ tiêm

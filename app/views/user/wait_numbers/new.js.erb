@@ -1,0 +1,34 @@
+$("body").append("<%= j render 'user/homes/form_wait_number', account: @account %>");
+$("#modalWaitNumber<%= @account.id %>").modal("show");
+// $('#select_injection_books').select2({
+//   width: '100%'
+// })
+var injectionBooksPath = '<%= Rails.application.routes.url_helpers.user_injection_books_path %>';
+$('.select_injection_books').select2({
+  width: '100%',
+  // theme: "bootstrap",
+  dropdownParent: $("#modalWaitNumber<%= @account.id %>"),
+  ajax: {
+    url: injectionBooksPath,
+    type: 'GET',
+    delay: 1000,
+    dataType: 'json',
+    data: function(params) {
+      return { query: params.term }
+    },
+    processResults: function(data) {
+      return { results: data.injection_books };
+    }
+  },
+  injection_books: true,
+  templateResult: formatResult7,
+  templateSelection: formatSelection7,
+}).trigger('change');
+
+function formatResult7(injection_books) {
+  return injection_books.name_person_injected;
+}
+
+function formatSelection7(injection_books) {
+  return injection_books.text || injection_books.name_person_injected;
+}

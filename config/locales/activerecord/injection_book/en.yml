@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      injection_book: Injection book
+    attributes:
+      injection_book:
+        injection_date: Injection date
+        react_after_injection: React after injection
+        time_after_injection: Time follow after injection
+        vaccination_center_id: Vaccination center
+        account_id: Account
+        book_code: Book code
+        name_person_injected: Name person injected
+        date_of_birth: Date of birth
+        place_of_birth: Place of birth
+        info_injection_book_id: Information injection book
+        gender: Gender
+        avatar: Avatar
+

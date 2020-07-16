@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :provinces, only: :index
       resources :districts, only: :index
       resources :wards, only: :index
+      resources :wait_numbers
     end
     root "homes#index"
     resources :injection_schedules, only: :index

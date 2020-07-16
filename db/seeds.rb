@@ -13,7 +13,7 @@
 #   Company.create(company_code: company_code, name: name, address: address)
 # end
 
-Role.create!([{role: "admin"}, {role: "super_admin"}, {role: "user"}, {role: "staff"}])
+Role.create!([{role: "admin"}, {role: "super_admin"}, {role: "user"}, {role: "staff"}, {role: "doctor"}, {role: "nurse"}])
 
 duy = DetailsInfo.create(first_name: "Duy", last_name: "Nguyen", identify: "12345678999", number_phone: "1234567890", email: "duynn.mta@gmail.com")
 account = CreateAccountService.new(details_info_id: duy.id).create_account("true")
@@ -65,6 +65,63 @@ VaccinationCenter.create! code: "VCC0009", address: "BlueDart Marthandam (K.K Di
   )
 end
 
+10.times do |n|
+  phone = DetailsInfo.pluck(:number_phone)
+  first_name = Faker::Name.name_with_middle
+  last_name = Faker::Name.name_with_middle
+  identify = Faker::IDNumber.invalid_south_african_id_number
+
+  number_phone = Faker::PhoneNumber.phone_number_with_country_code
+  while phone.include? number_phone do
+    number_phone = Faker::PhoneNumber.phone_number_with_country_code
+  end
+  current_address = Faker::Address.full_address
+  permanent_address = Faker::Address.full_address
+  email = Faker::Internet.email
+  detail_info = DetailsInfo.create!(first_name: first_name, last_name: last_name, identify: identify, number_phone: number_phone, email: email)
+
+  account = CreateAccountService.new(details_info_id: detail_info.id).create_account
+  Account.find(account.id).update! user_code: "doctor" + account.user_code.split("-")[1], role_id: 5
+end
+
+10.times do |n|
+  phone = DetailsInfo.pluck(:number_phone)
+  first_name = Faker::Name.name_with_middle
+  last_name = Faker::Name.name_with_middle
+  identify = Faker::IDNumber.invalid_south_african_id_number
+
+  number_phone = Faker::PhoneNumber.phone_number_with_country_code
+  while phone.include? number_phone do
+    number_phone = Faker::PhoneNumber.phone_number_with_country_code
+  end
+  current_address = Faker::Address.full_address
+  permanent_address = Faker::Address.full_address
+  email = Faker::Internet.email
+  detail_info = DetailsInfo.create!(first_name: first_name, last_name: last_name, identify: identify, number_phone: number_phone, email: email)
+
+  account = CreateAccountService.new(details_info_id: detail_info.id).create_account
+  Account.find(account.id).update! user_code: "nurse" + account.user_code.split("-")[1], role_id: 6
+end
+
+10.times do |n|
+  phone = DetailsInfo.pluck(:number_phone)
+  first_name = Faker::Name.name_with_middle
+  last_name = Faker::Name.name_with_middle
+  identify = Faker::IDNumber.invalid_south_african_id_number
+
+  number_phone = Faker::PhoneNumber.phone_number_with_country_code
+  while phone.include? number_phone do
+    number_phone = Faker::PhoneNumber.phone_number_with_country_code
+  end
+  current_address = Faker::Address.full_address
+  permanent_address = Faker::Address.full_address
+  email = Faker::Internet.email
+  detail_info = DetailsInfo.create!(first_name: first_name, last_name: last_name, identify: identify, number_phone: number_phone, email: email)
+
+  account = CreateAccountService.new(details_info_id: detail_info.id).create_account
+  Account.find(account.id).update! user_code: "staff" + account.user_code.split("-")[1], role_id: 4
+end
+
 50.times do |n|
   phone = InfoInjectionBook.pluck(:number_phone)
   father_name = Faker::Name.name_with_middle
@@ -74,9 +131,9 @@ end
   identify_father = Faker::IDNumber.invalid_south_african_id_number
   identify_guardian = Faker::IDNumber.invalid_south_african_id_number
 
-  number_phone = Faker::PhoneNumber.country_code
+  number_phone = Faker::PhoneNumber.phone_number_with_country_code
   while phone.include? number_phone do
-    number_phone = Faker::PhoneNumber.country_code
+    number_phone = Faker::PhoneNumber.phone_number_with_country_code
   end
   current_address = Faker::Address.full_address
   permanent_address = Faker::Address.full_address

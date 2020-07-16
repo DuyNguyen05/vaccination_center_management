@@ -1,6 +1,7 @@
 en:
   activerecord:
     models:
+      details_info: THÔNG TIN TÀI KHOẢN NHÂN VIÊN
     attributes:
       details_info:
         first_name: First Name
@@ -18,8 +19,10 @@ en:
         language: Language
         certificate: Certificate
         experience: Experience
-        tax_code: Tax Code
-        contract_code: Contract Code
+        tax_code: Mã Số Thuế Cá Nhân
+        vaccination_center: Trung Tâm Tiêm Chủng
+        department: Bộ Phận
+        contract_code: Mã Hợp Đồng
         male: Male
         female: Female
         gender: Gender

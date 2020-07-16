@@ -36,6 +36,7 @@ vi:
         select_vaccines:
           placeholder: Tìm kiếm và chọn Vắc-xin
         add_vaccine: + Thêm vaccine
+        next_appointment: Hẹn ngày tiêm tiếp theo
       step_3:
         name: Họ và tên khách hàng tiêm
         date_of_birth: Ngày sinh

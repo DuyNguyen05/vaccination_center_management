@@ -1,0 +1,7 @@
+<% if @wait_number.errors.any? %>
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @wait_number.errors.full_messages.join('; ') %>")
+<% else %>
+  $("#count_injection_book_waiting_<%= @wait_number.doctor_id %>")[0].innerHTML = parseInt($("#count_injection_book_waiting_<%= @wait_number.doctor_id %>")[0].innerHTML) + 1
+  $("#modalWaitNumber<%= @wait_number.doctor_id %>").modal("hide");
+  toastr["info"]("<%= I18n.t(".created") %>");
+<% end %>

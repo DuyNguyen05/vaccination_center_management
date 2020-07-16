@@ -1,0 +1,11 @@
+vi:
+  activerecord:
+    models:
+      detail_vaccine_package: Chi Tiết Gói Tiêm
+    attributes:
+      detail_vaccine_package:
+        vaccine_id: Mã Vaccine
+        created_at: Tạo Ngày
+        id: ID
+        total_injections: Tổng Số  Mũi Tiêm
+

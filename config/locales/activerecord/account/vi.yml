@@ -7,3 +7,6 @@ vi:
         user_code: Mã người dùng
         password: Mật khẩu
         avatar: Ảnh đại diện
+        role_id: Quyền truy cập
+        details_info_id: Thông tin tài khoản
+        info_injection_book_id: Thông tin tài khoản

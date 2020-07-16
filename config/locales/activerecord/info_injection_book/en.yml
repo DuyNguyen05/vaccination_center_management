@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      info_injection_book: Information injection book
+    attributes:
+      info_injection_book:
+        father_name: Father name
+        identify_father: Identify father
+        year_of_birth_father: Year of birth father
+        year_of_birth_mother: Year of birth mother
+        guardian_name: Guardian name
+        identify_guardian: Identify guardian
+        mother_name: Họ tên mẹ
+        identify_mother: CMT/CCCD mẹ
+        number_phone: SĐT liên hệ
+        current_address: Nơi ở thường trú (tạm trú)
+        permanent_address: Hộ khẩu thường trú
+        email: Thư điện tử
+        created_at: Tạo Ngày

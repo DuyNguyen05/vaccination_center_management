@@ -1,0 +1,13 @@
+vi:
+  activerecord:
+    models:
+      wait_number: WaitNumber
+    attributes:
+      wait_number:
+        doctor_id: Thông tin bác sĩ
+        nurse_id: Thông tin y tá
+        injection_book: Thông tin sổ tiêm
+        appointment: Thông tin hẹn lịch
+        number: Số
+        room: Phòng tiêm
+        detail_bill: Chỉ tiết hóa đơn

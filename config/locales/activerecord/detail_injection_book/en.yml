@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      detail_injection_book: Chi tiết sổ tiêm
+    attributes:
+      detail_injection_book:
+        injection_date: Ngày tiêm
+        react_after_injection: Phản ứng sau tiêm
+        time_after_injection: Thời gian theo dõi sau tiêm
+        vaccination_center_id: Chung tâm tiêm chủng
+        account_id: Thông tin tài khoản
+        injection_book_id: Thông tin sổ tiêm
+        status: Trạng thái
+        bill_id: Thông tin hóa đơn
+        check_before_injection_id: Thông tin kiểm tra trước tiêm

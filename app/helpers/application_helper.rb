@@ -20,4 +20,9 @@ module ApplicationHelper
   def vaccine_packages
     @vaccine_packages = VaccinePackageType.newest.limit(8)
   end
+
+  def ajax_redirect_to(redirect_uri)
+    { js: "window.location.replace('#{redirect_uri}');" }
+  end
+
 end

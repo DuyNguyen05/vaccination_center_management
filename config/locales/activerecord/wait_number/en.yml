@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    models:
+      wait_number: WaitNumber
+    attributes:
+      wait_number:
+        doctor_id: Information doctor
+        nurse_id: Information nurse
+        injection_book: Information injection
+        appointment: Information appointment
+        number: Number
+        room: Injection Room
+        detail_bill: Detail bill

@@ -7,6 +7,10 @@ class User::InjectionBooksController < User::UserController
       @injection_books = current_user_account.info_injection_book.injection_books.newest.page(params[:page])
     else
       @injection_books = InjectionBook.newest.filter_injection_books(params[:query]).page(params[:page])
+      respond_to do |format|
+        format.html
+        format.json { render json: { injection_books: @injection_books.as_json(only: [:name_person_injected, :id]) } }
+      end
     end
   end
 

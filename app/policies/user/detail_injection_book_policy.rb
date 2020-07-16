@@ -1,14 +1,14 @@
 class User::DetailInjectionBookPolicy < ApplicationPolicy
   def new?
-    user.is_staff?
+    user.is_doctor? || user.is_nurse?
   end
 
   def show?
-    new?
+    user.is_user? || new? || user.is_staff?
   end
 
   def index?
-    new?
+    new? || user.is_staff?
   end
 
   def edit?

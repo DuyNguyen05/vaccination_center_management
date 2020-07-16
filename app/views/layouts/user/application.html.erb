@@ -12,10 +12,10 @@
 
   <body id="page-top" class="">
     <div id="wrapper">
-      <% if current_user_account.is_staff? %>
-        <%= render "layouts/user/staff_sidebar" %>
-      <% else %>
+      <% if current_user_account.is_user? %>
         <%= render "layouts/user/sidebar" %>
+      <% else %>
+        <%= render "layouts/user/staff_sidebar" %>
       <% end %>
       <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">

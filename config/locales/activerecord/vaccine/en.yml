@@ -13,3 +13,10 @@ en:
         user_code: User Code
         company_code: Company Code
         created_at: Created At
+        saleprice: Sale price
+        entry_price: Entry price
+        vaccine_type_id: Vaccine type
+        dosage: Dosage
+        tag: Tag
+        company_id: Information company
+

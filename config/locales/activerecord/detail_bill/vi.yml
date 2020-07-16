@@ -1,0 +1,16 @@
+vi:
+  activerecord:
+    models:
+      detail_bill: Chi tiết hóa đơn
+    attributes:
+      detail_bill:
+        vaccine_id: Thông tin vắc xin
+        vaccine_package_type_id: Thông tin gói tiêm
+        number_injection: Số mũi
+        unit_price: Đơn giá
+        discount: Giảm giá
+        amount: Tổng
+        register_injection_package_id: Thông tin đăng ký gói tiêm
+        bill_id: Thông tin hóa đơn
+        next_appointment: Hẹn ngày tiêm tiếp theo
+
