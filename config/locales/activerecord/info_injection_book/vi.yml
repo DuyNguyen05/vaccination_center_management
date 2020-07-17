@@ -17,3 +17,12 @@ vi:
         permanent_address: Hộ khẩu thường trú
         email: Thư điện tử
         created_at: Tạo Ngày
+      injection_books:
+        book_code: Mã sổ tiêm
+        name_person_injected: Tên người tiêm
+        date_of_birth: Ngày sinh
+        place_of_birth: Nơi sinh
+        info_injection_book_id: Thông tin sổ tiêm
+        gender: Giới tính
+        avatar: Ảnh đại diện
+

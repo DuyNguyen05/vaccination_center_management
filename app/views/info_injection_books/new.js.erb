@@ -1,0 +1,259 @@
+$("body").append("<%= j render 'info_injection_books/new', info_injection_book: @info_injection_book, injection_book: @injection_book, appointment: @appointment %>");
+debugger
+$("#modalNewInjectionSchedule").modal("show");
+
+$('.select_district1').select2({})
+$('.select_ward1').select2({})
+var provincesPath = '<%= Rails.application.routes.url_helpers.user_provinces_path %>';
+var districtsPath = '<%= Rails.application.routes.url_helpers.user_districts_path %>';
+var wardsPath = '<%= Rails.application.routes.url_helpers.user_wards_path %>';
+
+$('.select_province1').select2({
+  width: '100%',
+  ajax: {
+    url: provincesPath,
+    type: 'GET',
+    delay: 1000,
+    dataType: 'json',
+    data: function(params) {
+      return { province_name: params.term }
+    },
+    processResults: function(data) {
+      return { results: data.provinces };
+    }
+  },
+  provinces: true,
+  templateResult: formatResult1,
+  templateSelection: formatSelection1,
+}).trigger('change');
+
+function formatResult1(provinces) {
+  return provinces.name;
+}
+
+function formatSelection1(provinces) {
+  return provinces.text || provinces.name;
+}
+
+$('.select_province1').on('change',function(){
+  var provinceId = $('.select_province1').val();
+  $('.select_district1').select2({
+    width: '100%',
+    ajax: {
+      url: districtsPath + "?provinceId=" + provinceId,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { district_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.districts };
+      }
+    },
+    districts: true,
+    templateResult: formatResult2,
+    templateSelection: formatSelection2,
+  }).trigger('change');
+
+  function formatResult2(districts) {
+    return districts.name;
+  }
+
+  function formatSelection2(districts) {
+    return districts.text || districts.name;
+  }
+});
+
+$('.select_district1').on('change',function(){
+  var districtId = $('.select_district1').val();
+  $('.select_ward1').select2({
+    width: '100%',
+    ajax: {
+      url: wardsPath + "?districtId=" + districtId,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { ward_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.wards };
+      }
+    },
+    wards: true,
+    templateResult: formatResult3,
+    templateSelection: formatSelection3,
+  }).trigger('change');
+
+  function formatResult3(wards) {
+    return wards.name;
+  }
+
+  function formatSelection3(wards) {
+    return wards.text || wards.name;
+  }
+});
+
+$('.select_district2').select2({})
+$('.select_ward2').select2({})
+var provincesPath = '<%= Rails.application.routes.url_helpers.user_provinces_path %>';
+var districtsPath = '<%= Rails.application.routes.url_helpers.user_districts_path %>';
+var wardsPath = '<%= Rails.application.routes.url_helpers.user_wards_path %>';
+
+$('.select_province2').select2({
+  width: '100%',
+  ajax: {
+    url: provincesPath,
+    type: 'GET',
+    delay: 1000,
+    dataType: 'json',
+    data: function(params) {
+      return { province_name: params.term }
+    },
+    processResults: function(data) {
+      return { results: data.provinces };
+    }
+  },
+  provinces: true,
+  templateResult: formatResult4,
+  templateSelection: formatSelection4,
+}).trigger('change');
+
+function formatResult4(provinces) {
+  return provinces.name;
+}
+
+function formatSelection4(provinces) {
+  return provinces.text || provinces.name;
+}
+
+$('.select_province2').on('change',function(){
+  var provinceId = $('.select_province2').val();
+  $('.select_district2').select2({
+    width: '100%',
+    ajax: {
+      url: districtsPath + "?provinceId=" + provinceId,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { district_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.districts };
+      }
+    },
+    districts: true,
+    templateResult: formatResult2,
+    templateSelection: formatSelection2,
+  }).trigger('change');
+
+  function formatResult2(districts) {
+    return districts.name;
+  }
+
+  function formatSelection2(districts) {
+    return districts.text || districts.name;
+  }
+});
+
+$('.select_district2').on('change',function(){
+  var districtId = $('.select_district2').val();
+  $('.select_ward2').select2({
+    width: '100%',
+    ajax: {
+      url: wardsPath + "?districtId=" + districtId,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { ward_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.wards };
+      }
+    },
+    wards: true,
+    templateResult: formatResult3,
+    templateSelection: formatSelection3,
+  }).trigger('change');
+
+  function formatResult3(wards) {
+    return wards.name;
+  }
+
+  function formatSelection3(wards) {
+    return wards.text || wards.name;
+  }
+});
+
+var vaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccines_path %>';
+
+$('.select_vaccines').select2({
+  width: '100%',
+  ajax: {
+    url: vaccinesPath,
+    type: 'GET',
+    delay: 1000,
+    dataType: 'json',
+    data: function(params) {
+      return { vaccine_name: params.term }
+    },
+    processResults: function(data) {
+      return { results: data.vaccines };
+    }
+  },
+  vaccines: true,
+  templateResult: formatResultt,
+  templateSelection: formatSelectionn,
+}).trigger('change');
+
+function formatResultt(vaccines) {
+  return vaccines.name;
+}
+
+function formatSelectionn(vaccines) {
+  return vaccines.text || vaccines.name;
+}
+
+$("#TypeOfConstruction").on('change',function(){
+  var selectedBalue = $("#TypeOfConstruction").val();
+  if (selectedBalue == "Tiêm lẻ")
+  {
+    $(".vaccine").slideDown(500);
+    $(".packageVaccine").hide();
+  }
+  if (selectedBalue == "Tiêm gói")
+  {
+    $(".packageVaccine").slideDown(500);
+    $(".vaccine").hide();
+  }
+  var packageVaccinesPath = '<%= Rails.application.routes.url_helpers.user_vaccine_package_types_path %>';
+  $('.select_package_vaccines').select2({
+    width: '100%',
+    ajax: {
+      url: packageVaccinesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { vaccine_package_name: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.vaccine_package_types };
+      }
+    },
+    vaccine_package_types: true,
+    templateResult: formatResult11,
+    templateSelection: formatSelection11,
+  }).trigger('change');
+
+  function formatResult11(vaccine_package_types) {
+    return vaccine_package_types.name;
+  }
+
+  function formatSelection11(vaccine_package_types) {
+    return vaccine_package_types.text || vaccine_package_types.name;
+  }
+});

@@ -1,0 +1,50 @@
+vi:
+  info_injection_books:
+    new:
+      new_info_injection_books: Đăng ký thông tin tiêm chủng
+      father_name: Họ và tên bố
+      mother_name: Họ và tên mẹ
+      identify_father: CMT/CCCD của bố
+      identify_mother: CMT/CCCD của mẹ
+      number_phone: Số điện thoại liên lạc
+      email: Hộp thư điện tử
+      current_address: Nơi ở thường trú (tạm trú)
+      permanent_address: Hộ khẩu thường trú
+      name_person_injected: Họ và tên của bé
+      full_name: Họ và tên
+      date_of_birth: Ngày khai sinh
+      place_of_birth: Nơi khai sinh
+      male: Trai
+      female: Gái
+      gender: Giới tính
+      button:
+        cancel: Hủy
+        submit: Hoàn thành
+      confirm:
+          are_you_sure: Bạn có chắc chắn không?
+      add_injection_book: Thêm sổ tiêm
+      province: Tỉnh/Thành Phố
+      district: Quận/Huyện
+      ward: Xã/Phường
+      guardian_name: Tên người giám hộ
+      identify_guardian: CMT/CCCD người giám hộ
+      book_code: Mã sổ tiêm (nếu có)
+      registration_date: Lịch hẹn mong muốn
+      injection_type: Chọn mũi tiêm
+      vaccine: Tiêm lẻ
+      package: Tiêm theo gói
+      vaccine_list: Danh mục các vắc xin
+      package_vaccine: Danh mục các gói tiêm
+      info_injection_books: Thông tin khách hàng
+      info_appointment: Thông tin tiêm chủng
+      note: "Lưu ý*:"
+      tutorial_1: "- Việc đăng ký thông tin tiêm chủng nhằm giúp Quý Khách tiết kiệm thời gian khi làm thủ tục tại quầy lễ tân của Trung Tâm, không mang ý nghĩa đặt trước giữ mũi vắc xin"
+      tutorial_2: "- Xin vui lòng mang theo sổ tiêm chủng (nếu có) và phiếu thu (khách hàng đã mua gói)."
+      tutorial_3: "- Nếu đã có mã sổ tiêm bạn có thể không cần điền thông tin khách hàng."
+      select_package_vaccines: Chọn gói tiêm
+    index:
+      search: Tìm kiếm
+      add_user: Đăng ký thông tin
+      user_management: Quản lý thông tin đăng ký tiêm
+      cancel_search: Hủy
+      search_title: Tìm kiếm

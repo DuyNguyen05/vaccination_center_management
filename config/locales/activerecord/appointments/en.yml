@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      appointment: Hóa đơn
+    attributes:
+      appointment:
+        book_code: Mã sổ tiêm
+        registration_date: Lịch hẹn mong muốn
+        vaccine: Thuốc tiêm
+        package: Gói tiêm
+

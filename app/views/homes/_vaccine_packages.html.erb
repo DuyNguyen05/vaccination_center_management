@@ -4,16 +4,18 @@
     <hr>
     <div class="service-row row">
       <% vaccine_packages.each do |vaccine_package| %>
-        <div class="col-md-3">
-          <div class="service-col">
-            <%= image_tag "s7.jpg" %>
-            <div class="serv-detail">
-              <i class="fab fa-pagelines"></i>
-              <h4><%= vaccine_package.name %></h4>
-              <p><%= vaccine_package.content %></p>
-            </div>
+        <div class="col-sm-3 col-xs-12">
+          <div class="dv_item item_1">
+            <a href="https://vnvc.vn/cac-dich-vu/tiem-chung-don-le-theo-yeu-cau/" title="TIÊM CHỦNG THEO YÊU CẦU"><img src="https://vnvc.vn/wp-content/uploads/2016/07/dvu5.jpg">
+              <div class="dv_title">
+                <span>
+                  <p><%= vaccine_package.name %><br><%= vaccine_package.content %></p>
+                </span>
+              </div>
+            </a>
           </div>
         </div>
+
       <% end %>
     </div>
   </div>
