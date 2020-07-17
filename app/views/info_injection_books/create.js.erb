@@ -1,0 +1,8 @@
+<% if @info_injection_book.present? && @info_injection_book.errors.present? %>
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @info_injection_book.errors.full_messages.join('; ') %> ")
+<% elsif @appointment.present? && @appointment.errors.present? %>
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @appointment.errors.full_messages.join('; ') %>")
+<% else %>
+  toastr["info"]("<%= I18n.t("created") %>");
+  $("#modalNewInjectionSchedule").modal("hide");
+<% end %>

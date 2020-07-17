@@ -4,6 +4,7 @@ class InfoInjectionBook < ApplicationRecord
   has_one :account, dependent: :destroy
   has_many :injection_books, dependent: :destroy
   has_many :addresses, dependent: :destroy
+  has_many :appointments, through: :injection_books
 
   accepts_nested_attributes_for :injection_books
   accepts_nested_attributes_for :addresses

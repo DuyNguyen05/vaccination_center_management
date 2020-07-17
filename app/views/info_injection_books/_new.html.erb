@@ -1,0 +1,511 @@
+<div class="modal fade bs-example-modal-lg" id="modalNewInjectionSchedule" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document" style="max-width: 80%">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h4 class="text-lg m-0 font-weight-bold text-primary text-uppercase text-center">
+                <%= t(".new_info_injection_books") %>
+              </h4>
+            </div>
+            <%= form_with model: info_injection_book, class: "well form-horizontal" do |f| %>
+              <%#= render "shared/error_message", resource: info_injection_book %>
+              <div class="card-body ml-5 mr-5">
+                <div class="row">
+                  <div class="col-xl-12 col-lg-12">
+                    <fieldset>
+                      <div class="form-group">
+                        <div class="row">
+                          <label class="col-md-1 text-right">
+                            <h6><i><u><%= t(".note") %></u></i></h6>
+                          </label>
+                          <div class="col-md-11 inputGroupContainer">
+                            <i>
+                              <ul>
+                                <li>
+                                  <%= t(".tutorial_1") %>
+                                </li>
+                                <li>
+                                  <%= t(".tutorial_2") %>
+                                </li>
+                                <li>
+                                  <%= t(".tutorial_3") %>
+                                </li>
+                              </ul>
+                            </i>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <%= f.fields_for :injection_books, injection_book do |ib| %>
+                  <%= ib.fields_for :appointments, appointment do |ap| %>
+                    <div class="card-header">
+                      <h4 class="text-lg m-0 text-uppercase">
+                        <%= t(".info_appointment") %>
+                      </h4>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-xl-12 col-lg-12">
+                        <fieldset>
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-4 text-left">
+                                <%= t(".book_code") %>
+                              </label>
+                              <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group">
+                                  <div class=" input-group-prepend">
+                                    <span class="btn btn-info">
+                                      <i class="fas fa-user"></i>
+                                    </span>
+                                  </div>
+                                  <%= ap.text_field :book_code, placeholder: t(".book_code"), class: "form-control bg-light border-1 small" %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-4 text-left">
+                                <%= t(".registration_date") %>
+                              </label>
+                              <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group">
+                                  <div class=" input-group-prepend">
+                                    <span class="btn btn-info">
+                                      <i class="fas fa-calendar"></i>
+                                    </span>
+                                  </div>
+                                  <%= ap.date_field :registration_date, placeholder: t(".registration_date"), class: "form-control bg-light border-1 small date", require: true %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-4 text-left form-check-label">
+                                <%= t(".injection_type") %>
+                              </label>
+                              <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group">
+                                  <label class="form-check-label">
+                                    <div class=" input-group-prepend">
+                                    </div>
+                                    <select class="form-control" id="TypeOfConstruction">
+                                      <option>Chọn</option>
+                                      <option>Tiêm lẻ</option>
+                                      <option>Tiêm gói</option>
+                                    </select>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group packageVaccine" style="display: none">
+                            <div class="row">
+                              <label class="col-md-4 text-left">
+                                <%= t(".select_package_vaccines")%>
+                              </label>
+                              <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group">
+                                  <%= ap.select :vaccine, {}, {} , { class: "select_package_vaccines form-control bg-light border-1", data: { placeholder: t(".package_vaccine") } }%>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group vaccine">
+                            <div class="row">
+                              <label class="col-md-4 text-left">
+                                <%= t(".vaccine") %>
+                              </label>
+                              <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group">
+                                  <%= ap.select :vaccine, {}, {} , { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".vaccine") } }%>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  <% end %>
+                  <div class="card-header">
+                    <h4 class="text-lg m-0 text-uppercase">
+                     <%= t(".info_injection_books") %>
+                    </h4>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                      <fieldset>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".name_person_injected") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-user"></i>
+                                  </span>
+                                </div>
+                                <%= ib.text_field :name_person_injected, placeholder: t(".full_name"), class: "form-control bg-light border-1 small", require: true  %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".date_of_birth") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-calendar"></i>
+                                  </span>
+                                </div>
+                                <%= ib.date_field :date_of_birth, placeholder: t(".date_of_birth"), class: "form-control bg-light border-1 small date", require: true  %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".place_of_birth") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-clinic-medical"></i>
+                                  </span>
+                                </div>
+                                <%= ib.text_field :place_of_birth, placeholder: t(".place_of_birth"), class: "form-control bg-light border-1 small" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left form-check-label">
+                              <%= t(".gender") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="form-check-inline">
+                                <label class="form-check-label">
+                                  <%= ib.radio_button :gender, :male, class: "form-check-input" %>
+                                  <%= t(".male") %>
+                                </label>
+                              </div>
+                              <div class="form-check-inline">
+                                <label class="form-check-label">
+                                  <%= ib.radio_button :gender, :female, class: "form-check-input" %>
+                                  <%= t(".female") %>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                      <fieldset>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".father_name") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-user"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :father_name, placeholder: t(".full_name"), class: "form-control bg-light border-1" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".identify_father") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-fingerprint"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :identify_father, placeholder: t(".identify_father"), class: "form-control bg-light border-1" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".number_phone") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-phone-square"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :number_phone, placeholder: t(".number_phone"), class: "form-control bg-light border-1" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".guardian_name") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-user"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :guardian_name, placeholder: t(".guardian_name"), class: "form-control bg-light border-1", require: true  %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                      <fieldset>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".mother_name") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-user"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :mother_name, placeholder: t(".full_name"), class: "form-control bg-light border-1" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".identify_mother") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-fingerprint"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :identify_mother, placeholder: t(".identify_mother"), class: "form-control bg-light border-1" %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".email") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-envelope"></i>
+                                  </span>
+                                </div>
+                                <%= f.email_field :email, placeholder: t(".email"), class: "form-control bg-light border-1", require: true  %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <label class="col-md-4 text-left">
+                              <%= t(".identify_guardian") %>
+                            </label>
+                            <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                <div class=" input-group-prepend">
+                                  <span class="btn btn-info">
+                                    <i class="fas fa-fingerprint"></i>
+                                  </span>
+                                </div>
+                                <%= f.text_field :identify_guardian, placeholder: t(".identify_guardian"), class: "form-control bg-light border-1", require: true  %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 text-primary">Hộ khẩu thường trú:</div>
+                    <%= f.fields_for :addresses, Address.new do |addr| %>
+                      <div class="col-xl-12 col-lg-12 row">
+                        <div class="col-xl-2 col-lg-2">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".province") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                                  <%= addr.select :province, {}, {}, class: "select_province1 form-control bg-light border-1", data: { placeholder: "Chọn..." }, require: true  %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".district") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :district, placeholder: t(".district"), class: "form-control bg-light border-1" %>
+                                  <%= addr.select :district, {}, {}, class: "select_district1 form-control bg-light border-1", data: { placeholder: "Chọn..." }, require: true  %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".ward") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :ward, placeholder: t(".ward"), class: "form-control bg-light border-1" %>
+                                  <%= addr.select :ward, {}, {}, class: "select_ward1 form-control bg-light border-1", data: { placeholder: "Chọn..." }, require: true  %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".permanent_address") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                                  <%= addr.text_field :permanent_address, placeholder: t(".permanent_address"), class: "form-control bg-light border-1 small", require: true  %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                    <div class="col-xl-12 col-lg-12 text-primary">Nơi ở thường trú (tạm trú):</div>
+                    <%= f.fields_for :addresses, Address.new, remote: true do |addr| %>
+                      <div class="col-xl-12 col-lg-12 row">
+                        <div class="col-xl-2 col-lg-2">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".province") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                                  <%= addr.select :province, {}, {}, class: "select_province2 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".district") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :district, placeholder: t(".district"), class: "form-control bg-light border-1" %>
+                                   <%= addr.select :district, {}, {}, class: "select_district2 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".ward") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :ward, placeholder: t(".ward"), class: "form-control bg-light border-1" %>
+                                  <%= addr.select :ward, {}, {}, class: "select_ward2 form-control bg-light border-1", data: { placeholder: "Chọn..." } %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                          <div class="form-group">
+                            <div class="row">
+                              <label class="col-md-12 text-left">
+                                <%= t(".current_address") %>
+                              </label>
+                              <div class="col-md-12 inputGroupContainer">
+                                <div class="input-group">
+                                  <%#= addr.text_field :province, placeholder: t(".province"), class: "form-control bg-light border-1" %>
+                                  <%= addr.text_field :current_address, placeholder: t(".current_address"), class: "form-control bg-light border-1 small" %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                  <br>
+                <% end %>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-center">
+                <%#= link_to t(".button.cancel"), injection_books_path, class: "btn btn-secondary", data: { confirm: t(".confirm.are_you_sure") }%>
+                <%= f.submit t("button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t("confirm.are_you_sure") } %>
+              </div>
+              <br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

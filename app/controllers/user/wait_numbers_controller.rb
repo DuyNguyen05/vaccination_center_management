@@ -1,7 +1,7 @@
 class User::WaitNumbersController < User::UserController
-  before_action :load_account, only: [:new]
+  before_action :load_account, only: [:new, :index]
   def index
-
+    @doctor_rooms = @account.doctor_rooms
   end
 
   def new

@@ -5,7 +5,7 @@
         <div class="float-left"><%= link_to t('.back'), url_for(:back) %></div>
         <br><br>
         <br><br>
-        <h2 class="fs-title text-center">Đã gửi yêu cầu. Vui lòng chờ thông báo từ bác sĩ nhé!</h2> <br><br>
+        <h2 class="fs-title text-center">Bắt đầu quá trình tiêm. Vui lòng điền đầy đủ thông tin theo chỉ định!</h2> <br><br>
         <div class="row justify-content-center">
           <div class="col-3 text-center">
             <%= image_tag "https://media.tenor.com/images/7d9cb36e95124fb829ff8f2450c3a567/tenor.gif", size: "200x180" %>
@@ -15,7 +15,7 @@
         <div class="row justify-content-center">
           <div class="col-md-1 text-center">
             <!-- <h5>Kết thúc!</h5> -->
-            <%= button_to t(".injection"), edit_user_detail_injection_book_path(detail_injection_book, steps: detail_injection_book.next_step), method: :get, class: "btn btn-primary" if current_user_account.is_staff? %>
+            <%= button_to t(".injection"), edit_user_detail_injection_book_path(detail_injection_book, steps: detail_injection_book.next_step), method: :get, class: "btn btn-primary" if current_user_account.is_doctor?  %>
           </div>
         </div>
       </div>

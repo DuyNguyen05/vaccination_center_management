@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_013532) do
+ActiveRecord::Schema.define(version: 2020_07_17_021857) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 2020_07_16_013532) do
     t.index ["details_info_id"], name: "index_admins_on_details_info_id"
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_admins_on_role_id"
+  end
+
+  create_table "appointments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "book_code"
+    t.datetime "registration_date"
+    t.string "injection_type"
+    t.string "vaccine"
+    t.string "vaccination_center"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

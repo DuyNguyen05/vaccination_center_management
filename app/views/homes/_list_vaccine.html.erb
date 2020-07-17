@@ -4,14 +4,12 @@
     <hr>
     <div class="service-row row">
       <% vaccines.each do |vaccine| %>
-        <div class="col-md-3">
-          <div class="service-col">
-            <%= image_tag "s7.jpg" %>
-            <div class="serv-detail">
-              <i class="fab fa-pagelines"></i>
-              <h4><%= vaccine.name %></h4>
-              <p><%= vaccine.content %></p>
-            </div>
+        <div class="col-sm-3 col-xs-12">
+          <div class="vx_item item_1">
+            <a href="https://vnvc.vn/infanrix-vac-xin-6-trong-1/" title="INFANRIX – Vắc xin 6 trong 1 (Phòng 6 bệnh: Ho gà, bạch hầu, uốn ván, bại liệt, viêm gan B và các bệnh do HIB)">
+              <img width="235" height="156" src="https://vnvc.vn/wp-content/uploads/2017/04/INFANRIX-6.jpg" class="img-responsive wp-post-image" alt="Vắc xin 6 trong 1 INFARIX" srcset="https://vnvc.vn/wp-content/uploads/2017/04/INFANRIX-6.jpg 800w, https://vnvc.vn/wp-content/uploads/2017/04/INFANRIX-6-300x199.jpg 300w, https://vnvc.vn/wp-content/uploads/2017/04/INFANRIX-6-768x510.jpg 768w" sizes="(max-width: 235px) 100vw, 235px">
+              <div class="dv_title text-center"><%= vaccine.name %> <%= vaccine.content %></div>
+            </a>
           </div>
         </div>
       <% end %>

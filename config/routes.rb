@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     end
     root "homes#index"
     resources :injection_schedules, only: :index
+    resources :info_injection_books
+    get "/vaccine-price", to: "homes#vaccine_price"
+    get "/about", to: "homes#about"
 
     namespace :admin do
       root "home#index"
