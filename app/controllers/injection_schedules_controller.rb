@@ -1,5 +1,5 @@
 class InjectionSchedulesController < ApplicationController
-  def index
+  def schedule
 
   end
 end

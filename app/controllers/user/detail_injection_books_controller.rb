@@ -1,6 +1,7 @@
 class User::DetailInjectionBooksController < User::UserController
   before_action :load_injection_book, only: [:create, :index]
   before_action :load_detail_injection_book, only: [:edit, :update, :show]
+  before_action :delete_wait_number, only: :create
   before_action -> { authorize [:user, DetailInjectionBook] }
 
   def create
@@ -52,5 +53,10 @@ class User::DetailInjectionBooksController < User::UserController
       bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code,
         detail_bills_attributes: [:id, :vaccine_id, :vaccine_package_type_id, :number_injection, :next_appointment, :doctor_injected, :nurse_injected, :unit_price, :discount, :amount,
           :register_injection_package_id, :_destroy]]
+  end
+
+  def delete_wait_number
+    @wait_number_injection_book = WaitNumber.where(injection_book_id: @injection_book.id) if @injection_book.present?
+    @wait_number_injection_book.destroy_all
   end
 end

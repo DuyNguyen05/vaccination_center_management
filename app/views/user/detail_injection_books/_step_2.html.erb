@@ -82,6 +82,7 @@
         <div id="add_vaccine">
           <%= bill_attributes.nested_fields_for :detail_bills, DetailBill.new, wrapper: true  do |detail_bill_attributes| %>
             <%= detail_bill_attributes.remove_nested_fields_link do%><i class="fa fa-times ml-3" style="color:gray"></i><%end%>
+            <%= detail_bill_attributes.hidden_field :account_id, value: current_user_account.id %>
             <div class="form-group ml-5">
               <div class="row">
                 <label class="col-md-3 text-left">

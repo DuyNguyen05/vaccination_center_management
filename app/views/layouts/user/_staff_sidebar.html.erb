@@ -44,9 +44,21 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
       <i class="fas fa-fw fa-book"></i>
-      <span><%= t(".injection_book") %></span>
+      <span><%= t(".bill") %></span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header"><%= t(".administer_bill") %></h6>
+        <%= link_to t(".list_bill"), user_bills_path, class: "collapse-item" %>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+      <i class="fas fa-fw fa-book"></i>
+      <span><%= t(".injection_book") %></span>
+    </a>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header"><%= t(".administer_injection_book") %></h6>
         <%= link_to t(".list_injection_book"), user_injection_books_path, class: "collapse-item" %>
@@ -63,15 +75,13 @@
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header"><%= t(".administer_schedule") %></h6>
-        <%= link_to t(".new_injection_schedule"), new_user_injection_schedule_path, class: "collapse-item" %>
-        <a class="collapse-item" href="#">
-          <%= t(".list_injection_schedule") %>
-        </a>
+        <%#= link_to t(".new_injection_schedule"), new_user_injection_schedule_path, class: "collapse-item" %>
+        <%= link_to t(".list_injection_schedule"), user_appointments_path, class: "collapse-item" %>
       </div>
     </div>
   </li>
   <li class="nav-item">
-    <%= link_to user_injection_schedules_path, class: "nav-link collapsed" do %>
+    <%= link_to user_schedule_path, class: "nav-link collapsed" do %>
       <i class="fas fa-fw fa-clock"></i>
       <span>
         <%= t(".injection_schedules") %>

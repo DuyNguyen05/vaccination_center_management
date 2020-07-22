@@ -22,4 +22,8 @@ class User::InjectionSchedulePolicy < ApplicationPolicy
   def create?
     new?
   end
+
+  def schedule?
+    user.is_staff? || user.is_doctor? || user.is_nurse? || user.is_user?
+  end
 end

@@ -1,0 +1,9 @@
+vi:
+  user:
+    bills:
+      index:
+        search: Tìm kiếm
+        cancel_search: Hủy
+        search_title: Tìm kiếm
+        search: Tìm kiếm
+        bill_management: Danh sách sổ tiêm

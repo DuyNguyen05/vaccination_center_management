@@ -15,12 +15,16 @@ Rails.application.routes.draw do
       resources :districts, only: :index
       resources :wards, only: :index
       resources :wait_numbers
+      resources :bills
+      get "/schedule", to: "injection_schedules#schedule"
+      resources :appointments
     end
     root "homes#index"
     resources :injection_schedules, only: :index
     resources :info_injection_books
     get "/vaccine-price", to: "homes#vaccine_price"
     get "/about", to: "homes#about"
+    get "/schedule", to: "injection_schedules#schedule"
 
     namespace :admin do
       root "home#index"

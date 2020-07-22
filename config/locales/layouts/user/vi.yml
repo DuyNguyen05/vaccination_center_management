@@ -52,6 +52,9 @@ vi:
         new_account: Đăng ký mới
         list_account: Danh sách đăng ký
         vaccines: Danh mục vắc xin
+        bill: Hóa đơn
+        list_bill: Danh sách hóa đơn
+        administer_bill: Quản lý hóa đơn
       header:
         search_for: Tìm kiếm
         notifications: Thông báo

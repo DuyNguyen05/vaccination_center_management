@@ -20,9 +20,9 @@
             <tr>
               <td> <%= number.name %> </td>
               <td> <%= vaccine.code %> </td>
-              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.vaccine&.updated_at %> </td>
-              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.next_appointment %></td>
-              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.wait_number&.doctor&.details_info&.full_name %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.vaccine&.updated_at&.strftime("%d - %m - %Y ") %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.next_appointment&.strftime("%d - %m - %Y ") %></td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.bill&.account&.details_info&.full_name %> </td>
             </tr>
           <% end %>
         </tbody>

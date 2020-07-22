@@ -1,0 +1,15 @@
+- bills.each do |bill|
+  %tr
+    %td
+      = bill.code
+    %td
+      = bill.injection_book.name_person_injected
+    %td
+      = bill.created_at.strftime("%d - %m - %Y ")
+    %td
+      = bill.payment_time
+    %td
+      = bill.total_money
+    %td
+      = bill.account_id
+    %td

@@ -1,0 +1,13 @@
+- appointments.each do |appointment|
+  %tr
+    %td
+      = appointment.injection_book.book_code
+    %td
+      = appointment.registration_date
+    %td
+      = appointment.injection_type
+    %td
+      = appointment.vaccine
+    %td
+      = appointment.vaccination_center
+    %td
