@@ -9,3 +9,5 @@ COPY Gemfile* ./
 RUN bundle install
 
 EXPOSE 3000
+RUN bundle exec wheneverize .
+RUN bundle exec whenever --update-crontab

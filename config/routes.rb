@@ -29,6 +29,9 @@ Rails.application.routes.draw do
     namespace :admin do
       root "home#index"
       resources :home
+      require 'sidekiq/web'
+      mount Sidekiq::Web => '/sidekiq'
+
       devise_for :admins, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 
       resources :accounts
@@ -48,6 +51,9 @@ Rails.application.routes.draw do
         resources :detail_vaccine_packages, shallow: true
       end
       resources :bills
+      resources :notifications
+
+      mount ActionCable.server => '/cable'
     end
   end
 end

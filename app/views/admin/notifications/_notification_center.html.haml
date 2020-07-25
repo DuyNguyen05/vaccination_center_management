@@ -1,0 +1,10 @@
+.dropdown.nav-item
+  %a.dropdown-toggle.nav-link{"data-toggle" => "dropdown", :href => "#"}
+    %span#open_notification
+      = render "admin/notifications/counter",counter: Notification.where(:opened_at => nil).size
+  %ul#notificationList.dropdown-menu.dropdown-list.dropdown-menu.dropdown-menu-right.shadow.pd-0
+    .dropdown-header.text-center THÔNG BÁO
+    .dropdown-body.d-flex.flex-column
+      - notifications.each do |notification|
+        = render "admin/notifications/notification", notification: notification
+    .dropdown-footer= link_to "Xem tất cả", "#"
