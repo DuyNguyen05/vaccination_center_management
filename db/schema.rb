@@ -300,6 +300,15 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "event"
+    t.datetime "opened_at"
+    t.integer "vaccine_id"
+    t.integer "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age"
     t.integer "max_age"
@@ -391,12 +400,11 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.string "entry_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tag", default: "default"
     t.integer "quantity"
     t.string "company_code"
     t.string "user_code"
     t.string "saleprice"
-    t.string "price"
-    t.string "tag"
     t.bigint "company_id"
     t.index ["company_code"], name: "index_vaccines_on_company_code"
     t.index ["company_id"], name: "index_vaccines_on_company_id"
