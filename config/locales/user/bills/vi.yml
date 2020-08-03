@@ -6,4 +6,44 @@ vi:
         cancel_search: Hủy
         search_title: Tìm kiếm
         search: Tìm kiếm
-        bill_management: Danh sách sổ tiêm
+        bill_management: Danh sách hóa đơn
+        print_invoice: In hóa đơn
+        view: Xem chi tiết
+      show:
+        name: Họ và tên khách hàng tiêm
+        date_of_birth: Ngày sinh
+        year_old: " Tuổi"
+        childbirth: Trẻ sơ sinh
+        born_yet: Chưa sinh
+        place_of_birth: Nơi khai sinh
+        male: Trai
+        female: Gái
+        gender: Giới tính
+        print_invoice: In hóa đơn
+        total: Tổng
+        payment: Tiền thanh toán
+        vaccination_center_name: Trung tâm tiêm chủng Quốc Tế
+        bill: Phiếu thu 
+        vaccine_name: Tên Vắc-xin
+        dosage: Liều lượng
+        amount: Số lượng
+        expiry_date: Hạn dùng
+        saleprice: Đơn giá 
+        money: Thành tiền
+        bill_code: Mã hóa đơn
+        create_time: Thời gian
+        tax: Thuế
+        contact: Liên hệ
+        doctor: Bác sĩ chỉ định tiêm
+        cashier: Người lập phiếu thu 
+        paymenter: Người nộp tiền  
+        nurse: Y tá tiêm
+        cash: Thanh toán 
+      bill:
+        search: Tìm kiếm
+        cancel_search: Hủy
+        search_title: Tìm kiếm
+        search: Tìm kiếm
+        bill_management: Danh sách hóa đơn
+        print_invoice: In hóa đơn
+        view: Xem chi tiết

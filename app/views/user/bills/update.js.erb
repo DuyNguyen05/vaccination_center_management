@@ -1,0 +1,6 @@
+<% if @bill.errors.any? %>
+  toastr["warning"]("<%= I18n.t("paid_error") %> <%= j @bill.errors.full_messages.join('; ') %>")
+<% else %>
+  $(".cash-button").fadeOut();
+  toastr["info"]("<%= I18n.t("paid_success") %>");
+<% end %>

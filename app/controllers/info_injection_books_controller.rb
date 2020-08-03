@@ -13,7 +13,9 @@ class InfoInjectionBooksController < ApplicationController
   def create
     respond_to do |format|
       if @injection_book.present?
-        @appointment = Appointment.new params[:info_injection_book][:injection_books_attributes][:appointments]
+        registration_date =  info_injection_book_params[:injection_books_attributes]["0"][:appointments_attributes]["0"][:registration_date]
+        vaccine = info_injection_book_params[:injection_books_attributes]["0"][:appointments_attributes]["0"][:vaccine]
+        @appointment = @injection_book.appointments.build registration_date: registration_date, vaccine: vaccine
         @appointment.save
         format.js
       else

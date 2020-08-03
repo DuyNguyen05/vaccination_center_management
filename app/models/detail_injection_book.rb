@@ -28,16 +28,24 @@ class DetailInjectionBook < ApplicationRecord
     self.update status: STEPS[STEPS.index(current_step)-1]
   end
 
-  def third_step?
+  def second_step?
     status == STEPS.third
   end
 
-  def first_step?
+  def waiting_step?
     status == STEPS.first
   end
 
-  def second_step?
+  def first_step?
     status == STEPS.second
+  end
+
+  def third_step?
+    status == STEPS[3]
+  end
+
+  def fouth_step?
+    status == STEPS[4]
   end
 
   def last_step?

@@ -21,8 +21,10 @@
         </div>
         <div class="col-lg-5"></div>
         <div class="col-lg-1 float-right">
-          <%= link_to(new_user_info_injection_book_path, class: "btn btn-primary" ) do %>
-            <i class="fas fa-user-plus"></i>
+          <% unless current_user_account.is_user? %>
+            <%= link_to(new_user_info_injection_book_path, class: "btn btn-primary" ) do %>
+              <i class="fas fa-user-plus"></i>
+            <% end %>
           <% end %>
         </div>
       </div>

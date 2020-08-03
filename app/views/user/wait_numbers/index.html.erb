@@ -45,3 +45,50 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">
+          <%= t(".paid_injection_books") %>
+        </h6>
+        <div class="dropdown no-arrow">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <% @paid_bills.each do |paid_bill| %>
+            <div class="col-xl-6 col-md-6 mb-6 injection_book" id="paid-<%= paid_bill.injection_book.id %>">
+              <div class="card border-left-primary shadow h-100 py-1">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="m-0 font-weight-bold text-dark text-uppercase mb-2">
+                        <b> <%= paid_bill.injection_book.name_person_injected %> </b>
+                      </div>
+                      <div class="small text-gray-700">
+                        <%=  t(".date_of_birth") %>: <%= paid_bill.injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
+                        <%= t(".year_old") + ": " %> <%= age(paid_bill.injection_book.date_of_birth) %><br>
+                        <%=  t(".gender") %>: <%= t("." + paid_bill.injection_book.gender) %><br>
+                        <%=  t(".place_of_birth") %>: <%= paid_bill.injection_book.place_of_birth %><br>
+                        <%#= link_to t(".injection_schedule"), "#", class: "h6 mb-0 font-italic text-green-500"%>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-book fa-2x text-gray-300"></i>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                      <%#= link_to t(".injection_history"), user_detail_injection_books_path(injection_book: injection_book), method: :get, class: "btn btn-primary float-left mr-2"%>
+                      <%#= link_to t(".injection_schedule"), "#", class: "btn btn-primary float-left mr-2"%>
+                      <%= button_to t(".react_after_injection"), user_detail_injection_books_path(injection_book: paid_bill.injection_book), method: :post, class: "btn btn-primary float-left mr-2"%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

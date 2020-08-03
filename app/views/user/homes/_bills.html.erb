@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold">
+          <%= t(".list_bill") %>
+        </h6>
+        <div class="dropdown no-arrow">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th><%= Bill.human_attribute_name("code") %></th>
+                  <th><%= Bill.human_attribute_name("injection_book_id") %></th>
+                  <th><%= Bill.human_attribute_name("creation_time") %></th>
+                  <th><%= Bill.human_attribute_name("payment_time") %></th>
+                  <th><%= Bill.human_attribute_name("total_money") %></th>
+                  <th><%= Bill.human_attribute_name("account_id") %></th>
+                  <th><%= t("action") %></th>
+                </tr>
+              </thead>
+              <tbody id="info_injection_book">
+                <% bills.each do |bill| %>
+                  <tr>
+                    <td><%= bill.code %></td>
+                    <td>
+                      <%= bill.injection_book.name_person_injected %></td>
+                    <td>
+                      <%= bill.created_at.strftime("%d - %m - %Y, %H:%M ") %></td>
+                    <td>
+                      <%= bill&.payment_time&.strftime("%d - %m - %Y, %H:%M ") %></td>
+                    <td>
+                      <%= number_to_currency(number_with_delimiter(bill&.total_money)) %></td>
+                    <td>
+                      <%= bill&.cashier&.details_info&.full_name %></td>
+                    <td>
+                      <%#= link_to t(".print_invoice"), "#", class: "btn btn-secondary btn-sm", data: { confirm: t("confirm.are_you_sure") } %>
+                      <%= link_to t(".view"), user_bill_path(bill), class: "btn btn-primary btn-sm" %>
+                      <%#= link_to t(".payment"), user_bill_path(bill), class: "btn btn-success btn-sm", data: { confirm: t("confirm.are_you_sure") } %>
+                    </td>
+                <% end %>
+              </tbody>
+              <%= paginate bills, theme: "twitter-bootstrap-4" %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

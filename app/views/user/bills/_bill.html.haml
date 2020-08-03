@@ -5,11 +5,13 @@
     %td
       = bill.injection_book.name_person_injected
     %td
-      = bill.created_at.strftime("%d - %m - %Y ")
+      = bill.created_at.strftime("%d - %m - %Y, %H:%M ")
     %td
-      = bill.payment_time
+      = bill&.payment_time&.strftime("%d - %m - %Y, %H:%M  ")
     %td
-      = bill.total_money
+      = number_to_currency(number_with_delimiter(bill&.total_money))
     %td
-      = bill.account_id
+      = bill&.cashier&.details_info&.full_name
     %td
+      = link_to t(".print_invoice"), "#", class: "btn btn-secondary btn-sm", data: { confirm: t("confirm.are_you_sure") }
+      = link_to t(".view"), user_bill_path(bill), class: "btn btn-primary btn-sm", data: { confirm: t("confirm.are_you_sure") }

@@ -5,7 +5,7 @@ class Account < ApplicationRecord
   belongs_to :details_info, optional: true
   belongs_to :info_injection_book, optional: true
 
-  has_many :bills, dependent: :destroy
+  has_many :paid_bills, class_name: "Bill", foreign_key: :doctor_id, dependent: :destroy, inverse_of: false
   has_many :doctor_rooms, class_name: "WaitNumber", foreign_key: :doctor_id, dependent: :destroy, inverse_of: false
   has_many :nurse_rooms, class_name: "WaitNumber", foreign_key: :nurse_id, dependent: :destroy, inverse_of: false
   has_many :injection_books, through: :doctor_rooms

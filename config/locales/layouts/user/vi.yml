@@ -26,6 +26,7 @@ vi:
         account_staff: Tài khoản của nhân viên
         new_account: Đăng ký mới
         list_account: Danh sách đăng ký
+        vaccines: Danh mục vắc xin
       staff_sidebar:
         vacinnation_center: Trung tâm tiêm chủng
         dashboard: Trang chủ

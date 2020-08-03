@@ -8,4 +8,6 @@ vi:
         registration_date: Lịch hẹn mong muốn
         vaccine: Thuốc tiêm
         package: Gói tiêm
+        injection_type: Hình thức tiêm 
+        vaccination_center: Địa điểm tiêm chủng
 

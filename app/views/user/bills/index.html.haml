@@ -40,7 +40,7 @@
                   %th= Bill.human_attribute_name("payment_time")
                   %th= Bill.human_attribute_name("total_money")
                   %th= Bill.human_attribute_name("account_id")
-                  %th
+                  %th= t("action")
               %tbody#info_injection_book
                 = render "bill", bills: @bills
             = paginate @bills, theme: "twitter-bootstrap-4"
