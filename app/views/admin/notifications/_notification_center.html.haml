@@ -5,6 +5,5 @@
   %ul#notificationList.dropdown-menu.dropdown-list.dropdown-menu.dropdown-menu-right.shadow.pd-0
     .dropdown-header.text-center THÔNG BÁO
     .dropdown-body.d-flex.flex-column
-      - notifications.each do |notification|
-        = render "admin/notifications/notification", notification: notification
+      = render notifications
     .dropdown-footer= link_to "Xem tất cả", "#"

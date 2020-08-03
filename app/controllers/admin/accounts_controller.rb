@@ -14,7 +14,7 @@ class Admin::AccountsController < Admin::AdminController
     role = Role.find(params[:role_id])
     admin = Admin.find_by(user_code: @account.user_code)
     if @account.update role: role
-      admin.update role: role
+      admin.update role: role if admin.present?
       flash[:success] = t(".updated")
     else
       render :edit

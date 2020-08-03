@@ -1,5 +1,5 @@
 class CheckQuantityVaccineJob < ApplicationJob
-  queue_as :default
+  # queue_as :sidekiq
 
   def perform
     Rails.logger.info("JOB RUNNING")

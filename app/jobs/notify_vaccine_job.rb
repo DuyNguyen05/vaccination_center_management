@@ -1,5 +1,5 @@
 class NotifyVaccineJob < ApplicationJob
-  queue_as :default
+  # queue_as :sidekiq
 
   def perform(id)
     vaccine = Vaccine.find(id)
