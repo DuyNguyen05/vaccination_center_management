@@ -4,7 +4,7 @@ class User::InjectionBooksController < User::UserController
 
   def index
     if current_user_account.is_user?
-      @injection_books = current_user_account.info_injection_book.injection_books.newest.page(params[:page])
+      @injection_books = current_user_account.info_injection_book.injection_books.newest.filter_injection_books(params[:query]).page(params[:page])
     else
       @injection_books = InjectionBook.newest.filter_injection_books(params[:query]).page(params[:page])
       respond_to do |format|
@@ -21,6 +21,7 @@ class User::InjectionBooksController < User::UserController
   def create
     @injection_book = current_user_account.info_injection_book.injection_books.build injection_book_params
     if @injection_book.save
+      flash[:notice] = t("created")
       redirect_to user_injection_books_path
     else
       render :new

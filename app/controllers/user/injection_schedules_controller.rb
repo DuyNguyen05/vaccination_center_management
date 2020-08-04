@@ -28,6 +28,10 @@ class User::InjectionSchedulesController < User::UserController
 
   end
 
+  def schedule
+
+  end
+
   private
 
   def load_injection_schedule
@@ -35,7 +39,7 @@ class User::InjectionSchedulesController < User::UserController
   end
 
   def injection_schedule_params
-    params.require(:injection_schedule).permit :injection_date,
+    params.require(:injection_schedule).permit :injection_date, :registration_date,
       :injection_schedule_type, detail_injection_schedules_attributes: [:id, :vaccine_id, :number_injection, :age, :_destroy]
   end
 end

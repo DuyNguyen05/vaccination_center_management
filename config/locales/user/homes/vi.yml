@@ -12,6 +12,8 @@ vi:
         list_room: Danh sách phòng tiêm
         status: đang chờ...
         job: BS.
+        list_bill: Danh sách hóa đơn đang chờ thanh toán 
+        payment: Thanh toán
       form_wait_number:
         job: BS.
         select_injection_books:
@@ -23,3 +25,29 @@ vi:
         room: "Chỉ định tiêm bởi:"
         appointment: Bạn có hẹn lịch trước với bác sĩ chưa?
         created: Lấy số thứ tự thành công
+      wait_rooms:
+        dashboard: Trang chủ
+        generate_report: Tạo báo cáo
+        injection_registration_schedule: Lịch đăng ký tiêm
+        injection_book_is_waiting: Sổ tiêm đang chờ
+        working_day_calendar: Lịch làm việc của tôi
+        report_today: Báo cáo hôm nay
+        overview: Tổng quan
+        list_room: Danh sách phòng tiêm
+        status: đang chờ...
+        job: BS.
+        list_bill: Danh sách hóa đơn đang chờ thanh toán 
+        payment: Thanh toán
+      bills:
+        dashboard: Trang chủ
+        generate_report: Tạo báo cáo
+        injection_registration_schedule: Lịch đăng ký tiêm
+        injection_book_is_waiting: Sổ tiêm đang chờ
+        working_day_calendar: Lịch làm việc của tôi
+        report_today: Báo cáo hôm nay
+        overview: Tổng quan
+        list_room: Danh sách phòng tiêm
+        status: đang chờ...
+        job: BS.
+        list_bill: Danh sách hóa đơn đang chờ thanh toán 
+        payment: Thanh toán

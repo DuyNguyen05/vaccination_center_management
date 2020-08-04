@@ -1,0 +1,10 @@
+vi:
+  user:
+    appointments:
+      index:
+        search: Tìm kiếm
+        cancel_search: Hủy
+        search_title: Tìm kiếm
+        search: Tìm kiếm
+        schedule_management: Quản lý thông tin đặt lịch
+        schedule_list: Danh sách đặt lịch

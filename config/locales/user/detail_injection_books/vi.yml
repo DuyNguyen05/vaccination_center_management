@@ -47,6 +47,25 @@ vi:
         male: Trai
         female: Gái
         gender: Giới tính
+        print_invoice: In hóa đơn
+        total: Tổng
+        payment: Tiền thanh toán
+        vaccination_center_name: Trung tâm tiêm chủng Quốc Tế
+        bill: Phiếu thu 
+        vaccine_name: Tên Vắc-xin
+        dosage: Liều lượng
+        amount: Số lượng
+        expiry_date: Hạn dùng
+        saleprice: Đơn giá 
+        money: Thành tiền
+        bill_code: Mã hóa đơn
+        create_time: Thời gian
+        tax: Thuế
+        contact: Liên hệ
+        doctor: Bác sĩ chỉ định tiêm
+        cashier: Người lập phiếu thu 
+        paymenter: Người nộp tiền  
+        nurse: Y tá tiêm
       info_step_1:
         injection_schedule: Lịch tiêm >>
         date_of_birth: Ngày sinh

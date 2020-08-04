@@ -2,9 +2,10 @@ class User::DetailInjectionBooksController < User::UserController
   before_action :load_injection_book, only: [:create, :index]
   before_action :load_detail_injection_book, only: [:edit, :update, :show]
   before_action -> { authorize [:user, DetailInjectionBook] }
+  before_action :delete_wait_number, only: :create
 
   def create
-    if @injection_book.detail_injection_books.blank? || @injection_book.detail_injection_books.last.current_step == "step_5" || @injection_book.detail_injection_books.last.current_step == "waiting" || @injection_book.detail_injection_books.last.current_step == "cancel"
+    if @injection_book.detail_injection_books.blank? || @injection_book.detail_injection_books.last.last_step? || @injection_book.detail_injection_books.last.waiting_step? || @injection_book.detail_injection_books.last.cancel?
       @detail_injection_book = @injection_book.detail_injection_books.create! status: "waiting", injection_date: Time.now
       redirect_to user_detail_injection_book_path(@detail_injection_book)
     else
@@ -15,7 +16,7 @@ class User::DetailInjectionBooksController < User::UserController
   end
 
   def edit
-    @detail_bill = @detail_injection_book.bill.detail_bills if @detail_injection_book.current_step == "step_4"
+    @detail_bill = @detail_injection_book.bill.detail_bills if @detail_injection_book.fouth_step?
     @check_before_injection = @detail_injection_book.build_check_before_injection if @detail_injection_book.check_before_injection.blank?
     @bill = @detail_injection_book.build_bill if @detail_injection_book.bill.blank?
     # @detail_bill = @bill.detail_bills.build if @bill.detail_bills.blank?
@@ -49,8 +50,13 @@ class User::DetailInjectionBooksController < User::UserController
     params.require(:detail_injection_book).permit :vaccination_center_id, :account_id,
       :react_after_injection, :status, :injection_date, :time_after_injection,
       check_before_injection_attributes: [:id, :conclude, :vaccine_type_id, :status,  answer_question: []],
-      bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code,
+      bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code, :doctor_id, :cashier_id,
         detail_bills_attributes: [:id, :vaccine_id, :vaccine_package_type_id, :number_injection, :next_appointment, :doctor_injected, :nurse_injected, :unit_price, :discount, :amount,
           :register_injection_package_id, :_destroy]]
+  end
+
+  def delete_wait_number
+    @wait_number_injection_book = WaitNumber.where(injection_book_id: @injection_book.id) if @injection_book.present?
+    @wait_number_injection_book.destroy_all
   end
 end

@@ -17,3 +17,6 @@ Run: cp .env_example .env
 
 4. Rails console
 - docker-compose run --rm web bundle exec rails console
+
+* Debug in docker 
+- docker attach vaccination_center_management_web_1

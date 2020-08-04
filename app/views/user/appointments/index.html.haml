@@ -3,15 +3,15 @@
     .card
       .card-header.py-3
         %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
-          =  t(".user_management")
+          =  t(".schedule_management")
       .card.my-4
         .card-header
           %i.fas.fa-search.mr-1
           = t(".search_title")
         .card-body
           .row.col-xl-12.col-lg-12
-            .col-lg-12
-              = form_tag user_info_injection_books_path, method: :get, class: "navbar-search" do
+            .col-lg-6
+              = form_tag user_appointments_path, method: :get, class: "navbar-search" do
                 .row
                   .col-sm-12
                     .form-group
@@ -20,28 +20,26 @@
                       = t(".cancel_search")
                     = button_tag(type: "submit", class: "btn btn-primary") do
                       = t(".search_title")
+            .col-lg-5
           %hr
       .card.mb-4
         .card-header
           .row
-            .col-md-6
+            .col-md-6.pt-2
               %i.fas.fa-table.mr-1
-              = t(".info_injection_books")
+              = t(".schedule_list")
             .col-md-6.text-right
-              = link_to(new_user_info_injection_book_path, class: "btn btn-primary" ) do
-                %i.fas.fa-user-plus
         .card-body
           .table-responsive
             %table.table.table-bordered.table-hover
               %thead
                 %tr
-                  %th= Account.human_attribute_name("user_code")
-                  %th= InfoInjectionBook.human_attribute_name("father_name")
-                  %th= InfoInjectionBook.human_attribute_name("mother_name")
-                  %th= InfoInjectionBook.human_attribute_name("guardian_name")
-                  %th= InfoInjectionBook.human_attribute_name("number_phone")
-                  %th= InfoInjectionBook.human_attribute_name("email")
-                  %th
+                  %th= Appointment.human_attribute_name("book_code")
+                  %th= Appointment.human_attribute_name("registration_date")
+                  %th= Appointment.human_attribute_name("injection_type")
+                  %th= Appointment.human_attribute_name("vaccine")
+                  %th= Appointment.human_attribute_name("vaccination_center")
+                  %th= t("action")
               %tbody#info_injection_book
-                = render "info_injection_book", info_injection_books: @info_injection_books
-            = paginate @info_injection_books, theme: "twitter-bootstrap-4"
+                = render "appointment", appointments: @appointments
+            = paginate @appointments, theme: "twitter-bootstrap-4"

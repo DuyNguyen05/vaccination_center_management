@@ -1,0 +1,15 @@
+- appointments.each do |appointment|
+  %tr{id: "appointment#{appointment.id}"}
+    %td
+      = appointment&.injection_book&.book_code 
+    %td
+      = appointment.registration_date&.strftime("%d - %m - %Y, %H:%M")
+    %td
+      = appointment.injection_type
+    %td
+      = appointment&.vaccine&.name
+    %td
+      = appointment.vaccination_center
+    %td
+      = link_to user_appointment_path(appointment), class: "btn btn-basic btn-sm", method: :delete, remote: :true, data: { confirm: t("confirm.are_you_sure") } do
+        %i.fa.fa-trash{"aria-hidden" => "true"}

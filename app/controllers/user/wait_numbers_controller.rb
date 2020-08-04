@@ -1,7 +1,10 @@
 class User::WaitNumbersController < User::UserController
   before_action :load_account, only: [:new, :index]
+  before_action -> { authorize [:user, WaitNumber] }, only: [:new, :create, :index]
+
   def index
-    @doctor_rooms = @account.doctor_rooms
+    @doctor_rooms = @account.doctor_rooms 
+    @paid_bills = @account.paid_bills.joins(:detail_injection_book).where("detail_injection_books.status = 'step_4'")
   end
 
   def new

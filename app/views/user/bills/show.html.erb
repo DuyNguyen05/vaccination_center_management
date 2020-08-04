@@ -1,0 +1,144 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 text-center">
+        <div class="float-left"><%= link_to t('.back'), url_for(:back) %></div>
+        <h4 class="m-0 font-weight-bold">
+          <%= t(".payment") %>
+        </h4>
+        <div class="dropdown no-arrow">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="container border border-secondary rounded">
+          <div class="row mt-5 mb-5 ml-1 mr-1">
+            <div class="well col-xs-12 col-sm-12 col-md-12 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <address>
+                    <strong><%= t(".vaccination_center_name")%></strong>
+                    <br>
+                    <%= vaccination_center.address %>
+                    <br>
+                    <abbr title="Phone"><%= t(".contact")%>:</abbr> <%= vaccination_center.number_phone %>
+                  </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                  <p>
+                      <em><%= t(".create_time")%>: <%= Time.now.strftime("%Hh:%Mm, Ngày %d tháng %m năm %Y ") %></em>
+                  </p>
+                  <p>
+                      <em><%= t(".bill_code")%> #: <%= @bill.code %></em>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                  <h1><%= t(".bill")%></h1>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 ">
+                  <div class="text-gray float-left ">
+                    <%= t(".name") + ": "%> <b class="text-uppercase"> <%= @bill.detail_injection_book.injection_book.name_person_injected %> </b><br>
+                    Địa chỉ: <%= @bill.detail_injection_book.injection_book.info_injection_book.current_address %><br>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 ">
+                  <div class="text-gray float-left ">
+                    <%= t(".date_of_birth") + ": " %> <%= @bill.detail_injection_book.injection_book.date_of_birth.strftime("%d/%m/%Y ") %><br>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 mb-3">
+                  <div class="text-gray float-left ">
+                    <%= t(".gender") %>: <%= t("." + @bill.detail_injection_book.injection_book.gender) %><br>
+                    Điện thoại: <%= @bill.detail_injection_book.injection_book.info_injection_book.number_phone %><br>
+                  </div>
+                </div>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th class="col-md-5"><%= t(".vaccine_name")%></th>
+                      <th><%= t(".dosage")%></th>
+                      <th><%= t(".amount")%></th>
+                      <th><%= t(".expiry_date")%></th>
+                      <th><%= t(".saleprice")%></th>
+                      <th><%= t(".money")%></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% detail_bill(@bill.detail_injection_book).each  do |detail_bill| %>
+                      <tr>
+                        <td><%= detail_bill.vaccine.name %></td>
+                        <td><%= detail_bill.vaccine.dosage %><%= detail_bill.vaccine.unit %></td>
+                        <td><p><%= detail_bill.number_injection %></p></td>
+                        <td><%= detail_bill.vaccine.expiry_date.strftime("%d/%m/%Y ") %> </td>
+                        <td><%= number_with_delimiter(detail_bill.vaccine.saleprice) %></td>
+                        <td><%= number_with_delimiter((detail_bill.number_injection)*(detail_bill.vaccine.saleprice.to_i)) %></td>
+                      </tr>
+                    <% end %>
+                    <tr>
+                      <td>
+                        <p>
+                          <%= t(".total")%>:
+                        </p>
+        <!--                 <p>
+                          <%#= t(".tax")%>: 
+                        </p> -->
+                      </td>
+                      <td> &nbsp; </td>
+                      <td> <p><%= number_injections @bill.detail_injection_book %></p><p></p> </td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>
+                        <p>
+                          <strong><%= amount @bill.detail_injection_book %></strong>
+                        </p>
+        <!--                 <p>
+                          <strong>0</strong>
+                        </p> -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-left"><h4><strong><%= t(".payment")%>:&nbsp;</strong></h4></td>
+                      <td> &nbsp; </td>
+                      <td> &nbsp; </td>
+                      <td> &nbsp; </td>
+                      <td> &nbsp; </td>
+                      <td class="text-danger"><h4><strong><%= total_price @bill.detail_injection_book %></strong></h4></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="col-xs-3 col-sm-3 col-md-3 text-center">
+                  <h7><strong><%= t(".doctor")%></strong></h7><br><br>
+                  <%= @bill.doctor.details_info.full_name %>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 text-center">
+                  <h7><strong><%= t(".nurse")%></strong></h7><br><br>
+                  <%#= @bill&.cashier&.details_info&.full_name %>
+                  <%= @bill&.nurse&.details_info&.full_name %>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 text-center">
+                  <h7><strong><%= t(".cashier")%></strong></h7><br><br>
+                  <%#= @bill&.cashier&.details_info&.full_name %>
+                  <%= @current_user_account.details_info.full_name %>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 text-center">
+                  <h7><strong><%= t(".paymenter")%></strong></h7><br><br>
+                  <%#= @bill&.detail_injection_book&.injection_book&.full_name %>
+                </div>
+        <!--         <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+                  <%#= link_to t(".print_invoice"), "#" %>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <%#= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft", data: { confirm: t(".confirm.are_you_sure") } if @detail_injection_book.second_step? %>
+          <%#= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.second_step? || @detail_injection_book.last_step? %>
+          <%= link_to t(".print_invoice"), "#", class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") } %>
+          <%= link_to t(".cash"), user_bill_path(id: @bill.id), method: :patch, remote: :true, class: "cash-button btn btn-success", data: { confirm: t("confirm.are_you_sure") } if @bill.detail_injection_book.third_step? %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

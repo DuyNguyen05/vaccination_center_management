@@ -9,6 +9,8 @@
 <%= form.hidden_field :time_after_injection, value: (Time.now + 30.minutes) %>
 <%= form.fields_for :bill, @bill do |bill_attributes| %>
   <%= render "shared/error_message", resource: @bill %>
+  <%= bill_attributes.hidden_field :doctor_id, value: current_user_account.id %>
+  <%#= bill_attributes.hidden_field :nurse_id, value: current_user_account.id %>
   <div class="form-card" style="color: black">
     <div class="row ml-5">
       <div class="col-md-12 ml-5">
@@ -82,6 +84,7 @@
         <div id="add_vaccine">
           <%= bill_attributes.nested_fields_for :detail_bills, DetailBill.new, wrapper: true  do |detail_bill_attributes| %>
             <%= detail_bill_attributes.remove_nested_fields_link do%><i class="fa fa-times ml-3" style="color:gray"></i><%end%>
+            <%= detail_bill_attributes.hidden_field :account_id, value: current_user_account.id %>
             <div class="form-group ml-5">
               <div class="row">
                 <label class="col-md-3 text-left">
@@ -127,4 +130,9 @@
 <% end %>
 <div class="modal fade bs-example-modal-lg" id="modal" tabindex="-1" role="dialog">
   <%= render "info_step_1", detail_injection_book: @detail_injection_book %>
+</div>
+<div class="text-center mt-5">
+  <%#= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft", data: { confirm: t(".confirm.are_you_sure") } if @detail_injection_book.second_step? %>
+  <%#= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.second_step? || @detail_injection_book.last_step? %>
+  <%= form.submit 'Tiếp theo', class: "btn btn-success", data: { confirm: t("confirm.are_you_sure") }  unless @detail_injection_book.last_step? || @detail_injection_book.cancel?  %>
 </div>

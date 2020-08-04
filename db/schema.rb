@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "creation_time"
+    t.integer "doctor_id"
+    t.integer "cashier_id"
+    t.integer "nurse_id"
     t.datetime "payment_time"
     t.bigint "account_id"
     t.bigint "injection_book_id"

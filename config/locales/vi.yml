@@ -25,3 +25,7 @@ vi:
     month_old: "Nhỏ hơn một tuổi"
     year_old: "Lớn hơn một tuổi"
   created: Tạo thành công
+  destroy: Xóa thành công
+  action: Thao tác
+  paid_success: Thanh toán thành công.
+  paid_error: Lỗi thanh toán, vui lòng thanh toán lại.

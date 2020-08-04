@@ -19,6 +19,6 @@ vi:
         childbirth: Sơ sinh
       show:
         injection_schedule: Lịch tiêm chủng
-      index:
+      schedule:
         injection_schedules: Lịch tiêm chủng
 

@@ -231,3 +231,8 @@
     </div>
   </div>
 <% end %>
+<div class="text-center mt-5">
+  <%= form.submit 'Hủy', class: "btn btn-danger", name: "save_draft", data: { confirm: t(".confirm.are_you_sure") } if @detail_injection_book.first_step? %>
+  <%#= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.second_step? || @detail_injection_book.last_step? %>
+  <%= form.submit 'Tiếp theo', class: "btn btn-success", data: { confirm: t("confirm.are_you_sure") }  unless @detail_injection_book.last_step? || @detail_injection_book.cancel?  %>
+</div>

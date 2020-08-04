@@ -21,3 +21,5 @@ vi:
         injection: Tiêm
         injection_history: Lịch sử tiêm
         back: Quay lại
+        react_after_injection: Cập nhật
+        paid_injection_books: Danh sách sổ tiêm chờ cập nhật theo dõi sau tiêm

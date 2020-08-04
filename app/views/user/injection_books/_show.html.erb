@@ -2,7 +2,7 @@
   <div class="card-header py-3 bg-light">
     <div class="float-left"><%= link_to t('.back'), url_for(:back) %></div>
     <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
-      <b class="text-uppercase"> <%= injection_book.name_person_injected %> </b>
+      <b class="text-uppercase"> <%= injection_book.name_person_injected %></b>
     </h6>
   </div>
   <div class="card-body">
@@ -24,6 +24,7 @@
           </div>
         </div>
         <div class="ml-4 text-gray float-right font-weight-bold">
+          <p><%= t(".book_code") %> <%= injection_book.book_code %></p>
           <%=  t(".date_of_birth") %>: <%= injection_book.date_of_birth.strftime("%d - %m - %Y ") %><br>
           <%= t(".year_old") + ": " %> <%= age(injection_book.date_of_birth) %><br>
           <%=  t(".gender") %>: <%= t("." + injection_book.gender) %><br>
@@ -31,7 +32,7 @@
           <div class="col-md-12 mt-3">
             <%#= link_to t(".injection_history"), user_detail_injection_books_path(injection_book: injection_book), method: :get, class: "btn btn-primary float-left mr-2"%>
             <%#= link_to t(".injection_schedule"), "#", class: "btn btn-primary float-left mr-2"%>
-            <%#= button_to t(".injection"), user_detail_injection_books_path(injection_book: injection_book), method: :post, class: "btn btn-primary float-left mr-2"%>
+            <%= button_to t(".injection"), user_detail_injection_books_path(injection_book: injection_book), method: :post, class: "btn btn-primary float-left mr-2" if current_user_account.is_doctor?  %>
           </div>
         </div>
       </div>

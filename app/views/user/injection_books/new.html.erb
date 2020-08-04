@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="card-body">
-        <%= form_with model: [:user, @injection_book] do |ib| %>
+        <%= form_for [:user, @injection_book] do |ib| %>
           <%= render "shared/error_message", resource: @injection_book %>
           <div class="row">
             <div class="col-xl-10 col-lg-8">
