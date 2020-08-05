@@ -7,7 +7,7 @@ active_record:
       minimum: 6
       maximum: 30
     email:
-      regex: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i
+      regex: !ruby/regexp '/\A([\w+\-]+(\.[\w+\-]+)*|[\w+\-]+)@(\.?[a-z\d\-]+)+\z/'
   info_injection_book:
     name:
       minimum: 0
@@ -15,8 +15,11 @@ active_record:
     number_phone:
       minimum: 6
       maximum: 30
-    email:
-      regex: /(\A([a-z]*\s*)*\<*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\>*\Z)/i
+    regex:
+      email: !ruby/regexp '/\A([\w+\-]+(\.[\w+\-]+)*|[\w+\-]+)@(\.?[a-z\d\-]+)+\z/'
+      number_phone: !ruby/regexp '/\A\+?(\s*\d\s*-?\.?)+\z/'
+      password: !ruby/regexp '/\A[a-zA-Z0-9@%+\\\/''!#\$\^\?:,\(\)\{\}\[\]`\~\-_\=\.]{8,16}\z/'
+      identify: !ruby/regexp '/\A\+?(\s*\d\s*-?\.?)+\z/'
   injection_book:
     name:
       minimum: 0

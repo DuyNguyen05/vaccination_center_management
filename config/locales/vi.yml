@@ -18,6 +18,7 @@ vi:
       resource_not_found: Không tìm thấy dữ liệu
       record_invalid: Lỗi dữ liệu
       invalid_authenticity_token: Lỗi truy cập
+      invalid: không hợp lệ
   enumerize:
     agree: "Đồng ý"
     disagree: "Không đồng ý"
@@ -29,3 +30,4 @@ vi:
   action: Thao tác
   paid_success: Thanh toán thành công.
   paid_error: Lỗi thanh toán, vui lòng thanh toán lại.
+  not_found: Không tìm thấy dữ liệu.

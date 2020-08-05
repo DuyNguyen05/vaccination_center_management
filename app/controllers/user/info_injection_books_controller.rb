@@ -1,9 +1,21 @@
 class User::InfoInjectionBooksController < User::UserController
   before_action :load_info_injection_book, except: [:index, :new, :create]
-  before_action -> { authorize [:user, InfoInjectionBook] }, only: [:index, :new, :create]
+  before_action -> { authorize [:user, InfoInjectionBook] }, only: [:index, :new, :create, :edit]
 
   def index
     @info_injection_books = InfoInjectionBook.includes(:account).newest.filter_info_injection_books(params[:query]).page(params[:page])
+  end
+
+  def edit
+  end
+
+  def update
+    if @info_injection_book.update info_injection_book_params
+      flash[:success] = t(".updated")
+      redirect_to user_info_injection_books_path
+    else
+      render :edit
+    end
   end
 
   def show
