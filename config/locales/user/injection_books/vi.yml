@@ -2,7 +2,7 @@ vi:
   user:
     injection_books:
       index:
-        list_injection_books: Danh sách các bé yêu
+        list_injection_books: Danh sách sổ tiêm
         injection_schedule: Lịch tiêm
         date_of_birth: Ngày sinh
         year_old: " Tuổi"
@@ -12,7 +12,9 @@ vi:
         male: Trai
         female: Gái
         gender: Giới tính
-        search: Tìm kiếm
+        search: Tìm kiếm với mã sổ tiêm hoặc tên/ngày sinh của sổ tiêm
+        cancel_search: Hủy
+        search_title: Tìm kiếm
       new:
         new_injection_book: Tạo sổ tiêm mới
         name_person_injected: Họ và tên của bé

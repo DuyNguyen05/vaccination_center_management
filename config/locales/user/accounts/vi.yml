@@ -3,3 +3,6 @@ vi:
     accounts:
       show:
         change_photo: Thay ảnh đại diện
+        # injection_registration_schedule: Đăng ký lịch tiêm
+        edit_password: Đổi mật khẩu 
+        injection_books: Danh sách sổ tiêm
