@@ -6,7 +6,7 @@ vi:
       wait_number:
         doctor_id: Thông tin bác sĩ
         nurse_id: Thông tin y tá
-        injection_book_id: Thông tin sổ tiêm
+        injection_book_id: Sổ tiêm
         appointment: Thông tin hẹn lịch
         number: Số
         room: Phòng tiêm

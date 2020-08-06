@@ -1,0 +1,34 @@
+<% vaccines_injected(injection_book).each do |vaccine| %>
+  <div class="card-header py-3 bg-light">
+    <h5 class="card-title text-lg m-0 font-weight-bold text-gray text-uppercase"><%= vaccine.name %></h5>
+  </div>
+  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> <%= t(".injection_number") %></th>
+            <th> <%= Vaccine.human_attribute_name("code")%></th>
+            <th> <%= Bill.human_attribute_name("updated_at")%></th>
+            <th> <%= Vaccine.human_attribute_name("next_appointment")%></th>
+            <th> <%= Bill.human_attribute_name("doctor")%></th>
+            <th> <%= Bill.human_attribute_name("nurse")%></th>
+          </tr>
+        </thead>
+        <tbody id="info_injection_book">
+          <% vaccine.number_injections.each do |number| %>
+            <tr>
+              <td> <%= number.name %> </td>
+              <td> <%= vaccine.code %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.vaccine&.updated_at&.strftime("%d - %m - %Y ") %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.next_appointment&.strftime("%d - %m - %Y ") %></td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.bill&.doctor&.details_info&.full_name %> </td>
+              <td> <%= history_injected(injection_book, vaccine)[number.name.split[1].to_i - 1 ]&.bill&.nurse&.details_info&.full_name %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

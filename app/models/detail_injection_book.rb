@@ -14,6 +14,8 @@ class DetailInjectionBook < ApplicationRecord
   validates_presence_of :injection_date, :if => lambda { |o| o.status == "step_1" }
   validates_presence_of :react_after_injection, :if => lambda { |o| o.status == "step_5" }
 
+  validate :format_react_after_injection, if: :react_after_injection
+
   scope :newest, -> {order updated_at: :desc}
 
   def current_step
@@ -63,4 +65,10 @@ class DetailInjectionBook < ApplicationRecord
     end
   end
 
+  def format_react_after_injection
+    unless !last_step?
+      return if time_after_injection  <= Time.now
+      errors.add(:react_after_injection, I18n.t("errors.messages.time_invalid"))
+    end
+  end
 end

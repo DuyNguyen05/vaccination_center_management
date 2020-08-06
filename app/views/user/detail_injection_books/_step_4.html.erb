@@ -15,6 +15,9 @@
             <div class="col-md-12 inputGroupContainer">
               <div class="input-group">
                 <%= form.text_area :react_after_injection, placeholder: t(".react_after_injection"), size: "20x8", class: "form-control bg-light border-1" %>
+                <%= form.fields_for :bill, @detail_injection_book.bill do |bill_attributes| %>
+                  <%= bill_attributes.hidden_field :nurse_id, value: @current_user_account.id %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -26,5 +29,5 @@
 <div class="text-center mt-5">
   <%#= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft", data: { confirm: t(".confirm.are_you_sure") } if @detail_injection_book.second_step? %>
   <%#= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.second_step? || @detail_injection_book.last_step? %>
-  <%= form.submit 'Tiếp theo', class: "btn btn-success", data: { confirm: t("confirm.are_you_sure") }  unless @detail_injection_book.last_step? || @detail_injection_book.cancel?  %>
+  <%= form.submit 'Tiếp theo', class: "btn btn-success", data: { confirm: t("confirm.are_you_sure") }  %>
 </div>

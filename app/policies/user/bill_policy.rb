@@ -1,6 +1,6 @@
 class User::BillPolicy < ApplicationPolicy
   def index?
-    user.is_staff? || user.is_doctor? || user.is_nurse?
+    user.is_staff? 
   end
 
   def new?

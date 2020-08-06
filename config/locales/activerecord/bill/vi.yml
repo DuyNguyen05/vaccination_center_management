@@ -11,3 +11,7 @@ vi:
         total_money: Tổng tiền
         code: Mã hóa đơn
         detail_injection_book_id: Chi tiết sổ tiêm
+        updated_at: Ngày tiêm
+        next_appointment: Ngày hẹn tiêm tiếp theo
+        doctor: Bác sĩ chỉ định tiêm
+        nurse: Y tá tiêm
