@@ -9,6 +9,7 @@ vi:
         bill_management: Danh sách hóa đơn
         print_invoice: In hóa đơn
         view: Xem chi tiết
+        bills: Danh sách hóa đơn
       show:
         name: Họ và tên khách hàng tiêm
         date_of_birth: Ngày sinh

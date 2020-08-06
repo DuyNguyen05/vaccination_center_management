@@ -50,7 +50,7 @@ class User::DetailInjectionBooksController < User::UserController
     params.require(:detail_injection_book).permit :vaccination_center_id, :account_id,
       :react_after_injection, :status, :injection_date, :time_after_injection,
       check_before_injection_attributes: [:id, :conclude, :vaccine_type_id, :status,  answer_question: []],
-      bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code, :doctor_id, :cashier_id,
+      bill_attributes: [:id, :creation_time, :payment_time, :account_id, :injection_book_id, :total_money, :code, :doctor_id, :cashier_id, :nurse_id,
         detail_bills_attributes: [:id, :vaccine_id, :vaccine_package_type_id, :number_injection, :next_appointment, :doctor_injected, :nurse_injected, :unit_price, :discount, :amount,
           :register_injection_package_id, :_destroy]]
   end

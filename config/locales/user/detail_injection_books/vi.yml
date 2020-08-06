@@ -37,6 +37,8 @@ vi:
           placeholder: Tìm kiếm và chọn Vắc-xin
         add_vaccine: + Thêm vaccine
         next_appointment: Hẹn ngày tiêm tiếp theo
+        info_injection: THÔNG TIN CHI TIẾT TIÊM CHỦNG
+        injection_number: Mũi tiêm
       step_3:
         name: Họ và tên khách hàng tiêm
         date_of_birth: Ngày sinh

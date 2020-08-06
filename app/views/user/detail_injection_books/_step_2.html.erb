@@ -3,9 +3,10 @@
 </div>
 <div class="float-right"><%= link_to t('.back'), url_for(:back) %></div>
 <h6 class="text-lg m-0 font-weight-bold text-uppercase text-center">
-  <b class="text-uppercase">THÔNG TIN CHI TIẾT TIÊM CHỦNG</b>
+  <b class="text-uppercase"><%= t(".info_injection") %></b>
 </h6>
 <hr>
+<%= render "history_book", injection_book: detail_injection_book.injection_book %>
 <%= form.hidden_field :time_after_injection, value: (Time.now + 30.minutes) %>
 <%= form.fields_for :bill, @bill do |bill_attributes| %>
   <%= render "shared/error_message", resource: @bill %>

@@ -19,6 +19,8 @@ vi:
       record_invalid: Lỗi dữ liệu
       invalid_authenticity_token: Lỗi truy cập
       invalid: không hợp lệ
+      injection_boook_exist: Sổ tiêm đang trong quá trình tiêm.
+      time_invalid:  Chưa đủ thời gian theo dõi.
   enumerize:
     agree: "Đồng ý"
     disagree: "Không đồng ý"
