@@ -37,7 +37,7 @@
                   %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("content")
                   %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("expiry_date")
                   %th.text-center{:scope => "col"}= Vaccine.human_attribute_name("quantity")
-                  %th.text-center
+                  %th.text-center.width-100
               %tbody#vaccines
                 = render "admin/vaccines/vaccine", vaccines: @vaccines
             = paginate @vaccines, theme: "twitter-bootstrap-4"

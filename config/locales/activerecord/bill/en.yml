@@ -1,5 +1,4 @@
 en:
-<<<<<<< HEAD
   activerecord:
     models:
       bill: Hóa đơn
@@ -12,6 +11,3 @@ en:
         total_money: Tổng tiền
         code: Mã hóa đơn
         detail_injection_book_id: Chi tiết sổ tiêm
-=======
-  
->>>>>>> commit 2

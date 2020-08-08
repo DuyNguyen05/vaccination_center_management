@@ -1,7 +1,6 @@
 vi:
   activerecord:
     models:
-<<<<<<< HEAD
       injection_book: Sổ tiêm
     attributes:
       injection_book:
@@ -13,17 +12,3 @@ vi:
         gender: Giới tính
         avatar: Ảnh đại diện
 
-=======
-      injection_book: THÔNG TIN SỔ  TIÊM
-    attributes:
-      injection_book:
-        book_code: Mã Sổ  Tiêm
-        name_person_injected: Tên Của Bé
-        date_of_birth: Ngày Sinh
-        place_of_birth: Nơi Sinh
-        gender: Giới Tính
-        created_at: Tạo Ngày
-        male: Nam
-        female: Nữ
-        gender: Giới Tính
->>>>>>> commit 2

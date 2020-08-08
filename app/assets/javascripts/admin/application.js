@@ -19,7 +19,7 @@
 //= require select2-full
 //= require ./lib/statistic
 //= require chartkick
-
+//= require cocoon
 
 $(document).ready(function() {
   var companiesPath = '/admin/companies';
@@ -54,3 +54,4 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#vaccineCompany').select2();
 });
+

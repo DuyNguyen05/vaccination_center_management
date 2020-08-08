@@ -1,5 +1,4 @@
 en:
-<<<<<<< HEAD
   activerecord:
     models:
       injection_book: Injection book
@@ -18,6 +17,3 @@ en:
         gender: Gender
         avatar: Avatar
 
-=======
-  
->>>>>>> commit 2

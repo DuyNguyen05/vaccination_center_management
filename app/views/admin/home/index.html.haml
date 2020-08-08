@@ -6,37 +6,16 @@
           .card-header.py-3
             %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
               = t("admin.layouts.dashboard")
-    %ol.breadcrumb.mb-4
-      %li.breadcrumb-item.active= t("admin.layouts.dashboard")
-    .row
-      .col-xl-3.col-md-6
-        .card.bg-primary.text-white.mb-4
-          .card-body Tổng số sổ tiêm
-          .card-footer.d-flex.align-items-center.justify-content-between
-            %a.small.text-white.stretched-link{:href => "#"} 1000
-            .small.text-white
-              %i.fas.fa-angle-right
-      .col-xl-3.col-md-6
-        .card.bg-warning.text-white.mb-4
-          .card-body Tổng số nhân viên
-          .card-footer.d-flex.align-items-center.justify-content-between
-            %a.small.text-white.stretched-link{:href => "#"} 300
-            .small.text-white
-              %i.fas.fa-angle-right
-      .col-xl-3.col-md-6
-        .card.bg-success.text-white.mb-4
-          .card-body Tổng số vaccine
-          .card-footer.d-flex.align-items-center.justify-content-between
-            %a.small.text-white.stretched-link{:href => "#"} 300
-            .small.text-white
-              %i.fas.fa-angle-right
-      .col-xl-3.col-md-6
-        .card.bg-danger.text-white.mb-4
-          .card-body Tổng số gói tiêm
-          .card-footer.d-flex.align-items-center.justify-content-between
-            %a.small.text-white.stretched-link{:href => "#"} 15
-            .small.text-white
-              %i.fas.fa-angle-right
+          .card.m-1.p-2
+            .d-flex.justify-content-between.align-items-center
+              %div
+                %i.fas.fa-search.mr-1
+                = t(".filter_by")
+              %div
+                = link_to "Ngày", admin_root_path, class: "btn btn-primary", remote: true, method: :get
+                = link_to "Tuần", admin_root_path(type: "week"), class: "btn btn-primary", remote: true, method: :get
+                = link_to "Tháng",admin_root_path(type: "month"), class: "btn btn-primary", remote: true, method: :get
+                = link_to "Năm",admin_root_path(type: "year"), class: "btn btn-primary", remote: true, method: :get
     .row
       .col-xl-6
         .card.mb-4
@@ -46,7 +25,8 @@
           .card-body
             #statistic-body
               .container-fluid
-                = render "admin/charts/injection_book", injection_books: @injection_books
+                #injection_books
+                  = render "admin/charts/injection_book", injection_books: @injection_books
       .col-xl-6
         .card.mb-4
           .card-header
@@ -55,15 +35,16 @@
           .card-body
             #statistic-body
               .container-fluid
-                = render "admin/charts/vaccine", vaccines: @vaccines
+                #vaccines
+                  = render "admin/charts/vaccine", vaccines: @vaccines
     .card.mb-4
       .card-header
         %i.fas.fa-table.mr-1>
-        = t("admin.charts.detail_bill")
+        = t("admin.charts.bill")
       .row
         .col-xl-12
           .card-body
             #statistic-body
               .container-fluid
-                -# = render "admin/charts/detail_bill", detail_bills: @detail_bills
-                = line_chart @detail_bills
+                #detail_bills
+                  = render "admin/charts/detail_bill", detail_bills: @detail_bills

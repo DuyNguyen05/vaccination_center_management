@@ -24,16 +24,17 @@
               %i.fas.fa-table.mr-1>
               = t(".order_list")
             .col-md-6.text-right
-              = link_to new_admin_company_order_path(@company), class: "btn btn-primary" do
+              = link_to new_admin_order_detail_order_path(@detail_order), class: "btn btn-primary" do
                 %i.fas.fa-plus-square
         .card-body
           .table-responsive
             %table.table.table-bordered.table-hover
               %thead
                 %tr
-                  %th.text-center{:scope => "col"}= Order.human_attribute_name("id")
-                  %th.text-center{:scope => "col"}= Order.human_attribute_name("code")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("vaccine_id")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("quantity")
                   %th.text-center{:scope => "col"}= Order.human_attribute_name("company_id")
-              %tbody#orders
-                = render "admin/orders/order", orders: @orders
-            = paginate @orders, theme: "twitter-bootstrap-4"
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("account_id")
+              %tbody#detail_orders
+                = render "admin/detail_orders/detail_order", detail_orders: @detail_orders
+            = paginate @detail_orders, theme: "twitter-bootstrap-4"

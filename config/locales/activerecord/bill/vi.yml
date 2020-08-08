@@ -1,7 +1,6 @@
 vi:
   activerecord:
     models:
-<<<<<<< HEAD
       bill: Hóa đơn
     attributes:
       bill:
@@ -12,12 +11,3 @@ vi:
         total_money: Tổng tiền
         code: Mã hóa đơn
         detail_injection_book_id: Chi tiết sổ tiêm
-=======
-      bill: Hoá Đơn
-    attributes:
-      bill:
-        created_at: Ngày Tạo
-        injection_book_id: Mã Sổ  Tiêm
-        code: Mã Hóa Đơn
-        account_id: Người Tạo
->>>>>>> commit 2

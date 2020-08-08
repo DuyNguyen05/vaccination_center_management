@@ -1,0 +1,8 @@
+.nested-fields
+  .form-group
+    = f.label DetailOrder.human_attribute_name(:vaccine_id)
+    = f.select :vaccine_id, options_for_select(@vaccines), {:include_hidden => false}, class: "form-control", id: "vaccineCompany"
+  .form-group
+    = f.label DetailOrder.human_attribute_name(:quantity)
+    = f.text_field "quantity", class: "form-control"
+  = link_to_remove_association "remove vaccine", f

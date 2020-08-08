@@ -1,8 +1,5 @@
 - orders.each do |order|
   %tr
-    %td
-      - Vaccine.where(id: order.vaccine_id).each do |vaccine|
-        = vaccine.name
-    %td= order.quantity
-    %td= order.company.name
-    %td= order.account_id
+    %td.text-center= link_to order.id, admin_order_path(order.id)
+    %td.text-center= order.code
+    %td.text-center= order.company.name

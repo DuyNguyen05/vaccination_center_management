@@ -1,0 +1,30 @@
+.container-fluid
+  .row
+    .col-xl-12.col-lg-12
+      .card
+        .card-header.py-3
+          %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+            -# = t("admin.vaccines.index.add_vaccine")
+            Phiếu nhập vaccine
+  %ol.breadcrumb.mb-4
+    %li.breadcrumb-item
+      = link_to admin_vaccines_path do
+        -# = t("admin.vaccines.index.show_all")
+        Phiếu nhập vaccine
+    -# %li.breadcrumb-item.active= t("admin.vaccines.index.add_vaccine")
+  .card.mb-4.shadow
+    .card-body
+      .row
+        .col-12
+          .table-responsive.px-2
+            = form_with model: [:admin, @order, @detail_order] do |f|
+              = f.hidden_field :account_id, value: current_admin_admin.id
+              -# = f.hidden_field :company_id, value: @company.id
+              .form-group
+                = f.label Order.human_attribute_name(:vaccine_id)
+                = f.select :vaccine_id, options_for_select(@vaccines), {:include_hidden => false}, class: "form-control", id: "vaccineCompany"
+              .form-group
+                = f.label Order.human_attribute_name(:quantity)
+                = f.text_field :quantity, class: "form-control"
+              -# = f.submit t(".submit"), class: "btn btn-primary"
+              = f.submit "Tạo", class: "btn btn-primary"

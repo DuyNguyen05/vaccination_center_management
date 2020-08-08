@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_021857) do
+ActiveRecord::Schema.define(version: 2020_08_08_055700) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_code"
@@ -197,6 +197,15 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_id"], name: "index_detail_injection_schedules_on_vaccine_id"
   end
 
+  create_table "detail_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "vaccine_id"
+    t.string "quantity"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_detail_orders_on_order_id"
+  end
+
   create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vaccine_package_type_id"
     t.bigint "vaccine_id"
@@ -300,15 +309,6 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "event"
-    t.datetime "opened_at"
-    t.integer "vaccine_id"
-    t.integer "admin_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age"
     t.integer "max_age"
@@ -320,8 +320,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "quantity"
-    t.string "vaccine_id"
+    t.string "code"
     t.bigint "company_id"
     t.bigint "account_id"
     t.datetime "created_at", null: false
@@ -400,11 +399,12 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.string "entry_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "tag", default: "default"
     t.integer "quantity"
     t.string "company_code"
     t.string "user_code"
     t.string "saleprice"
+    t.string "price"
+    t.string "tag"
     t.bigint "company_id"
     t.index ["company_code"], name: "index_vaccines_on_company_code"
     t.index ["company_id"], name: "index_vaccines_on_company_id"

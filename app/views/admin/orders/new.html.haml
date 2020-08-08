@@ -17,14 +17,12 @@
       .row
         .col-12
           .table-responsive.px-2
-            = form_with model: [:admin, @company, @order] do |f|
-              = f.hidden_field :account_id, value: current_admin_admin.id
-              = f.hidden_field :company_id, value: @company.id
-              .form-group
-                = f.label Order.human_attribute_name(:vaccine_id)
-                = f.select :vaccine_id, options_for_select(@vaccines), {:include_hidden => false}, class: "form-control", id: "vaccineCompany", multiple: true
-              .form-group
-                = f.label Order.human_attribute_name(:quantity)
-                = f.text_field "quantity[]", class: "form-control"
-              -# = f.submit t(".submit"), class: "btn btn-primary"
+            = form_with model: [:admin, @company, @order], local: true do |f|
+              %div
+                = f.hidden_field :account_id, value: current_admin_admin.id
+                = f.hidden_field :company_id, value: @company.id
+              #detail_orders
+                = f.fields_for :detail_orders do |detail_order|
+                  = render "admin/orders/detail_order_fields", f: detail_order
+                = link_to_add_association 'add answer', f, :detail_orders
               = f.submit "Tạo", class: "btn btn-primary"
