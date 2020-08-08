@@ -1,0 +1,6 @@
+vi:
+  admin:
+    notifications:
+      index:
+        notification_management: Quản Lý Thông Báo
+        notification_list: Danh Sách Thông Báo

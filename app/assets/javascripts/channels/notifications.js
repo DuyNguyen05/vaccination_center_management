@@ -9,7 +9,7 @@ App.notifications = App.cable.subscriptions.create("NotificationsChannel", {
 
   received: function (data) {
     console.log(data);
-    $("#notificationList").prepend(data.notification);
+    $("#notificationList").append(data.notification);
     $("#open_notification").html(data.counter);
   },
 });

@@ -1,0 +1,28 @@
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = t(".notification_management")
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1
+              = t(".notification_list")
+            .col-md-6.text-right
+              = link_to "Thông Báo Chưa Đọc", admin_notifications_path(unread: 1), class: 'btn btn-success', method: :get
+              = link_to "Tất Cả Thông Báo ", admin_notifications_path, class: 'btn btn-primary', method: :get
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center Thông báo của bạn
+              %tbody#notifications
+                - @notifications.each do |notification|
+                  %tr
+                    %td
+                      %div= notification.event
+                      %div.small= time_ago_in_words(notification.created_at)
+            = paginate @notifications, theme: "twitter-bootstrap-4"
