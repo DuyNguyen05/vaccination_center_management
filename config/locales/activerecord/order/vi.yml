@@ -1,0 +1,10 @@
+vi:
+  activerecord:
+    models:
+      order: Order
+    attributes:
+      order:
+        id: ID
+        code: Mã Order
+        company: Tên Công Ty
+        created_at: Ngày Tạo

@@ -1,0 +1,35 @@
+.modal.fade.bd-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modalInjectionBookEdit#{injection_book.id}"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h4
+          %b= t(".edit_injection_book")
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        = form_with model: [:admin, injection_book], method: :patch do |f|
+          = f.hidden_field :info_injection_book_id, value: info_injection_book.id
+          .form-group
+            = f.label InjectionBook.human_attribute_name("book_code")
+            = f.text_field :book_code, class: "form-control", disabled: true
+          .form-group
+            = f.label InjectionBook.human_attribute_name("name_person_injected")
+            = f.text_field :name_person_injected, class: "form-control"
+          .form-group
+            = f.label InjectionBook.human_attribute_name("date_of_birth")
+            = f.date_field :date_of_birth, class: "form-control"
+          .form-group
+            = f.label InjectionBook.human_attribute_name("place_of_birth")
+            = f.text_field :place_of_birth, class: "form-control"
+          .form-group
+            = f.label InjectionBook.human_attribute_name("gender")
+            %br
+            .form-check-inline
+              %label.form-check-label
+                = f.radio_button :gender, :male, class: "form-check-input"
+                = t(".male")
+            .form-check-inline
+              %label.form-check-label
+                = f.radio_button :gender, :female, class: "form-check-input"
+                = t(".female")
+          = f.submit t(".submit"), class: "btn btn-primary"

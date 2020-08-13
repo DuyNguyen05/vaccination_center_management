@@ -14,4 +14,9 @@ class DetailBill < ApplicationRecord
   def validate_next_appointment
     next_appointment > Time.now
   end
+
+  def total_price
+    vaccine.price * number_injection
+ end
+
 end

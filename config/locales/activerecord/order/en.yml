@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      order: Order
+    attributes:
+      order:
+        id: ID
+        code: Order Code
+        company: Company
+        created_at: Created At

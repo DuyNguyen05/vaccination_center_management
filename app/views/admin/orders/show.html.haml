@@ -1,0 +1,45 @@
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = @order.code
+      %ol.breadcrumb.mb-4
+        %li.breadcrumb-item
+          = link_to admin_company_path(@company) do
+            = t("admin.companies.index.name", company_name: "#{@company.name}")
+        %li.breadcrumb-item
+          = link_to admin_company_orders_path(@company.id) do
+            = t("admin.orders.index.order_list")
+        %li.breadcrumb-item.active= t(".detail_order", order_code: @order.code)
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1>
+              = t(".detail_order", order_code: @order.code)
+            .col-md-6.text-right
+              = link_to admin_order_path(@order.id, request.parameters.merge(format: "csv")), class: "btn btn-success export-csv-btn" do
+                %i.fa.fa-download{"aria-hidden" => "true"}
+                = t(".download")
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center{:scope => "col"}= DetailOrder.human_attribute_name("code")
+                  %th.text-center{:scope => "col"}= DetailOrder.human_attribute_name("vaccine_name")
+                  %th.text-center{:scope => "col"}= DetailOrder.human_attribute_name("quantity")
+                  %th.text-center
+              %tbody
+                - @detail_orders.each do |detail_order|
+                  %tr.text-center{id: "detail_order#{detail_order.id}"}
+                    %td= detail_order.vaccine.code
+                    %td= detail_order.vaccine.name
+                    %td= detail_order.quantity
+                    %td
+                      = link_to edit_admin_company_path(@company, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
+                        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+                      = link_to admin_company_path(@company, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: @company.name)}, remote: true, class: "btn btn-danger mr-3" do
+                        %i.fa.fa-trash{"aria-hidden" => "true"}
+            = paginate @detail_orders, theme: "twitter-bootstrap-4"

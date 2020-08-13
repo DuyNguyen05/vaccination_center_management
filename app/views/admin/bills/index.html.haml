@@ -1,0 +1,37 @@
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = t("admin.sidebar.bill_management")
+      .card.my-4
+        .card-header
+          %i.fas.fa-search.mr-1
+          = t(".search_title")
+        .card-body
+          = form_tag admin_bills_path, method: :get do
+            .row
+              .col-sm-12
+                .form-group
+                  = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+                = button_tag(type: "submit", class: "btn btn-primary") do
+                  %i.fa.fa-search{"aria-hidden" => "true"}
+                  = t(".search_title")
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1>
+              = t(".bill_list")
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center{:scope => "col"}= Bill.human_attribute_name("code")
+                  %th.text-center{:scope => "col"}= Bill.human_attribute_name("injection_book_id")
+                  %th.text-center{:scope => "col"}= Bill.human_attribute_name("created_at")
+                  %th.text-center{:scope => "col"}= Bill.human_attribute_name("account_id")
+              %tbody#bills
+                = render "admin/bills/bill", bills: @bills
+            = paginate @bills, theme: "twitter-bootstrap-4"

@@ -1,0 +1,19 @@
+- injection_books.each do |user|
+  %tr{id: "info_injection_book#{user.id}"}
+    %td
+      = user.book_code
+    %td
+      = user.name_person_injected
+    %td
+      = l(user.date_of_birth, format: :date_month_year_concise)
+    %td
+      = user.place_of_birth
+    %td
+      = user.gender
+    %td
+      = l(user.created_at, format: :date_month_year_concise)
+    %td
+      = link_to edit_admin_injection_book_path(user, info_injection_book_id: info_injection_book.id), class: "btn btn-primary mr-2", remote: true do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+      = link_to admin_injection_book_path(user, info_injection_book_id: info_injection_book.id), class: "btn btn-danger", method: :delete, data: { confirm: t("confirm.are_you_sure") }, remote: true do
+        %i.fa.fa-trash{"aria-hidden" => "true"}

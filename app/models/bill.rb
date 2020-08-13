@@ -9,10 +9,26 @@ class Bill < ApplicationRecord
   has_many :detail_bills, dependent: :destroy
   has_many :vaccines, through: :detail_bills
   belongs_to :detail_injection_book
+  has_many :vaccines, through: :detail_bills
 
   accepts_nested_attributes_for :detail_bills, allow_destroy: true
 
   scope :newest, -> {order created_at: :desc}
+  
+  scope :filter_bill, -> (query) do
+    where("injection_book_id LIKE :q OR id LIKE :q OR created_at LIKE :q", q: "%#{query}%") if query.present?
+  end
+
+  # Bill.includes(:detail_bills, :vaccines).map{ |a| a.vaccines.sum(:price) }
+
+  # scope :tested, -> (time) do
+  #   includes(:detail_bills, :vaccines).where("created_at >= ?", time)
+  #     .map{ |a| a.vaccines.sum(:price) }
+  # end
+
+  # def tested
+  #   includes(:detail_bills, :vaccines).map{ |a| a.created_at, a.vaccines.sum(:price) }
+  # end
 
   private
 

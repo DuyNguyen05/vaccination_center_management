@@ -1,0 +1,6 @@
+vi:
+  admin:
+    charts:
+      injection_book: Đồ Thị Sổ Tiêm
+      vaccine: Đồ Thị Vaccine
+      bill: Đồ Thị Doanh Thu

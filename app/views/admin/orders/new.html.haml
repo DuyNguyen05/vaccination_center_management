@@ -1,0 +1,33 @@
+.container-fluid
+  .row
+    .col-xl-12.col-lg-12
+      .card
+        .card-header.py-3
+          %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+            Phiếu nhập vaccine
+  %ol.breadcrumb.mb-4
+    %li.breadcrumb-item
+      = link_to admin_company_path(@company) do
+        = t("admin.companies.index.name", company_name: "#{@company.name}")
+    %li.breadcrumb-item
+      = link_to admin_company_orders_path(@company.id) do
+        = t("admin.orders.index.order_list")
+    %li.breadcrumb-item.active Phiếu Nhập Vaccine
+  .card.mb-4.shadow
+    .card-body
+      .row
+        .col-12
+          .table-responsive.px-2
+            = form_with model: [:admin, @company, @order], local: true do |f|
+              = render "admin/shared/error_messages", object: f.object
+              %div
+                = f.hidden_field :account_id, value: current_admin_admin.id
+                = f.hidden_field :company_id, value: @company.id
+              #detail_orders
+                = f.fields_for :detail_orders do |detail_order|
+                  = render "admin/orders/detail_order_fields", f: detail_order
+                = link_to_add_association f, :detail_orders, class: "btn btn-success mt-2" do
+                  %i.fas.fa-plus
+                  Thêm Vaccine
+              .text-right
+                = f.submit "Tạo Mới Order", class: "btn btn-primary mt-4", data: { confirm: t("confirm.are_you_sure") }

@@ -10,7 +10,7 @@
         = form_with model: [:admin, detail_vaccine_package], method: :patch do |f|
           .form-group
             = f.label DetailVaccinePackage.human_attribute_name(:vaccine_id)
-            = f.select :vaccine_id, options_for_select(vaccines), {},class: "form-control", id: "detail-vaccine-package"
+            = f.select :vaccine_id, {}, {},class: "form-control", id: "detail-vaccine-package"
           .form-group
             = f.label DetailVaccinePackage.human_attribute_name(:total_injections)
             = f.number_field :total_injections, class: "form-control"

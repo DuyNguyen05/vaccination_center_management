@@ -10,13 +10,48 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
 //= require toastr
 //= require ./lib/account
 //= require select2-full
-$('#detail-vaccine-package').select2({
-  theme: "bootstrap"
+//= require ./lib/statistic
+//= require chartkick
+//= require cocoon
+
+$(document).ready(function() {
+  var companiesPath = '/admin/companies';
+  $('#selectcompanies').select2({
+    width: '100%',
+    ajax: {
+      url: companiesPath,
+      type: 'GET',
+      delay: 1000,
+      dataType: 'json',
+      data: function(params) {
+        return { query: params.term }
+      },
+      processResults: function(data) {
+        return { results: data.companies };
+      }
+    },
+    companies: true,
+    templateResult: formatResult,
+    templateSelection: formatSelection,
+  }).trigger('change');
+
+  function formatResult(companies) {
+    return companies.name;
+  }
+
+  function formatSelection(companies) {
+    return companies.text || companies.name;
+  }
 });
+
+$(document).ready(function() {
+  $('#vaccineCompany').select2();
+});
+

@@ -1,5 +1,5 @@
 %nav.sb-topnav.navbar.navbar-expand.navbar-dark.bg-dark
-  %a.navbar-brand{:href => "index.html"} Admin Page
+  = link_to "Admin Page", admin_root_path, class: "navbar-brand"
   %button#sidebarToggle.btn.btn-link.btn-sm.order-1.order-lg-0{:href => "#"}
   / Navbar Search
   %form.d-none.d-md-inline-block.form-inline.ml-auto.mr-0.mr-md-3.my-2.my-md-0

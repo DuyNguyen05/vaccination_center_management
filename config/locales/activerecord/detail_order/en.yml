@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      detail_order: Chi Tiết Order
+    attributes:
+      detail_order:
+        id: ID
+        code: Mã Vaccine
+        vaccine_name: Tên Vaccine
+        created_at: Ngày Tạo
+        quantity: Số Lượng
+

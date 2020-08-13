@@ -1,0 +1,27 @@
+.container-fluid
+  .row
+    .col-xl-12.col-lg-12
+      .card
+        .card-header.py-3
+          %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+            = t(".show_injection_book")
+  .card.mb-4.shadow
+    .card-body
+      .row.mt-3
+        .col-4= InjectionBook.human_attribute_name("book_code")
+        .col-8= @injection_book.book_code
+      .row.mt-3
+        .col-4= InjectionBook.human_attribute_name("name_person_injected")
+        .col-8= @injection_book.name_person_injected
+      .row.mt-3
+        .col-4= InjectionBook.human_attribute_name("date_of_birth")
+        .col-8= l(@injection_book.date_of_birth, format: :date_month_year_concise)
+      .row.mt-3
+        .col-4= InjectionBook.human_attribute_name("place_of_birth")
+        .col-8= @injection_book.place_of_birth
+      .row.mt-3
+        .col-4= InjectionBook.human_attribute_name("gender")
+        .col-8= @injection_book.gender
+      .row.mt-3
+        .col-4= InjectionBook.human_attribute_name("created_at")
+        .col-8= l(@injection_book.created_at, format: :date_month_year_concise)

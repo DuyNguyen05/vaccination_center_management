@@ -3,6 +3,12 @@ class Admin::CompaniesController < Admin::AdminController
 
   def index
     @companies = Company.match_query(params[:query]).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: { companies: @companies.as_json }
+      end
+    end
   end
 
   def new

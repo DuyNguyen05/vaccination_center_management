@@ -1,0 +1,42 @@
+.row
+  .col-xl-12.col-lg-12
+    .card
+      .card-header.py-3
+        %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
+          = t(".order_management")
+      .card.my-4
+        .card-header
+          %i.fas.fa-search.mr-1
+          = t(".search_title")
+        .card-body
+          = form_tag admin_companies_path, method: :get do
+            .row
+              .col-sm-12
+                .form-group
+                  = text_field_tag :query, params[:query], class: "form-control", placeholder: t(".search")
+                = button_tag(type: "submit", class: "btn btn-primary") do
+                  %i.fa.fa-search{"aria-hidden" => "true"}
+                  = t(".search_title")
+      .card.mb-4
+        .card-header
+          .row
+            .col-md-6.pt-2
+              %i.fas.fa-table.mr-1>
+              = t(".order_list")
+            .col-md-6.text-right
+              = link_to new_admin_company_order_path(@company), class: "btn btn-warning" do
+                %i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+                = t(".new")
+        .card-body
+          .table-responsive
+            %table.table.table-bordered.table-hover
+              %thead
+                %tr
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("id")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("code")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("company")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("created_at")
+                  %th.text-center{:scope => "col"}
+              %tbody#orders
+                = render "admin/orders/order", orders: @orders
+            = paginate @orders, theme: "twitter-bootstrap-4"

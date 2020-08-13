@@ -2,18 +2,19 @@ vi:
   admin:
     companies:
       index:
-        add_company: Thêm Công Ty
-        search: Nhập Tên Hoặc Mã Công Ty
-        show_all: Tất Cả Các Công Ty
-        company_list: Danh Sách Công Ty
+        add_company: Thêm Nhà Cung Cấp
+        search: Nhập Tên Hoặc Mã Nhà Cung Cấp
+        show_all: Tất Cả Các Nhà Cung Cấp
+        company_list: Danh Sách Nhà Cung Cấp
         search_title: Tìm Kiếm
+        name: "%{company_name}"
       new:
-        add_company: Thêm Công Ty
-        submit: Tạo Công Ty
+        add_company: Thêm Nhà Cung Cấp
+        submit: Tạo Nhà Cung Cấp
       edit:
-        edit_company: Chỉnh Sửa Công Ty
+        edit_company: Chỉnh Sửa Nhà Cung Cấp
         submit: Cập Nhật
       company:
         edit: Chỉnh Sửa
         destroy: Xóa
-        are_you_sure: "Bạn chắc muốn xóa công ty %{name}"
+        are_you_sure: "Bạn chắc muốn xóa Nhà Cung Cấp %{name}"

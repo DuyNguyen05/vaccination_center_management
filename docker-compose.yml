@@ -1,5 +1,10 @@
 version: "3.7"
 services:
+  redis:
+    image: redis:5.0.6-alpine3.10
+    volumes:
+      - redis-data:/data
+    restart: always
   mysql:
     image: mysql:5.7.28
     restart: always
@@ -24,6 +29,16 @@ services:
     restart: always
     depends_on:
       - mysql
-
+      - redis
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    env_file:
+      - .env
 volumes:
   mysql-data:
+  redis-data:
