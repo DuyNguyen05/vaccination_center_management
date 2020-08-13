@@ -3,7 +3,7 @@
     .card
       .card-header.py-3
         %h3.text-lg.m-0.font-weight-bold.text-uppercase.text-center
-          = t("admin.sidebar.order_management")
+          = t(".order_management")
       .card.my-4
         .card-header
           %i.fas.fa-search.mr-1
@@ -24,8 +24,9 @@
               %i.fas.fa-table.mr-1>
               = t(".order_list")
             .col-md-6.text-right
-              = link_to new_admin_company_order_path(@company), class: "btn btn-primary" do
-                %i.fas.fa-plus-square
+              = link_to new_admin_company_order_path(@company), class: "btn btn-warning" do
+                %i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+                = t(".new")
         .card-body
           .table-responsive
             %table.table.table-bordered.table-hover
@@ -33,7 +34,9 @@
                 %tr
                   %th.text-center{:scope => "col"}= Order.human_attribute_name("id")
                   %th.text-center{:scope => "col"}= Order.human_attribute_name("code")
-                  %th.text-center{:scope => "col"}= Order.human_attribute_name("company_id")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("company")
+                  %th.text-center{:scope => "col"}= Order.human_attribute_name("created_at")
+                  %th.text-center{:scope => "col"}
               %tbody#orders
                 = render "admin/orders/order", orders: @orders
             = paginate @orders, theme: "twitter-bootstrap-4"

@@ -1,5 +1,9 @@
 - orders.each do |order|
-  %tr
-    %td.text-center= link_to order.id, admin_order_path(order.id)
+  %tr{id: "order#{order.id}"}
+    %td.text-center= link_to order.id, admin_order_path(order.id, company_id: @company.id)
     %td.text-center= order.code
     %td.text-center= order.company.name
+    %td.text-center= l(order.created_at, format: :time_date_month_year_concise)
+    %td.text-center
+      = link_to admin_order_path(order, company_id: @company.id), method: :delete, data: { confirm: t("confirm.are_you_sure")}, remote: true, class: "btn btn-danger" do
+        %i.fa.fa-trash{"aria-hidden" => "true"}

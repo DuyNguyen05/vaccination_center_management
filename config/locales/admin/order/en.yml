@@ -1,0 +1,16 @@
+en:
+  admin:
+    orders:
+      index:
+        order_management: Quản Lý Order
+        search_title: Tìm Kiếm
+        order_list: Danh Sách Order
+        search: Nhập Vào Mã Order
+        new: Tạo Order
+      show:
+        download: Download
+        detail_order: "Detail %{order_code}"
+        create:
+          created: Tạo Mới Thành Công
+
+

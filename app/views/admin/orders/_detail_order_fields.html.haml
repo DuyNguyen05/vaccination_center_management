@@ -1,8 +1,10 @@
 .nested-fields
   .form-group
     = f.label DetailOrder.human_attribute_name(:vaccine_id)
-    = f.select :vaccine_id, options_for_select(@vaccines), {:include_hidden => false}, class: "form-control", id: "vaccineCompany"
+    = f.select :vaccine_id, options_for_select(Vaccine.where(company_code: @company.company_code).pluck(:name, :id)), {:include_hidden => false}, class: "form-control", id: "vaccineCompany"
   .form-group
     = f.label DetailOrder.human_attribute_name(:quantity)
-    = f.text_field "quantity", class: "form-control"
-  = link_to_remove_association "remove vaccine", f
+    = f.number_field "quantity", min: 0, class: "form-control"
+  = link_to_remove_association f, class: "btn btn-warning mb-1" do
+    %i.fas.fa-trash
+    Xóa

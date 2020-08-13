@@ -7,6 +7,7 @@ en:
         show_all: Show All Company
         company_list: Company List
         search_title: Search
+        name: "%{company_name}"
       new:
         add_company: Add Company
         submit: Create

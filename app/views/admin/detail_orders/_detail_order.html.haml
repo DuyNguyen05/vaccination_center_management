@@ -1,8 +1,0 @@
-- detail_orders.each do |detail_order|
-  %tr
-    %td
-      - Vaccine.where(id: detail_order.vaccine_id).each do |vaccine|
-        = vaccine.name
-    %td= detail_order.quantity
-    %td= detail_order.company.name
-    %td= detail_order.account_id

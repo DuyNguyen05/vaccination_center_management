@@ -1,19 +1,17 @@
 class Admin::OrdersController < Admin::AdminController
+  before_action :set_company
 
   def index
-    @company = Company.find(params[:company_id])
     @orders = @company.orders.page(params[:page])
   end
 
   def new
-    @company = Company.find(params[:company_id])
     @vaccines = Vaccine.where(company_code: @company.company_code).pluck(:name, :id)
     @order = @company.orders.new
     @order.detail_orders.build
   end
 
   def create
-    @company = Company.find(params[:company_id])
     @order = @company.orders.new order_params
     if @order.save
       flash[:success] = t(".created")
@@ -25,15 +23,24 @@ class Admin::OrdersController < Admin::AdminController
 
   def show
     respond_to do |format|
-      format.html do
-        @order = Order.find(params[:id])
-        @detail_orders = @order.detail_orders.page(params[:page])
-      end
+      @order = Order.find(params[:id])
+      @detail_orders = @order.detail_orders.page(params[:page])
+      format.html
       format.csv do
         csv = ExportCsvService.new @detail_orders, DetailOrder.search_csv_column_definitions
-        send_data csv.perform(1000), filename: "order-#{Time.current.to_i}.csv"
+        send_data csv.perform(1000), filename: "#{@order.code}.csv"
       end
     end
+  end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+    @orders = @company.orders.page(params[:page])
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   private

@@ -11,3 +11,4 @@ vi:
         total_money: Tổng tiền
         code: Mã hóa đơn
         detail_injection_book_id: Chi tiết sổ tiêm
+        created_at: Ngày Tạo

@@ -198,12 +198,13 @@ ActiveRecord::Schema.define(version: 2020_08_08_055700) do
   end
 
   create_table "detail_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "vaccine_id"
     t.string "quantity"
     t.bigint "order_id"
+    t.bigint "vaccine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_detail_orders_on_order_id"
+    t.index ["vaccine_id"], name: "index_detail_orders_on_vaccine_id"
   end
 
   create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

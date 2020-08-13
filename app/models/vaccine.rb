@@ -9,6 +9,7 @@ class Vaccine < ApplicationRecord
   has_many :number_injections, dependent: :destroy
   has_many :detail_bills, dependent: :destroy
   has_many :bills, through: :detail_bills
+  has_many :detail_orders, dependent: :destroy
 
   enumerize :tag, in: [:default, :other], default: :default
 

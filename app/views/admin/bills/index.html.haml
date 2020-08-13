@@ -32,7 +32,6 @@
                   %th.text-center{:scope => "col"}= Bill.human_attribute_name("injection_book_id")
                   %th.text-center{:scope => "col"}= Bill.human_attribute_name("created_at")
                   %th.text-center{:scope => "col"}= Bill.human_attribute_name("account_id")
-                  %th.text-center
               %tbody#bills
                 = render "admin/bills/bill", bills: @bills
             = paginate @bills, theme: "twitter-bootstrap-4"

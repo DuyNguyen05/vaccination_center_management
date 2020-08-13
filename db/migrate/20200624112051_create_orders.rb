@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :code
       t.references :company, foreign_key: true
       t.references :account, foreign_key: true
-
+    
       t.timestamps
     end
   end

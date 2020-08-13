@@ -7,6 +7,7 @@ vi:
         show_all: Tất Cả Các Nhà Cung Cấp
         company_list: Danh Sách Nhà Cung Cấp
         search_title: Tìm Kiếm
+        name: "%{company_name}"
       new:
         add_company: Thêm Nhà Cung Cấp
         submit: Tạo Nhà Cung Cấp
