@@ -26,6 +26,8 @@
 //= require jquery_nested_form
 //= require ./lib/custom.js.erb
 //= require cloudinary
+//= require cable
+//= require_tree ../channels
 
 // $(document).ready(function() {
 //   toastr.options = {

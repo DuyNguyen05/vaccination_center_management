@@ -15,6 +15,7 @@ class CreateInfoInjectionBooks < ActiveRecord::Migration[5.2]
       t.string :permanent_address
       # t.string :detail_current_address
       # t.string :detail_permanent_address
+      t.boolean :check_info, default: true
 
       t.timestamps
     end

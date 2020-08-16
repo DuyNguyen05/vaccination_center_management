@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module VaccinationCenterManagement
   class Application < Rails::Application
+    config.time_zone = 'Hanoi'
+    config.active_record.default_timezone = :local
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.assets.paths << Rails.root.join("app", "assets", "fonts", "webfonts")

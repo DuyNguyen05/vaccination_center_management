@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vaccination Center</title>
+    <meta charset="UTF-8">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+          <% if notice %>
+            <p class= "alert alert-success">
+              <%= notice %>
+            </p>
+          <% end %>
+          <% if alert %>
+            <p class= "alert alert-danger">
+              <%= alert %>
+            </p>
+          <% end %>
+          <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+              <div class="row">
+                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h4 text-gray-900 mb-4">
+                        <%= t("change_password") %>
+                      </h1>
+                    </div>
+                    <%= form_for(resource, as: resource_name, url: user_account_registration_path, html: { method: :patch }, class: "user") do |f| %>
+                      <%= render "shared/error_message", resource: resource %>
+                      <%= f.hidden_field :reset_password_token %>
+                      <div class="form-group">
+                        <%= f.label t("new_password"), class: "control-label" %>
+                        <% if @minimum_password_length %>
+                          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+                        <% end %>
+                        <br>
+                        <%= f.password_field :password, class: "form-control form-control-user", placeholder: t("new_password"), autofocus: true, autocomplete: "new-password"%>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label t("password_confirmation"), class: "control-label" %>
+                        <br>
+                        <%= f.password_field :password_confirmation, class: "form-control form-control-user", placeholder: t("password_confirmation"), autocomplete: "off"%>
+                      </div>
+                      <%= f.submit t("change_password"), class: "btn btn-primary btn-user btn-block" %>
+                    <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

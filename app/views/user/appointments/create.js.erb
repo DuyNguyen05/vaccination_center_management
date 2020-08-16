@@ -1,0 +1,6 @@
+<% if @appointment.errors.any? %>
+  toastr["warning"]("<%= I18n.t("error") %> <%= j @appointment.errors.full_messages.join('; ') %>")
+<% else %>
+	$("#appointment<%= @appointment.id %>").fadeOut();
+  toastr["info"]("<%= I18n.t(".create") %>");
+<% end %>

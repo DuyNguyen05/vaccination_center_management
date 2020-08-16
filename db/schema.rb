@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_021857) do
+ActiveRecord::Schema.define(version: 2020_08_06_142655) do
 
-  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_code"
     t.string "password"
     t.string "avatar"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["role_id"], name: "index_accounts_on_role_id"
   end
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "info_injection_book_id"
     t.string "province"
     t.string "district"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["info_injection_book_id"], name: "index_addresses_on_info_injection_book_id"
   end
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_code"
     t.string "password"
     t.bigint "role_id"
@@ -66,17 +66,17 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["role_id"], name: "index_admins_on_role_id"
   end
 
-  create_table "appointments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "appointments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "book_code"
     t.datetime "registration_date"
     t.string "injection_type"
-    t.string "vaccine"
+    t.string "vaccine_id"
     t.string "vaccination_center"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "creation_time"
     t.integer "doctor_id"
     t.integer "cashier_id"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["injection_book_id"], name: "index_bills_on_injection_book_id"
   end
 
-  create_table "check_before_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "check_before_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "answer_question"
     t.string "conclude"
     t.bigint "vaccine_type_id"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_type_id"], name: "index_check_before_injections_on_vaccine_type_id"
   end
 
-  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "company_code"
     t.string "name"
     t.string "address"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "contract_distributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contract_distributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "contract_id"
     t.bigint "details_info_id"
     t.datetime "created_at", null: false
@@ -125,13 +125,13 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["details_info_id"], name: "index_contract_distributions_on_details_info_id"
   end
 
-  create_table "contract_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contract_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "start_at"
     t.datetime "finish_at"
     t.integer "expire"
@@ -141,14 +141,14 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["contract_type_id"], name: "index_contracts_on_contract_type_id"
   end
 
-  create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "detail_bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "detail_bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.bigint "vaccine_package_type_id"
     t.integer "number_injection", default: 0
@@ -166,7 +166,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_package_type_id"], name: "index_detail_bills_on_vaccine_package_type_id"
   end
 
-  create_table "detail_injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "detail_injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "injection_date"
     t.string "react_after_injection"
     t.datetime "time_after_injection"
@@ -176,16 +176,14 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "bill_id"
     t.bigint "check_before_injection_id"
     t.index ["account_id"], name: "index_detail_injection_books_on_account_id"
-    t.index ["bill_id"], name: "index_detail_injection_books_on_bill_id"
     t.index ["check_before_injection_id"], name: "index_detail_injection_books_on_check_before_injection_id"
     t.index ["injection_book_id"], name: "index_detail_injection_books_on_injection_book_id"
     t.index ["vaccination_center_id"], name: "index_detail_injection_books_on_vaccination_center_id"
   end
 
-  create_table "detail_injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "detail_injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.integer "number_injection"
     t.string "type_age"
@@ -197,7 +195,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_id"], name: "index_detail_injection_schedules_on_vaccine_id"
   end
 
-  create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "detail_vaccine_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "vaccine_package_type_id"
     t.bigint "vaccine_id"
     t.integer "total_injections"
@@ -208,7 +206,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_package_type_id"], name: "index_detail_vaccine_packages_on_vaccine_package_type_id"
   end
 
-  create_table "details_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "details_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -232,17 +230,17 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccination_center_id"], name: "index_details_infos_on_vaccination_center_id"
   end
 
-  create_table "districts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "districts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.bigint "province_id"
     t.index ["province_id"], name: "index_districts_on_province_id"
   end
 
-  create_table "form_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "form_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "content"
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "image_link"
     t.integer "imageable_id"
     t.string "imageable_type"
@@ -250,7 +248,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "import_vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "import_vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "company_code"
     t.integer "quantity"
     t.bigint "vaccine_id"
@@ -261,7 +259,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_id"], name: "index_import_vaccines_on_vaccine_id"
   end
 
-  create_table "info_injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "info_injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "father_name"
     t.string "identify_father"
     t.string "year_of_birth_father"
@@ -274,12 +272,13 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.string "number_phone"
     t.string "current_address"
     t.string "permanent_address"
+    t.boolean "check_info", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
   end
 
-  create_table "injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "injection_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "book_code"
     t.string "name_person_injected"
     t.datetime "date_of_birth"
@@ -292,7 +291,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["info_injection_book_id"], name: "index_injection_books_on_info_injection_book_id"
   end
 
-  create_table "injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "injection_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "injection_date"
     t.datetime "registration_date"
     t.string "injection_schedule_type"
@@ -300,7 +299,19 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "notifis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "vaccine_id"
+    t.bigint "injection_book_id"
+    t.datetime "opened_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_notifis_on_account_id"
+    t.index ["injection_book_id"], name: "index_notifis_on_injection_book_id"
+    t.index ["vaccine_id"], name: "index_notifis_on_vaccine_id"
+  end
+
+  create_table "number_injections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "age"
     t.integer "max_age"
     t.string "name"
@@ -310,11 +321,11 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_id"], name: "index_number_injections_on_vaccine_id"
   end
 
-  create_table "provinces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "provinces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "register_injection_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "register_injection_packages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "injection_book_id"
     t.bigint "vaccine_package_type_id"
     t.bigint "bill_id"
@@ -325,19 +336,19 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_package_type_id"], name: "index_register_injection_packages_on_vaccine_package_type_id"
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "vaccination_centers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "vaccination_centers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "code"
     t.string "address"
     t.string "number_phone"
@@ -345,7 +356,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "vaccine_distributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "vaccine_distributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "vaccine_id"
     t.bigint "vaccination_center_id"
     t.datetime "created_at", null: false
@@ -354,7 +365,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_id"], name: "index_vaccine_distributions_on_vaccine_id"
   end
 
-  create_table "vaccine_package_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "vaccine_package_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "content"
     t.string "code"
@@ -362,13 +373,13 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "vaccine_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "vaccine_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "vaccines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "code"
     t.string "name"
     t.string "manufacture"
@@ -392,7 +403,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["vaccine_type_id"], name: "index_vaccines_on_vaccine_type_id"
   end
 
-  create_table "wait_numbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "wait_numbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "doctor_id"
     t.integer "nurse_id"
     t.bigint "injection_book_id"
@@ -406,7 +417,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
     t.index ["injection_book_id"], name: "index_wait_numbers_on_injection_book_id"
   end
 
-  create_table "wards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "wards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.bigint "district_id"
     t.index ["district_id"], name: "index_wards_on_district_id"
@@ -432,7 +443,6 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
   add_foreign_key "detail_bills", "vaccine_package_types"
   add_foreign_key "detail_bills", "vaccines"
   add_foreign_key "detail_injection_books", "accounts"
-  add_foreign_key "detail_injection_books", "bills"
   add_foreign_key "detail_injection_books", "check_before_injections"
   add_foreign_key "detail_injection_books", "injection_books"
   add_foreign_key "detail_injection_books", "vaccination_centers"
@@ -446,6 +456,9 @@ ActiveRecord::Schema.define(version: 2020_07_17_021857) do
   add_foreign_key "import_vaccines", "accounts"
   add_foreign_key "import_vaccines", "vaccines"
   add_foreign_key "injection_books", "info_injection_books"
+  add_foreign_key "notifis", "accounts"
+  add_foreign_key "notifis", "injection_books"
+  add_foreign_key "notifis", "vaccines"
   add_foreign_key "number_injections", "vaccines"
   add_foreign_key "register_injection_packages", "bills"
   add_foreign_key "register_injection_packages", "injection_books"

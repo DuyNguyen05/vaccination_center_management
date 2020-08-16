@@ -1,12 +1,13 @@
 vi:
   activerecord:
     models:
-      appointment: Hóa đơn
+      appointment: Lịch hẹn
     attributes:
       appointment:
         book_code: Mã sổ tiêm
         registration_date: Lịch hẹn mong muốn
         vaccine: Thuốc tiêm
+        vaccine_id: Thuốc tiêm
         package: Gói tiêm
         injection_type: Hình thức tiêm 
         vaccination_center: Địa điểm tiêm chủng

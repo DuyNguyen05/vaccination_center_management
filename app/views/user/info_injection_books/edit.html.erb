@@ -155,7 +155,7 @@
               </fieldset>
             </div>
             <div class="col-xl-12 col-lg-12 ml-4 text-primary"><%= t(".permanent_address") %>:</div>
-            <%= f.fields_for :addresses, @info_injection_book.addresses.first do |addr| %>
+            <%= f.fields_for :addresses, @info_injection_book.addresses.build do |addr| %>
               <div class="row ml-2">
                 <div class="col-xl-4 col-lg-4">
                   <div class="form-group">
@@ -220,7 +220,7 @@
               </div>
             <% end %>
             <div class="col-xl-12 col-lg-12 ml-4 text-primary"><%= t(".current_address") %>: </div>
-            <%= f.fields_for :addresses,  @info_injection_book.addresses.last do |addr| %>
+            <%= f.fields_for :addresses,  @info_injection_book.addresses.build do |addr| %>
               <div class="row ml-2">
                 <div class="col-xl-4 col-lg-4">
                   <div class="form-group">

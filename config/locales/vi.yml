@@ -33,3 +33,11 @@ vi:
   paid_success: Thanh toán thành công.
   paid_error: Lỗi thanh toán, vui lòng thanh toán lại.
   not_found: Không tìm thấy dữ liệu.
+  vaccine:
+    born_yet: Dành cho trẻ sơ sinh
+    age_month: Dành cho trẻ %{age} tháng tuổi
+    age: Dành cho người từ %{year} tuổi trở lên
+  change_password_first_login: Bạn phải thay đổi mật khẩu cho lần đăng nhập đầu tiên. Vui lòng thay đổi mật khẩu và đăng nhập lại. 
+  change_password: Thay đổi mật khẩu 
+  new_password: Mật khẩu mới
+  password_confirmation: Mật khẩu xác nhận 

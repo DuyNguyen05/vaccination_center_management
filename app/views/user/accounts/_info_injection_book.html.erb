@@ -17,15 +17,15 @@
     </div>
   </div>
   <hr>
-  <div class="row mt-2">
+<!--   <div class="row mt-2">
     <div class="col-md-3">
-      <label><%= InfoInjectionBook.human_attribute_name("year_of_birth_father") %></label>
+      <label><%#= InfoInjectionBook.human_attribute_name("year_of_birth_father") %></label>
     </div>
     <div class="col-md-9">
-      <label><%= account.info_injection_book&.year_of_birth_father %></label>
+      <label><%#= account.info_injection_book&.year_of_birth_father %></label>
     </div>
   </div>
-  <hr>
+  <hr> -->
   <div class="row mt-2">
     <div class="col-md-3">
       <label><%= InfoInjectionBook.human_attribute_name("mother_name") %></label>
@@ -44,15 +44,15 @@
     </div>
   </div>
   <hr>
-  <div class="row mt-2">
+<!--   <div class="row mt-2">
     <div class="col-md-3">
-      <label><%= InfoInjectionBook.human_attribute_name("year_of_birth_mother") %></label>
+      <label><%#= InfoInjectionBook.human_attribute_name("year_of_birth_mother") %></label>
     </div>
     <div class="col-md-9">
-      <label><%= account.info_injection_book&.year_of_birth_mother %></label>
+      <label><%#= account.info_injection_book&.year_of_birth_mother %></label>
     </div>
   </div>
-  <hr>
+  <hr> -->
   <div class="row mt-2">
     <div class="col-md-3">
       <label><%= InfoInjectionBook.human_attribute_name("guardian_name") %></label>
@@ -71,12 +71,30 @@
     </div>
   </div>
   <hr>
-  <div class="row mt-2">
+<!--   <div class="row mt-2">
     <div class="col-md-3">
-      <label><%= InfoInjectionBook.human_attribute_name("year_of_birth_guardian") %></label>
+      <label><%#= InfoInjectionBook.human_attribute_name("year_of_birth_guardian") %></label>
     </div>
     <div class="col-md-9">
-      <label><%= account.info_injection_book&.year_of_birth_guardian %></label>
+      <label><%#= account.info_injection_book&.year_of_birth_guardian %></label>
+    </div>
+  </div>
+  <hr> -->
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <label><%= t(".current_address") %></label>
+    </div>
+    <div class="col-md-9">
+      <label><%= account.info_injection_book&.addresses&.first&.ext_current_address %></label>
+    </div>
+  </div>
+  <hr>
+   <div class="row mt-2">
+    <div class="col-md-3">
+      <label><%= t(".permanent_address") %></label>
+    </div>
+    <div class="col-md-9">
+      <label><%= account.info_injection_book&.addresses&.second&.ext_permanent_address %></label>
     </div>
   </div>
   <hr>

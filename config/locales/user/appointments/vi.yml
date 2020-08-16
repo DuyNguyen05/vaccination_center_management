@@ -8,3 +8,17 @@ vi:
         search: Tìm kiếm
         schedule_management: Quản lý thông tin đặt lịch
         schedule_list: Danh sách đặt lịch
+      new:
+        new_injection_schedule: Hẹn lịch tiêm 
+        book_code: Mã sổ tiêm (nếu có)
+        registration_date: Lịch hẹn mong muốn
+        injection_type: Chọn mũi tiêm
+        vaccine: Tiêm lẻ
+        package: Tiêm theo gói
+        vaccine_list: Danh mục các vắc xin
+        package_vaccine: Danh mục các gói tiêm
+        info_appointment: Thông tin lịch hẹn
+      create:
+        create: Tạo thành công
+      destroy:
+        destroy: Đã xóa

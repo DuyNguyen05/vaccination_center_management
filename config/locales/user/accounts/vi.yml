@@ -6,3 +6,6 @@ vi:
         # injection_registration_schedule: Đăng ký lịch tiêm
         edit_password: Đổi mật khẩu 
         injection_books: Danh sách sổ tiêm
+      info_injection_book:
+        permanent_address: Địa chỉ tạm trú
+        current_address: Địa chỉ thường trú

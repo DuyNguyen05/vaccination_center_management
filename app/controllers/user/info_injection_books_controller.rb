@@ -41,7 +41,7 @@ class User::InfoInjectionBooksController < User::UserController
   private
 
   def info_injection_book_params
-    params.require(:info_injection_book).permit :father_name, :identify_father, :email,
+    params.require(:info_injection_book).permit :father_name, :identify_father, :email, :check_info,
       :mother_name, :identify_mother, :number_phone, :guardian_name, :identify_guardian,
       injection_books_attributes: [:id, :name_person_injected, :date_of_birth,
         :place_of_birth, :gender, :_destroy],

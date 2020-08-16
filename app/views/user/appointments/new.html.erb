@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 text-center">
+        <h6 class="m-0 font-weight-bold text-primary text-uppercase">
+          <%= t(".new_injection_schedule") %>
+        </h6>
+      </div>
+      <div class="card-body">
+        <%= form_for [:user, @appointment], remote: true do |ap| %>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12">
+              <fieldset>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-left">
+                      <%= t(".book_code") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-user"></i>
+                          </span>
+                        </div>
+                        <%= ap.text_field :book_code, placeholder: t(".book_code"), class: "form-control bg-light border-1 small" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-left">
+                      <%= t(".registration_date") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <div class=" input-group-prepend">
+                          <span class="btn btn-info">
+                            <i class="fas fa-calendar"></i>
+                          </span>
+                        </div>
+                        <%= ap.date_field :registration_date, placeholder: t(".registration_date"), class: "form-control bg-light border-1 small date", require: true %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-md-4 text-left form-check-label">
+                      <%= t(".injection_type") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <label class="form-check-label">
+                          <div class=" input-group-prepend">
+                          </div>
+                          <select class="form-control" id="TypeOfConstruction">
+                            <option>Chọn</option>
+                            <option>Tiêm lẻ</option>
+                            <option>Tiêm gói</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group packageVaccine" style="display: none">
+                  <div class="row">
+                    <label class="col-md-4 text-left">
+                      <%= t(".select_package_vaccines")%>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <%= ap.select :vaccine_id, {}, {} , { class: "select_package_vaccines form-control bg-light border-1", data: { placeholder: t(".package_vaccine") } }%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group vaccine">
+                  <div class="row">
+                    <label class="col-md-4 text-left">
+                      <%= t(".vaccine") %>
+                    </label>
+                    <div class="col-md-8 inputGroupContainer">
+                      <div class="input-group">
+                        <%= ap.select :vaccine_id, {}, {} , { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".vaccine") } }%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= link_to t("button.cancel"), :back, class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") }%>
+            <%= ap.submit t("button.submit"), class: "btn btn-primary d-flex justify-content-center", data: { confirm: t("confirm.are_you_sure") } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
