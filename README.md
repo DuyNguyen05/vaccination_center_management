@@ -20,3 +20,7 @@ Run: cp .env_example .env
 
 * Debug in docker 
 - docker attach vaccination_center_management_web_1
+
+
+
+*docker-machine ip

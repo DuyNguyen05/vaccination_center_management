@@ -11,6 +11,7 @@
             </div>
             <%= form_with model: info_injection_book, class: "well form-horizontal" do |f| %>
               <%#= render "shared/error_message", resource: info_injection_book %>
+              <%= f.hidden_field :check_info, value: false %>
               <div class="card-body ml-5 mr-5">
                 <div class="row">
                   <div class="col-xl-12 col-lg-12">
@@ -112,7 +113,7 @@
                               </label>
                               <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
-                                  <%= ap.select :vaccine, {}, {} , { class: "select_package_vaccines form-control bg-light border-1", data: { placeholder: t(".package_vaccine") } }%>
+                                  <%= ap.select :vaccine_id, {}, {} , { class: "select_package_vaccines form-control bg-light border-1", data: { placeholder: t(".package_vaccine") } }%>
                                 </div>
                               </div>
                             </div>
@@ -124,7 +125,7 @@
                               </label>
                               <div class="col-md-8 inputGroupContainer">
                                 <div class="input-group">
-                                  <%= ap.select :vaccine, {}, {} , { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".vaccine") } }%>
+                                  <%= ap.select :vaccine_id, {}, {} , { class: "select_vaccines form-control bg-light border-1", data: { placeholder: t(".vaccine") } }%>
                                 </div>
                               </div>
                             </div>

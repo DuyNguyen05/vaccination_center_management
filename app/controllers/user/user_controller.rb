@@ -7,6 +7,8 @@ class User::UserController < ApplicationController
 
   before_action :authenticate_user_account!
   alias_method :current_user, :current_user_account
+  before_action :check_first_login
+
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   rescue_from ActiveRecord::RecordNotFound do
@@ -28,6 +30,15 @@ class User::UserController < ApplicationController
         flash[:alert] = t "errors.user_not_authorized"
         redirect_to request.referrer || user_root_path
       end
+    end
+  end
+
+  def check_first_login
+    if current_user_account.sign_in_count == 1
+      flash[:alert] = t "change_password_first_login"
+      redirect_to edit_user_account_registration_path
+    else
+      return
     end
   end
 end

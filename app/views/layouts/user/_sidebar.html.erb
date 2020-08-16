@@ -41,12 +41,8 @@
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header"><%= t(".administer_schedule") %></h6>
-        <a class="collapse-item" href="#">
-          <%= t(".new_injection_schedule") %>
-        </a>
-        <a class="collapse-item" href="#">
-          <%= t(".list_injection_schedule") %>
-        </a>
+        <%= link_to t(".new_injection_schedule"), new_user_appointment_path, class: "collapse-item" %>
+        <%= link_to t(".list_injection_schedule"), user_appointments_path, class: "collapse-item" %>
       </div>
     </div>
   </li>

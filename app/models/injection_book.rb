@@ -8,6 +8,7 @@ class InjectionBook < ApplicationRecord
   has_many :register_injection_packages, dependent: :destroy
   has_many :vaccine_package_types, through: :register_injection_packages, dependent: :destroy
   has_many :appointments, dependent: :destroy, foreign_key: :book_code
+  has_many :notifis
 
   accepts_nested_attributes_for :image, reject_if: proc {|attributes|
     attributes['image_link'].blank?}

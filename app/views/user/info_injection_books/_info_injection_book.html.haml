@@ -16,3 +16,5 @@
       = link_to t(".detail"), user_account_path(info_injection_book.account), class: "btn btn-primary btn-sm" 
       = link_to t(".edit"), edit_user_info_injection_book_path(info_injection_book), class: "btn btn-secondary btn-sm" 
       / = link_to user_info_injection_book_path(info_injection_book), class: "btn btn-basic btn-sm", method: :delete, data: { confirm: t("confirm.are_you_sure") } 
+      - if info_injection_book.check_info
+        %button.btn.btn-success.btn-sm= t(".checked")

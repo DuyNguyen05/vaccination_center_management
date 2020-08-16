@@ -39,6 +39,7 @@ vi:
       info_injection_book:
         detail: Chi tiết 
         edit: Chỉnh sửa
+        checked: Đã kiểm tra
       edit:
         edit_info_injection_books: Sửa thông tin bố mẹ của bé
         father_name: Họ và tên bố

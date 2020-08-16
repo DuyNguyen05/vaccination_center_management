@@ -1,5 +1,5 @@
 class Account < ApplicationRecord
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :registerable
 
   belongs_to :role, optional: true
   belongs_to :details_info, optional: true
@@ -9,6 +9,7 @@ class Account < ApplicationRecord
   has_many :doctor_rooms, class_name: "WaitNumber", foreign_key: :doctor_id, dependent: :destroy, inverse_of: false
   has_many :nurse_rooms, class_name: "WaitNumber", foreign_key: :nurse_id, dependent: :destroy, inverse_of: false
   has_many :injection_books, through: :doctor_rooms
+  has_many :notifis
 
   scope :filter_users, ->(query) do
     joins(:details_info).where("email LIKE :q OR user_code LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
@@ -52,5 +53,9 @@ class Account < ApplicationRecord
     else
       false
     end
+  end
+
+  def unviewed_notifications_count
+    Notifi.for_user(self.id)
   end
 end

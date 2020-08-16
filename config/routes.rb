@@ -1,11 +1,14 @@
+# require 'sidekiq/web'
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     namespace :user do
+      mount ActionCable.server => '/cable'
+      # mount Sidekiq::Web => '/sidekiq'
       root "homes#index"
       devise_for :accounts
       resources :injection_books
       resources :info_injection_books
-      resources :accounts, only: [:show]
+      resources :accounts
       resources :details_infos, only: [:new, :create]
       resources :detail_injection_books
       resources :vaccines, only: :index
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
       resources :bills
       get "/schedule", to: "injection_schedules#schedule"
       resources :appointments
+      resources :notifis, only: [:index, :update]
     end
     root "homes#index"
     resources :injection_schedules, only: :index

@@ -147,6 +147,14 @@ end
   InjectionBook.create!(name_person_injected: name_person_injected, date_of_birth: date_of_birth, place_of_birth: place_of_birth, info_injection_book_id: n+1, gender: "male")
 end
 
+50.times do |n|
+  doctor_id = Account.where(role: 5).first.id
+  cashier_id = Account.where(role: 4).first.id
+  nurse_id = Account.where(role: 4).second.id
+  DetailInjectionBook.create(injection_date: Time.now, react_after_injection: "AAAAAAAAAAAAAAA", time_after_injection: Time.now + 30*60, status: "step_5")
+  bill = Bill.create(creation_time: Time.now, doctor_id: doctor_id, cashier_id: cashier_id, nurse_id: nurse_id, payment_time: Time.now, injection_book_id: 1, total_money: 1200000)
+end
+
 require 'csv'
 
 Province.transaction do

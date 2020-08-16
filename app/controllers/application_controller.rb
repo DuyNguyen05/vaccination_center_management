@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -23,9 +24,18 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if params[:user_account].present?
-      user_root_path
+      if current_user_account.sign_in_count == 1
+        edit_user_account_registration_path
+      else
+        user_root_path
+      end
     else
       admin_root_path
     end
+  end
+
+  def configure_permitted_parameters
+    update_attrs = [:password, :password_confirmation, :current_password]
+    devise_parameter_sanitizer.permit :account_update, keys: update_attrs
   end
 end

@@ -10,15 +10,15 @@
       <div class="our-services container-fluid">
         <h7>SỐ MŨI TIÊM</h7>
         <hr class="sidebar-divider my-0 mb-3">
-        <div class="service-row row">
+        <div class="service-row">
           <% vaccine.number_injections.each do |number| %>
-            <li class="mb-2 ml-5"><%= number.name %></li>
+            <li class="mb-2 ml-5"><%= number.name %>: <%= age_for_vaccine number.age %> </li>
           <% end %>
         </div>
         <br>
         <h7>THÔNG TIN</h7>
         <hr class="sidebar-divider my-0 mb-3">
-        <p class="ml-2"><%= vaccine.content %></p>
+        <p class="ml-2"><%= vaccine.content&.html_safe %></p>
       </div>
     </div>
     <div class="modal-footer">

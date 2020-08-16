@@ -14,8 +14,8 @@ class InfoInjectionBooksController < ApplicationController
     respond_to do |format|
       if @injection_book.present?
         registration_date =  info_injection_book_params[:injection_books_attributes]["0"][:appointments_attributes]["0"][:registration_date]
-        vaccine = info_injection_book_params[:injection_books_attributes]["0"][:appointments_attributes]["0"][:vaccine]
-        @appointment = @injection_book.appointments.build registration_date: registration_date, vaccine: vaccine
+        vaccine_id = info_injection_book_params[:injection_books_attributes]["0"][:appointments_attributes]["0"][:vaccine_id]
+        @appointment = Appointment.new registration_date: registration_date, vaccine_id: vaccine_id, book_code: @injection_book.book_code
         @appointment.save
         format.js
       else
@@ -30,9 +30,9 @@ class InfoInjectionBooksController < ApplicationController
 
   def info_injection_book_params
     params.require(:info_injection_book).permit :father_name, :identify_father, :email,
-      :mother_name, :identify_mother, :number_phone, :guardian_name, :identify_guardian,
+      :mother_name, :identify_mother, :number_phone, :guardian_name, :identify_guardian, :check_info,
       injection_books_attributes: [:id, :name_person_injected, :date_of_birth, :place_of_birth, :gender, :_destroy,
-        appointments_attributes: [:id, :book_code, :registration_date, :vaccine, :injection_type, :vaccination_center]],
+        appointments_attributes: [:id, :book_code, :registration_date, :vaccine_id, :injection_type, :vaccination_center]],
       addresses_attributes: [:id, :province, :district, :ward, :hometown, :current_address, :permanent_address]
   end
 
