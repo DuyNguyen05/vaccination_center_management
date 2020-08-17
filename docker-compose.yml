@@ -4,16 +4,16 @@ networks:
   vaccination:
 
 services:
-  # redis:
-  #   image: redis:5-alpine
-  #   container_name: vaccination_redis
-  #   command: redis-server
-  #   networks:
-  #     - vaccination
-  #   ports:
-  #     - 6379:6379
+  redis:
+    image: redis:5-alpine
+    container_name: vaccination_redis
+    command: redis-server
+    networks:
+      - vaccination
+    ports:
+      - 6379:6379
   # esearch:
-  #   build: 
+  #   build:
   #     context: .
   #     dockerfile: Dockerfile_ES
   #   container_name: vaccination_esearch
@@ -39,7 +39,7 @@ services:
     networks:
       - vaccination
   # sidekiq: &sidekiq
-  #   build: 
+  #   build:
   #     context: .
   #     dockerfile: Dockerfile
   #   container_name: vaccination_sidekiq

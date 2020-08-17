@@ -10,6 +10,14 @@ class User::InfoInjectionBooksController < User::UserController
   end
 
   def update
+    if params[:check_info].present?
+      @info_injection_book.update check_info: true unless @info_injection_book.check_info
+      respond_to do |format|
+        format.js
+      end
+      return
+    end
+
     if @info_injection_book.update info_injection_book_params
       flash[:success] = t(".updated")
       redirect_to user_info_injection_books_path
@@ -45,7 +53,7 @@ class User::InfoInjectionBooksController < User::UserController
       :mother_name, :identify_mother, :number_phone, :guardian_name, :identify_guardian,
       injection_books_attributes: [:id, :name_person_injected, :date_of_birth,
         :place_of_birth, :gender, :_destroy],
-      addresses_attributes: [:id, :province, :district, :ward, :hometown, :current_address, :permanent_address]
+      addresses_attributes: [:id, :province_id, :district_id, :ward_id, :hometown, :current_address, :permanent_address, :_destroy]
   end
 
   def load_info_injection_book

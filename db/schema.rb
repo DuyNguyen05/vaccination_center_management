@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2020_08_06_142655) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "info_injection_book_id"
-    t.string "province"
-    t.string "district"
-    t.string "ward"
+    t.integer "province_id"
+    t.integer "district_id"
+    t.integer "ward_id"
     t.string "current_address"
     t.string "permanent_address"
     t.string "hometown"

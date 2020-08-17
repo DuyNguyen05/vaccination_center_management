@@ -33,7 +33,7 @@ class InfoInjectionBooksController < ApplicationController
       :mother_name, :identify_mother, :number_phone, :guardian_name, :identify_guardian, :check_info,
       injection_books_attributes: [:id, :name_person_injected, :date_of_birth, :place_of_birth, :gender, :_destroy,
         appointments_attributes: [:id, :book_code, :registration_date, :vaccine_id, :injection_type, :vaccination_center]],
-      addresses_attributes: [:id, :province, :district, :ward, :hometown, :current_address, :permanent_address]
+      addresses_attributes: [:id, :province_id, :district_id, :ward_id, :hometown, :current_address, :permanent_address]
   end
 
   def find_injection_book

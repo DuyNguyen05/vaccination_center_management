@@ -38,6 +38,9 @@ gem "thor", "~> 0.19.1"
 gem "enumerize"
 gem "nested_form"
 gem "nested_form_fields"
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
 gem 'whenever', require: false
 
 group :development, :test do

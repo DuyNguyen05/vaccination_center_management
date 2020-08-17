@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Xin chào ban!</h1>
+    <p>
+      Bạn vừa đăng ký sổ tiêm tại trung tâm tiêm chủng Quốc Tế.
+    </p>
+    <p>
+      Đây là tài khoản đăng nhập của bạn.
+    </p>
+    <p>Tài khoản: <%= @user.user_code %></p>
+    <p>Mật khẩu: <%= ENV["INIT_ACCOUNT_PASSWORD"] %> </p>
+    <p> Vui lòng đăng nhập theo đường link sau <%= link_to "Đăng nhập", user_root_url %> và thay đổi mật khẩu để sử dụng ứng dụng!</p>
+    <p>Cảm ơn bạn đã sử dụng dịch vụ!</p>
+  </body>
+</html>

@@ -20,10 +20,10 @@ class InfoInjectionBook < ApplicationRecord
   validate :format_identify_guardian, if: :identify_guardian
   validate :format_identify_father, if: :identify_father
   validate :format_identify_mother, if: :identify_mother
-  
+
   scope :newest, -> { order(created_at: :desc) }
   scope :filter_info_injection_books, ->(query) do
-    joins(:account).where("accounts.user_code LIKE :q OR identify_father LIKE :q OR identify_mother LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
+    joins(:account).where("accounts.user_code LIKE :q OR identify_guardian LIKE :q OR guardian_name LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
   end
 
   private
@@ -33,7 +33,7 @@ class InfoInjectionBook < ApplicationRecord
   end
 
   def format_phone
-    return if number_phone.match(Settings.active_record.info_injection_book.regex.number_phone) 
+    return if number_phone.match(Settings.active_record.info_injection_book.regex.number_phone)
     errors.add(:number_phone, :invalid)
   end
 

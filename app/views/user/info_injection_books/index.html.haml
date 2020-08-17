@@ -35,13 +35,13 @@
             %table.table.table-bordered.table-hover
               %thead
                 %tr
-                  %th= Account.human_attribute_name("user_code")
-                  %th= InfoInjectionBook.human_attribute_name("guardian_name")
-                  %th= InfoInjectionBook.human_attribute_name("father_name")
-                  %th= InfoInjectionBook.human_attribute_name("mother_name")
-                  %th= InfoInjectionBook.human_attribute_name("number_phone")
-                  %th= InfoInjectionBook.human_attribute_name("email")
-                  %th= t("action")
+                  %th.text-center{:scope => "col-1"}= Account.human_attribute_name("user_code")
+                  %th.text-center{:scope => "col-2"}= InfoInjectionBook.human_attribute_name("guardian_name")
+                  / %th.text-center{:scope => "col-2"}= InfoInjectionBook.human_attribute_name("father_name")
+                  / %th.text-center{:scope => "col-2"}= InfoInjectionBook.human_attribute_name("mother_name")
+                  %th.text-center{:scope => "col-2"}= InfoInjectionBook.human_attribute_name("number_phone")
+                  %th.text-center{:scope => "col-2"}= InfoInjectionBook.human_attribute_name("email")
+                  %th.text-center{:scope => "col-1"}= t("action")
               %tbody#info_injection_book
                 = render "info_injection_book", info_injection_books: @info_injection_books
             = paginate @info_injection_books, theme: "twitter-bootstrap-4"

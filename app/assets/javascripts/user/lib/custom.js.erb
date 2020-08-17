@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(".injection_book").on("click", function(e){
     var injectionBookPath = '<%= Rails.application.routes.url_helpers.user_injection_books_path %>/' + this.id;
-    location.replace(injectionBookPath)
+    window.location = injectionBookPath
   });
 
   $('.input-file').on('change',function(){

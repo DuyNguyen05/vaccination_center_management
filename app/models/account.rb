@@ -1,6 +1,8 @@
 class Account < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :registerable
 
+  after_create :send_email
+
   belongs_to :role, optional: true
   belongs_to :details_info, optional: true
   belongs_to :info_injection_book, optional: true
@@ -49,7 +51,7 @@ class Account < ApplicationRecord
 
   def online?
     if current_sign_in_at.present?
-      last_sign_out_at.present? ? current_sign_in_at > last_sign_out_at : true
+      remember_created_at.blank? ? false : true
     else
       false
     end
@@ -57,5 +59,9 @@ class Account < ApplicationRecord
 
   def unviewed_notifications_count
     Notifi.for_user(self.id)
+  end
+
+  def send_email
+    InfoAccountMailer.send_email(self).deliver if info_injection_book.check_info
   end
 end
