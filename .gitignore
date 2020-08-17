@@ -48,3 +48,6 @@ build-iPhoneSimulator/
 log/*
 log/*
 config/database.yml
+/config/master.key
+
+/config/credentials.yml.enc
