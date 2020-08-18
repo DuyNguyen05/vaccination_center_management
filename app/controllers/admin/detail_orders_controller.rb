@@ -14,7 +14,6 @@ class Admin::DetailOrdersController < Admin::AdminController
   def create
     @company = Company.find(params[:company_id])
     @order = @company.orders.new order_params
-    byebug
     if @order.save
       flash[:success] = t(".created")
       redirect_to admin_company_path(@company)

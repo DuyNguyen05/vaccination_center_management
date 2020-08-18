@@ -8,7 +8,7 @@ class Admin::DetailsInfosController < Admin::AdminController
   def create
     @details_info = DetailsInfo.new details_info_params
     if @details_info.save
-      CreateAccountService.new(details_info_id: @details_info.id).create_account(params[:details_info][:admin])
+      CreateAccountService.new(details_info_id: @details_info.id).create_account
       redirect_to admin_accounts_path
     else
       render :new

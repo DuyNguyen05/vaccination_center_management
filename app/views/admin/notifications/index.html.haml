@@ -21,9 +21,9 @@
                 %tr
                   %th.text-center Thông báo của bạn
               %tbody#notifications
-                - @notifications.each do |notification|
+                - @notificationss.each do |notification|
                   %tr
                     %td
                       %div= notification.event
                       %div.small= time_ago_in_words(notification.created_at)
-            = paginate @notifications, theme: "twitter-bootstrap-4"
+            = paginate @notificationss, theme: "twitter-bootstrap-4"

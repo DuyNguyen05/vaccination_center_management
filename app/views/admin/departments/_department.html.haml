@@ -1,10 +1,10 @@
 - departments.each do |department|
-  %tr.text-center{id: "department#{department.id}", "data-link": "#{admin_department_path(department)}"}
-    %td
+  %tr.text-center{id: "department#{department.id}"}
+    %td{"data-link": "#{admin_department_path(department)}"}
       = department.id
-    %td
+    %td{"data-link": "#{admin_department_path(department)}"}
       = link_to department.name, admin_department_path(department)
-    %td
+    %td{"data-link": "#{admin_department_path(department)}"}
       = department.detail
     %td
       = link_to edit_admin_department_path(department, format: "js"), remote: true, class: "btn btn-primary mr-3" do

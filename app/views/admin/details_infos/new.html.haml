@@ -111,13 +111,13 @@
                 .form-group
                   .row
                     %label.col-md-4.text-left.required
-                      = t(".vaccination_center")
+                      = t(".role")
                     .col-md-8.inputGroupContainer
                       .input-group
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-hospital-alt
-                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1"
+                        = f.select :role, options_for_select(Role.order(id: :desc).limit(3).pluck(:role, :id)), {}, class: "form-control bg-light border-1"
             .col-xl-6.col-lg-6
               %fieldset
                 .form-group

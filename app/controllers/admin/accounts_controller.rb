@@ -2,7 +2,8 @@ class Admin::AccountsController < Admin::AdminController
   before_action :set_account, except: [:index, :new, :create]
 
   def index
-    @accounts = Account.includes(:details_info).filter_users(params[:query]).page(params[:page])
+    @accounts = Account.where.not("role_id = 1 OR role_id = 3").order(id: :desc)
+    @accounts = @accounts.includes(:details_info).filter_users(params[:query]).page(params[:page])
   end
 
   def show

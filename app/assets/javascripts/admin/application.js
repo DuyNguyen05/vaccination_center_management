@@ -62,7 +62,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $("tr[data-link]").click(function() {
+  $("td[data-link]").click(function() {
     window.location = $(this).data("link")
   })
 });

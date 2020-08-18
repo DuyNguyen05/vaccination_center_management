@@ -24,4 +24,6 @@ class Order < ApplicationRecord
     self.code = order_code
     self.save!
   end
+
+
 end

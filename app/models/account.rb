@@ -18,6 +18,8 @@ class Account < ApplicationRecord
     joins(:accounts).where("accounts.user_code LIKE :q OR email LIKE :q OR identify_father LIKE :q OR identify_mother LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
   end
 
+  
+
   class << self
 
     def all_data_user

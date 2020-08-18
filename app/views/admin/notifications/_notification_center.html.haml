@@ -5,5 +5,5 @@
   %ul.dropdown-menu.dropdown-list.dropdown-menu.dropdown-menu-right.shadow.pd-0
     .dropdown-header.text-center THÔNG BÁO
     #notificationList.dropdown-body.d-flex.flex-column
-      = render notifications
+      = render notifications, notifications: notifications
     .dropdown-footer= link_to "Xem tất cả", admin_notifications_path

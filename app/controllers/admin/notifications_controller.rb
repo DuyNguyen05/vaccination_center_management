@@ -2,9 +2,9 @@ class Admin::NotificationsController < Admin::AdminController
 
   def index
     if params[:unread].present?
-      @notifications = Notification.unread.order(id: :desc).page(params[:page])
+      @notificationss = Notification.unread.order(id: :desc).page(params[:page])
     else
-      @notifications = Notification.order(id: :desc).page(params[:page])
+      @notificationss = Notification.order(id: :desc).page(params[:page])
     end
   end
 
