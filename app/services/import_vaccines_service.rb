@@ -3,7 +3,7 @@ require "roo"
 
 class ImportVaccinesService
 
-  PARAMS_VACCINE = ["code", "name", "manufacture", "content", "expiry_date", "quantity", "saleprice", "tag", "company_code", "unit", "dosage", "entry_price"].freeze
+  PARAMS_VACCINE = ["name", "manufacture", "content", "expiry_date", "quantity", "saleprice", "tag", "company_code", "unit", "dosage", "entry_price"].freeze
   class << self
     def perform(file, user)
       data = open_file file

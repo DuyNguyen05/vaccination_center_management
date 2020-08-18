@@ -1,6 +1,9 @@
 class Vaccine < ApplicationRecord
   extend Enumerize
-  belongs_to :vaccine_type, optional: true
+
+  after_create :generate_vaccine_code
+
+  # belongs_to :vaccine_type, optional: true
   belongs_to :company, class_name: Company.name, foreign_key: :company_code
   has_many :detail_injection_books
   has_many :injection_books, through: :detail_injection_books
@@ -22,7 +25,7 @@ class Vaccine < ApplicationRecord
     where("code LIKE :q OR name LIKE :q", q: "%#{params}%") if params.present?
   end
 
-  validates :code, presence: true, uniqueness: true
+  # validates :code, presence: true, uniqueness: true
   validates :manufacture, presence: true
   # validates :content, presence: true
   validates :expiry_date, presence: true
@@ -57,5 +60,22 @@ class Vaccine < ApplicationRecord
       product = month.values
       data << {"date" => date, "product" => product}
     end
+  end
+
+  private
+
+  def generate_vaccine_code
+    source = (0..9).to_a
+    vaccine_code = ""
+    8.times{ vaccine_code += source[rand(source.size)].to_s }
+    vaccine = Vaccine.find_by code: vaccine_code
+    while vaccine.present? do
+      vaccine_code = ""
+      8.times{ vaccine_code += source[rand(source.size)].to_s }
+      vaccine = Vaccine.find_by code: vaccine_code
+    end
+    vaccine_code
+    self.code = vaccine_code
+    self.save!
   end
 end

@@ -12,10 +12,16 @@ class Order < ApplicationRecord
 
   def generate_order_code
     source = (0..9).to_a
-    code = "ORDER-"
-    8.times{ code += source[rand(source.size)].to_s }
-    self.code = code
+    order_code = "ORDER-"
+    8.times{ order_code += source[rand(source.size)].to_s }
+    order = Order.find_by code: order_code
+    while order.present? do
+      order_code = "ORDER-"
+      8.times{ order_code += source[rand(source.size)].to_s }
+      order = Order.find_by code: order_code
+    end
+    order_code
+    self.code = order_code
     self.save!
   end
-
 end
