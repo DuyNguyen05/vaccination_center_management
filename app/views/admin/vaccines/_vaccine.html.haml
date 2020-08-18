@@ -1,5 +1,5 @@
 - vaccines.each do |vaccine|
-  %tr.text-center{id: "vaccine#{vaccine.id}"}
+  %tr.text-center{id: "vaccine#{vaccine.id}", "data-link": "#{admin_vaccine_path(vaccine)}"}
     %td= link_to "#{vaccine.code}", admin_vaccine_path(vaccine)
     %td= vaccine.name
     %td= vaccine.manufacture

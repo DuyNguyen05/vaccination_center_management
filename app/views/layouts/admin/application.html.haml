@@ -7,8 +7,8 @@
     = csrf_meta_tags
     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
 
-  %body
-    = render "layouts/admin/header"
+  %body.sb-nav-fixed
+    = render "layouts/admin/header", notifications: @notifications
     #layoutSidenav
       = render "layouts/admin/sidebar"
       #layoutSidenav_content
