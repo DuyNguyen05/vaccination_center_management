@@ -4,7 +4,9 @@ vi:
       deleted: Xóa Thành Công
     update:
       updated: Cập Nhật Thành Công
+    create:
+        created: Thành Công
   time:
     formats:
-      date_month_year_concise: "%d-%m-%Y"
+      date_month_year_concise: "%d/%m/%Y"
       time_date_month_year_concise: "%k:%M %d-%m-%Y"

@@ -13,11 +13,11 @@
             %h6.font-medium
               = @account.details_info.first_name
               = @account.details_info.last_name
-              %span= @account.role_id
+              -# %span= @account.role_id
             %span.m-b-15.d-block
               = form_for [:admin, @account], method: :patch, value: @account.id do |f|
                 .form-group
-                  = f.select :role_id, options_for_select([["admin", 1],["staff", 4]], @account.role_id), {}, { class: "form-control", id: "sel1", data: {value: f.object.role_id} }
+                  = f.select :role_id, options_for_select([["staff", 4], ["doctor", 5], ["nurse", 6]], @account.role_id), {}, { class: "form-control", id: "sel1", data: {value: f.object.role_id} }
           .col-lg-9
             %ul.list-style-none
               .row

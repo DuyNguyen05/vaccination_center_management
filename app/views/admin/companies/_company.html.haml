@@ -1,5 +1,5 @@
 - companies.each do |company|
-  %tr.text-center.company_id{id: "#{company.id}"}
+  %tr.text-center{id: "company#{company.id}"}
     %td{"data-link": "#{admin_company_path(company)}"}= company.company_code
     %td{"data-link": "#{admin_company_path(company)}"}= link_to company.name, admin_company_path(company)
     %td{"data-link": "#{admin_company_path(company)}"}= company.address

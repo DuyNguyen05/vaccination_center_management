@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h3
+      Chào mừng bạn #{@staff.details_info.first_name}, đã trở thành nhân viên của Trung tâm
+    %p
+      Thông tin tài khoản đăng nhập của bạn
+    %p Tài khoản: #{@user_code}
+    %p Mật khẩu: #{@password}
+    %p
+      Vui lòng đăng nhập theo đường link sau #{link_to "Đăng nhập", user_root_url} và thay đổi mật khẩu để sử dụng ứng dụng!
+    %p Chúc bạn một ngày tốt lành
+    %p Trân Trọng,

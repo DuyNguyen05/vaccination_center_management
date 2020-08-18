@@ -8,9 +8,9 @@
           %span{"aria-hidden" => "true"} ×
       .modal-body
         = form_with model: [:admin, vaccine], method: :patch do |f|
-          .form-group
-            = f.label Vaccine.human_attribute_name(:code)
-            = f.text_field :code, class: "form-control"
+          -# .form-group
+          -#   = f.label Vaccine.human_attribute_name(:code)
+          -#   = f.text_field :code, class: "form-control"
           .form-group
             = f.label Vaccine.human_attribute_name(:name)
             = f.text_field :name, class: "form-control"
@@ -23,7 +23,7 @@
           .form-group
             = f.label Vaccine.human_attribute_name(:expiry_date)
             = f.date_field :expiry_date, class: "form-control"
-          .form-group
-            = f.label Vaccine.human_attribute_name(:quantity)
-            = f.number_field :quantity, class: "form-control", min: 0
+          -# .form-group
+          -#   = f.label Vaccine.human_attribute_name(:quantity)
+          -#   = f.number_field :quantity, class: "form-control", min: 0
           = f.submit t(".submit"), class: "btn btn-primary"

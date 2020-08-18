@@ -1,7 +1,7 @@
 class Vaccine < ApplicationRecord
   extend Enumerize
 
-  after_create :generate_vaccine_code
+  # after_create :generate_vaccine_code
 
   # belongs_to :vaccine_type, optional: true
   belongs_to :company, class_name: Company.name, foreign_key: :company_code

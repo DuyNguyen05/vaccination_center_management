@@ -13,5 +13,5 @@
             = f.select :vaccine_id, {}, {},class: "form-control", id: "detail-vaccine-package"
           .form-group
             = f.label DetailVaccinePackage.human_attribute_name(:total_injections)
-            = f.number_field :total_injections, class: "form-control"
+            = f.number_field :total_injections, class: "form-control", min: 0
           = f.submit t(".submit"), class: "btn btn-primary"

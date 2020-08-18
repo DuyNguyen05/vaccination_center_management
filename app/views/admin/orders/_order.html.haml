@@ -7,7 +7,7 @@
     %td.text-center{"data-link": "#{admin_order_path(order.id, company_id: @company.id)}"}
       = order.company.name
     %td.text-center{"data-link": "#{admin_order_path(order.id, company_id: @company.id)}"}
-      = l(order.created_at, format: :time_date_month_year_concise)
+      = l(order.created_at.localtime, format: :time_date_month_year_concise)
     %td.text-center
       = link_to admin_order_path(order, company_id: @company.id), method: :delete, data: { confirm: t("confirm.are_you_sure")}, remote: true, class: "btn btn-danger" do
         %i.fa.fa-trash{"aria-hidden" => "true"}

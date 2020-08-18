@@ -19,7 +19,7 @@ class Admin::DetailsInfosController < Admin::AdminController
 
   def update
     if @details_info.update details_info_params
-      flash[:success] = t("updated")
+      flash[:success] = t("admin.update.updated")
       redirect_to admin_account_path(@details_info.account)
     else
       render :edit

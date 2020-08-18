@@ -22,10 +22,39 @@ class Admin::DetailOrdersController < Admin::AdminController
     end
   end
 
+  def edit
+    # @vaccines = Vaccine.pluck(:code, :id)
+    @detail_order = DetailOrder.find(params[:id])
+    @company = @detail_order.order.company
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    respond_to do |format|
+      @detail_order = DetailOrder.find(params[:id])
+      if @detail_order.update detail_order_params
+        @order = Order.find(params[:order_id])
+        @detail_orders = @order.detail_orders.page(params[:page])
+        format.js
+      else
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    respond_to do |format|
+      @detail_order.destroy
+      format.js
+    end
+  end
+
   private
 
-  def order_params
-    params.require(:order).permit(:account_id, :company_id, :vaccine_id, :quantity)
+  def detail_order_params
+    params.require(:detail_order).permit(:account_id, :company_id, :vaccine_id, :quantity)
   end
 
   def set_company

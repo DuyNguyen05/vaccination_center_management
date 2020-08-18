@@ -2,5 +2,5 @@
   %tr.text-center{id: "bill#{bill.id}"}
     %td= bill.id
     %td= link_to bill.injection_book_id, admin_injection_book_path(bill.injection_book_id)
-    %td= l(bill.created_at, format: :date_month_year_concise)
+    %td= l(bill.created_at.localtime, format: :date_month_year_concise)
     %td= bill.account_id

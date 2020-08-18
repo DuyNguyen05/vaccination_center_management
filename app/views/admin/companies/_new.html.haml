@@ -9,9 +9,6 @@
       .modal-body
         = form_with model: [:admin, @company] do |f|
           .form-group
-            = f.label Company.human_attribute_name(:company_code)
-            = f.text_field :company_code, class: "form-control"
-          .form-group
             = f.label Company.human_attribute_name(:name)
             = f.text_field :name, class: "form-control"
           .form-group
