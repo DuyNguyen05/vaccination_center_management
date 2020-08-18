@@ -1,6 +1,6 @@
 - accounts.each do |account|
   - if account.details_info.present?
-    %tr
+    %tr{"data-link": "#{admin_account_path(account)}"}
       %td
         = link_to "#{account.user_code}", admin_account_path(account)
       %td

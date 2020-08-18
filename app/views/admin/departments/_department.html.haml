@@ -1,5 +1,5 @@
 - departments.each do |department|
-  %tr.text-center{id: "department#{department.id}"}
+  %tr.text-center{id: "department#{department.id}", "data-link": "#{admin_department_path(department)}"}
     %td
       = department.id
     %td

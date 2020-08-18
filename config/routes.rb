@@ -53,6 +53,8 @@ Rails.application.routes.draw do
       resources :bills
       resources :notifications
 
+      patch "/notifications/update_all", to: "notifications#update_all"
+
       mount ActionCable.server => '/cable'
     end
   end

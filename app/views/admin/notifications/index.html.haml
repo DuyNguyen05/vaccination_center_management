@@ -12,7 +12,8 @@
               = t(".notification_list")
             .col-md-6.text-right
               = link_to "Thông Báo Chưa Đọc", admin_notifications_path(unread: 1), class: 'btn btn-success', method: :get
-              = link_to "Tất Cả Thông Báo ", admin_notifications_path, class: 'btn btn-primary', method: :get
+              = link_to "Tất Cả Thông Báo", admin_notifications_path, class: 'btn btn-primary', method: :get
+              = link_to "Đánh Dấu Tất Cả Là Đã Đọc", admin_notifications_update_all_path(update_all: 1), class: 'btn btn-warning', method: :patch
         .card-body
           .table-responsive
             %table.table.table-bordered.table-hover
