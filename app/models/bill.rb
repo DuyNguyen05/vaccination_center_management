@@ -13,13 +13,23 @@ class Bill < ApplicationRecord
   accepts_nested_attributes_for :detail_bills, allow_destroy: true
 
   scope :newest, -> {order created_at: :desc}
+  scope :filter_bills, ->(query) do
+    where("code LIKE :q", q: "%#{query}%") if query.present?
+  end
 
   private
 
   def generate_bill_code
     source = (0..9).to_a
-    bill_code = "BI"
+    bill_code = "BILL"
     8.times{ bill_code += source[rand(source.size)].to_s }
+    bill = Bill.find_by code: bill_code
+    while bill.present? do
+      bill_code = "BILL"
+      8.times{ bill_code += source[rand(source.size)].to_s }
+      bill = Bill.find_by code: bill_code
+    end
+    bill_code
     self.code = bill_code
     self.save!
   end

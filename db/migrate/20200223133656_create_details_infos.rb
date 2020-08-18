@@ -16,6 +16,7 @@ class CreateDetailsInfos < ActiveRecord::Migration[5.2]
       t.string :nationality
       t.string :gender
       t.string :tax_code
+      t.boolean :check_info, default: true
       t.references :vaccination_center, foreign_key: true
       t.references :department, foreign_key: true
 

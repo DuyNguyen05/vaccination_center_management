@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'wicked_pdf'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -17,6 +18,7 @@ module VaccinationCenterManagement
     config.action_view.field_error_proc = Proc.new { |html_tag, instance|
       html_tag
     }
+    config.middleware.use WickedPdf::Middleware
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

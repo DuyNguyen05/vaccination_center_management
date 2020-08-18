@@ -222,6 +222,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_142655) do
     t.string "nationality"
     t.string "gender"
     t.string "tax_code"
+    t.boolean "check_info", default: true
     t.bigint "vaccination_center_id"
     t.bigint "department_id"
     t.datetime "created_at", null: false
@@ -234,10 +235,6 @@ ActiveRecord::Schema.define(version: 2020_08_06_142655) do
     t.string "name"
     t.bigint "province_id"
     t.index ["province_id"], name: "index_districts_on_province_id"
-  end
-
-  create_table "form_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "content"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -343,7 +340,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_142655) do
   end
 
   create_table "templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "content"
+    t.text "content", limit: 4294967295
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

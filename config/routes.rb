@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :wards, only: :index
       resources :wait_numbers
       resources :bills
+      get "/export_bill", to: "bills#export_bill"
       get "/schedule", to: "injection_schedules#schedule"
       resources :appointments
       resources :notifis, only: [:index, :update]

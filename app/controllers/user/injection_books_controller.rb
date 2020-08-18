@@ -4,9 +4,9 @@ class User::InjectionBooksController < User::UserController
 
   def index
     if current_user_account.is_user?
-      @injection_books = current_user_account.info_injection_book.injection_books.newest.filter_injection_books(params[:query]).page(params[:page])
+      @injection_books = current_user_account.info_injection_book.injection_books.filter_injection_books(params[:query]).page(params[:page])
     else
-      @injection_books = InjectionBook.newest.filter_injection_books(params[:query]).page(params[:page])
+      @injection_books = InjectionBook.filter_injection_books(params[:query]).page(params[:page])
       respond_to do |format|
         format.html
         format.json { render json: { injection_books: @injection_books.as_json(only: [:name_person_injected, :id]) } }

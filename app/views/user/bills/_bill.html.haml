@@ -13,5 +13,5 @@
     %td
       = bill&.cashier&.details_info&.full_name
     %td
-      = link_to t(".print_invoice"), "#", class: "btn btn-secondary btn-sm", data: { confirm: t("confirm.are_you_sure") }
+      = link_to t(".print_invoice"), user_export_bill_path(id: bill.id), remote: :true, class: "btn btn-secondary btn-sm", data: { confirm: t("confirm.are_you_sure") }
       = link_to t(".view"), user_bill_path(bill), class: "btn btn-primary btn-sm", data: { confirm: t("confirm.are_you_sure") }

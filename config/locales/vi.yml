@@ -37,7 +37,9 @@ vi:
     born_yet: Dành cho trẻ sơ sinh
     age_month: Dành cho trẻ %{age} tháng tuổi
     age: Dành cho người từ %{year} tuổi trở lên
-  change_password_first_login: Bạn phải thay đổi mật khẩu cho lần đăng nhập đầu tiên. Vui lòng thay đổi mật khẩu và đăng nhập lại. 
-  change_password: Thay đổi mật khẩu 
+  change_password_first_login: Bạn phải thay đổi mật khẩu cho lần đăng nhập đầu tiên. Vui lòng thay đổi mật khẩu và đăng nhập lại.
+  change_password: Thay đổi mật khẩu
   new_password: Mật khẩu mới
-  password_confirmation: Mật khẩu xác nhận 
+  password_confirmation: Mật khẩu xác nhận
+  export_error: Lỗi xuất hóa đơn
+  export_success: Xuất hóa đơn thành công!

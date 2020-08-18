@@ -62,6 +62,6 @@ class Account < ApplicationRecord
   end
 
   def send_email
-    InfoAccountMailer.send_email(self).deliver if info_injection_book.check_info
+    InfoAccountMailer.send_email(self).deliver if info_injection_book&.check_info || details_info&.check_info
   end
 end

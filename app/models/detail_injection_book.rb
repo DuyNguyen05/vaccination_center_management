@@ -67,7 +67,7 @@ class DetailInjectionBook < ApplicationRecord
 
   def format_react_after_injection
     unless !last_step?
-      return if time_after_injection  <= Time.now
+      return if time_after_injection  >= Time.now
       errors.add(:react_after_injection, I18n.t("errors.messages.time_invalid"))
     end
   end

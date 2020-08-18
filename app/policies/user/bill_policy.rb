@@ -1,6 +1,6 @@
 class User::BillPolicy < ApplicationPolicy
   def index?
-    user.is_staff? 
+    user.is_staff?
   end
 
   def new?
@@ -20,6 +20,10 @@ class User::BillPolicy < ApplicationPolicy
   end
 
   def update?
+    index?
+  end
+
+  def export_bill?
     index?
   end
 end

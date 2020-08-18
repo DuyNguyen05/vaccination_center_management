@@ -81,7 +81,7 @@
                           <%= t(".total")%>:
                         </p>
         <!--                 <p>
-                          <%#= t(".tax")%>: 
+                          <%#= t(".tax")%>:
                         </p> -->
                       </td>
                       <td> &nbsp; </td>
@@ -135,7 +135,7 @@
         <div class="text-center mt-5">
           <%#= form.submit 'Hủy', class: "previous action-button-previous btn btn-danger", name: "save_draft", data: { confirm: t(".confirm.are_you_sure") } if @detail_injection_book.second_step? %>
           <%#= form.submit 'Quay lại', class: "previous action-button-previous btn btn-warning", name: "back_button" unless @detail_injection_book.second_step? || @detail_injection_book.last_step? %>
-          <%= link_to t(".print_invoice"), "#", class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") } %>
+          <%= link_to t(".print_invoice"), user_export_bill_path(id: @bill.id), remote: :true, class: "btn btn-secondary", data: { confirm: t("confirm.are_you_sure") } %>
           <%= link_to t(".cash"), user_bill_path(id: @bill.id), method: :patch, remote: :true, class: "cash-button btn btn-success", data: { confirm: t("confirm.are_you_sure") } if @bill.detail_injection_book.third_step? %>
         </div>
       </div>
