@@ -32,7 +32,7 @@
         .col-8= @vaccine.quantity
       .row.mt-3
         .col-4=  Vaccine.human_attribute_name(:company_code)
-        .col-8= @vaccine.company_code
+        .col-8= link_to @vaccine.company_code, admin_company_path(@vaccine.company.id)
       .row.mt-3
         .col-4=  Vaccine.human_attribute_name(:created_at)
         .col-8= l(@vaccine.created_at, format: :date_month_year_concise)

@@ -30,16 +30,16 @@
                   %th.text-center{:scope => "col"}= DetailOrder.human_attribute_name("code")
                   %th.text-center{:scope => "col"}= DetailOrder.human_attribute_name("vaccine_name")
                   %th.text-center{:scope => "col"}= DetailOrder.human_attribute_name("quantity")
-                  %th.text-center
-              %tbody
+                  -# %th.text-center
+              %tbody#detail_orders
                 - @detail_orders.each do |detail_order|
                   %tr.text-center{id: "detail_order#{detail_order.id}"}
                     %td= detail_order.vaccine.code
                     %td= detail_order.vaccine.name
                     %td= detail_order.quantity
-                    %td
-                      = link_to edit_admin_company_path(@company, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
-                        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-                      = link_to admin_company_path(@company, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: @company.name)}, remote: true, class: "btn btn-danger mr-3" do
-                        %i.fa.fa-trash{"aria-hidden" => "true"}
+                    -# %td
+                    -#   = link_to edit_admin_detail_order_path(detail_order, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
+                    -#     %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+                    -#   = link_to admin_company_path(@company, format: 'js'),  method: :delete, data: { confirm: t(".are_you_sure", name: @company.name)}, remote: true, class: "btn btn-danger mr-3" do
+                    -#     %i.fa.fa-trash{"aria-hidden" => "true"}
             = paginate @detail_orders, theme: "twitter-bootstrap-4"

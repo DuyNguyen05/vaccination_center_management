@@ -41,17 +41,17 @@
               %tbody#info_injection_book
                 - @users.each do |user|
                   %tr
-                    %td
+                    %td{"data-link": "#{admin_info_injection_book_path(user)}"}
                       = link_to "#{user.account.user_code}", admin_info_injection_book_path(user)
-                    %td
+                    %td{"data-link": "#{admin_info_injection_book_path(user)}"}
                       = user.father_name
-                    %td
+                    %td{"data-link": "#{admin_info_injection_book_path(user)}"}
                       = user.mother_name
-                    %td
+                    %td{"data-link": "#{admin_info_injection_book_path(user)}"}
                       = user.number_phone
-                    %td
+                    %td{"data-link": "#{admin_info_injection_book_path(user)}"}
                       = user.email
-                    %td
+                    %td{"data-link": "#{admin_info_injection_book_path(user)}"}
                       = user.current_address
                     %td
                       = link_to edit_admin_info_injection_book_path(user), class: "btn btn-primary mr-2" do

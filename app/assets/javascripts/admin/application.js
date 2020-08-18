@@ -20,6 +20,8 @@
 //= require ./lib/statistic
 //= require chartkick
 //= require cocoon
+//= require cable
+//= require_directory ../channels
 
 $(document).ready(function() {
   var companiesPath = '/admin/companies';
@@ -51,7 +53,16 @@ $(document).ready(function() {
   }
 });
 
+$('#detail-vaccine-package').select2({
+  theme: "bootstrap"
+});
+
 $(document).ready(function() {
   $('#vaccineCompany').select2();
 });
 
+$(document).ready(function() {
+  $("td[data-link]").click(function() {
+    window.location = $(this).data("link")
+  })
+});

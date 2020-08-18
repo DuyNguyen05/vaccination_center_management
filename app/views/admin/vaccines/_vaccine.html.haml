@@ -1,11 +1,17 @@
 - vaccines.each do |vaccine|
   %tr.text-center{id: "vaccine#{vaccine.id}"}
-    %td= link_to "#{vaccine.code}", admin_vaccine_path(vaccine)
-    %td= vaccine.name
-    %td= vaccine.manufacture
-    %td= vaccine.content
-    %td= l(vaccine.expiry_date, format: :date_month_year_concise)
-    %td= vaccine.quantity
+    %td{"data-link": "#{admin_vaccine_path(vaccine)}"}
+      = link_to "#{vaccine.code}", admin_vaccine_path(vaccine)
+    %td{"data-link": "#{admin_vaccine_path(vaccine)}"}
+      = vaccine.name
+    %td{"data-link": "#{admin_vaccine_path(vaccine)}"}
+      = vaccine.manufacture
+    %td{"data-link": "#{admin_vaccine_path(vaccine)}"}
+      = vaccine.content
+    %td{"data-link": "#{admin_vaccine_path(vaccine)}"}
+      = l(vaccine.expiry_date, format: :date_month_year_concise)
+    %td{"data-link": "#{admin_vaccine_path(vaccine)}"}
+      = vaccine.quantity
     %td
       = link_to edit_admin_vaccine_path(vaccine, format: 'js'), remote: true, class: "btn btn-primary mr-2" do
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}

@@ -117,7 +117,7 @@
                         .input-group-prepend
                           %span.btn.btn-info
                             %i.fa.fa-hospital-alt
-                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1"
+                        = f.select :vaccination_center_id, options_for_select(VaccinationCenter.pluck(:code, :id)), {}, class: "form-control bg-light border-1 pb-custom"
             .col-xl-6.col-lg-6
               %fieldset
                 .form-group

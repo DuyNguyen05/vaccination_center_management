@@ -8,7 +8,7 @@ class Admin::DetailsInfosController < Admin::AdminController
   def create
     @details_info = DetailsInfo.new details_info_params
     if @details_info.save
-      CreateAccountService.new(details_info_id: @details_info.id).create_account(params[:details_info][:admin])
+      CreateAccountService.new(details_info_id: @details_info.id).create_account
       redirect_to admin_accounts_path
     else
       render :new
@@ -19,7 +19,7 @@ class Admin::DetailsInfosController < Admin::AdminController
 
   def update
     if @details_info.update details_info_params
-      flash[:success] = t("updated")
+      flash[:success] = t("admin.update.updated")
       redirect_to admin_account_path(@details_info.account)
     else
       render :edit

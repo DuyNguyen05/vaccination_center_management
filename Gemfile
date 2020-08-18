@@ -41,6 +41,9 @@ gem "nested_form_fields"
 gem 'groupdate'
 gem "chartkick"
 gem "cocoon"
+gem "redis"
+gem "sidekiq"
+gem "whenever", require: false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

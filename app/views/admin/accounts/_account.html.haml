@@ -1,13 +1,13 @@
 - accounts.each do |account|
   - if account.details_info.present?
     %tr
-      %td
+      %td{"data-link": "#{admin_account_path(account)}"}
         = link_to "#{account.user_code}", admin_account_path(account)
-      %td
+      %td{"data-link": "#{admin_account_path(account)}"}
         = account.details_info.first_name
-      %td
+      %td{"data-link": "#{admin_account_path(account)}"}
         = account.details_info.email
-      %td
+      %td{"data-link": "#{admin_account_path(account)}"}
         = account.details_info.number_phone
       %td
         = link_to edit_admin_details_info_path(account.details_info), class: "btn btn-primary mr-2" do

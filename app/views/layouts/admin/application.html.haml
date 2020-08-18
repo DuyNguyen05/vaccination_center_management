@@ -8,7 +8,7 @@
     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
 
   %body
-    = render "layouts/admin/header"
+    = render "layouts/admin/header", notifications: @notifications
     #layoutSidenav
       = render "layouts/admin/sidebar"
       #layoutSidenav_content

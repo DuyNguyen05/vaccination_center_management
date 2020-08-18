@@ -1,8 +1,8 @@
 - companies.each do |company|
   %tr.text-center{id: "company#{company.id}"}
-    %td= company.company_code
-    %td= link_to company.name, admin_company_path(company)
-    %td= company.address
+    %td{"data-link": "#{admin_company_path(company)}"}= company.company_code
+    %td{"data-link": "#{admin_company_path(company)}"}= link_to company.name, admin_company_path(company)
+    %td{"data-link": "#{admin_company_path(company)}"}= company.address
     %td
       = link_to edit_admin_company_path(company, format: 'js'), remote: true, class: "btn btn-primary mr-3" do
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}

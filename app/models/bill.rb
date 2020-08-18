@@ -14,7 +14,7 @@ class Bill < ApplicationRecord
   accepts_nested_attributes_for :detail_bills, allow_destroy: true
 
   scope :newest, -> {order created_at: :desc}
-  
+
   scope :filter_bill, -> (query) do
     where("injection_book_id LIKE :q OR id LIKE :q OR created_at LIKE :q", q: "%#{query}%") if query.present?
   end
@@ -38,5 +38,18 @@ class Bill < ApplicationRecord
     8.times{ bill_code += source[rand(source.size)].to_s }
     self.code = bill_code
     self.save!
+  end
+
+  def generate_user_code(code)
+    source = (0..9).to_a
+    user_code = code
+    5.times{ user_code += source[rand(source.size)].to_s }
+    account = Account.find_by user_code: user_code
+    while account.present? do
+      user_code = code
+      5.times{ user_code += source[rand(source.size)].to_s }
+      account = Account.find_by user_code: user_code
+    end
+    user_code
   end
 end

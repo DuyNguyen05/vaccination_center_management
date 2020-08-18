@@ -5,6 +5,7 @@ class Admin < ApplicationRecord
 
   belongs_to :role
   belongs_to :details_info, optional: true
+  has_many :notifications
 
   def active_for_authentication?
     super && self.role.admin? # i.e. super && self.is_active

@@ -19,9 +19,6 @@
               = render "admin/shared/error_messages", object: f.object
               = f.hidden_field :user_code, value: current_admin_admin.id
               .form-group
-                = f.label Vaccine.human_attribute_name(:code), class: "required"
-                = f.text_field :code, class: "form-control"
-              .form-group
                 = f.label Vaccine.human_attribute_name(:name), class: "required"
                 = f.text_field :name, class: "form-control"
               .form-group
@@ -35,7 +32,7 @@
                 = f.date_field :expiry_date, class: "form-control"
               .form-group
                 = f.label Vaccine.human_attribute_name(:quantity), class: "required"
-                = f.number_field :quantity, class: "form-control"
+                = f.number_field :quantity, class: "form-control", min: 0
               .form-group
                 = f.label Vaccine.human_attribute_name(:company_code), class: "required"
                 = f.select :company_code, {}, {}, class: "form-control", id: "selectcompanies"

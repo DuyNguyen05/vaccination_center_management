@@ -1,4 +1,6 @@
 class Account < ApplicationRecord
+  # after_create :send_mail_welcome
+
   devise :database_authenticatable, :recoverable, :rememberable, :trackable
 
   belongs_to :role, optional: true
@@ -17,6 +19,8 @@ class Account < ApplicationRecord
   scope :filter_info_injection_books, ->(query) do
     joins(:accounts).where("accounts.user_code LIKE :q OR email LIKE :q OR identify_father LIKE :q OR identify_mother LIKE :q OR number_phone LIKE :q", q: "%#{query}%") if query.present?
   end
+
+
 
   class << self
 
@@ -85,5 +89,11 @@ class Account < ApplicationRecord
     else
       false
     end
+  end
+
+  private
+
+  def send_mail_welcome
+    StaffMailer.welcome_email(self, self.user_code, "12345678").deliver_now
   end
 end

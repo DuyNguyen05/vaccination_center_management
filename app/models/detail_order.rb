@@ -1,5 +1,6 @@
 class DetailOrder < ApplicationRecord
   belongs_to :vaccine
+  belongs_to :order
 
   validates :vaccine_id, presence: true
   validates :quantity, presence: true
